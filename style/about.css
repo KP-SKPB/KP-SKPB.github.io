@@ -1,0 +1,60 @@
+.heading{
+  font-size: 3.5rem;
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 0 1rem;
+  padding-top: 5rem;
+  letter-spacing: .2rem;
+  font-weight: 500;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--primary-color);
+        position: relative;
+        z-index: 1;
+        transition: 1s;
+        cursor: pointer;
+
+        &:hover {
+            background: black;
+
+            svg {
+                fill: var(--primary-color);
+            }
+        }
+        svg {
+            transition: .5s;
+        }
+    }
+    ul img{
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 10px #555;
+        &:hover {
+            outline: 2px dashed var(--primary-color);
+        }
+    }
+}
+.toggle:has(input:checked) ~ ul li{
+    transform: rotate(calc(360deg / 6 * var(--i)));
+    scale: 2;
+}
+.toggle:has(input:checked) {
+    rotate: 135deg;
+}

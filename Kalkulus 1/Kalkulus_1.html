@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../style/learn.css">
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../Js/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+</head>
+<body>
+  <nav class="sidebar">
+    <ol id="menu">
+      <div id="sidebar-btn">
+        <span class="logo">Kalkulus 1</span>
+        <button onclick="toggleSidebar()" id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+        </button>
+      </div>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+            <span class="link-text">Sistem Bilangan Real</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+        <div>
+          <li><a href="Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
+          <li><a href="Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
+          <li><a href="Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a></li>
+          <li><a href="Bab 1/Persamaan_Garis_dan_Jarak.html">Persamaan Garis dan Jarak</a></li>
+          <li><a href="Bab 1/Persamaan_Lingkaran_dan_Bola.html">Persamaan Lingkaran dan Bola</a></li>
+        </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Fungsi</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+          <li><a href="Bab 2/Definisi_dan_Notasi_Fungsi.html">Definisi dan Notasi Fungsi</a></li>
+          <li><a href="Bab 2/Operasi_pada_Fungsi.html">Operasi pada Fungsi</a></li>
+          <li><a href="Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
+          <li><a href="Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
+          </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Limit & Kekontinuan</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+          <li><a href="Bab 3/Pengantar_Notasi_Limit.html">Pengantar_Notasi_Limit</a></li>
+          <li><a href="Bab 3/Penghitungan_Limit.html">Penghitungan Limit</a></li>
+          <li><a href="Bab 3/Limit_di_Tak-Hingga.html">Limit di Tak-Hingga</a></li>
+          <li><a href="Bab 3/Kekontinuan.html">Kekontinuan</a></li>
+          </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Turunan</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+          <li><a href="Bab 4/Garis_Singgung_dan_Laju_Perubahan.html">Garis Singgung dan Laju Perubahan</a></li>
+          <li><a href="Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
+          <li><a href="Bab 4/Diferensiasi.html">Diferensiasi</a></li>
+          <li><a href="Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html">Aturan Rantai dan Diferensiasi Implisit</a></li>
+          </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Aplikasi Turunan</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+            <li><a href="Bab 5/Laju-laju_yang_Berkaitan.html">Laju-laju yang Berkaitan</a></li>
+            <li><a href="Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html">Interval Naik Turun dan Kecekungan Fungsi</a></li>
+            <li><a href="Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html">Ekstrim Relatif Uji Turunan Pertama dan Kedua</a></li>
+            <li><a href="Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html">Grafik Polinomial dan Fungsi Rasional</a></li>
+            <li><a href="Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html">Nilai Maksimum atau Minimum Suatu Fungsi</a></li>
+            <li><a href="Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html">Aplikasi Masalah Maksimum dan Minimum</a></li>
+          </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Integral</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+            <li><a href="Bab 6/Anti-turunan_Integral_TakTentu.html">Anti-turunan Integral TakTentu</a></li>
+            <li><a href="Bab 6/Integrasi_dengan_Substitusi.html">Integrasi dengan Substitusi</a></li>
+            <li><a href="Bab 6/Luas_Sebagai_Limit.html">Luas Sebagai Limit</a></li>
+            <li><a href="Bab 6/Integral_Tertentu.html">Integral Tertentu</a></li>
+            <li><a href="Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html">Teorema Fundamental Kalkulus Pertama</a></li>
+            <li><a href="Bab 6/Integral_Tertentu_dengan_Subtitusi.html">Integral Tertentu dengan Subtitusi</a></li>
+            <li><a href="Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html">Teorema Fundamental Kalkulus Kedua</a></li>
+          </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Bilangan Kompleks</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+          <li><a href="Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a></li>
+          <li><a href="Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a></li>
+          </div>
+        </ol>
+      </li>
+      <li class="active">
+        <a>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <span class="link-text">Matriks</span>
+          </button>
+        </a>
+        <ol class="sub-menu">
+          <div>
+          <li><a href="Sup B/Matriks_dan_Operasi_Matriks.html">Matriks dan Operasi Matriks</a></li>
+          <li><a href="Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html">Operasi Baris Elementer dan Matriks Invers</a></li>
+          <li><a href="Sup B/Sistem_Persamaan_Linier.html">Sistem Persamaan Linier</a></li>
+          <li><a href="Sup B/Determinan.html">Determinan</a></li>
+          <li><a href="Sup B/Nilai_Eigen_dan_Vektor_Eigen.html">Nilai Eigen dan Vektor Eigen</a></li>
+          </div>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
+  <main>
+    <header>
+      oi
+    </header>
+    <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+    <math-field>f(x)=</math-field>
+    \begin{equation}
+      f(x) = x^2 + 2x + 1
+    \end{equation}
+
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, explicabo. Aliquid, cupiditate quo. Ipsum sequi harum aperiam. Odit, deserunt cum sint assumenda placeat distinctio nihil, sapiente praesentium vero dicta obcaecati.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur quidem enim debitis pariatur voluptates magni ipsum est, tenetur nulla, expedita architecto optio dolorem consectetur aliquid sunt saepe, eveniet quasi!
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, tenetur. Sint accusantium tenetur impedit omnis reiciendis veniam exercitationem obcaecati eius aspernatur sunt saepe incidunt ratione, laudantium quia nisi beatae odio!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio ratione cupiditate totam sint quaerat non, amet obcaecati repellendus impedit necessitatibus dignissimos asperiores nulla voluptatem voluptate, fuga sapiente sit, rerum recusandae?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate ab commodi fugiat dolore optio dicta amet ut numquam et culpa doloribus, similique blanditiis necessitatibus aliquid sapiente beatae minima expedita.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae fermentum felis. Suspendisse potenti. Aliquam leo odio, placerat sed pretium vitae, scelerisque sed arcu. Nullam imperdiet sollicitudin lacus sed gravida. Nullam id ullamcorper nibh. Curabitur sapien nisl, lacinia pharetra ante eget, faucibus ultrices lorem. Ut mattis faucibus est, non tempus nunc elementum eget. Donec dui est, accumsan eu accumsan at, blandit sed nibh. Nulla ac tortor tincidunt, sagittis dolor non, venenatis urna. Nunc aliquam vitae lorem a fringilla. Aenean tempus urna nibh, vitae ullamcorper nibh tempus at. Aliquam erat volutpat. Nullam commodo nulla ut viverra dignissim.
+
+Curabitur bibendum ipsum consectetur lacus aliquam, eget efficitur justo laoreet. Nullam in eros sed nunc pulvinar efficitur condimentum eget lorem. Proin consequat lorem a nulla luctus consequat sed a est. Morbi consectetur nisl quis sagittis aliquam. Maecenas ex augue, congue ac aliquam in, pharetra sit amet justo. Sed consequat lacus quis justo suscipit, nec aliquet felis dapibus. Nam porttitor erat in lorem volutpat tincidunt. In hac habitasse platea dictumst. Pellentesque scelerisque et lorem sed efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec fermentum arcu non dolor venenatis, quis facilisis turpis vulputate. Praesent id erat id diam aliquet luctus eu in arcu. Nullam et feugiat augue. Nulla vel ligula gravida, lacinia leo vitae, tincidunt mi. Donec egestas auctor nibh. Sed ultrices eu dolor eu consectetur.
+
+Sed a metus est. Nam quis est orci. Curabitur eu orci ac justo hendrerit lacinia. Fusce imperdiet quis ex in tempor. Aliquam tellus felis, bibendum sit amet est ut, ultrices dignissim ligula. Etiam id efficitur nunc. In a massa arcu. Aenean tincidunt mattis risus, et consequat nisi porttitor id. Duis convallis magna at ipsum porta convallis et at lectus. Nunc ac accumsan purus. Curabitur non orci congue, suscipit nisi ac, pretium ante. Fusce et elit ac enim venenatis sodales. Pellentesque iaculis nunc ut quam hendrerit, at placerat leo molestie.
+
+Vestibulum tincidunt lacus vitae varius consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed tempus quis risus in malesuada. Ut sodales leo ante, vitae aliquam erat ornare sed. Nullam felis tortor, suscipit id nulla id, aliquet tincidunt mi. Sed libero velit, auctor id dui at, pulvinar tempor metus. Fusce pharetra pulvinar erat commodo consectetur. Donec quis eros non eros tempus efficitur lobortis at turpis. Sed dignissim urna convallis, fermentum nisi quis, finibus magna. Nam porta tincidunt sapien interdum suscipit. Quisque odio lorem, ornare ut urna in, cursus finibus lectus. Maecenas tincidunt mattis diam. Ut sed orci pellentesque, varius nulla vel, congue metus. Donec nec massa auctor dui blandit mollis. Integer tempus, orci nec molestie molestie, elit dui ultricies arcu, placerat congue lacus lacus et enim.
+
+Morbi sed erat neque. Sed auctor quis mauris vitae tempor. Curabitur blandit sem mauris, id imperdiet lectus hendrerit vel. Duis ac tellus nec mauris gravida pharetra. Nulla vitae cursus diam. Donec tempus mattis diam eu ullamcorper. Morbi molestie metus et mauris luctus, sed consequat tortor porttitor. Nulla mi dui, dictum non orci vel, pellentesque porttitor nisi. Proin rutrum nisl sit amet ante congue, et sodales lectus imperdiet. Donec tincidunt nibh diam, eu semper quam mattis eget. Vivamus aliquet nisi non sem molestie egestas. Nullam non ex non magna pharetra mattis.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui architecto accusamus nam consequuntur in, eum beatae sapiente optio laboriosam animi temporibus corporis cupiditate porro quidem sunt veniam aperiam quia commodi?
+  </main>
+  
+</body>
+</html>

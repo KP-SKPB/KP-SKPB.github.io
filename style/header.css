@@ -1,0 +1,161 @@
+label{
+    width: 50px;
+    height: 20px;
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: whitesmoke;
+}
+label:after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius: 18px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input:checked + label {
+    background: #242424;
+}
+
+input:checked + label::after {
+    left: 49px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+}
+
+label:active::after{
+    width: 25px;
+}
+
+label svg{
+    position: absolute;
+    width: 12px;
+    top: -390px;
+    z-index: 100;
+}
+
+label svg.sun{
+    left: 4px;
+    transition: 0.2s;
+}
+
+label svg.moon{
+    left: 34px;
+    transition: 0.2s;
+    rotate: 360deg;
+}
+
+input:checked + label svg.sun{
+    rotate: 360deg;
+}
+
+input:checked + label svg.moon{
+    width: 12px;
+    rotate: 0deg;
+}
+
+header{
+    width: 96%;
+    background: var(--secondary-color);
+    position: fixed;
+    top: 0rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+header .navbar ul{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    list-style: none;
+}
+
+header .navbar ul li{
+    margin: 0 1rem;
+}
+
+header .navbar ul li a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.2s;
+}
+
+header .navbar ul li .active,
+header .navbar ul li a:hover{
+    color: var(--primary-color);
+}
+
+header .fa-bars{
+    font-size: 1rem;
+    color: var(--text-color);
+    display: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+header .fa-times{
+    transform: rotate(180deg);
+    color: var(--text-color);
+}
+
+@media (max-width: 768px){
+    html{
+        font-size: 60%;
+    }
+
+    header .fa-bars {
+        display: block; 
+        font-size: 2rem;
+        cursor: pointer; 
+    }
+
+    header .navbar{
+        position: fixed;
+        top: -100rem; left: 0;
+        width: 100%;
+        background: var(--secondary-color);
+        border-radius: 1rem;
+        opacity: 0;
+        transition: 0.2s linear;
+        z-index: -100;
+    }
+
+    header .navbar ul{
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .navbar ul li{
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header .navbar ul li a{
+        font-size: 1.5rem;
+        display: block;
+    }
+
+    header .nav-toggle{
+        top: 4rem;
+        opacity: 1;
+    }
+} 

@@ -1,0 +1,216 @@
+@import url('https://fonts.cdnfonts.com/css/latin-modern-sans');
+@font-face {
+  font-family: HYWenHei;
+  src: url(zhcn.ttf);
+}
+
+:root{
+  --text-color:black;
+  --bg-color:#fff;
+  --first-color:#69B7D9;
+  --second-color:#FFC410;
+  --third-color:#013880;
+
+  --primary-color: #EFD30B;
+  --secondary-color: #F9BE08;
+  --tertiary-color: #DFDFD9;
+  --primary-color-dark: #C07F00;
+  --secondary-color-dark: #4C3D3D;
+}
+
+.dark-mode{
+  --text-color:#DBDBDB;
+  --bg-color:#292929; /* #2D2D2D */
+  --first-color:#013880;
+  --second-color:#FFC410;
+  --third-color:#69B7D9;
+
+  --primary-color: #B1F0F7;
+  --secondary-color: #1FB7FF;
+  --tertiary-color: #F0E4DF;
+  --primary-color-dark: #0631BC;
+  --secondary-color-dark: #001A6E;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+::-webkit-scrollbar-track{
+  background: var(--secondary-color);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  line-height: 1.5rem;
+}
+
+body {
+  font-family: 'LMSansDemiCond10', sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#menu > li > ol > div > li::marker { 
+  content: counters(list-item, '.') ' '; 
+}
+#menu > li > ol > div > li{
+  margin-left: 25px;
+}
+
+#menu > li:nth-child(8) > ol > div > li::marker {
+  content: 'A.'counter(list-item);
+}
+
+#menu > li:nth-child(9) > ol > div > li::marker {
+  content: 'B.'counter(list-item);
+}
+ 
+main {
+  padding: min(30px,7%);
+}
+
+main p{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.sidebar{
+  box-sizing: border-box;
+  font-family: HYWenHei;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--primary-color);
+  border-right: var(--text-color) 1px solid;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow: hidden;
+  text-wrap: nowrap;
+  transition: 0.5s ease-in-out;
+  overflow-y: auto; 
+}
+
+.logo{
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+#sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Elemen di sisi kiri dan kanan */
+}
+
+.sidebar.hidden {
+  width: 0px;
+  #toggle-btn svg{
+    transform: rotate(180deg);
+  }
+  #toggle-btn{
+    left: 0;
+  }
+}
+
+.sidebar ol{
+  list-style-type: none;
+}
+
+.sidebar ol li.active{
+  .svg-icon {
+    width: 15px;
+    height: 100%;
+    margin: 0;
+    flex-shrink: 0;
+    color: var(--text-color);
+  }
+}
+
+.sidebar a, .sidebar .dropdown-btn{
+  padding: .3em;
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.dropdown-btn{
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sidebar a span, .sidebar .dropdown-btn span{
+  flex-grow: 1;
+}
+
+.sidebar .dropdown-btn:hover{
+  background-color: var(--primary-color-dark);
+  color: var(--bg-color);
+}
+
+.sidebar a:has(.dropdown-btn){
+  background-color: var(--second-color);
+  border-radius: 0;
+}
+
+.sub-menu{
+  font-size: 10px;
+  background-color: var(--secondary-color);
+}
+
+.sidebar .sub-menu{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+
+  > div{
+    overflow: hidden;
+  }
+}
+
+.sidebar .sub-menu.show{
+  grid-template-rows: 1fr;
+}
+
+#toggle-btn{
+  position: fixed;
+  left: 190px;
+  padding: 1em;
+  border: none;
+  border-radius: .5em;
+  background: none;
+  cursor: pointer;
+  svg{
+    transition: rotate 0.5s ease;
+  }
+  transition: 0.5s ease-in-out;
+  background-color: var(--primary-color);
+}
+
+#toggle-btn:hover{
+  background-color: var(--primary-color);
+}
+
+.def-box{
+  margin-top: 1.75em;
+  margin-bottom: 1em;
+  border: 1px solid #409090;  
+  padding: 10px; 
+  border-radius: 10px; 
+  font-family: Cambria, Georgia, serif; 
+  color: #000; 
+}

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('header.css');
+@import url('about.css');
+
+:root{
+    --base-color: #F9F8F4;
+    --text-color: #1A1A19;
+    --primary-color: #EFD30B;
+    --secondary-color: #F9BE08;
+    --tertiary-color: #DFDFD9;
+
+    --primary-color-dark: #C07F00;
+    --secondary-color-dark: #4C3D3D;
+}
+
+.dark-mode{
+    --base-color: #343c42;
+    --text-color: #FAFAFA;
+    --primary-color: #B1F0F7;
+    --secondary-color: #1FB7FF;
+    --tertiary-color: #F0E4DF;
+
+    --primary-color-dark: #0631BC;
+    --secondary-color-dark: #001A6E;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid #1A1A19; */
+}
+
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    background-color: var(--base-color);
+    color: var(--text-color);
+    align-items: center;
+}
+
+.home{
+    min-height: 100vh;
+    background-image: url(../images/Tenki_no_Ko.jpg);
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+    animation: bgChange 20s linear infinite;
+}
+
+@keyframes bgChange{
+    0%{
+        background-image: url('../images/Tenki_no_Ko.jpg');
+    }
+    20%{
+        background-image: url('../images/Tenki_no_Ko_2.jpg');
+    }
+    35%{
+        background-image: url('../images/Tenki_no_Ko_3.jpg');
+    }
+    65%{
+        background-image: url('../images/kimi_no_nawa_1.jpg');;
+    }
+    85%{
+        background-image: url('../images/kimi_no_nawa_2.jpg');;
+    }
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.home .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top: 14rem;
+    padding-bottom: 8rem;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.home .content.hidden{
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.home .content h1{
+    font-size: 5rem;
+    color: var(--primary-color);
+    padding: 0 1rem;
+    text-shadow: 0 0.3rem .5rem rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.home .content p{
+    color: var(--tertiary-color);
+    font-size: 2rem;
+    z-index: 3;
+}
+
+.home::before{
+    content: '';
+    position: absolute;
+    bottom: -33rem; left: 0%;
+    transform: translateX(-50%);
+    border-top: 70vh solid var(--base-color);
+    width: 120%;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 1s ease, color 1s ease;
+}
+.home::after{
+    content: '';
+    position: absolute;
+    bottom: -33rem; right: 90%;
+    transform: translateX(100%);
+    border-top: 70vh solid var(--base-color);
+    width: 120%;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;            
+}
+
+.box2{
+    background: url(../images/frieren.png) no-repeat center ;
+}
+
+.box1{
+    background: url(../images/himmel.jpg) no-repeat center ;
+}
+
+.box {
+    position: relative;
+    width: 30%;
+    height: 300px;
+    background-size: cover;
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 2rem;
+    transition: 0.5s;
+
+    &:hover {
+        cursor: pointer;
+        translate: -60px -60px;
+        box-shadow: 10px 10px 20px rgb(0 0 0 / .2),
+        40px 40px 0 var(--primary-color-dark),
+        50px 50px 20px rgb(0 0 0 / .5),
+        80px 80px 0 var(--secondary-color-dark),
+        80px 80px 20px rgb(0 0 0 / .5);
+
+        h3 {
+            color: #2d2c18;
+        }
+    }
+    h3 {
+        text-align: center;
+        position: absolute;
+        top: 80%;
+        right: 20%;
+        left: 20%;
+        font-size: 2rem;
+        font-weight: 500;
+        -webkit-text-stroke: 1px var(--text-color);
+        color: transparent;
+    }
+}
+
+
+@media (max-width: 768px) {
+    
+} 
