@@ -5,7 +5,7 @@
 }
 
 :root{
-  --text-color:black;
+  --text-color:#000;
   --bg-color:#fff;
   --first-color:#69B7D9;
   --second-color:#FFC410;
@@ -47,6 +47,8 @@
 
 html{
   line-height: 1.5rem;
+  text-align: justify;
+  font-size: 16px;
 }
 
 body {
@@ -205,12 +207,50 @@ main p{
   background-color: var(--primary-color);
 }
 
-.def-box{
+.dfn-box{
   margin-top: 1.75em;
   margin-bottom: 1em;
-  border: 1px solid #409090;  
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
   padding: 10px; 
   border-radius: 10px; 
-  font-family: Cambria, Georgia, serif; 
-  color: #000; 
+  color: var(--text-color); 
+}
+
+.dfn-header {
+  background-color: var(--text-color);/* #5cc6c6; */
+  color: var(--bg-color);
+  font-weight: bold;
+  font-size: large;
+  padding: 4px 10px; 
+  border: 2px solid var(--text-color); 
+  border-radius: 5px; 
+  margin-top: -1.75em;
+  margin-left: -0.25em;
+  margin-bottom: 0.25em;
+  display: table;
+  padding: 0.25em;
+}
+
+.dfn-content {
+  font-size: 16px; 
+  line-height: 1.6;  
+}
+
+.definisi{
+  background-color: #b7e0ff80;
+  border-color: #7c96aa;
+  .dfn-header{
+    background-color: #51abf0;
+    border-color: #0630bc96;
+  }
+}
+
+.teorema{
+  background-color: #FFCFB380;
+  border-color: #5f4c41;
+  .dfn-header{
+    background-color: #FFCFB3;
+    border-color: #C07F00;
+  }
 }
