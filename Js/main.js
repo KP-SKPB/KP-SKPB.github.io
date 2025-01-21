@@ -2,12 +2,10 @@
 // darkmode
 const darkModeToggle = document.getElementById('darkmode-toggle');
 
-// Periksa apakah dark mode sudah diaktifkan sebelumnya
 if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark-mode');
 }
 
-// Tambahkan event listener untuk toggle tombol
 darkModeToggle.onclick = function () {
     if (document.body.classList.contains('dark-mode')) {
         document.body.classList.remove('dark-mode');
