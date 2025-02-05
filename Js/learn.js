@@ -1,9 +1,11 @@
 // Dark mode
 const darkModeToggle = document.getElementById('darkmode-toggle');
 
-// if (localStorage.getItem('dark-mode') === 'enabled') {
-//     document.body.classList.add('dark-mode');
-// }
+if(darkModeToggle.checked) {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('dark-mode', 'enabled');
+}
+
 
 darkModeToggle.onclick = function () {
     if (document.body.classList.contains('dark-mode')) {
@@ -13,12 +15,13 @@ darkModeToggle.onclick = function () {
         document.body.classList.add('dark-mode');
         localStorage.setItem('dark-mode', 'enabled');
     }
+    
 };
 
 
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
-  sidebar.classList.toggle('hidden');
+  sidebar.classList.toggle('hidden-nav');
 }
   
 
@@ -36,8 +39,6 @@ function saveDetailsState() {
   const detailsStates = Array.from(document.querySelectorAll("details")).map(details => details.open);
   localStorage.setItem("detailsStates", JSON.stringify(detailsStates));
 }
-
-// Function to restore the state of all <details> elements
 function restoreDetailsState() {
   const detailsStates = JSON.parse(localStorage.getItem("detailsStates")) || [];
   document.querySelectorAll("details").forEach((details, index) => {
@@ -48,11 +49,17 @@ function restoreDetailsState() {
       }
   });
 }
-
-// Restore the state when the page loads
 restoreDetailsState();
-
-// Save the state whenever a details element is toggled
 document.querySelectorAll("details").forEach(details => {
   details.addEventListener("toggle", saveDetailsState);
 });
+
+
+// Scroll progress bar
+window.onscroll = function() {myFunction()};
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.height = scrolled + "%";
+}

@@ -68,7 +68,7 @@ input:checked + label svg.moon{
 }
 
 header{
-    width: 96%;
+    width: 98%;
     background: var(--secondary-color);
     position: fixed;
     top: 0rem; left: 50%;
@@ -101,6 +101,20 @@ header .navbar ul li a{
 header .navbar ul li .active,
 header .navbar ul li a:hover{
     color: var(--primary-color);
+}
+
+.navbar ul li a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--secondary-color);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover::after{
+    width: 100%;
 }
 
 header .fa-bars{

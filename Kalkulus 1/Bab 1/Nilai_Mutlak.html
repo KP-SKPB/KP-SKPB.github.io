@@ -25,7 +25,10 @@
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
           displayMath: [['$$', '$$'], ['\\[', '\\]']],
-          tags: 'ams'
+          tags: 'ams',
+          macros: {
+            R: "{\\mathbb{R}}"
+          }
         }
       };
     </script>
@@ -34,15 +37,17 @@
     <script src="https://unpkg.com/mathlive"></script>
 </head>
 <body>
-  <nav class="sidebar hidden">
+  <nav class="sidebar hidden-nav">
     <ol id="menu">
       <div id="sidebar-btn">
-        <span class="logo">Kalkulus 1</span>
+        <h1 class="logo">KALKULUS 1</h1>
         <button onclick="toggleSidebar()" id="toggle-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          <span id="toggle-btn-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </span>
         </button>
       </div>
-      <li class="active">
+      <li class="active" style="border-top: 4px solid var(--second-color);">
         <a>
           <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
             <span class="link-text">Sistem Bilangan Real</span>
@@ -50,11 +55,11 @@
         </a>
         <ol class="sub-menu">
         <div>
-          <li><a href="Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
-          <li><a href="Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
-          <li><a href="Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a></li>
-          <li><a href="Bab 1/Persamaan_Garis_dan_Jarak.html">Persamaan Garis dan Jarak</a></li>
-          <li><a href="Bab 1/Persamaan_Lingkaran_dan_Bola.html">Persamaan Lingkaran dan Bola</a></li>
+          <li><a href="../Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
+          <li><a href="../Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
+          <li><a href="../Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a></li>
+          <li><a href="../Bab 1/Persamaan_Garis_dan_Jarak.html">Persamaan Garis dan Jarak</a></li>
+          <li><a href="../Bab 1/Persamaan_Lingkaran_dan_Bola.html">Persamaan Lingkaran dan Bola</a></li>
         </div>
         </ol>
       </li>
@@ -66,10 +71,10 @@
         </a>
         <ol class="sub-menu">
           <div>
-          <li><a href="Bab 2/Definisi_dan_Notasi_Fungsi.html">Definisi dan Notasi Fungsi</a></li>
-          <li><a href="Bab 2/Operasi_pada_Fungsi.html">Operasi pada Fungsi</a></li>
-          <li><a href="Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
-          <li><a href="Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
+          <li><a href="../Bab 2/Definisi_dan_Notasi_Fungsi.html">Definisi dan Notasi Fungsi</a></li>
+          <li><a href="../Bab 2/Operasi_pada_Fungsi.html">Operasi pada Fungsi</a></li>
+          <li><a href="../Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
+          <li><a href="../Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
           </div>
         </ol>
       </li>
@@ -81,10 +86,10 @@
         </a>
         <ol class="sub-menu">
           <div>
-          <li><a href="Bab 3/Pengantar_Notasi_Limit.html">Pengantar_Notasi_Limit</a></li>
-          <li><a href="Bab 3/Penghitungan_Limit.html">Penghitungan Limit</a></li>
-          <li><a href="Bab 3/Limit_di_Tak-Hingga.html">Limit di Tak-Hingga</a></li>
-          <li><a href="Bab 3/Kekontinuan.html">Kekontinuan</a></li>
+          <li><a href="../Bab 3/Pengantar_Notasi_Limit.html">Pengantar_Notasi_Limit</a></li>
+          <li><a href="../Bab 3/Penghitungan_Limit.html">Penghitungan Limit</a></li>
+          <li><a href="../Bab 3/Limit_di_Tak-Hingga.html">Limit di Tak-Hingga</a></li>
+          <li><a href="../Bab 3/Kekontinuan.html">Kekontinuan</a></li>
           </div>
         </ol>
       </li>
@@ -96,10 +101,10 @@
         </a>
         <ol class="sub-menu">
           <div>
-          <li><a href="Bab 4/Garis_Singgung_dan_Laju_Perubahan.html">Garis Singgung dan Laju Perubahan</a></li>
-          <li><a href="Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
-          <li><a href="Bab 4/Diferensiasi.html">Diferensiasi</a></li>
-          <li><a href="Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html">Aturan Rantai dan Diferensiasi Implisit</a></li>
+          <li><a href="../Bab 4/Garis_Singgung_dan_Laju_Perubahan.html">Garis Singgung dan Laju Perubahan</a></li>
+          <li><a href="../Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
+          <li><a href="../Bab 4/Diferensiasi.html">Diferensiasi</a></li>
+          <li><a href="../Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html">Aturan Rantai dan Diferensiasi Implisit</a></li>
           </div>
         </ol>
       </li>
@@ -111,12 +116,12 @@
         </a>
         <ol class="sub-menu">
           <div>
-            <li><a href="Bab 5/Laju-laju_yang_Berkaitan.html">Laju-laju yang Berkaitan</a></li>
-            <li><a href="Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html">Interval Naik Turun dan Kecekungan Fungsi</a></li>
-            <li><a href="Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html">Ekstrim Relatif Uji Turunan Pertama dan Kedua</a></li>
-            <li><a href="Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html">Grafik Polinomial dan Fungsi Rasional</a></li>
-            <li><a href="Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html">Nilai Maksimum atau Minimum Suatu Fungsi</a></li>
-            <li><a href="Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html">Aplikasi Masalah Maksimum dan Minimum</a></li>
+            <li><a href="../Bab 5/Laju-laju_yang_Berkaitan.html">Laju-laju yang Berkaitan</a></li>
+            <li><a href="../Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html">Interval Naik Turun dan Kecekungan Fungsi</a></li>
+            <li><a href="../Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html">Ekstrim Relatif Uji Turunan Pertama dan Kedua</a></li>
+            <li><a href="../Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html">Grafik Polinomial dan Fungsi Rasional</a></li>
+            <li><a href="../Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html">Nilai Maksimum atau Minimum Suatu Fungsi</a></li>
+            <li><a href="../Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html">Aplikasi Masalah Maksimum dan Minimum</a></li>
           </div>
         </ol>
       </li>
@@ -128,13 +133,13 @@
         </a>
         <ol class="sub-menu">
           <div>
-            <li><a href="Bab 6/Anti-turunan_Integral_TakTentu.html">Anti-turunan Integral TakTentu</a></li>
-            <li><a href="Bab 6/Integrasi_dengan_Substitusi.html">Integrasi dengan Substitusi</a></li>
-            <li><a href="Bab 6/Luas_Sebagai_Limit.html">Luas Sebagai Limit</a></li>
-            <li><a href="Bab 6/Integral_Tertentu.html">Integral Tertentu</a></li>
-            <li><a href="Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html">Teorema Fundamental Kalkulus Pertama</a></li>
-            <li><a href="Bab 6/Integral_Tertentu_dengan_Subtitusi.html">Integral Tertentu dengan Subtitusi</a></li>
-            <li><a href="Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html">Teorema Fundamental Kalkulus Kedua</a></li>
+            <li><a href="../Bab 6/Anti-turunan_Integral_TakTentu.html">Anti-turunan Integral TakTentu</a></li>
+            <li><a href="../Bab 6/Integrasi_dengan_Substitusi.html">Integrasi dengan Substitusi</a></li>
+            <li><a href="../Bab 6/Luas_Sebagai_Limit.html">Luas Sebagai Limit</a></li>
+            <li><a href="../Bab 6/Integral_Tertentu.html">Integral Tertentu</a></li>
+            <li><a href="../Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html">Teorema Fundamental Kalkulus Pertama</a></li>
+            <li><a href="../Bab 6/Integral_Tertentu_dengan_Subtitusi.html">Integral Tertentu dengan Subtitusi</a></li>
+            <li><a href="../Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html">Teorema Fundamental Kalkulus Kedua</a></li>
           </div>
         </ol>
       </li>
@@ -146,12 +151,12 @@
         </a>
         <ol class="sub-menu">
           <div>
-          <li><a href="Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a></li>
-          <li><a href="Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a></li>
+          <li><a href="../Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a></li>
+          <li><a href="../Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a></li>
           </div>
         </ol>
       </li>
-      <li class="active">
+      <li class="active" style="border-bottom: 4px solid var(--second-color);">
         <a>
           <button onclick="toggleSubMenu(this)" class="dropdown-btn">
             <span class="link-text">Matriks</span>
@@ -159,11 +164,11 @@
         </a>
         <ol class="sub-menu">
           <div>
-          <li><a href="Sup B/Matriks_dan_Operasi_Matriks.html">Matriks dan Operasi Matriks</a></li>
-          <li><a href="Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html">Operasi Baris Elementer dan Matriks Invers</a></li>
-          <li><a href="Sup B/Sistem_Persamaan_Linier.html">Sistem Persamaan Linier</a></li>
-          <li><a href="Sup B/Determinan.html">Determinan</a></li>
-          <li><a href="Sup B/Nilai_Eigen_dan_Vektor_Eigen.html">Nilai Eigen dan Vektor Eigen</a></li>
+          <li><a href="../Sup B/Matriks_dan_Operasi_Matriks.html">Matriks dan Operasi Matriks</a></li>
+          <li><a href="../Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html">Operasi Baris Elementer dan Matriks Invers</a></li>
+          <li><a href="../Sup B/Sistem_Persamaan_Linier.html">Sistem Persamaan Linier</a></li>
+          <li><a href="../Sup B/Determinan.html">Determinan</a></li>
+          <li><a href="../Sup B/Nilai_Eigen_dan_Vektor_Eigen.html">Nilai Eigen dan Vektor Eigen</a></li>
           </div>
         </ol>
       </li>
@@ -174,7 +179,6 @@
         <ul>
             <li><a href="#home">Beranda</a></li>
             <li><a href="#course">Index</a></li>
-            <li><a href="#about">Referensi</a></li>
             <li><a href="#feedback">Feedback</a></li>
         </ul>
     </nav>
@@ -191,18 +195,26 @@
 
     <div class="fa fa-bars"></div>
   </header>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
   
-  <main class="content">
+  <main class="content" id="main-content">
+    <h2>
+      <section class="no-subbab">1.2</section>
+      <span class="judul-bab">Nilai Mutlak</span>
+    </h2>
     <div class="dfn-box definisi">
       <div class="dfn-header">
-        Definisi 1.0.1.(Nilai Mutlak)
+        Definisi 1.2.1.(Nilai Mutlak)
       </div>
       <div class="dfn-content">
         Nilai Mutlak atau <i>magnitude</i> suatu bilangan real $a$, ditulis dengan $|a|$, didefinisikan dengan
         \begin{equation*}
           |a|=\begin{cases}
             a, & \text{jika } a\geq 0,\\
-            -a, & \text{jika } a < 0.
+            -a, & \text{jika } a &lt; 0.
           \end{cases}
         \end{equation*}
       </div>
@@ -232,7 +244,7 @@
           <li>$|p|\geq 0$ (Nilai Mutlak suatu bilangan selalu tak-negatif).</li>
           <li>$|-p|=|p|$ (suatu bilangan dan negatifnya mempunyai nilai mutlak sama).</li>
           <li>$|pq|=|p||q|$ (Nilai mutlak dari perkalian sama dengan perkalian nilai mutlak).</li>
-          <li>$\left|\frac{p}{q}\right|=\frac{|p|}{|q|}, \quad q\neq 0$ (Nilai mutlak dari pembagian sama dengan pembagian nilai mutlak).</li>
+          <li>$\left|\dfrac{p}{q}\right|=\dfrac{|p|}{|q|}, \quad q\neq 0$ (Nilai mutlak dari pembagian sama dengan pembagian nilai mutlak).</li>
         </ol>
       </div>
     </div>
@@ -278,33 +290,35 @@
           <summary>Pembahasan</summary>
           <div class="solution-step">
             Pertama-tama, sederhanakan terlebih dahulu bentuk mutlaknya.
-          \begin{align*}
-              |2x^2-3x|&=x|2x-3|\\
-              |x(2x-3)|&=x|2x-3|\\
-              |x||2x-3|-x|2x-3|&=0\\
-              |2x-3|(|x|-x)&=0\\
-              |2x-3|=0\dots(i) \quad &\text{atau}\quad |x|-x=0\dots(ii)
-          \end{align*}
-          Di bawah ini diuraikan penyelesaian untuk masing-masing solusi.
-          <ol class="itemaze roman">
-            <li>
-              Perhatikan bahwa $|2x-3|=0$ hanya terpenuhi ketika fungsi di dalam tanda mutlak juga bernilai $0$. Oleh karena itu, solusinya adalah
-              $$2x-3=0\implies x=3/2.$$
-            </li>
-            <li>
-              Berdasarkan definisi, $|x|$ dapat ditulis sebagai
-        $$|x|=\begin{cases}
-            x,\quad x\geq 0\\
-            -x,\quad x &lt; 0
-        \end{cases}$$
-        Untuk $x\geq0$, solusinya adalah sebagai berikut.
-        $$x-x=0\implies 0=0$$
-        Pernyataan bahwa $0=0$ merupakan pernyataan yang benar sehingga semua bilangan real $x\geq0$ memenuhi $|x|-x=0$. Adapun untuk $x&lt;0$, solusinya adalah sebagai berikut.
-        $$-x-x=0\implies -2x=0\implies x=0$$
-        Nilai $x=0$ tidak memenuhi syarat $x &lt; 0$ sehingga tidak ada solusi untuk $x &lt; 0$. Himpunan Penyelesaian (HP) dari $|x|-x=0$ diperoleh dengan menggabungkan solusi untuk $x\geq0$ dan $x &lt; 0$, yaitu 
-        $$HP=[0,+\infty)\cup\emptyset=[0,+\infty)=\{x|x\geq 0, x\in \mathbb{R}\}.$$
-            </li>
-          </ol>
+            \begin{align*}
+                |2x^2-3x|&=x|2x-3|\\
+                |x(2x-3)|&=x|2x-3|\\
+                |x||2x-3|-x|2x-3|&=0\\
+                |2x-3|(|x|-x)&=0\\
+                |2x-3|=0\dots(i) \quad &\text{atau}\quad |x|-x=0\dots(ii)
+            \end{align*}
+            Di bawah ini diuraikan penyelesaian untuk masing-masing solusi.
+            <ol class="itemaze roman">
+              <li>
+                Perhatikan bahwa $|2x-3|=0$ hanya terpenuhi ketika fungsi di dalam tanda mutlak juga bernilai $0$. Oleh karena itu, solusinya adalah
+                $$2x-3=0\implies x=3/2.$$
+              </li>
+              <li>
+                Berdasarkan definisi, $|x|$ dapat ditulis sebagai
+                $$|x|=\begin{cases}
+                    x,\quad x\geq 0\\
+                    -x,\quad x &lt; 0
+                \end{cases}$$
+                Untuk $x\geq0$, solusinya adalah sebagai berikut.
+                $$x-x=0\implies 0=0$$
+                Pernyataan bahwa $0=0$ merupakan pernyataan yang benar sehingga semua bilangan real $x\geq0$ memenuhi $|x|-x=0$. Adapun untuk $x&lt;0$, solusinya adalah sebagai berikut.
+                $$-x-x=0\implies -2x=0\implies x=0$$
+                Nilai $x=0$ tidak memenuhi syarat $x &lt; 0$ sehingga tidak ada solusi untuk $x &lt; 0$. Himpunan Penyelesaian (HP) dari $|x|-x=0$ diperoleh dengan menggabungkan solusi untuk $x\geq0$ dan $x &lt; 0$, yaitu 
+                $$HP=[0,+\infty)\cup\emptyset=[0,+\infty)=\{x\,|\,x\geq 0, x\in \mathbb{R}\}.$$
+              </li>
+            </ol>
+            Jadi solusi dari $|2x^2-3x|=x|2x-3|$ adalah gabungan dari solusi $(i)$ dan $(ii)$, yaitu:
+            $$\{x|x\geq0,x\in\R\}=[0,+\infty).$$
         </div>
         </details>
       </div>
@@ -319,7 +333,8 @@
         $$2\leq |3+x|\leq 5.$$
         <details class="solution">
           <summary>Pembahasan</summary>
-          Pertidaksamaan mutlak tersebut dapat dipecah menjadi $2$ pertidaksamaan, yaitu $|3+x|\geq2$ dan $|3+x|\leq5$. Berikut adalah penyelesaian untuk masing-masing pertidaksamaan.
+          <div class="solution-step">
+            Pertidaksamaan mutlak tersebut dapat dipecah menjadi $2$ pertidaksamaan, yaitu $|3+x|\geq2$ dan $|3+x|\leq5$. Berikut adalah penyelesaian untuk masing-masing pertidaksamaan.
           <ol class="itemaze alpha">
             <li>$|3+x|\geq2$
               Dengan sifat nilai mutlak, penyelesaian dari pertidaksamaan tersebut dapat dicari dengan langkah berikut.
@@ -349,10 +364,11 @@
           </ol>
           Solusi dari pertidaksamaan mutlak pada soal adalah gabungan dari $HP_1$ dan $HP_2$, yaitu:
           $$HP=[-8,-5]\cup[-1,2]=\{x|-8\leq x\leq-5\cup -1\leq x\leq2\}.$$
+          </div>
         </details>
       </div>
     </div>
-
+    
     <div class="dfn-box contoh">
       <div class="dfn-header">
           Contoh 3 (ETS 2021/2022)
@@ -362,27 +378,230 @@
         $$\frac{7}{|2x-1|}\geq 3.$$
         <details class="solution">
           <summary>Pembahasan</summary>
-          Nilai mutlak hasilnya selalu tak-negatif. Adapun $|2x-1|$ sebagai penyebut sehingga nilainya tak boleh $0$. $|2x-1|$ akan bernilai $0$ hanya ketika fungsi di dalam tanda mutlak juga bernilai $0$.
-          $$2x-1=0 \implies x=1/2$$
-          Jadi, $|2x-1|>0$ dimana $x\neq1/2$ dan pada pertidaksamaan, kedua ruas dapat langsung dikalikan $|2x-1|$.
-          \begin{align*}
-              \frac{7}{|2x-1|}&\geq 3\\
-              7&\geq 3|2x-1|\\
-              |2x-1|&\leq\frac{7}{3}\\
-              -\frac{7}{3}\leq2x&-1\leq\frac{7}{3}\\
-              -\frac{7}{3}+1\leq &2x\leq \frac{7}{3}+1\\
-              -\frac{4}{3}\leq &2x\leq \frac{10}{3}\\
-              -\frac{2}{3}\leq &x\leq \frac{5}{3}
-          \end{align*}
-          Dengan demikian, Himpunan Penyelesaian dari pertidaksamaan mutlak pada soal adalah
-          $$HP=[-2/3,5/3]\backslash\{1/2\}=[-2/3,1/2)\cup (1/2,5/3].$$
+          <div class="solution-step">
+            Nilai mutlak hasilnya selalu tak-negatif. Adapun $|2x-1|$ sebagai penyebut sehingga nilainya tak boleh $0$. $|2x-1|$ akan bernilai $0$ hanya ketika fungsi di dalam tanda mutlak juga bernilai $0$.
+            $$2x-1=0 \implies x=1/2$$
+            Jadi, $|2x-1|>0$ dimana $x\neq1/2$ dan pada pertidaksamaan, kedua ruas dapat langsung dikalikan $|2x-1|$.
+            \begin{align*}
+                \frac{7}{|2x-1|}&\geq 3\\
+                7&\geq 3|2x-1|\\
+                |2x-1|&\leq\frac{7}{3}\\
+                -\frac{7}{3}\leq2x&-1\leq\frac{7}{3}\\
+                -\frac{7}{3}+1\leq &2x\leq \frac{7}{3}+1\\
+                -\frac{4}{3}\leq &2x\leq \frac{10}{3}\\
+                -\frac{2}{3}\leq &x\leq \frac{5}{3}
+            \end{align*}
+            Dengan demikian, Himpunan Penyelesaian dari pertidaksamaan mutlak pada soal adalah
+            $$HP=\left[-\frac{2}{3},\frac{5}{3}\right]\setminus\left\{\frac{1}{2}\right\}=\left[-\frac{2}{3},\frac{1}{2}\right)\cup \left(\frac{1}{2},\frac{5}{3}\right].$$
+          </div>
         </details>
       </div>
     </div>
-
     
+    <div class="dfn-box latihan">
+      <div class="dfn-header">
+        Latihan!
+      </div>
+      <div class="dfn-content">
+        <div class="latihan-box">
+          <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+          Dapatkan penyelesaian dari $|2x+1|=|3x-2|+1$.
+          <br><br>
+          Jawab: <math-field class="answer"></math-field>
+          <details class="jawaban-latihan hidden" style="--no-jawaban: '1'">
+            <summary>Lihat Solusi</summary>
+            <div class="solution-step">
+              Berdasarkan definisi nilai mutlak, $|2x+1|$ dan $|3x-2|$ dapat ditulis sebagai
+            $$|2x+1|=\begin{cases}
+                2x+1,\quad 2x+1\geq 0\implies x\geq-\frac{1}{2}\\
+                -(2x+1),\quad 2x+1 &lt; 0\implies x&lt;-\frac{1}{2}
+            \end{cases}$$
+            dan
+            $$|3x-2|=\begin{cases}
+                3x-2,\quad 3x-2\geq 0\implies x\geq\frac{2}{3}\\
+                -(3x-2),\quad 3x-2&lt; 0\implies x&lt;\frac{2}{3}
+            \end{cases}$$
+            Hal tersebut membagi daerah pada garis bilangan menjadi $3$ daerah, yaitu:
+            <img class="illust" src="img/1.2.1.svg" alt="Gambar 1.2.1">
+            Selanjutnya, akan dicari solusi persamaan mutlak untuk setiap daerah.
+            <ol class="itemaze alpha">
+              <li>
+                Daerah I ($x&lt;-\frac{1}{2}$)<br>
+                Pada daerah ini, $|2x+1|=-(2x+1)$ dan $|3x-2|=-(3x-2)$ sehingga
+                \begin{align*}
+                    |2x+1|&=|3x-2|+1\\
+                    -(2x+1)&=-(3x-2)+1\\
+                    -2x-1&=-3x+2+1\\
+                    x&=4.
+                \end{align*}
+                Nilai $x=4$ termasuk dalam interval $x&lt;-\frac{1}{2}$ sehingga $x=4$ tidak termasuk solusi untuk persamaan mutlak pada soal.
+              </li>
+              <li>
+                Daerah II ($-\frac{1}{2} \leq x&lt;\frac{2}{3}$)<br>
+                Pada daerah ini, $|2x+1|=2x+1$ dan $|3x-2|=-(3x-2)$ sehingga
+                \begin{align*}
+                    |2x+1|&=|3x-2|+1\\
+                    2x+1&=-(3x-2)+1\\
+                    2x+1&=-3x+2+1\\
+                    5x&=2\\
+                    x&=\frac{2}{5}
+                \end{align*}
+                Nilai $x=\frac{2}{5}$ termasuk dalam $-\frac{1}{2} \leq x&lt;\frac{2}{3}$ sehingga $x=\frac{2}{5}$ merupakan solusi untuk persamaan mutlak pada soal.
+              </li>
+              <li>
+                Daerah III ($x\geq\frac{2}{3}$)<br>
+                Pada daerah ini, $|2x+1|=2x+1$ dan $|3x-2|=3x-2$ sehingga
+                \begin{align*}
+                    |2x+1|&=|3x-2|+1\\
+                    2x+1&=3x-2+1\\
+                    -x&=-2\\
+                    x&=2.
+                \end{align*}
+                Nilai $x=2$ termasuk dalam interval $x\geq\frac{2}{3}$ sehingga $x=2$ merupakan solusi untuk persamaan mutlak pada soal.
+              </li>
+            </ol>
+            Penyelesaian dari persamaan pada soal diperoleh dengan menggabungkan solusi pada tiap daerah, yaitu $\frac{2}{5}$ dan $2$.
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="dfn-content">
+        <div class="latihan-box">
+          <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+          Dapatkan penyelesaian pertidaksamaan $$\left|\frac{x+2}{1-x}\right|\leq 3.$$
+          <br><br>
+          Jawab: <math-field class="answer"></math-field>
+          <details class="jawaban-latihan hidden" style="--no-jawaban: '2'">
+            <summary>Lihat Solusi</summary>
+            <div class="solution-step">
+              Perhatikan bahwa $\displaystyle \left|\frac{x+2}{1-x}\right|=\frac{|x+2|}{|1-x|}$. Hasil dari tanda mutlak selalu bernilai tak-negatif. Adapun $|1-x|$ sebagai penyebut tak boleh bernilai $0$. $|1-x|$ akan bernilai $0$ hanya ketika fungsi di dalam tanda mutlak juga bernilai $0$.
+              $$1-x=0\implies x=1$$
+              Jadi, $|1-x|>0$ dimana $x\neq1$ dan pada pertidaksamaan, kedua ruas dapat langsung dikalikan $|1-x|$.
+              \begin{align*}
+                  \left|\frac{x+2}{1-x}\right|&\leq 3\\
+                  \frac{|x+2|}{|1-x|}&\leq3\\
+                  |x+2|&\leq 3|1-x|\\
+                  |x+2|-3|1-x|&\leq0
+              \end{align*}
+              Berdasarkan definisi nilai mutlak, $|x+2|$ dan $|1-x|$ dapat ditulis sebagai
+              $$|x+2|=\begin{cases}
+                  x+2,\quad x+2\geq 0\implies x\geq-2\\
+                  -(x+2),\quad x+2&lt; 0\implies x&lt;-2
+              \end{cases}$$
+              dan
+              $$|1-x|=\begin{cases}
+                  1-x,\quad 1-x\geq 0\implies x\leq1\\
+                  -(1-x),\quad 1-x&lt; 0\implies x>1
+              \end{cases}$$
+              Hal tersebut membagi daerah pada garis bilangan menjadi $3$ daerah, yaitu:
+              <img src="img/1.2.2.svg" alt="" class="illust" style="width: 30%;">
+              Selanjutnya, akan dicari solusi pertidaksamaan mutlak untuk setiap daerah.
+              <ol class="itemaze alpha">
+                <li>
+                  Daerah I ($x&lt;-2$)<br>
+                  Pada daerah ini, $|x+2|=-(x+2)$ dan $|1-x|=1-x$ sehingga
+                  \begin{align*}
+                      |x+2|-3|1-x|&\leq0\\
+                      -(x+2)-3(1-x)&\leq0\\
+                      -x-2-3+3x&\leq0\\
+                      2x-5&\leq0\\
+                      2x&\leq5\\
+                      x&\leq\frac{5}{2}.
+                  \end{align*}
+                  Perhatikan bahwa $\left\{x\leq\frac{5}{2}\right\} \cap \{x&lt;-2\}=\{x&lt;-2\}$ sehingga diperoleh Himpunan Penyelesaian (HP) yang pertama adalah
+                  $$HP_1=\{x|x&lt;-2,\mathbb{R}\}=(-\infty,-2).$$
+                </li>
+                <li>
+                  Daerah II ($-2 \leq x\leq 1$)<br>
+                  Pada daerah ini, $|x+2|=x+2$ dan $|1-x|=1-x$ sehingga
+                  \begin{align*}
+                      |x+2|-3|1-x|&\leq0\\
+                      x+2-3(1-x)&\leq0\\
+                      x+2-3+3x&\leq0\\
+                      4x-1&\leq0\\
+                      4x&\leq1\\
+                      x&\leq\frac{1}{4}.
+                  \end{align*}
+                  Perhatikan bahwa $\left(x\leq\frac{1}{4}\right) \cap (-2\leq x\leq 1)=-2\leq x\leq \frac{1}{4}$ sehingga diperoleh Himpunan Penyelesaian (HP) yang kedua adalah
+                  $$HP_2=\left\{x\,\left|\,-2\leq x\leq \frac{1}{4}\right.,x\in\R\right\}=\left[-2,\frac{1}{4}\right].$$
+                </li>
+                <li>
+                  Daerah III ($x>1$)<br>
+                  Pada daerah ini, $|x+2|=x+2$ dan $|1-x|=-(1-x)$ sehingga
+                  \begin{align*}
+                      |x+2|-3|1-x|&\leq0\\
+                      x+2-3(-(1-x))&\leq0\\
+                      x+2-3(-1+x)&\leq0\\
+                      x+2+3-3x&\leq0\\
+                      -2x+5&\leq0\\
+                      -2x&\leq-5\\
+                      x&\geq \frac{5}{2}.
+                  \end{align*}
+                  Perhatikan bahwa $x\geq \frac{5}{2} \cap x>1=x\geq \frac{5}{2}$ sehingga diperoleh Himpunan Penyelesaian (HP) yang ketiga adalah
+                  $$HP_3=\left\{x\,\left|\,x\geq \frac{5}{2}\right.,x\in\R\right\}=\left[\frac{5}{2},+\infty\right).$$
+                </li>
+              </ol>
+              Jadi, Himpunan Penyelesaian (HP) dari pertidaksamaan mutlak pada soal adalah
+              $$HP=(HP_1\cup HP_2\cup HP_3)\backslash \{1\}=\left\{x\,\left|\,x\leq \frac{1}{4}\right. \vee x\geq \frac{5}{2}, x\in\R\right\}=\left(-\infty,\frac{1}{4}\right]\cup \left[\frac{5}{2},+\infty\right).$$
+            </div>
+          </details>
+        </div>
+      </div>
+      <button id="submitAnswer">Check Answer</button>
+      <div id="loading" class="hidden"></div>
+    </div>
 
   </main>
+  <script type="module">
+    import "//unpkg.com/mathlive?module";
+    import "//unpkg.com/@cortex-js/compute-engine";
+
+    const ce = MathfieldElement.computeEngine;
+
+    const answerButton = document.getElementById('submitAnswer');
+    const answerElements = document.querySelectorAll('.answer');
+
+    const correctAnswers = [
+      ce.parse("\\{2/5,2\\}"), 
+      ce.parse("\\left\\lbrace x\\leq\\frac14\\right\\rbrace\\cup\\left\\lbrace x\\geq\\frac52\\right\\rbrace"),     // Jawaban benar untuk pertanyaan 2
+    ];
+
+    answerButton.addEventListener('click', () => {
+      answerElements.forEach((answerElement, index) => {
+        let studentInput = answerElement.expression;
+        const expectedAnswer = correctAnswers[index];
+
+        if(index==0 && (studentInput.isSame(ce.parse("\\frac25,2"))
+          || studentInput.isSame(ce.parse("2,\\frac25")
+        ))) {
+          studentInput = expectedAnswer;
+        }
+
+        if(index==1 && (answerElement.value==="\\left(-\\infty,\\frac14\\right\\rbrack\\cup\\left\\lbrack\\frac52,+\\infty\\right)"
+          || answerElement.value==="\\left(-\\infty,\\frac14\\right\\rbrack\\cup\\left\\lbrack\\frac52,\\infty\\right)")
+        ) {
+          studentInput = expectedAnswer;
+        }
+
+        const loading = document.getElementById("loading");
+        const feedback = document.querySelectorAll('.jawaban-latihan');
+
+        loading.classList.remove("hidden");
+
+        setTimeout(() => {
+        loading.classList.add("hidden");
+        feedback.forEach(el => {el.classList.remove('hidden');});
+        if (!studentInput.isSame(expectedAnswer)) {
+          answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+          answerElement.style.borderColor = "red";
+        } else {
+          answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+          answerElement.style.borderColor = "green";
+        }
+        }, 2000);
+      });
+    });
+  </script>
   
 </body>
 </html>
