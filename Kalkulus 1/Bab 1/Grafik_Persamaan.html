@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../Js/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          tags: "ams",
+          macros: {
+            R: "{\\mathbb{R}}",
+          },
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+    <!-- <script src="../../Js/mathlive.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <h1 class="logo">KALKULUS 1</h1>
+          <button onclick="toggleSidebar()" id="toggle-btn">
+            <span id="toggle-btn-inner">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill=""
+              >
+                <path
+                  d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <li class="active" style="border-top: 4px solid var(--second-color)">
+          <a>
+            <button
+              onclick="toggleSubMenu(this.parentElement)"
+              class="dropdown-btn"
+            >
+              <span class="link-text">Sistem Bilangan Real</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
+              <li><a href="../Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
+              <li>
+                <a href="../Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a>
+              </li>
+              <li>
+                <a href="../Bab 1/Persamaan_Garis_dan_Jarak.html"
+                  >Persamaan Garis dan Jarak</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 1/Persamaan_Lingkaran_dan_Bola.html"
+                  >Persamaan Lingkaran dan Bola</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Fungsi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 2/Definisi_dan_Notasi_Fungsi.html"
+                  >Definisi dan Notasi Fungsi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 2/Operasi_pada_Fungsi.html"
+                  >Operasi pada Fungsi</a
+                >
+              </li>
+              <li><a href="../Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
+              <li><a href="../Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Limit & Kekontinuan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 3/Pengantar_Notasi_Limit.html"
+                  >Pengantar_Notasi_Limit</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 3/Penghitungan_Limit.html"
+                  >Penghitungan Limit</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 3/Limit_di_Tak-Hingga.html"
+                  >Limit di Tak-Hingga</a
+                >
+              </li>
+              <li><a href="../Bab 3/Kekontinuan.html">Kekontinuan</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Turunan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 4/Garis_Singgung_dan_Laju_Perubahan.html"
+                  >Garis Singgung dan Laju Perubahan</a
+                >
+              </li>
+              <li><a href="../Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
+              <li><a href="../Bab 4/Diferensiasi.html">Diferensiasi</a></li>
+              <li>
+                <a href="../Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html"
+                  >Aturan Rantai dan Diferensiasi Implisit</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Aplikasi Turunan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 5/Laju-laju_yang_Berkaitan.html"
+                  >Laju-laju yang Berkaitan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html"
+                  >Interval Naik Turun dan Kecekungan Fungsi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html"
+                  >Ekstrim Relatif Uji Turunan Pertama dan Kedua</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html"
+                  >Grafik Polinomial dan Fungsi Rasional</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html"
+                  >Nilai Maksimum atau Minimum Suatu Fungsi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html"
+                  >Aplikasi Masalah Maksimum dan Minimum</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Integral</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 6/Anti-turunan_Integral_TakTentu.html"
+                  >Anti-turunan Integral TakTentu</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Integrasi_dengan_Substitusi.html"
+                  >Integrasi dengan Substitusi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Luas_Sebagai_Limit.html"
+                  >Luas Sebagai Limit</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Integral_Tertentu.html">Integral Tertentu</a>
+              </li>
+              <li>
+                <a href="../Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html"
+                  >Teorema Fundamental Kalkulus Pertama</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Integral_Tertentu_dengan_Subtitusi.html"
+                  >Integral Tertentu dengan Subtitusi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html"
+                  >Teorema Fundamental Kalkulus Kedua</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Bilangan Kompleks</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a>
+              </li>
+              <li>
+                <a href="../Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a>
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" style="border-bottom: 4px solid var(--second-color)">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Matriks</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Sup B/Matriks_dan_Operasi_Matriks.html"
+                  >Matriks dan Operasi Matriks</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html"
+                  >Operasi Baris Elementer dan Matriks Invers</a
+                >
+              </li>
+              <li>
+                <a href="../Sup B/Sistem_Persamaan_Linier.html"
+                  >Sistem Persamaan Linier</a
+                >
+              </li>
+              <li><a href="../Sup B/Determinan.html">Determinan</a></li>
+              <li>
+                <a href="../Sup B/Nilai_Eigen_dan_Vektor_Eigen.html"
+                  >Nilai Eigen dan Vektor Eigen</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#course">Index</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+      </nav>
+      <input type="checkbox" id="darkmode-toggle" />
+      <label for="darkmode-toggle">
+        <svg
+          class="sun"
+          width="800px"
+          height="800px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 12C15 13.6569 13.6569 15 12 15C10.3432 15 9.00004 13.6569 9.00004 12C9.00004 10.3432 10.3432 9.00004 12 9.00004C13.6569 9.00004 15 10.3432 15 12Z"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7.64338 5.18899L7.56701 6.10541C7.52707 6.58478 7.50709 6.82447 7.40373 7.01167C7.31261 7.1767 7.1767 7.31261 7.01167 7.40373C6.82447 7.50709 6.58477 7.52707 6.10541 7.56701L5.18898 7.64338C4.16259 7.72892 3.6494 7.77168 3.39642 8.00615C3.17627 8.21018 3.05941 8.50232 3.07812 8.8019C3.09961 9.14615 3.44174 9.53105 4.126 10.3008L4.69153 10.9371C5.02586 11.3132 5.19302 11.5012 5.2565 11.7135C5.31243 11.9004 5.31243 12.0997 5.2565 12.2866C5.19302 12.4988 5.02586 12.6869 4.69153 13.063L4.126 13.6992C3.44174 14.469 3.09961 14.8539 3.07812 15.1982C3.05941 15.4978 3.17627 15.7899 3.39642 15.9939C3.6494 16.2284 4.16259 16.2712 5.18899 16.3567L6.10541 16.4331C6.58478 16.473 6.82446 16.493 7.01167 16.5964C7.1767 16.6875 7.31261 16.8234 7.40373 16.9884C7.50709 17.1756 7.52707 17.4153 7.56701 17.8947L7.64338 18.8111C7.72892 19.8375 7.77168 20.3507 8.00615 20.6037C8.21018 20.8238 8.50232 20.9407 8.8019 20.922C9.14615 20.9005 9.53105 20.5583 10.3008 19.8741L10.9371 19.3085C11.3132 18.9742 11.5012 18.8071 11.7135 18.7436C11.9004 18.6876 12.0997 18.6876 12.2866 18.7436C12.4988 18.8071 12.6869 18.9742 13.063 19.3085L13.6992 19.8741C14.469 20.5583 14.8539 20.9005 15.1982 20.922C15.4978 20.9407 15.7899 20.8238 15.9939 20.6037C16.2284 20.3507 16.2712 19.8375 16.3567 18.8111L16.4331 17.8947C16.473 17.4153 16.493 17.1756 16.5964 16.9884C16.6875 16.8234 16.8234 16.6875 16.9884 16.5964C17.1756 16.493 17.4153 16.473 17.8947 16.4331L18.8111 16.3567C19.8375 16.2712 20.3507 16.2284 20.6037 15.9939C20.8238 15.7899 20.9407 15.4978 20.922 15.1982C20.9005 14.8539 20.5583 14.469 19.8741 13.6992L19.3085 13.063C18.9742 12.6869 18.8071 12.4988 18.7436 12.2866C18.6876 12.0997 18.6876 11.9004 18.7436 11.7135C18.8071 11.5012 18.9742 11.3132 19.3085 10.9371L19.8741 10.3008C20.5583 9.53105 20.9005 9.14615 20.922 8.8019C20.9407 8.50232 20.8238 8.21018 20.6037 8.00615C20.3507 7.77168 19.8375 7.72892 18.8111 7.64338L17.8947 7.56701C17.4153 7.52707 17.1756 7.50709 16.9884 7.40373C16.8234 7.31261 16.6875 7.1767 16.5964 7.01167C16.493 6.82446 16.473 6.58478 16.4331 6.10541L16.3567 5.18898C16.2712 4.16259 16.2284 3.6494 15.9939 3.39642C15.7899 3.17627 15.4978 3.05941 15.1982 3.07812C14.8539 3.09961 14.469 3.44174 13.6992 4.126L13.063 4.69153C12.6869 5.02586 12.4988 5.19302 12.2866 5.2565C12.0997 5.31243 11.9004 5.31243 11.7135 5.2565C11.5012 5.19302 11.3132 5.02586 10.9371 4.69153L10.3008 4.126C9.53105 3.44174 9.14615 3.09961 8.8019 3.07812C8.50232 3.05941 8.21018 3.17627 8.00615 3.39642C7.77168 3.6494 7.72892 4.16259 7.64338 5.18899Z"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg
+          class="moon"
+          width="800px"
+          height="800px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z"
+            stroke="#9e9e9e"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </label>
+
+      <div class="fa fa-bars" style="color: var(--sidebar-text-1)"></div>
+    </header>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="subbab-container">
+        <section class="no-subbab">1.3</section>
+        <span class="judul-subbab">Grafik Persamaan</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 1.3.1</div>
+        <div class="dfn-content">
+          Grafik suatu persamaan yang menghubungkan dua peubah $x$ dan $y$
+          adalah himpunan semua titik pada bidang-$xy$ yang
+          koordinat-koordinatnya merupakan anggota himpunan penyelesaian
+          persamaan tersebut.
+        </div>
+      </div>
+
+      Berikut ini dituliskan beberapa sifat penting dari grafik persamaan.
+      <ol class="itemaze arabic">
+        <li>
+          Grafik suatu persamaan pada bidang-$xy$ adalah simetriks terhadap
+          sumbu-$x$ apabila $y$ diganti dengan $(-y)$ dalam persamaan tersebut
+          akan menghasilkan persamaan yang ekuivalen.
+        </li>
+        <li>
+          Grafik suatu persamaan pada bidang-$xy$ adalah simetriks terhadap
+          sumbu-$y$ apabila $x$ diganti dengan $(-x)$ dalam persamaan tersebut
+          akan menghasilkan persamaan yang ekuivalen.
+        </li>
+        <li>
+          Grafik suatu persamaan pada bidang-$xy$ adalah simetriks terhadap
+          titik asal $0$ apabila $x$ diganti dengan $(-x)$ dan $y$ diganti
+          dengan $(-y)$ dalam persamaan tersebut akan menghasilkan persamaan
+          yang ekuivalen.
+        </li>
+        <li>
+          Grafik persamaan bentuknya mengikuti kurva dasar. Misalnya,
+          $y-2=\sqrt{x}$ dan $y=\sqrt{x-1}$ memiliki bentuk yang sama karena
+          memiliki kurva dasar yang sama, yaitu $y=\sqrt{x}$, hanya saja
+          letaknya pada garis koordinat berbeda.
+        </li>
+      </ol>
+      <img
+        src="img/1.3.1.svg"
+        alt="Gambar 1.3.1"
+        class="illust"
+        style="width: 50%; background-color: white"
+      />
+
+      Lengkapnya, berikut adalah bentuk-bentuk kurva dasar yang umum digunakan.
+
+      <div class="grid-container">
+        <div class="grid-card">
+          <b style="font-size: medium">$y = x^2$</b>
+          <img src="img/1.3.2.svg" alt="Gambar 1.3.2" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y = -x^2$</b>
+          <img src="img/1.3.3.svg" alt="Gambar 1.3.3" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$x = y^2$</b>
+          <img src="img/1.3.4.svg" alt="Gambar 1.3.4" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$x = -y^2$</b>
+          <img src="img/1.3.5.svg" alt="Gambar 1.3.5" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y = \sqrt{x}$</b>
+          <img src="img/1.3.6.svg" alt="Gambar 1.3.6" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y = -\sqrt{x}$</b>
+          <img src="img/1.3.7.svg" alt="Gambar 1.3.7" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y = x^3$</b>
+          <img src="img/1.3.8.svg" alt="Gambar 1.3.8" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$x = y^3$</b>
+          <img src="img/1.3.9.svg" alt="Gambar 1.3.9" class="illust-table-4" />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y=\dfrac{1}{x}$</b>
+          <img
+            src="img/1.3.10.svg"
+            alt="Gambar 1.3.10"
+            class="illust-table-4"
+          />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y=-\dfrac{1}{x}$</b>
+          <img
+            src="img/1.3.11.svg"
+            alt="Gambar 1.3.11"
+            class="illust-table-4"
+          />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y=\dfrac{1}{x^2}$</b>
+          <img
+            src="img/1.3.12.svg"
+            alt="Gambar 1.3.12"
+            class="illust-table-4"
+          />
+        </div>
+        <div class="grid-card">
+          <b style="font-size: medium">$y=-\dfrac{1}{x^2}$</b>
+          <img
+            src="img/1.3.13.svg"
+            alt="Gambar 1.3.13"
+            class="illust-table-4"
+          />
+        </div>
+      </div>
+
+      <br />
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Diberikan titik-titik $A(-5,5)$, $B(2,5)$, $C(2,0)$, $D(2,-2)$,
+          $E(-5,-2)$, dan $F(-5,0)$, titik-titik manakah yang terletak pada
+          garis horizontal dan pada garis vertikal serta tentukan persamaannya.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Titik-titik yang terletak pada garis horizontal yang sama akan
+              memiliki nilai koordinat $y$ yang sama, misalnya $A(-5,5)$ dan
+              $B(2,5)$ terletak pada garis horizontal $y=5$; $C(2,0)$ dan
+              $F(-5,0)$ terletak pada garis horizontal $y=0$; serta $D(2,-2)$
+              dan $E(-5,-2)$ terletak pada garis horizontal $y=-2$. Adapun
+              titik-titik yang terletak pada garis vertikal yang sama akan
+              memiliki nilai koordinat $x$ yang sama, misalnya $A(-5,5)$,
+              $E(-5,-2)$, dan $F(-5,0)$ terletak pada garis vertikal $x=-5$;
+              serta $B(2,5)$, $C(2,0)$, dan $D(2,-2)$ terletak pada garis
+              vertikal $x=2$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2</div>
+        <div class="dfn-content">
+          Di antara persamaan-persamaan berikut ini yang mempunyai grafik
+          simetrik terhadap sumbu-$x$ adalah:
+          <ol class="itemaze alpha">
+            <li>$x=9-5y^2$</li>
+            <li>$xy=2$</li>
+            <li>$y=|x|-2$</li>
+            <li>$y=x^2+21$</li>
+            <li>$x^2-y^2-4=0$</li>
+          </ol>
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Grafik pada bidang-$xy$ dikatakan simetrik terhadap sumbu-$x$ bila
+              ketika $y$ diganti $-y$, persamaan yang dihasilkan ekuivalen.
+              <ol class="itemaze alpha">
+                <li>$x=9-5(-y)^2 \implies x=9-5y^2$</li>
+                <li>$x(-y)=2 \implies -xy=2$</li>
+                <li>$-y=|x|-2$</li>
+                <li>$-y=x^2+21$</li>
+                <li>$x^2-(-y)^2-4=0 \implies x^2-y^2-4=0$</li>
+              </ol>
+              Dengan demikian, persamaan yang simetrik terhadap sumbu-$x$ adalah
+              persamaan pada poin (a) dan (e), yaitu $x=9-5y^2$ dan
+              $x^2-y^2-4=0$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="soal-latihan">
+              Tentukan di antara titik-titik berikut manakah yang terletak pada
+              grafik persamaan $y=2x^2-4$.
+              <br />
+              <div
+                class="answer-container multiple-choice"
+                style="--hint: --H1"
+              >
+                <label class="option radio-option" style="--choice: 'A'">
+                  <input
+                    type="radio"
+                    name="question1"
+                    value="A"
+                    onclick="toggleRadio(this)"
+                  />
+                  $(5,6)$
+                </label>
+                <label class="option radio-option" style="--choice: 'B'">
+                  <input
+                    type="radio"
+                    name="question1"
+                    value="B"
+                    onclick="toggleRadio(this)"
+                  />
+                  $(-2,3)$
+                </label>
+                <label class="option radio-option" style="--choice: 'C'">
+                  <input
+                    type="radio"
+                    name="question1"
+                    value="C"
+                    onclick="toggleRadio(this)"
+                  />
+                  $(3,-2)$
+                </label>
+                <label class="option radio-option" style="--choice: 'D'">
+                  <input
+                    type="radio"
+                    name="question1"
+                    value="D"
+                    onclick="toggleRadio(this)"
+                  />
+                  $(7,20)$
+                </label>
+                <label class="option radio-option" style="--choice: 'E'">
+                  <input
+                    type="radio"
+                    name="question1"
+                    value="E"
+                    onclick="toggleRadio(this)"
+                  />
+                  $(6,8)$
+                </label>
+              </div>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Untuk mengetahui apakah titik-titik tersebut terletak pada
+                grafik persamaan $y=2x^2-4$ atau tidak, dicek apakah titik-titik
+                tersebut memenuhi persamaan grafik atau tidak. Apabila $y$ yang
+                dihasilkan ketika nilai $x$ disubstitusi ke persamaan grafik
+                adalah sesuai dengan $y$ pada titik, maka titik tersebut
+                terletak pada grafik.
+
+                <ol class="itemaze alpha">
+                  <li>
+                    $(5,6)$
+                    <br />
+                    $y=2(5)^2-4=2(25)-4=50-4=46$
+                  </li>
+                  <li>
+                    $(-2,3)$
+                    <br />
+                    $y=2(-2)^2-4=2(4)-4=8-4=4$
+                  </li>
+                  <li>
+                    $(3,-2)$
+                    <br />
+                    $y=2(3)^2-4=2(9)-4=18-4=14$
+                  </li>
+                  <li>
+                    $(7,20)$
+                    <br />
+                    $y=2(7)^2-4=2(49)-4=98-4=94$
+                  </li>
+                  <li>
+                    $(0,-4)$
+                    <br />
+                    $y=2(0)^2-4=0-4=-4$
+                  </li>
+                </ol>
+                Dengan demikian, titik yang terletak pada grafik persamaan
+                $y=2x^2-4$ adalah titik pada poin (E), yaitu $(0,-4)$.
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="soal-latihan">
+              Dengan uji simetri, manakah persamaan-persamaan berikut ini
+              simetri terhadap sumbu $x$ atau simetri terhadap sumbu $y$ atau
+              simetri terhadap titik asal $O(0,0)$?
+              <br />
+              <div
+                class="answer-container multiple-choice"
+                style="--hint: --H2"
+              >
+                <label class="option check-option" style="--choice: 'A'">
+                  <input type="checkbox" name="question2" value="A" />
+                  $y=|2x|-1$
+                </label>
+                <label class="option check-option" style="--choice: 'B'">
+                  <input type="checkbox" name="question2" value="B" />
+                  $xy^3=5$
+                </label>
+                <label class="option check-option" style="--choice: 'C'">
+                  <input type="checkbox" name="question2" value="C" />
+                  $x=3-y^3$
+                </label>
+                <label class="option check-option" style="--choice: 'D'">
+                  <input type="checkbox" name="question2" value="D" />
+                  $y=\frac{2}{3x^2}$
+                </label>
+                <label class="option check-option" style="--choice: 'E'">
+                  <input type="checkbox" name="question2" value="E" />
+                  $x^2y^4=2$
+                </label>
+              </div>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Akan dicek untuk masing-masing persamaan apakah simetri terhadap
+                sumbu $x$ atau simetri terhadap sumbu $y$ atau simetri terhadap
+                titik asal $O(0,0)$.
+                <ul class="itemaze">
+                  <li>
+                    Simetri terhadap sumbu-$x$\ Grafik pada bidang-$xy$
+                    dikatakan simetri terhadap sumbu-$x$ bila ketika $y$ diganti
+                    $-y$, persamaan yang dihasilkan ekuivalen.
+                    <ol class="itemaze alpha">
+                      <li>$-y=|2x|-1$</li>
+                      <li>$x(-y)^3=5\implies -xy^3=5$</li>
+                      <li>$x=3-(-y)^3 \implies x=3+y^3$</li>
+                      <li>$-y=\frac{2}{3x^2}$</li>
+                      <li>$x^2(-y)^4=2 \implies x^2y^4=2$</li>
+                    </ol>
+                  </li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                Dengan demikian, titik yang terletak pada grafik persamaan
+                $y=2x^2-4$ adalah titik pada poin (E), yaitu $(0,-4)$.
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="soal-latihan">
+              Diberikan $y=2+\sqrt{x-1}$ dan garis $l$ yang melalui titik
+              $(1,2)$ dan $(7,5)$. Buatlah sketsa kurva persamaan
+              $y=2+\sqrt{x-1}$ dan garis $l$.
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Garis $l$ merupakan garis yang menghubungkan titik $(1,2)$ dan
+                $(7,5)$. Adapun grafik persamaan $y=2+\sqrt{x-1}$ bentuknya
+                menyerupai kurva dasar $y=\sqrt{x}$, namun melewati titik-titik
+                berikut.
+                <table>
+                  <tr>
+                    <th>x</th>
+                    <th>y = 2 + &radic;(x - 1)</th>
+                    <th>(x, y)</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>(1,2)</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>(2,3)</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>(5,4)</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>(10,5)</td>
+                  </tr>
+                </table>
+                Dengan demikian, kedua grafik tersebut digambarkan pada
+                bidang-$xy$ berikut.
+                <img
+                  src="img/1.3.14.svg"
+                  alt="Gambar 1.3.14"
+                  class="illust"
+                  style="width: 60%"
+                />
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+
+      const correctAnswers = ["E", ["B", "E"]];
+
+      answerButton.addEventListener("click", () => {
+        const loading = document.getElementById("loading");
+        const feedback = document.querySelectorAll(".jawaban-latihan");
+        const option = document.querySelectorAll(".option input");
+        const choice_1 = document.querySelector(
+          ".option input[name=question1]:checked"
+        );
+        const choice_2 = document.querySelectorAll(
+          ".option input[name=question2]:checked"
+        );
+        option.forEach((op) => {
+          op.parentElement.style.backgroundColor = "rgba(255, 192, 203, 0)";
+          op.parentElement.style.color = "black";
+        });
+
+        loading.classList.remove("hidden");
+
+        setTimeout(() => {
+          loading.classList.add("hidden");
+          feedback.forEach((el) => {
+            el.classList.remove("hidden");
+          });
+          if (choice_1.value != correctAnswers[0]) {
+            choice_1.parentElement.style.backgroundColor =
+              "rgba(255, 192, 203, 0.5)";
+            choice_1.parentElement.style.color = "red";
+          } else {
+            choice_1.parentElement.style.backgroundColor =
+              "rgba(172, 255, 47, 0.5)";
+            choice_1.parentElement.style.color = "green";
+          }
+          choice_2.forEach((choice) => {
+            if (!correctAnswers[1].includes(choice.value)) {
+              choice.parentElement.style.backgroundColor =
+                "rgba(255, 192, 203, 0.5)";
+              choice.parentElement.style.color = "red";
+            } else {
+              choice.parentElement.style.backgroundColor =
+                "rgba(172, 255, 47, 0.5)";
+              choice.parentElement.style.color = "green";
+            }
+          });
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

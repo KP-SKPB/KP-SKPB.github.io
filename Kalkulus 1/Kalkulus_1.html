@@ -1,265 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- custom css file -->
-    <link rel="stylesheet" href="../style/learn.css">
+    <link rel="stylesheet" href="../style/calc.css" />
+
+    <link rel="icon" type="image/png" href="../images/math.png" />
 
     <title>Kalkulus 1</title>
 
     <!-- font awesome for logo FB, IG, etc-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
-    <!-- jquery cdn link  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- custom js file -->
     <script type="text/javascript" src="../Js/learn.js" defer></script>
-    <!-- mathjax for equation -->
-    <script type="text/javascript">
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        }
-      };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!-- math input -->
-    <script src="https://unpkg.com/mathlive"></script>
-</head>
-<body>
-  <nav class="sidebar">
-    <ol id="menu">
-      <div id="sidebar-btn">
-        <span class="logo">Kalkulus 1</span>
-        <button onclick="toggleSidebar()" id="toggle-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
-        </button>
-      </div>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
-            <span class="link-text">Sistem Bilangan Real</span>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo">KALKULUS 1</span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill=""
+            >
+              <path
+                d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"
+              />
+            </svg>
           </button>
-        </a>
-        <ol class="sub-menu">
-        <div>
-          <li><a href="Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
-          <li><a href="Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
-          <li><a href="Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a></li>
-          <li><a href="Bab 1/Persamaan_Garis_dan_Jarak.html">Persamaan Garis dan Jarak</a></li>
-          <li><a href="Bab 1/Persamaan_Lingkaran_dan_Bola.html">Persamaan Lingkaran dan Bola</a></li>
         </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Fungsi</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-          <li><a href="Bab 2/Definisi_dan_Notasi_Fungsi.html">Definisi dan Notasi Fungsi</a></li>
-          <li><a href="Bab 2/Operasi_pada_Fungsi.html">Operasi pada Fungsi</a></li>
-          <li><a href="Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
-          <li><a href="Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
-          </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Limit & Kekontinuan</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-          <li><a href="Bab 3/Pengantar_Notasi_Limit.html">Pengantar_Notasi_Limit</a></li>
-          <li><a href="Bab 3/Penghitungan_Limit.html">Penghitungan Limit</a></li>
-          <li><a href="Bab 3/Limit_di_Tak-Hingga.html">Limit di Tak-Hingga</a></li>
-          <li><a href="Bab 3/Kekontinuan.html">Kekontinuan</a></li>
-          </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Turunan</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-          <li><a href="Bab 4/Garis_Singgung_dan_Laju_Perubahan.html">Garis Singgung dan Laju Perubahan</a></li>
-          <li><a href="Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
-          <li><a href="Bab 4/Diferensiasi.html">Diferensiasi</a></li>
-          <li><a href="Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html">Aturan Rantai dan Diferensiasi Implisit</a></li>
-          </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Aplikasi Turunan</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-            <li><a href="Bab 5/Laju-laju_yang_Berkaitan.html">Laju-laju yang Berkaitan</a></li>
-            <li><a href="Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html">Interval Naik Turun dan Kecekungan Fungsi</a></li>
-            <li><a href="Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html">Ekstrim Relatif Uji Turunan Pertama dan Kedua</a></li>
-            <li><a href="Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html">Grafik Polinomial dan Fungsi Rasional</a></li>
-            <li><a href="Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html">Nilai Maksimum atau Minimum Suatu Fungsi</a></li>
-            <li><a href="Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html">Aplikasi Masalah Maksimum dan Minimum</a></li>
-          </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Integral</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-            <li><a href="Bab 6/Anti-turunan_Integral_TakTentu.html">Anti-turunan Integral TakTentu</a></li>
-            <li><a href="Bab 6/Integrasi_dengan_Substitusi.html">Integrasi dengan Substitusi</a></li>
-            <li><a href="Bab 6/Luas_Sebagai_Limit.html">Luas Sebagai Limit</a></li>
-            <li><a href="Bab 6/Integral_Tertentu.html">Integral Tertentu</a></li>
-            <li><a href="Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html">Teorema Fundamental Kalkulus Pertama</a></li>
-            <li><a href="Bab 6/Integral_Tertentu_dengan_Subtitusi.html">Integral Tertentu dengan Subtitusi</a></li>
-            <li><a href="Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html">Teorema Fundamental Kalkulus Kedua</a></li>
-          </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Bilangan Kompleks</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-          <li><a href="Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a></li>
-          <li><a href="Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a></li>
-          </div>
-        </ol>
-      </li>
-      <li class="active">
-        <a>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <span class="link-text">Matriks</span>
-          </button>
-        </a>
-        <ol class="sub-menu">
-          <div>
-          <li><a href="Sup B/Matriks_dan_Operasi_Matriks.html">Matriks dan Operasi Matriks</a></li>
-          <li><a href="Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html">Operasi Baris Elementer dan Matriks Invers</a></li>
-          <li><a href="Sup B/Sistem_Persamaan_Linier.html">Sistem Persamaan Linier</a></li>
-          <li><a href="Sup B/Determinan.html">Determinan</a></li>
-          <li><a href="Sup B/Nilai_Eigen_dan_Vektor_Eigen.html">Nilai Eigen dan Vektor Eigen</a></li>
-          </div>
-        </ol>
-      </li>
-    </ol>
-  </nav>
-  <header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#course">Materi</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#feedback">Feedback</a></li>
-        </ul>
+
+        <!-- BAB 1 - 6 (A & B) -->
+
+        <li class="active" style="border-top: 4px solid var(--second-color)">
+          <a>
+            <button
+              onclick="toggleSubMenu(this.parentElement)"
+              class="dropdown-btn"
+            >
+              <span class="link-text" title="1. Sistem Bilangan Real"
+                >[1] Sistem Bilangan Real</span
+              >
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
+              <li><a href="Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
+              <li>
+                <a href="Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a>
+              </li>
+              <li>
+                <a href="Bab 1/Persamaan_Garis_dan_Jarak.html"
+                  >Persamaan Garis dan Jarak</a
+                >
+              </li>
+              <li>
+                <a href="Bab 1/Persamaan_Lingkaran_dan_Bola.html"
+                  >Persamaan Lingkaran dan Bola</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="2. Fungsi">[2] Fungsi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Bab 2/Definisi_dan_Notasi_Fungsi.html"
+                  >Definisi dan Notasi Fungsi</a
+                >
+              </li>
+              <li>
+                <a href="Bab 2/Operasi_pada_Fungsi.html">Operasi pada Fungsi</a>
+              </li>
+              <li><a href="Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
+              <li><a href="Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="3. Limit dan Kekontinuan"
+                >[3] Limit & Kekontinuan</span
+              >
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Bab 3/Pengantar_Notasi_Limit.html"
+                  >Pengantar_Notasi_Limit</a
+                >
+              </li>
+              <li>
+                <a href="Bab 3/Penghitungan_Limit.html">Penghitungan Limit</a>
+              </li>
+              <li>
+                <a href="Bab 3/Limit_di_Tak-Hingga.html">Limit di Tak-Hingga</a>
+              </li>
+              <li><a href="Bab 3/Kekontinuan.html">Kekontinuan</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="4. Turunan">[4] Turunan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Bab 4/Garis_Singgung_dan_Laju_Perubahan.html"
+                  >Garis Singgung dan Laju Perubahan</a
+                >
+              </li>
+              <li><a href="Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
+              <li><a href="Bab 4/Diferensiasi.html">Diferensiasi</a></li>
+              <li>
+                <a href="Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html"
+                  >Aturan Rantai dan Diferensiasi Implisit</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="5. Aplikasi Turunan"
+                >[5] Aplikasi Turunan</span
+              >
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Bab 5/Laju-laju_yang_Berkaitan.html"
+                  >Laju-laju yang Berkaitan</a
+                >
+              </li>
+              <li>
+                <a href="Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html"
+                  >Interval Naik Turun dan Kecekungan Fungsi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html"
+                  >Ekstrim Relatif Uji Turunan Pertama dan Kedua</a
+                >
+              </li>
+              <li>
+                <a href="Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html"
+                  >Grafik Polinomial dan Fungsi Rasional</a
+                >
+              </li>
+              <li>
+                <a href="Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html"
+                  >Nilai Maksimum atau Minimum Suatu Fungsi</a
+                >
+              </li>
+              <li>
+                <a href="Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html"
+                  >Aplikasi Masalah Maksimum dan Minimum</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="6. Integral">[6] Integral</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Bab 6/Anti-turunan_Integral_TakTentu.html"
+                  >Anti-turunan Integral TakTentu</a
+                >
+              </li>
+              <li>
+                <a href="Bab 6/Integrasi_dengan_Substitusi.html"
+                  >Integrasi dengan Substitusi</a
+                >
+              </li>
+              <li>
+                <a href="Bab 6/Luas_Sebagai_Limit.html">Luas Sebagai Limit</a>
+              </li>
+              <li>
+                <a href="Bab 6/Integral_Tertentu.html">Integral Tertentu</a>
+              </li>
+              <li>
+                <a href="Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html"
+                  >Teorema Fundamental Kalkulus Pertama</a
+                >
+              </li>
+              <li>
+                <a href="Bab 6/Integral_Tertentu_dengan_Subtitusi.html"
+                  >Integral Tertentu dengan Subtitusi</a
+                >
+              </li>
+              <li>
+                <a href="Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html"
+                  >Teorema Fundamental Kalkulus Kedua</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="Materi Tambahan: Bilangan Kompleks"
+                >A. Bilangan Kompleks</span
+              >
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a>
+              </li>
+              <li>
+                <a href="Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a>
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" title="Materi Tambahan: Matriks"
+                >B. Matriks</span
+              >
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="Sup B/Matriks_dan_Operasi_Matriks.html"
+                  >Matriks dan Operasi Matriks</a
+                >
+              </li>
+              <li>
+                <a href="Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html"
+                  >Operasi Baris Elementer dan Matriks Invers</a
+                >
+              </li>
+              <li>
+                <a href="Sup B/Sistem_Persamaan_Linier.html"
+                  >Sistem Persamaan Linier</a
+                >
+              </li>
+              <li><a href="Sup B/Determinan.html">Determinan</a></li>
+              <li>
+                <a href="Sup B/Nilai_Eigen_dan_Vektor_Eigen.html"
+                  >Nilai Eigen dan Vektor Eigen</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+      </ol>
+      <a href="Web.html" title="Beranda SKPB" id="Back">kembali</a>
     </nav>
-    <input type="checkbox" id="darkmode-toggle"/>
-    <label for="darkmode-toggle">
-        <svg class="sun" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3432 15 9.00004 13.6569 9.00004 12C9.00004 10.3432 10.3432 9.00004 12 9.00004C13.6569 9.00004 15 10.3432 15 12Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M7.64338 5.18899L7.56701 6.10541C7.52707 6.58478 7.50709 6.82447 7.40373 7.01167C7.31261 7.1767 7.1767 7.31261 7.01167 7.40373C6.82447 7.50709 6.58477 7.52707 6.10541 7.56701L5.18898 7.64338C4.16259 7.72892 3.6494 7.77168 3.39642 8.00615C3.17627 8.21018 3.05941 8.50232 3.07812 8.8019C3.09961 9.14615 3.44174 9.53105 4.126 10.3008L4.69153 10.9371C5.02586 11.3132 5.19302 11.5012 5.2565 11.7135C5.31243 11.9004 5.31243 12.0997 5.2565 12.2866C5.19302 12.4988 5.02586 12.6869 4.69153 13.063L4.126 13.6992C3.44174 14.469 3.09961 14.8539 3.07812 15.1982C3.05941 15.4978 3.17627 15.7899 3.39642 15.9939C3.6494 16.2284 4.16259 16.2712 5.18899 16.3567L6.10541 16.4331C6.58478 16.473 6.82446 16.493 7.01167 16.5964C7.1767 16.6875 7.31261 16.8234 7.40373 16.9884C7.50709 17.1756 7.52707 17.4153 7.56701 17.8947L7.64338 18.8111C7.72892 19.8375 7.77168 20.3507 8.00615 20.6037C8.21018 20.8238 8.50232 20.9407 8.8019 20.922C9.14615 20.9005 9.53105 20.5583 10.3008 19.8741L10.9371 19.3085C11.3132 18.9742 11.5012 18.8071 11.7135 18.7436C11.9004 18.6876 12.0997 18.6876 12.2866 18.7436C12.4988 18.8071 12.6869 18.9742 13.063 19.3085L13.6992 19.8741C14.469 20.5583 14.8539 20.9005 15.1982 20.922C15.4978 20.9407 15.7899 20.8238 15.9939 20.6037C16.2284 20.3507 16.2712 19.8375 16.3567 18.8111L16.4331 17.8947C16.473 17.4153 16.493 17.1756 16.5964 16.9884C16.6875 16.8234 16.8234 16.6875 16.9884 16.5964C17.1756 16.493 17.4153 16.473 17.8947 16.4331L18.8111 16.3567C19.8375 16.2712 20.3507 16.2284 20.6037 15.9939C20.8238 15.7899 20.9407 15.4978 20.922 15.1982C20.9005 14.8539 20.5583 14.469 19.8741 13.6992L19.3085 13.063C18.9742 12.6869 18.8071 12.4988 18.7436 12.2866C18.6876 12.0997 18.6876 11.9004 18.7436 11.7135C18.8071 11.5012 18.9742 11.3132 19.3085 10.9371L19.8741 10.3008C20.5583 9.53105 20.9005 9.14615 20.922 8.8019C20.9407 8.50232 20.8238 8.21018 20.6037 8.00615C20.3507 7.77168 19.8375 7.72892 18.8111 7.64338L17.8947 7.56701C17.4153 7.52707 17.1756 7.50709 16.9884 7.40373C16.8234 7.31261 16.6875 7.1767 16.5964 7.01167C16.493 6.82446 16.473 6.58478 16.4331 6.10541L16.3567 5.18898C16.2712 4.16259 16.2284 3.6494 15.9939 3.39642C15.7899 3.17627 15.4978 3.05941 15.1982 3.07812C14.8539 3.09961 14.469 3.44174 13.6992 4.126L13.063 4.69153C12.6869 5.02586 12.4988 5.19302 12.2866 5.2565C12.0997 5.31243 11.9004 5.31243 11.7135 5.2565C11.5012 5.19302 11.3132 5.02586 10.9371 4.69153L10.3008 4.126C9.53105 3.44174 9.14615 3.09961 8.8019 3.07812C8.50232 3.05941 8.21018 3.17627 8.00615 3.39642C7.77168 3.6494 7.72892 4.16259 7.64338 5.18899Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="moon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#9e9e9e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </label>
-    <div class="fa fa-bars"></div>
-  </header>
-  <main class="content">
-    <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-    <math-field>\\begin{pmatrix} ... & ... \\\ ... & ... \\end{pmatrix}</math-field>
-    \begin{equation}
-      f(x) = x^2 + 2x + 1
-    \end{equation}
 
-    <div class="dfn-box definisi">
-      <div class="dfn-header">
-        Definition 2.1.1. Graph.
-      </div>
-      <div class="dfn-content">
-        A graph is an ordered pair \( G = (V, E) \)
-        consisting of a nonempty set \( V \) (called the vertices) 
-        and a set \( E \) (called the edges) 
-        of two-element subsets of \( V \).
-      </div>
-    </div>
-    
-<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='131.636pt' height='151.487pt' viewBox='0 -151.487 131.636 151.487'>
-<g id='page1'>
-<g transform='matrix(1 0 0 -1 0 0)'>
-<path d='M.7422 31.667969H121.883' stroke='var(--text-color)' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path d='M125.46863 31.667969C124.40613 31.867188 122.67957 32.464844 121.484257 33.16016V30.17188C122.67957 30.871094 124.40613 31.46875 125.46863 31.667969'/>
-<path d='M125.94819 26.86647C126.00788 27.12522 126.23694 28.04178 126.93413 28.04178C126.98413 28.04178 127.22319 28.04178 127.43225 27.91209C127.1535 27.8624 126.95413 27.61334 126.95413 27.37428C126.95413 27.2149 127.06381 27.02584 127.33256 27.02584C127.55194 27.02584 127.87069 27.2049 127.87069 27.60334C127.87069 28.12146 127.28288 28.26084 126.94413 28.26084C126.36631 28.26084 126.01788 27.73303 125.89819 27.50397C125.64913 28.16115 125.11131 28.26084 124.82256 28.26084C123.78631 28.26084 123.218814 26.97584 123.218814 26.72678C123.218814 26.6274 123.318189 26.6274 123.338189 26.6274C123.417877 26.6274 123.447877 26.64709 123.467564 26.73678C123.80631 27.79272 124.46381 28.04178 124.80256 28.04178C124.99163 28.04178 125.34038 27.95209 125.34038 27.37428C125.34038 27.06553 125.171 26.39803 124.80256 25.00365C124.64319 24.38584 124.29444 23.967715 123.85631 23.967715C123.79631 23.967715 123.567252 23.967715 123.358189 24.09709C123.607252 24.146778 123.82631 24.356152 123.82631 24.634902C123.82631 24.90396 123.607252 24.98365 123.457877 24.98365C123.158814 24.98365 122.909752 24.72459 122.909752 24.40584C122.909752 23.947715 123.407877 23.74834 123.84631 23.74834C124.50381 23.74834 124.86225 24.44584 124.89225 24.505528C125.01163 24.13709 125.37038 23.74834 125.96788 23.74834C126.99413 23.74834 127.56163 25.03334 127.56163 25.2824C127.56163 25.38209 127.47225 25.38209 127.44225 25.38209C127.35256 25.38209 127.33256 25.3424 127.31288 25.2724C126.98413 24.206778 126.30663 23.967715 125.98788 23.967715C125.59944 23.967715 125.44006 24.286465 125.44006 24.624903C125.44006 24.844278 125.49975 25.06334 125.60944 25.50178L125.94819 26.86647Z'/>
-<path d='M12.082031 20.3281V141.469' stroke='var(--text-color)' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)' d='M12.082031 145.05458C11.882813 143.99208 11.285156 142.265516 10.58594 141.070203H13.57813C12.878906 142.265516 12.28125 143.99208 12.082031 145.05458'/>
-<path fill='var(--text-color)' d='M8.16126 147.67235C8.20094 147.81173 8.20094 147.83173 8.20094 147.90141C8.20094 148.08079 8.06157 148.17048 7.91219 148.17048C7.81251 148.17048 7.65313 148.11048 7.56344 147.9611C7.54344 147.91141 7.46376 147.60266 7.42407 147.42329C7.35438 147.16423 7.28469 146.89516 7.22469 146.62641L6.77657 144.833288C6.73657 144.683913 6.30844 143.986726 5.65094 143.986726C5.14282 143.986726 5.03344 144.424851 5.03344 144.793601C5.03344 145.25173 5.20282 145.86923 5.54126 146.74579C5.70063 147.15423 5.74063 147.26391 5.74063 147.46298C5.74063 147.91141 5.42188 148.27985 4.92376 148.27985C3.977506 148.27985 3.608756 146.83548 3.608756 146.74579C3.608756 146.64641 3.708444 146.64641 3.728444 146.64641C3.828131 146.64641 3.838131 146.6661 3.887819 146.82548C4.156881 147.76204 4.55532 148.06079 4.89376 148.06079C4.97344 148.06079 5.14282 148.06079 5.14282 147.74204C5.14282 147.49298 5.04344 147.23391 4.97344 147.04485C4.57501 145.98891 4.39594 145.4211 4.39594 144.95298C4.39594 144.066413 5.02344 143.767351 5.61094 143.767351C5.99969 143.767351 6.33813 143.936726 6.61719 144.215788C6.48782 143.697663 6.36813 143.209538 5.96969 142.68173C5.71063 142.34298 5.33219 142.05423 4.87407 142.05423C4.73438 142.05423 4.286256 142.08391 4.116881 142.47235C4.276256 142.47235 4.40563 142.47235 4.54532 142.59204C4.64469 142.68173 4.74438 142.8111 4.74438 143.000476C4.74438 143.309226 4.47563 143.349226 4.37594 143.349226C4.146881 143.349226 3.818131 143.189851 3.818131 142.70173C3.818131 142.2036 4.256256 141.83485 4.87407 141.83485C5.90001 141.83485 6.92594 142.74141 7.20501 143.867038L8.16126 147.67235Z'/>
-<path d='M23.4219 91.1953L25.6875 95.9648L27.957 100.0859L30.2227 103.5938L32.4922 106.5234L34.7578 108.9102L37.0273 110.7891L39.293 112.1875L41.5625 113.1484L43.8281 113.6992L46.0977 113.875L48.3633 113.7109L50.6328 113.2383L52.8984 112.4961L55.168 111.5156L57.4336 110.332L59.7031 108.9766L61.9687 107.4883L64.2383 105.8945L66.5039 104.2344L68.7734 102.5391L71.0391 100.8438L73.3086 99.1797L75.5742 97.5898L77.8437 96.0977L80.1094 94.7422L82.375 93.5547L84.6445 92.5742L86.9102 91.832L89.1797 91.3594L91.4453 91.1953L93.7148 91.3711L95.9805 91.918L98.25 92.875L100.5156 94.2734L102.7852 96.1484L105.0508 98.5352L107.3203 101.4648L109.5859 104.9688L111.8555 109.0898L114.121 113.8555' stroke='#0ff' fill='none' stroke-width='.79701' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)' d='M71.66525 112.34231C71.70494 112.48168 71.70494 112.50168 71.70494 112.57137C71.70494 112.75075 71.56557 112.84044 71.41619 112.84044C71.3165 112.84044 71.15713 112.78044 71.06744 112.63106C71.04744 112.58137 70.96775 112.27262 70.92807 112.09325C70.85838 111.83418 70.78869 111.56512 70.72869 111.29637L70.28057 109.503248C70.24057 109.353873 69.81244 108.656685 69.15494 108.656685C68.64682 108.656685 68.53744 109.09481 68.53744 109.46356C68.53744 109.92169 68.70682 110.53919 69.04525 111.41575C69.20463 111.82418 69.24463 111.93387 69.24463 112.13294C69.24463 112.58137 68.92588 112.94981 68.42775 112.94981C67.481504 112.94981 67.112754 111.50544 67.112754 111.41575C67.112754 111.31637 67.212442 111.31637 67.232442 111.31637C67.332129 111.31637 67.342129 111.33606 67.391817 111.49544C67.660879 112.432 68.05932 112.73075 68.39775 112.73075C68.47744 112.73075 68.64682 112.73075 68.64682 112.412C68.64682 112.16294 68.54744 111.90387 68.47744 111.71481C68.079 110.65887 67.89994 110.09106 67.89994 109.62294C67.89994 108.736373 68.52744 108.43731 69.11494 108.43731C69.50369 108.43731 69.84213 108.606685 70.12119 108.885748C69.99182 108.367623 69.87213 107.879498 69.47369 107.35169C69.21463 107.01294 68.83619 106.72419 68.37807 106.72419C68.23838 106.72419 67.790254 106.75387 67.620879 107.14231C67.780254 107.14231 67.90963 107.14231 68.04932 107.262C68.14869 107.35169 68.24838 107.48106 68.24838 107.670435C68.24838 107.979185 67.97963 108.019185 67.87994 108.019185C67.650879 108.019185 67.322129 107.85981 67.322129 107.37169C67.322129 106.87356 67.760254 106.50481 68.37807 106.50481C69.404 106.50481 70.42994 107.41137 70.709 108.536998L71.66525 112.34231Z'/>
-<path fill='var(--text-color)' d='M81.67642 111.80418C81.82579 111.80418 82.01517 111.80418 82.01517 112.00356C82.01517 112.20262 81.82579 112.20262 81.68642 112.20262H75.719543C75.580168 112.20262 75.390793 112.20262 75.390793 112.00356C75.390793 111.80418 75.580168 111.80418 75.729543 111.80418H81.67642ZM81.68642 109.87169C81.82579 109.87169 82.01517 109.87169 82.01517 110.07106C82.01517 110.27044 81.82579 110.27044 81.67642 110.27044H75.729543C75.580168 110.27044 75.390793 110.27044 75.390793 110.07106C75.390793 109.87169 75.580168 109.87169 75.719543 109.87169H81.68642Z'/>
-<path fill='var(--text-color)' d='M89.00566 112.53137H89.86253C90.06159 112.53137 90.16128 112.53137 90.16128 112.73075C90.16128 112.84044 90.06159 112.84044 89.89222 112.84044H89.06566L89.27472 113.97575C89.31472 114.18512 89.45409 114.89231 89.51378 115.01168C89.60347 115.20106 89.77284 115.35043 89.98191 115.35043C90.02191 115.35043 90.28097 115.35043 90.47003 115.17106C90.03191 115.13137 89.93222 114.78262 89.93222 114.63325C89.93222 114.40418 90.11159 114.28481 90.30066 114.28481C90.55972 114.28481 90.84847 114.50387 90.84847 114.88231C90.84847 115.34044 90.39034 115.56981 89.98191 115.56981C89.64347 115.56981 89.01566 115.39044 88.71691 114.40418C88.65722 114.19512 88.62722 114.09544 88.38816 112.84044H87.70097C87.51159 112.84044 87.40191 112.84044 87.40191 112.65106C87.40191 112.53137 87.49159 112.53137 87.68097 112.53137H88.33847L87.59128 108.596685C87.41191 107.630435 87.24253 106.72419 86.72472 106.72419C86.68472 106.72419 86.43566 106.72419 86.246594 106.90325C86.70472 106.93325 86.79441 107.292 86.79441 107.44137C86.79441 107.670435 86.61503 107.78981 86.42597 107.78981C86.166906 107.78981 85.877844 107.570748 85.877844 107.19231C85.877844 106.74387 86.316281 106.50481 86.72472 106.50481C87.27253 106.50481 87.67097 107.09262 87.85034 107.47106C88.16909 108.098873 88.39816 109.304185 88.40816 109.373873L89.00566 112.53137Z'/>
-<path fill='var(--text-color)' d='M94.5972 106.15637C94.5972 106.18606 94.5972 106.20606 94.42783 106.37543C93.18283 107.630435 92.86408 109.513248 92.86408 111.03731C92.86408 112.77043 93.24252 114.50387 94.46783 115.74887C94.5972 115.86856 94.5972 115.88856 94.5972 115.91825C94.5972 115.98794 94.5572 116.01793 94.49752 116.01793C94.39783 116.01793 93.50158 115.34044 92.91377 114.07544C92.40564 112.97981 92.286266 111.87419 92.286266 111.03731C92.286266 110.26044 92.39564 109.055123 92.94377 107.929498C93.54127 106.70419 94.39783 106.05669 94.49752 106.05669C94.5572 106.05669 94.5972 106.08669 94.5972 106.15637Z'/>
-<path fill='var(--text-color)' d='M98.50122 111.55544C98.56091 111.81418 98.78997 112.73075 99.48716 112.73075C99.53716 112.73075 99.77622 112.73075 99.98529 112.60106C99.70654 112.55137 99.50716 112.30231 99.50716 112.06325C99.50716 111.90387 99.61685 111.71481 99.8856 111.71481C100.10497 111.71481 100.42372 111.89387 100.42372 112.29231C100.42372 112.81043 99.83591 112.94981 99.49716 112.94981C98.91935 112.94981 98.57091 112.422 98.45122 112.19294C98.20216 112.85012 97.66435 112.94981 97.3756 112.94981C96.33935 112.94981 95.771848 111.66481 95.771848 111.41575C95.771848 111.31637 95.871223 111.31637 95.891223 111.31637C95.970911 111.31637 96.000911 111.33606 96.020598 111.42575C96.35935 112.48168 97.01685 112.73075 97.3556 112.73075C97.54466 112.73075 97.89341 112.64106 97.89341 112.06325C97.89341 111.7545 97.72404 111.087 97.3556 109.69262C97.19622 109.07481 96.84747 108.656685 96.40935 108.656685C96.34935 108.656685 96.120286 108.656685 95.911223 108.78606C96.160286 108.835748 96.37935 109.045123 96.37935 109.323873C96.37935 109.59294 96.160286 109.67262 96.010911 109.67262C95.711848 109.67262 95.462786 109.41356 95.462786 109.09481C95.462786 108.636685 95.960911 108.43731 96.39935 108.43731C97.05685 108.43731 97.41529 109.13481 97.44529 109.194498C97.56466 108.82606 97.92341 108.43731 98.52091 108.43731C99.54716 108.43731 100.11466 109.72231 100.11466 109.97137C100.11466 110.07106 100.02529 110.07106 99.99529 110.07106C99.9056 110.07106 99.8856 110.03137 99.86591 109.96137C99.53716 108.895748 98.85966 108.656685 98.54091 108.656685C98.15247 108.656685 97.9931 108.975435 97.9931 109.313873C97.9931 109.533248 98.05279 109.75231 98.16247 110.19075L98.50122 111.55544Z'/>
-<path fill='var(--text-color)' d='M103.74673 111.03731C103.74673 111.81418 103.63736 113.0195 103.08923 114.14512C102.49173 115.37043 101.634859 116.01793 101.535484 116.01793C101.475484 116.01793 101.435796 115.97793 101.435796 115.91825C101.435796 115.88856 101.435796 115.86856 101.625171 115.68919C102.60111 114.70294 103.16892 113.11919 103.16892 111.03731C103.16892 109.333873 102.80048 107.580748 101.565171 106.32575C101.435796 106.20606 101.435796 106.18606 101.435796 106.15637C101.435796 106.09669 101.475484 106.05669 101.535484 106.05669C101.634859 106.05669 102.53142 106.73419 103.11923 107.999185C103.62736 109.09481 103.74673 110.20044 103.74673 111.03731Z'/>
-<path fill='var(--text-color)' d='M21.66718 26.86647C21.72687 27.12522 21.95593 28.04178 22.65312 28.04178C22.70312 28.04178 22.94218 28.04178 23.15125 27.91209C22.8725 27.8624 22.67312 27.61334 22.67312 27.37428C22.67312 27.2149 22.78281 27.02584 23.05156 27.02584C23.27093 27.02584 23.58968 27.2049 23.58968 27.60334C23.58968 28.12146 23.00187 28.26084 22.66312 28.26084C22.08531 28.26084 21.73687 27.73303 21.61718 27.50397C21.36812 28.16115 20.83031 28.26084 20.54156 28.26084C19.50531 28.26084 18.937809 26.97584 18.937809 26.72678C18.937809 26.6274 19.037184 26.6274 19.057184 26.6274C19.136872 26.6274 19.166872 26.64709 19.186559 26.73678C19.52531 27.79272 20.18281 28.04178 20.52156 28.04178C20.71062 28.04178 21.05937 27.95209 21.05937 27.37428C21.05937 27.06553 20.89 26.39803 20.52156 25.00365C20.36218 24.38584 20.01343 23.967715 19.57531 23.967715C19.51531 23.967715 19.286247 23.967715 19.077184 24.09709C19.326247 24.146778 19.54531 24.356152 19.54531 24.634902C19.54531 24.90396 19.326247 24.98365 19.176872 24.98365C18.877809 24.98365 18.628747 24.72459 18.628747 24.40584C18.628747 23.947715 19.126872 23.74834 19.56531 23.74834C20.22281 23.74834 20.58125 24.44584 20.61125 24.505528C20.73062 24.13709 21.08937 23.74834 21.68687 23.74834C22.71312 23.74834 23.28062 25.03334 23.28062 25.2824C23.28062 25.38209 23.19125 25.38209 23.16125 25.38209C23.07156 25.38209 23.05156 25.3424 23.03187 25.2724C22.70312 24.206778 22.02562 23.967715 21.70687 23.967715C21.31843 23.967715 21.15906 24.286465 21.15906 24.624903C21.15906 24.844278 21.21875 25.06334 21.32843 25.50178L21.66718 26.86647Z'/>
-<path fill='var(--text-color)' d='M27.63309 24.58801C27.63309 25.35519 27.54246 25.90644 27.22152 26.39457C27.00527 26.71551 26.57277 26.99426 26.01496 26.99426C24.396836 26.99426 24.396836 25.09019 24.396836 24.58801C24.396836 24.08582 24.396836 22.223631 26.01496 22.223631C27.63309 22.223631 27.63309 24.08582 27.63309 24.58801ZM26.01496 22.418943C25.69402 22.418943 25.26871 22.607068 25.12902 23.178943C25.031523 23.59051 25.031523 24.16269 25.031523 24.67863C25.031523 25.18801 25.031523 25.71801 25.13621 26.10176C25.28246 26.65269 25.72902 26.79926 26.01496 26.79926C26.39152 26.79926 26.75434 26.56894 26.87996 26.16426C26.99152 25.78769 26.9984 25.28551 26.9984 24.67863C26.9984 24.16269 26.9984 23.64644 26.90777 23.207068C26.76809 22.572381 26.29402 22.418943 26.01496 22.418943Z'/>
-<path fill='var(--text-color)' d='M33.0062 26.86647C33.06589 27.12522 33.29495 28.04178 33.99214 28.04178C34.04214 28.04178 34.2812 28.04178 34.49026 27.91209C34.21151 27.8624 34.01214 27.61334 34.01214 27.37428C34.01214 27.2149 34.12183 27.02584 34.39058 27.02584C34.60995 27.02584 34.9287 27.2049 34.9287 27.60334C34.9287 28.12146 34.34089 28.26084 34.00214 28.26084C33.42433 28.26084 33.07589 27.73303 32.9562 27.50397C32.70714 28.16115 32.16933 28.26084 31.88058 28.26084C30.84433 28.26084 30.276826 26.97584 30.276826 26.72678C30.276826 26.6274 30.376201 26.6274 30.396201 26.6274C30.475889 26.6274 30.505889 26.64709 30.525576 26.73678C30.86433 27.79272 31.52183 28.04178 31.86058 28.04178C32.04964 28.04178 32.39839 27.95209 32.39839 27.37428C32.39839 27.06553 32.22901 26.39803 31.86058 25.00365C31.7012 24.38584 31.35245 23.967715 30.91433 23.967715C30.85433 23.967715 30.625264 23.967715 30.416201 24.09709C30.665264 24.146778 30.88433 24.356152 30.88433 24.634902C30.88433 24.90396 30.665264 24.98365 30.515889 24.98365C30.216826 24.98365 29.967764 24.72459 29.967764 24.40584C29.967764 23.947715 30.465889 23.74834 30.90433 23.74834C31.56183 23.74834 31.92026 24.44584 31.95026 24.505528C32.06964 24.13709 32.42839 23.74834 33.02589 23.74834C34.05214 23.74834 34.61964 25.03334 34.61964 25.2824C34.61964 25.38209 34.53026 25.38209 34.50026 25.38209C34.41058 25.38209 34.39058 25.3424 34.37089 25.2724C34.04214 24.206778 33.36464 23.967715 33.04589 23.967715C32.65745 23.967715 32.49808 24.286465 32.49808 24.624903C32.49808 24.844278 32.55776 25.06334 32.66745 25.50178L33.0062 26.86647Z'/>
-<path fill='var(--text-color)' d='M37.70952 26.79926C37.70952 26.98738 37.69577 26.99426 37.50046 26.99426C37.0539 26.55488 36.41921 26.54801 36.133274 26.54801V26.29676C36.300774 26.29676 36.76109 26.29676 37.14452 26.49207V22.934881C37.14452 22.704881 37.14452 22.614256 36.44702 22.614256H36.182024V22.363006C36.307649 22.369881 37.16546 22.390818 37.42359 22.390818C37.63984 22.390818 38.51859 22.369881 38.67202 22.363006V22.614256H38.40702C37.70952 22.614256 37.70952 22.704881 37.70952 22.934881V26.79926Z'/>
-<path fill='var(--text-color)' d='M44.34522 26.86647C44.40491 27.12522 44.63397 28.04178 45.33116 28.04178C45.38116 28.04178 45.62022 28.04178 45.82928 27.91209C45.55053 27.8624 45.35116 27.61334 45.35116 27.37428C45.35116 27.2149 45.46084 27.02584 45.72959 27.02584C45.94897 27.02584 46.26772 27.2049 46.26772 27.60334C46.26772 28.12146 45.67991 28.26084 45.34116 28.26084C44.76334 28.26084 44.41491 27.73303 44.29522 27.50397C44.04616 28.16115 43.50834 28.26084 43.21959 28.26084C42.18334 28.26084 41.615843 26.97584 41.615843 26.72678C41.615843 26.6274 41.715218 26.6274 41.735218 26.6274C41.814906 26.6274 41.844906 26.64709 41.864593 26.73678C42.20334 27.79272 42.86084 28.04178 43.19959 28.04178C43.38866 28.04178 43.73741 27.95209 43.73741 27.37428C43.73741 27.06553 43.56803 26.39803 43.19959 25.00365C43.04022 24.38584 42.69147 23.967715 42.25334 23.967715C42.19334 23.967715 41.964281 23.967715 41.755218 24.09709C42.004281 24.146778 42.22334 24.356152 42.22334 24.634902C42.22334 24.90396 42.004281 24.98365 41.854906 24.98365C41.555843 24.98365 41.306781 24.72459 41.306781 24.40584C41.306781 23.947715 41.804906 23.74834 42.24334 23.74834C42.90084 23.74834 43.25928 24.44584 43.28928 24.505528C43.40866 24.13709 43.76741 23.74834 44.36491 23.74834C45.39116 23.74834 45.95866 25.03334 45.95866 25.2824C45.95866 25.38209 45.86928 25.38209 45.83928 25.38209C45.74959 25.38209 45.72959 25.3424 45.70991 25.2724C45.38116 24.206778 44.70366 23.967715 44.38491 23.967715C43.99647 23.967715 43.83709 24.286465 43.83709 24.624903C43.83709 24.844278 43.89678 25.06334 44.00647 25.50178L44.34522 26.86647Z'/>
-<path fill='var(--text-color)' d='M50.23448 23.63238H49.99729C49.97635 23.47894 49.90667 23.067381 49.81573 22.997693C49.7601 22.955818 49.22292 22.955818 49.12542 22.955818H47.84198C48.57417 23.60457 48.81854 23.79988 49.23698 24.12769C49.75323 24.53926 50.23448 24.97176 50.23448 25.63426C50.23448 26.47832 49.4951 26.99426 48.60229 26.99426C47.73729 26.99426 47.151354 26.38769 47.151354 25.74582C47.151354 25.39019 47.451354 25.35519 47.521041 25.35519C47.688541 25.35519 47.89073 25.47394 47.89073 25.72488C47.89073 25.85051 47.84198 26.09457 47.479166 26.09457C47.695416 26.58988 48.16979 26.74332 48.4976 26.74332C49.1951 26.74332 49.55792 26.19926 49.55792 25.63426C49.55792 25.02738 49.12542 24.54613 48.90198 24.29519L47.221041 22.634881C47.151354 22.572381 47.151354 22.558318 47.151354 22.363006H50.0251L50.23448 23.63238Z'/>
-<path fill='var(--text-color)' d='M95.46516 26.86647C95.52485 27.12522 95.75391 28.04178 96.4511 28.04178C96.5011 28.04178 96.74016 28.04178 96.94922 27.91209C96.67047 27.8624 96.4711 27.61334 96.4711 27.37428C96.4711 27.2149 96.58079 27.02584 96.84954 27.02584C97.06891 27.02584 97.38766 27.2049 97.38766 27.60334C97.38766 28.12146 96.79985 28.26084 96.4611 28.26084C95.88329 28.26084 95.53485 27.73303 95.41516 27.50397C95.1661 28.16115 94.62829 28.26084 94.33954 28.26084C93.30329 28.26084 92.735787 26.97584 92.735787 26.72678C92.735787 26.6274 92.835162 26.6274 92.855162 26.6274C92.934849 26.6274 92.964849 26.64709 92.984537 26.73678C93.32329 27.79272 93.98079 28.04178 94.31954 28.04178C94.5086 28.04178 94.85735 27.95209 94.85735 27.37428C94.85735 27.06553 94.68797 26.39803 94.31954 25.00365C94.16016 24.38584 93.81141 23.967715 93.37329 23.967715C93.31329 23.967715 93.084224 23.967715 92.875162 24.09709C93.124224 24.146778 93.34329 24.356152 93.34329 24.634902C93.34329 24.90396 93.124224 24.98365 92.974849 24.98365C92.675787 24.98365 92.426724 24.72459 92.426724 24.40584C92.426724 23.947715 92.924849 23.74834 93.36329 23.74834C94.02079 23.74834 94.37922 24.44584 94.40922 24.505528C94.5286 24.13709 94.88735 23.74834 95.48485 23.74834C96.5111 23.74834 97.0786 25.03334 97.0786 25.2824C97.0786 25.38209 96.98922 25.38209 96.95922 25.38209C96.86954 25.38209 96.84954 25.3424 96.82985 25.2724C96.5011 24.206778 95.8236 23.967715 95.50485 23.967715C95.11641 23.967715 94.95704 24.286465 94.95704 24.624903C94.95704 24.844278 95.01672 25.06334 95.12641 25.50178L95.46516 26.86647Z'/>
-<path fill='var(--text-color)' d='M98.682938 22.802381C98.655126 22.711756 98.613251 22.537381 98.613251 22.516443C98.613251 22.363006 98.738876 22.293318 98.85044 22.293318C98.97575 22.293318 99.08763 22.383943 99.12231 22.446756C99.15731 22.509568 99.21294 22.732693 99.24794 22.879256C99.28294 23.011756 99.3595 23.332381 99.40138 23.50676C99.44325 23.66051 99.48513 23.81394 99.51981 23.97426C99.59669 24.26019 99.61075 24.31613 99.81294 24.60207C100.00825 24.88113 100.33606 25.24363 100.85919 25.24363C101.26356 25.24363 101.27075 24.88801 101.27075 24.75551C101.27075 24.33707 100.97075 23.56269 100.85919 23.269881C100.78231 23.074568 100.7545 23.011756 100.7545 22.893006C100.7545 22.523318 101.06138 22.293318 101.417 22.293318C102.1145 22.293318 102.42169 23.255818 102.42169 23.360506C102.42169 23.45113 102.33075 23.45113 102.30981 23.45113C102.21231 23.45113 102.20544 23.40926 102.17731 23.332381C102.017 22.774568 101.717 22.488631 101.43794 22.488631C101.29169 22.488631 101.26356 22.586131 101.26356 22.732693C101.26356 22.893006 101.29856 22.983631 101.42419 23.297693C101.50794 23.51394 101.79388 24.25332 101.79388 24.64394C101.79388 25.32051 101.25669 25.43894 100.887 25.43894C100.30825 25.43894 99.91763 25.08332 99.70825 24.80426C99.6595 25.28551 99.24794 25.43894 98.962 25.43894C98.662001 25.43894 98.501688 25.22269 98.411063 25.06238C98.257626 24.80426 98.159813 24.40676 98.159813 24.37176C98.159813 24.28113 98.257626 24.28113 98.278251 24.28113C98.376063 24.28113 98.382938 24.30207 98.432001 24.49051C98.536376 24.90176 98.668876 25.24363 98.94106 25.24363C99.12231 25.24363 99.17106 25.09019 99.17106 24.90176C99.17106 24.76926 99.10856 24.51144 99.0595 24.32301C99.01075 24.13457 98.94106 23.84863 98.90606 23.69519L98.682938 22.802381Z'/>
-<path fill='var(--text-color)' d='M107.94639 23.93926C108.05795 23.93926 108.22545 23.93926 108.22545 24.10676C108.22545 24.28113 108.06514 24.28113 107.94639 24.28113H103.7892C103.677641 24.28113 103.510454 24.28113 103.510454 24.11363C103.510454 23.93926 103.670766 23.93926 103.7892 23.93926H107.94639Z'/>
-<path fill='var(--text-color)' d='M111.32057 26.79926C111.32057 26.98738 111.30682 26.99426 111.11151 26.99426C110.66494 26.55488 110.03026 26.54801 109.74432 26.54801V26.29676C109.91182 26.29676 110.37213 26.29676 110.75557 26.49207V22.934881C110.75557 22.704881 110.75557 22.614256 110.05807 22.614256H109.79307V22.363006C109.918695 22.369881 110.77651 22.390818 111.03463 22.390818C111.25088 22.390818 112.12963 22.369881 112.28307 22.363006V22.614256H112.01807C111.32057 22.614256 111.32057 22.704881 111.32057 22.934881V26.79926Z'/>
-<path fill='var(--text-color)' d='M111.90421 26.86647C111.9639 27.12522 112.19296 28.04178 112.89015 28.04178C112.94015 28.04178 113.17921 28.04178 113.38827 27.91209C113.10952 27.8624 112.91015 27.61334 112.91015 27.37428C112.91015 27.2149 113.01983 27.02584 113.28859 27.02584C113.50796 27.02584 113.82671 27.2049 113.82671 27.60334C113.82671 28.12146 113.2389 28.26084 112.90015 28.26084C112.32233 28.26084 111.9739 27.73303 111.85421 27.50397C111.60515 28.16115 111.06733 28.26084 110.77858 28.26084C109.74233 28.26084 109.174835 26.97584 109.174835 26.72678C109.174835 26.6274 109.27421 26.6274 109.29421 26.6274C109.373897 26.6274 109.403897 26.64709 109.423585 26.73678C109.76233 27.79272 110.41983 28.04178 110.75858 28.04178C110.94765 28.04178 111.2964 27.95209 111.2964 27.37428C111.2964 27.06553 111.12702 26.39803 110.75858 25.00365C110.59921 24.38584 110.25046 23.967715 109.81233 23.967715C109.75233 23.967715 109.523272 23.967715 109.31421 24.09709C109.563272 24.146778 109.78233 24.356152 109.78233 24.634902C109.78233 24.90396 109.563272 24.98365 109.413897 24.98365C109.114835 24.98365 108.865772 24.72459 108.865772 24.40584C108.865772 23.947715 109.363897 23.74834 109.80233 23.74834C110.45983 23.74834 110.81827 24.44584 110.84827 24.505528C110.96765 24.13709 111.3264 23.74834 111.9239 23.74834C112.95015 23.74834 113.51765 25.03334 113.51765 25.2824C113.51765 25.38209 113.42827 25.38209 113.39827 25.38209C113.30859 25.38209 113.28859 25.3424 113.2689 25.2724C112.94015 24.206778 112.26265 23.967715 111.9439 23.967715C111.55546 23.967715 111.39608 24.286465 111.39608 24.624903C111.39608 24.844278 111.45577 25.06334 111.56546 25.50178L111.90421 26.86647Z'/>
-<path fill='var(--text-color)' d='M115.121908 22.802381C115.094096 22.711756 115.052221 22.537381 115.052221 22.516443C115.052221 22.363006 115.177846 22.293318 115.28941 22.293318C115.41472 22.293318 115.5266 22.383943 115.56128 22.446756C115.59628 22.509568 115.65191 22.732693 115.68691 22.879256C115.72191 23.011756 115.79847 23.332381 115.84035 23.50676C115.88222 23.66051 115.9241 23.81394 115.95878 23.97426C116.03566 24.26019 116.04972 24.31613 116.25191 24.60207C116.44722 24.88113 116.77503 25.24363 117.29816 25.24363C117.70253 25.24363 117.70972 24.88801 117.70972 24.75551C117.70972 24.33707 117.40972 23.56269 117.29816 23.269881C117.22128 23.074568 117.19347 23.011756 117.19347 22.893006C117.19347 22.523318 117.50035 22.293318 117.85597 22.293318C118.55347 22.293318 118.86066 23.255818 118.86066 23.360506C118.86066 23.45113 118.76972 23.45113 118.74878 23.45113C118.65128 23.45113 118.64441 23.40926 118.61628 23.332381C118.45597 22.774568 118.15597 22.488631 117.87691 22.488631C117.73066 22.488631 117.70253 22.586131 117.70253 22.732693C117.70253 22.893006 117.73753 22.983631 117.86316 23.297693C117.94691 23.51394 118.23285 24.25332 118.23285 24.64394C118.23285 25.32051 117.69566 25.43894 117.32597 25.43894C116.74722 25.43894 116.3566 25.08332 116.14722 24.80426C116.09847 25.28551 115.68691 25.43894 115.40097 25.43894C115.100971 25.43894 114.940658 25.22269 114.850033 25.06238C114.696596 24.80426 114.598783 24.40676 114.598783 24.37176C114.598783 24.28113 114.696596 24.28113 114.717221 24.28113C114.815033 24.28113 114.821908 24.30207 114.870971 24.49051C114.975346 24.90176 115.107846 25.24363 115.38003 25.24363C115.56128 25.24363 115.61003 25.09019 115.61003 24.90176C115.61003 24.76926 115.54753 24.51144 115.49847 24.32301C115.44972 24.13457 115.38003 23.84863 115.34503 23.69519L115.121908 22.802381Z'/>
-<path fill='var(--text-color)' d='M24.50365 11.78131C24.32427 12.14974 24.03552 12.4188 23.58708 12.4188C22.42177 12.4188 21.186459 10.95443 21.186459 9.50037C21.186459 8.563805 21.734271 7.906305 22.51146 7.906305C22.71052 7.906305 23.20865 7.946305 23.80615 8.653492C23.88583 8.235055 24.23458 7.906305 24.71271 7.906305C25.06146 7.906305 25.29052 8.13568 25.4499 8.45443C25.61927 8.812867 25.74865 9.42068 25.74865 9.44037C25.74865 9.54006 25.65896 9.54006 25.62927 9.54006C25.52958 9.54006 25.51958 9.50037 25.48958 9.36068C25.32052 8.71318 25.14115 8.12568 24.73271 8.12568C24.46365 8.12568 24.43396 8.38443 24.43396 8.583805C24.43396 8.802867 24.45365 8.882555 24.56333 9.32099C24.67302 9.73943 24.69271 9.8388 24.7824 10.21756L25.14115 11.61193C25.21083 11.89099 25.21083 11.91068 25.21083 11.95068C25.21083 12.12005 25.09115 12.21974 24.92177 12.21974C24.68271 12.21974 24.53333 12.00037 24.50365 11.78131ZM23.85615 9.2013C23.80615 9.02193 23.80615 9.002242 23.65677 8.832867C23.21865 8.285055 22.81021 8.12568 22.53115 8.12568C22.03302 8.12568 21.89365 8.673492 21.89365 9.06193C21.89365 9.56005 22.2124 10.78537 22.44146 11.24349C22.75052 11.83099 23.19865 12.19974 23.59708 12.19974C24.24458 12.19974 24.38396 11.38287 24.38396 11.32318S24.36396 11.20349 24.35427 11.1538L23.85615 9.2013Z'/>
-<path fill='var(--text-color)' d='M114.37761 14.81943C114.37761 14.82943 114.37761 14.92912 114.24823 14.92912C114.01917 14.92912 113.29198 14.84943 113.03292 14.82943C112.953232 14.81943 112.843544 14.80943 112.843544 14.63037C112.843544 14.51068 112.933232 14.51068 113.08261 14.51068C113.56104 14.51068 113.58073 14.44099 113.58073 14.3413C113.58073 14.27162 113.49104 13.93287 113.44136 13.72381L112.624482 10.4763C112.505107 9.97849 112.465107 9.81912 112.465107 9.47037C112.465107 8.524117 112.993232 7.906305 113.73011 7.906305C114.90573 7.906305 116.13073 9.39068 116.13073 10.82506C116.13073 11.73162 115.60292 12.4188 114.80604 12.4188C114.34792 12.4188 113.93948 12.13006 113.64073 11.82131L114.37761 14.81943ZM113.44136 11.05412C113.50104 11.27318 113.50104 11.29318 113.59073 11.40287C114.07886 12.05037 114.52698 12.19974 114.78604 12.19974C115.14479 12.19974 115.41354 11.90099 115.41354 11.26349C115.41354 10.67568 115.08511 9.53006 114.90573 9.15162C114.57698 8.484117 114.11886 8.12568 113.73011 8.12568C113.39167 8.12568 113.06292 8.39443 113.06292 9.13162C113.06292 9.32099 113.06292 9.51006 113.22229 10.13787L113.44136 11.05412Z'/>
-<path d='M34.7617 31.667969V91.1992H23.4219V31.667969Z' stroke='#808080' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)' d='M24.2188 91.1992C24.2188 91.6406 23.8633 91.9961 23.4219 91.9961S22.625 91.6406 22.625 91.1992S22.9805 90.4023 23.4219 90.4023S24.2188 90.7578 24.2188 91.1992Z'/>
-<path d='M46.1016 31.667969V108.918H34.7617V31.667969Z' stroke='#808080' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)' d='M35.5586 108.918C35.5586 109.3555 35.1992 109.7148 34.7617 109.7148C34.3203 109.7148 33.9648 109.3555 33.9648 108.918C33.9648 108.4766 34.3203 108.1211 34.7617 108.1211C35.1992 108.1211 35.5586 108.4766 35.5586 108.918Z'/>
-<path d='M57.4375 31.667969V113.8789H46.1016V31.667969Z' stroke='#808080' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)' d='M46.8984 113.8789C46.8984 114.3164 46.5391 114.6758 46.1016 114.6758C45.6602 114.6758 45.3047 114.3164 45.3047 113.8789C45.3047 113.4375 45.6602 113.082 46.1016 113.082C46.5391 113.082 46.8984 113.4375 46.8984 113.8789Z'/>
-<path d='M68.7773 31.667969V110.332H57.4375V31.667969Z' stroke='#808080' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)' d='M58.2383 110.332C58.2383 110.7734 57.8789 111.1289 57.4375 111.1289C57 111.1289 56.6406 110.7734 56.6406 110.332C56.6406 109.8945 57 109.5352 57.4375 109.5352C57.8789 109.5352 58.2383 109.8945 58.2383 110.332Z'/>
-<path d='M114.137 31.667969V96.1602H102.7969V31.667969Z' stroke='#808080' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path fill='var(--text-color)'d='M103.5937 96.1602C103.5937 96.6016 103.2383 96.957 102.7969 96.957S102 96.6016 102 96.1602S102.3555 95.3633 102.7969 95.3633S103.5937 95.7188 103.5937 96.1602Z'/>
-</g>
-</g>
-</svg>
+    <!-- MAIN CONTENT -->
+    <main>
+      <header>
+        <div id="home">
+          <h1>
+            <span class="title"
+              >"Selamat Datang di Web Pembelajaran Kalkulus 1"</span
+            ><br /><span class="title"> Tempat Belajar yang Menyenangkan!</span>
+          </h1>
+          <br />
+          <hr />
+          Kami hadir untuk memberikan pengalaman belajar yang mudah,
+          menyenangkan, dan bermanfaat bagi Anda. Di dalam
+          <b>Web Pembelajaran Kalkulus 1</b>, Anda bisa menemukan berbagai
+          materi pembelajaran dalam berbagai bidang khususnya yang berhubungan
+          dengan mata kuliah Kalkulus 1 ITS. Kami berharap dengan adanya website
+          pembelajaran ini nantinya mahasiswa bisa terbantu dalam memahami lebih
+          dalam terkait mata kuliah Kalkulus ini. Apa yang Anda Dapatkan:
 
-    
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui architecto accusamus nam consequuntur in, eum beatae sapiente optio laboriosam animi temporibus corporis cupiditate porro quidem sunt veniam aperiam quia commodi?
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, mollitia et suscipit magni distinctio eum sint pariatur quibusdam minus, officiis recusandae soluta voluptatibus, cum nemo reiciendis quasi illum consequuntur consequatur?
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis earum maiores reiciendis eos nesciunt nemo est. Quisquam facere ut cumque dolores incidunt fugiat, sed dolorum obcaecati quae in sapiente voluptates.
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quaerat aperiam cupiditate laudantium deserunt! Veniam blanditiis obcaecati odio ut exercitationem et voluptate quidem, voluptas facere ea incidunt quod distinctio officiis?
+          <ul id="list">
+            <li>
+              <b>Rangkuman materi yang menyeluruh</b><br />: Materi yang kami
+              susun merujuk pada buku Diktat Kuliah Kalkulus 1 yang menjadi
+              referensi utama mahasiswa ITS segala jurusan.
+            </li>
+            <li>
+              <b>Contoh Soal beserta Pembahasan </b><br />: Kami juga memberikan
+              beberapa contoh soal beserta pembahasan yang bisa menambah wawasan
+              dan keterampilan analitik maupun kalkulasi mahasiswa dalam mata
+              kuliah Kalkulus 1 ini khususnya.
+            </li>
+            <li>
+              <b>Latihan Soal dari Sumber Soal Kuis, ETS dan juga EAS</b><br />
+              : Pada bagian akhir kami juga memberikan beberapa latihan soal
+              beserta dengan <i>hint</i> (kata kunci) untuk melatih keterampilan
+              mahasiswa dalam menyelesaikan beberapa tipe soal yang sering
+              digunakan dalam Kuis, ETS maupun EAS Kalkulus 1 ini.
+            </li>
+          </ul>
+          <br />
 
+          Kami berharap <b>Web Pembelajaran Kalkulus</b> ini bisa menjadi sumber
+          belajar yang bermanfaat dan membantu mahasiswa mencapai tujuan
+          akademis atau karier Anda. Semangat belajar kalkulus semuanya!
 
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, omnis totam. Necessitatibus cumque aspernatur eligendi quasi, veritatis explicabo atque nam ex debitis incidunt dolores. Eos dicta id nobis quisquam quibusdam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempora expedita numquam maiores quod dolore repellat molestiae facilis nulla veniam laboriosam, distinctio, natus consectetur unde deserunt. Dolores velit quam quasi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi maiores, quibusdam ipsum eius iusto officia sapiente itaque! Temporibus aperiam non, sunt sint tempora nam quas voluptas illum blanditiis consequuntur adipisci!
-  </main>
-  
-</body>
+          <br />
+
+          <p id="pesan">#KalkulusItuMudah <br />#SemangatBelajar!</p>
+
+          <p id="AnakKP">&copy; Copyright 2025</p>
+        </div>
+      </header>
+    </main>
+  </body>
 </html>

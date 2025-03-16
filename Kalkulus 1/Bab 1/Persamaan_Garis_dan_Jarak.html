@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../Js/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          tags: "ams",
+          macros: {
+            R: "{\\mathbb{R}}",
+          },
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+    <!-- <script src="../../Js/mathlive.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <h1 class="logo">KALKULUS 1</h1>
+          <button onclick="toggleSidebar()" id="toggle-btn">
+            <span id="toggle-btn-inner">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill=""
+              >
+                <path
+                  d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <li class="active" style="border-top: 4px solid var(--second-color)">
+          <a>
+            <button
+              onclick="toggleSubMenu(this.parentElement)"
+              class="dropdown-btn"
+            >
+              <span class="link-text">Sistem Bilangan Real</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/Bilangan_Real.html">Bilangan Real</a></li>
+              <li><a href="../Bab 1/Nilai_Mutlak.html">Nilai Mutlak</a></li>
+              <li>
+                <a href="../Bab 1/Grafik_Persamaan.html">Grafik Persamaan</a>
+              </li>
+              <li>
+                <a href="../Bab 1/Persamaan_Garis_dan_Jarak.html"
+                  >Persamaan Garis dan Jarak</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 1/Persamaan_Lingkaran_dan_Bola.html"
+                  >Persamaan Lingkaran dan Bola</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Fungsi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 2/Definisi_dan_Notasi_Fungsi.html"
+                  >Definisi dan Notasi Fungsi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 2/Operasi_pada_Fungsi.html"
+                  >Operasi pada Fungsi</a
+                >
+              </li>
+              <li><a href="../Bab 2/Grafik_Fungsi.html">Grafik Fungsi</a></li>
+              <li><a href="../Bab 2/Fungsi_Invers.html">Fungsi Invers</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Limit & Kekontinuan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 3/Pengantar_Notasi_Limit.html"
+                  >Pengantar_Notasi_Limit</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 3/Penghitungan_Limit.html"
+                  >Penghitungan Limit</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 3/Limit_di_Tak-Hingga.html"
+                  >Limit di Tak-Hingga</a
+                >
+              </li>
+              <li><a href="../Bab 3/Kekontinuan.html">Kekontinuan</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Turunan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 4/Garis_Singgung_dan_Laju_Perubahan.html"
+                  >Garis Singgung dan Laju Perubahan</a
+                >
+              </li>
+              <li><a href="../Bab 4/Fungsi_Turunan.html">Fungsi Turunan</a></li>
+              <li><a href="../Bab 4/Diferensiasi.html">Diferensiasi</a></li>
+              <li>
+                <a href="../Bab 4/Aturan_Rantai_dan_Diferensiasi_Implisit.html"
+                  >Aturan Rantai dan Diferensiasi Implisit</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Aplikasi Turunan</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 5/Laju-laju_yang_Berkaitan.html"
+                  >Laju-laju yang Berkaitan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../Bab 5/Interval_Naik_Turun_dan_Kecekungan_Fungsi.html"
+                  >Interval Naik Turun dan Kecekungan Fungsi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../Bab 5/Ekstrim_Relatif_Uji_Turunan_Pertama_dan_Kedua.html"
+                  >Ekstrim Relatif Uji Turunan Pertama dan Kedua</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 5/Grafik_Polinomial_dan_Fungsi_Rasional.html"
+                  >Grafik Polinomial dan Fungsi Rasional</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 5/Nilai_Maksimum_atau_Minimum_Suatu_Fungsi.html"
+                  >Nilai Maksimum atau Minimum Suatu Fungsi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 5/Aplikasi_Masalah_Maksimum_dan_Minimum.html"
+                  >Aplikasi Masalah Maksimum dan Minimum</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Integral</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Bab 6/Anti-turunan_Integral_TakTentu.html"
+                  >Anti-turunan Integral TakTentu</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Integrasi_dengan_Substitusi.html"
+                  >Integrasi dengan Substitusi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Luas_Sebagai_Limit.html"
+                  >Luas Sebagai Limit</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Integral_Tertentu.html">Integral Tertentu</a>
+              </li>
+              <li>
+                <a href="../Bab 6/Teorema_Fundamental_Kalkulus_Pertama.html"
+                  >Teorema Fundamental Kalkulus Pertama</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Integral_Tertentu_dengan_Subtitusi.html"
+                  >Integral Tertentu dengan Subtitusi</a
+                >
+              </li>
+              <li>
+                <a href="../Bab 6/Teorema_Fundamental_Kalkulus_Kedua.html"
+                  >Teorema Fundamental Kalkulus Kedua</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Bilangan Kompleks</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Sup A/Bilangan_Kompleks.html">Bilangan Kompleks</a>
+              </li>
+              <li>
+                <a href="../Sup A/Teorema_De_Moivre.html">Teorema De Moivre</a>
+              </li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" style="border-bottom: 4px solid var(--second-color)">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text">Matriks</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li>
+                <a href="../Sup B/Matriks_dan_Operasi_Matriks.html"
+                  >Matriks dan Operasi Matriks</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../Sup B/Operasi_Baris_Elementer_dan_Matriks_Invers.html"
+                  >Operasi Baris Elementer dan Matriks Invers</a
+                >
+              </li>
+              <li>
+                <a href="../Sup B/Sistem_Persamaan_Linier.html"
+                  >Sistem Persamaan Linier</a
+                >
+              </li>
+              <li><a href="../Sup B/Determinan.html">Determinan</a></li>
+              <li>
+                <a href="../Sup B/Nilai_Eigen_dan_Vektor_Eigen.html"
+                  >Nilai Eigen dan Vektor Eigen</a
+                >
+              </li>
+            </div>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#course">Index</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+      </nav>
+      <input type="checkbox" id="darkmode-toggle" />
+      <label for="darkmode-toggle">
+        <svg
+          class="sun"
+          width="800px"
+          height="800px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 12C15 13.6569 13.6569 15 12 15C10.3432 15 9.00004 13.6569 9.00004 12C9.00004 10.3432 10.3432 9.00004 12 9.00004C13.6569 9.00004 15 10.3432 15 12Z"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7.64338 5.18899L7.56701 6.10541C7.52707 6.58478 7.50709 6.82447 7.40373 7.01167C7.31261 7.1767 7.1767 7.31261 7.01167 7.40373C6.82447 7.50709 6.58477 7.52707 6.10541 7.56701L5.18898 7.64338C4.16259 7.72892 3.6494 7.77168 3.39642 8.00615C3.17627 8.21018 3.05941 8.50232 3.07812 8.8019C3.09961 9.14615 3.44174 9.53105 4.126 10.3008L4.69153 10.9371C5.02586 11.3132 5.19302 11.5012 5.2565 11.7135C5.31243 11.9004 5.31243 12.0997 5.2565 12.2866C5.19302 12.4988 5.02586 12.6869 4.69153 13.063L4.126 13.6992C3.44174 14.469 3.09961 14.8539 3.07812 15.1982C3.05941 15.4978 3.17627 15.7899 3.39642 15.9939C3.6494 16.2284 4.16259 16.2712 5.18899 16.3567L6.10541 16.4331C6.58478 16.473 6.82446 16.493 7.01167 16.5964C7.1767 16.6875 7.31261 16.8234 7.40373 16.9884C7.50709 17.1756 7.52707 17.4153 7.56701 17.8947L7.64338 18.8111C7.72892 19.8375 7.77168 20.3507 8.00615 20.6037C8.21018 20.8238 8.50232 20.9407 8.8019 20.922C9.14615 20.9005 9.53105 20.5583 10.3008 19.8741L10.9371 19.3085C11.3132 18.9742 11.5012 18.8071 11.7135 18.7436C11.9004 18.6876 12.0997 18.6876 12.2866 18.7436C12.4988 18.8071 12.6869 18.9742 13.063 19.3085L13.6992 19.8741C14.469 20.5583 14.8539 20.9005 15.1982 20.922C15.4978 20.9407 15.7899 20.8238 15.9939 20.6037C16.2284 20.3507 16.2712 19.8375 16.3567 18.8111L16.4331 17.8947C16.473 17.4153 16.493 17.1756 16.5964 16.9884C16.6875 16.8234 16.8234 16.6875 16.9884 16.5964C17.1756 16.493 17.4153 16.473 17.8947 16.4331L18.8111 16.3567C19.8375 16.2712 20.3507 16.2284 20.6037 15.9939C20.8238 15.7899 20.9407 15.4978 20.922 15.1982C20.9005 14.8539 20.5583 14.469 19.8741 13.6992L19.3085 13.063C18.9742 12.6869 18.8071 12.4988 18.7436 12.2866C18.6876 12.0997 18.6876 11.9004 18.7436 11.7135C18.8071 11.5012 18.9742 11.3132 19.3085 10.9371L19.8741 10.3008C20.5583 9.53105 20.9005 9.14615 20.922 8.8019C20.9407 8.50232 20.8238 8.21018 20.6037 8.00615C20.3507 7.77168 19.8375 7.72892 18.8111 7.64338L17.8947 7.56701C17.4153 7.52707 17.1756 7.50709 16.9884 7.40373C16.8234 7.31261 16.6875 7.1767 16.5964 7.01167C16.493 6.82446 16.473 6.58478 16.4331 6.10541L16.3567 5.18898C16.2712 4.16259 16.2284 3.6494 15.9939 3.39642C15.7899 3.17627 15.4978 3.05941 15.1982 3.07812C14.8539 3.09961 14.469 3.44174 13.6992 4.126L13.063 4.69153C12.6869 5.02586 12.4988 5.19302 12.2866 5.2565C12.0997 5.31243 11.9004 5.31243 11.7135 5.2565C11.5012 5.19302 11.3132 5.02586 10.9371 4.69153L10.3008 4.126C9.53105 3.44174 9.14615 3.09961 8.8019 3.07812C8.50232 3.05941 8.21018 3.17627 8.00615 3.39642C7.77168 3.6494 7.72892 4.16259 7.64338 5.18899Z"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg
+          class="moon"
+          width="800px"
+          height="800px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z"
+            stroke="#9e9e9e"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </label>
+
+      <div class="fa fa-bars"></div>
+    </header>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2>
+        <section class="no-subbab">1.4</section>
+        <span class="judul-bab">Persamaan Garis dan Jarak</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 1.4.1</div>
+        <div class="dfn-content">
+          Diberikan $P(x_1,y_1)$ dan $Q(x_2,y_2)$ titik-titik pada bidang
+          koordinat. Gradien garis yang melalui $P$ dan $Q$ didefinisikan dengan
+          $$m=\frac{y_2-y_1}{x_2-x_1}$$
+        </div>
+      </div>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 1.4.2</div>
+        <div class="dfn-content">
+          Sudut kemiringan garis $l$ adalah sudut $\varphi$ terkecil yang diukur
+          berlawanan arah jarum jam dari arah sumbu-$x$ positif ke garis $l$.
+          <div
+            style="
+              align-items: center;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <div></div>
+            <img src="img/1.4.1.svg" alt="Gambar 1.4.1" style="width: 30%" />
+            <img src="img/1.4.1(2).svg" alt="Gambar 1.4.1" style="width: 30%" />
+            <div></div>
+          </div>
+        </div>
+      </div>
+      Gradien garis dapat dihitung dengan rumus $$m=\tan\varphi.$$
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 1.4.1.</div>
+        <div class="dfn-content">
+          Jika garis $l_1$ mempunyai gradien $m_1$ dan garis $l_2$ mempunyai
+          gradien $m_2$, maka
+          <ol class="itemaze arabic">
+            <li>$l_1$ sejajar $l_2$ jika dan hanya jika $m_1=m_2$</li>
+            <li>
+              $l_1$ tegak lurus terhadap $l_2$ jika dan hanya jika $m_1m_2=-1$
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      Bentuk-bentuk persamaan garis:
+      <ol class="itemaze arabic">
+        <li>
+          Persamaan garis yang melalui $2$ titik $(x_1,y_1)$ dan $(x_2,y_2)$
+          adalah $$\frac{y-y_1}{y_2-y_1}=\frac{x-x_1}{x_2-x_1}.$$
+        </li>
+        <li>
+          Persamaan garis yang melalui titik $(x_1,y_1)$ dan mempunyai gradien
+          $m$ adalah $$y-y_1=m(x-x_1).$$
+        </li>
+        <li>
+          Persamaan garis dengan gradien $a$ dan memotong sumbu-$y$ di titik
+          $(0,b)$ adalah $$y=ax+b.$$
+        </li>
+        <li>
+          Persamaan garis vertikal yang melalui titik $(a,0)$ adalah $$x=a.$$
+        </li>
+        <li>
+          Persamaan garis horizontal yang melalui titik $(0,b)$ adalah $$y=b.$$
+        </li>
+        <li>
+          Persamaan (umum) garis dalam $x$ dan $y$ adalah $$ax+by+c=0$$ dengan
+          $a,b,c$ konstan dan $ab\neq 0$.
+        </li>
+      </ol>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 1.4.2.(Jarak Dua Titik)</div>
+        <div class="dfn-content">
+          Jarak antara dua titik $(x_1,y_1)$ dan $(x_2,y_2)$ dalam bidang
+          koordinat diberikan oleh $$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$$
+        </div>
+      </div>
+      <img src="img/1.4.2.svg" alt="Gambar 1.4.2" class="illust illust-outer" />
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 1.4.3.(Titik Tengah)</div>
+        <div class="dfn-content">
+          Titik-tengah dari segmen garis yang menghubungkan dua titik
+          $(x_1,y_1)$ dan $(x_2,y_2)$ dalam bidang koordinat adalah
+          $$\left(\frac{1}{2}(x_1+x_2),\frac{1}{2}(y_1+y_2)\right)$$
+        </div>
+      </div>
+      Misalkan $M(x_M,y_M)$ adalah titik tengah dari $P_1(x_1,y_1)$ dan
+      $P_2(x_2,y_2)$.
+      <img src="img/1.4.3.svg" alt="Gambar 1.4.2" class="illust illust-outer" />
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 1.4.4.(Jarak Titik dan Garis)</div>
+        <div class="dfn-content">
+          Jarak $d$ antara titik $(x_0,y_0)$ ke garis $ax+by+c=0$ dalam bidang
+          koordinat diberikan oleh\ $$d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}.$$
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Jika titik tengah antara $A(2,-1)$ dan titik $B$ adalah titik $C(4,1)$
+          maka tentukan koordinat $B$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Misalkan $x_1=2,y_1=-1$, dan $B(x_2,y_2)$. Titik tengah antara $A$
+              dan $B$ adalah $C(4,1)$, maka \begin{align*}
+              \frac{1}{2}(x_1+x_2)=4\\ \frac{1}{2}(2+x_2)=4\\ 2+x_2=8\\ x_2=6
+              \end{align*} dan \begin{align*} \frac{1}{2}(y_1+y_2)=1\\
+              \frac{1}{2}(-1+y_2)=1\\ -1+y_2=2\\ y_2=3. \end{align*} Dengan
+              demikian, diperoleh bahwa $B(6,3)$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2</div>
+        <div class="dfn-content">
+          Diberikan titik koordinat $A(-2,-1)$, $B(0,3)$, dan $C(4,3)$. Jika
+          garis $l$ melalui titik $A$ dan $B$, maka tentukan jarak titik $C$ ke
+          garis $l$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Dari titik $A$ dan $B$, dimisalkan $x_1=-2$, $x_2=0$, $y_1=-1$,
+              dan $y_2=3$. Perhatikan bahwa garis $l$ melalui titik $A$ dan $B$
+              sehingga garis $l$ memiliki gradien
+              $$m=\frac{y_2-y_1}{x_2-x_1}=\frac{3-(-1)}{0-(-2)}=\frac{4}{2}=2.$$
+              Dengan demikian, persamaan garis $l$ adalah \begin{align*}
+              y-y_1&=m(x-x_1)\\ y-(-1)&=2(x-(-2))\\ y+1&=2(x+2)\\ y+1&=2x+4\\
+              y=2x+4-1\\ y=2x+3\\ 0=2x-y+3\\ 2x-y+3=0. \end{align*} Akan dicari
+              $d$ jarak antara titik $C(4,3)$ ke garis $l$. Diberikan $a=2$,
+              $b=-1$, $c=3$, $x_0=4$, dan $y_0=3$. \begin{align*}
+              d&=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}\\
+              &=\frac{|2.4+(-1)3+3|}{\sqrt{2^2+(-1)^2}}\\
+              &=\frac{|8-3+3|}{\sqrt{4+1}}\\ &=\frac{|8|}{\sqrt{5}}\\
+              d&=\frac{8}{\sqrt{5}} \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 3(EAS 2024/2025)</div>
+        <div class="dfn-content">
+          Tentukan semua nilai $a$ sehingga jarak antara titik $(a,-1)$ dan
+          $(0,3)$ adalah $5$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Misalkan $d=5$ jarak antara titik $(a,-1)$ dan $(0,3)$ dengan
+              $x_1=a$, $x_2=0$, $y_1=-1$, dan $y_2=3$. Diperoleh bahwa
+              \begin{align*} \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}&=d\\
+              \sqrt{(0-a)^2+(3-(-1))^2}&=5\\ \sqrt{(-a)^2+(3+1)^2}&=5\\
+              \sqrt{a^2+4^2}&=5\\ \sqrt{a^2+16}&=5\\ a^2+16&=25\\ a^2&=25-16\\
+              a^2&=9\\ a=3 \quad &\mathrm{atau} \quad a=-3 \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 4(EAS 2023/2024)</div>
+        <div class="dfn-content">
+          Tentukan persamaan garis yang melalui titik $(1,-3)$ dan tegak lurus
+          garis $-x+2y=2$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Perhatikan bahwa \begin{align*} -x+2y&=2\\ 2y&=x+2\\
+              y&=\frac{1}{2}x+1. \end{align*} Garis tersebut memiliki gradien
+              $1/2$. Misalkan $m_1=1/2$ dan $m$ adalah gradien dari garis yang
+              ingin kita cari persamaannya. Kedua garis saling tegak lurus
+              sehingga \begin{align*} m.m_1&=-1\\ m.\frac{1}{2}&=-1\\ m&=-2.
+              \end{align*} Garis yang melalui titik $(1,-3)$ dengan $x_1=1$ dan
+              $y_1=-3$, serta bergradien $-2$ persamaannya adalah \begin{align*}
+              y-y_1&=m(x-x_1)\\ y-(-3)&=-2(x-1)\\ y&=-2x+2-3\\ y&=-2x-1\\
+              2x+y+1&=0. \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Selesaikan pertidaksamaan berikut: $$\sqrt{x^2-6x+9}-3x\geq 12.$$
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+              <div class="hint">
+                <button class="hint-button">
+                  <svg viewBox="0 0 500 500" width="30" height="30">
+                    <g>
+                      <path
+                        class="path_1"
+                        style="fill: #ffffff00"
+                        d="M352.583,211.919c0-67.689-54.588-122.629-122.143-123.197
+                 c-67.974-0.572-124.261,55.222-124.26,123.198c0,33.247,13.171,63.416,34.579,85.577c25.593,26.494,40.024,61.808,40.024,98.645
+                 v13.156h97.197v-13.15c0-36.544,13.862-71.932,39.432-98.042C339.169,275.889,352.583,245.472,352.583,211.919z"
+                      />
+                      <rect
+                        class="path_2"
+                        x="180.783"
+                        y="409.297"
+                        style="fill: #ffffff00"
+                        width="97.197"
+                        height="57.125"
+                      />
+                      <path
+                        class="path_3"
+                        style="fill: #ffffff00"
+                        d="M253.254,466.422c0,14.126-11.452,25.578-25.578,25.578s-25.578-11.452-25.578-25.578H253.254z"
+                      />
+                      <g>
+                        <path
+                          d="M230.523,78.722c-35.583-0.342-69.221,13.48-94.756,38.802C110.239,142.84,96.18,176.363,96.18,211.92
+                   c0,34.708,13.278,67.567,37.387,92.524c24,24.844,37.216,57.409,37.216,91.697v13.156v57.125c0,5.523,4.477,10,10,10h12.756
+                   C197.871,491.185,211.53,502,227.676,502s29.805-10.815,34.138-25.578h16.166c5.523,0,10-4.477,10-10v-57.125v-13.15
+                   c0-34.627,12.99-66.961,36.576-91.044c24.522-25.04,38.027-58.133,38.027-93.185c0-35.38-13.723-68.697-38.64-93.812
+                   C299.041,93.006,265.864,79.02,230.523,78.722z M227.676,482c-4.787,0-9.076-2.17-11.936-5.578h23.872
+                   C236.752,479.83,232.463,482,227.676,482z M267.98,456.422h-14.726h-51.156h-11.315v-37.125h77.197V456.422z M310.267,291.109
+                   c-27.269,27.844-42.287,65.148-42.287,105.039v3.15h-77.197v-3.156c0-39.5-15.211-77-42.832-105.593
+                   c-20.488-21.208-31.771-49.133-31.771-78.629c0-30.183,11.958-58.663,33.67-80.194c21.72-21.538,50.338-33.226,80.505-33.005
+                   c61.882,0.521,112.228,51.301,112.228,113.197C342.583,241.707,331.106,269.83,310.267,291.109z"
+                        />
+                        <path
+                          d="M229.381,55.584c5.523,0,10-4.477,10-10V10c0-5.523-4.477-10-10-10s-10,4.477-10,10v35.584
+                   C219.381,51.107,223.858,55.584,229.381,55.584z"
+                        />
+                        <path
+                          d="M85.246,29.896c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968
+                   l-7.108-9.783C91.073,3.89,84.82,2.9,80.351,6.146c-4.468,3.247-5.458,9.5-2.212,13.968L85.246,29.896z"
+                        />
+                        <path
+                          d="M124.729,84.239c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.246,5.458-9.5,2.212-13.968
+                   l-19.113-26.308c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.246-5.458,9.5-2.212,13.968L124.729,84.239z"
+                        />
+                        <path
+                          d="M37.031,160.15l33.843,10.996c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   c1.707-5.253-1.168-10.894-6.42-12.601l-33.843-10.996c-5.251-1.705-10.894,1.168-12.601,6.42
+                   C28.904,152.802,31.778,158.443,37.031,160.15z"
+                        />
+                        <path
+                          d="M84.808,260.51c-1.707-5.253-7.346-8.126-12.601-6.42l-33.843,10.996c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l33.843-10.996C83.64,271.404,86.514,265.763,84.808,260.51
+                   z"
+                        />
+                        <path
+                          d="M102.626,391.668c-4.467-3.246-10.721-2.255-13.968,2.212l-8.903,12.253c-3.246,4.468-2.256,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.903-12.253C108.085,401.168,107.095,394.915,102.626,391.668z
+                   "
+                        />
+                        <path
+                          d="M134.544,347.736c-4.468-3.246-10.722-2.255-13.968,2.212l-8.845,12.175c-3.246,4.468-2.255,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.845-12.175C140.003,357.236,139.012,350.982,134.544,347.736z
+                   "
+                        />
+                        <path
+                          d="M338.347,336.895c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.247-5.458,9.5-2.212,13.968l20.916,28.789
+                   c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968L338.347,336.895z"
+                        />
+                        <path
+                          d="M426.045,260.984l-33.843-10.997c-5.252-1.705-10.894,1.168-12.601,6.42c-1.707,5.252,1.168,10.894,6.42,12.601
+                   l33.843,10.997c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   C434.172,268.333,431.298,262.691,426.045,260.984z"
+                        />
+                        <path
+                          d="M471.39,130.367c-1.706-5.252-7.347-8.127-12.601-6.42l-14.678,4.769c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l14.678-4.769
+                   C470.222,141.261,473.096,135.62,471.39,130.367z"
+                        />
+                        <path
+                          d="M387.777,167.536c1.024,0,2.065-0.159,3.092-0.492l25.994-8.446c5.252-1.707,8.127-7.348,6.42-12.601
+                   c-1.707-5.252-7.347-8.127-12.601-6.42l-25.994,8.446c-5.252,1.707-8.127,7.348-6.42,12.601
+                   C379.642,164.849,383.562,167.536,387.777,167.536z"
+                        />
+                        <path
+                          d="M320.89,83.916c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l20.916-28.789
+                   c3.246-4.468,2.255-10.722-2.212-13.968c-4.469-3.246-10.722-2.255-13.968,2.212l-20.916,28.789
+                   C315.431,74.416,316.422,80.669,320.89,83.916z"
+                        />
+                        <path
+                          d="M288.349,135.549c-11.289-8.76-24.609-14.981-38.521-17.992c-5.395-1.169-10.721,2.26-11.889,7.659
+                   c-1.168,5.398,2.261,10.721,7.659,11.889c11.007,2.382,21.55,7.308,30.491,14.245c1.823,1.415,3.981,2.1,6.124,2.1
+                   c2.984,0,5.937-1.33,7.907-3.87C293.505,145.217,292.712,138.935,288.349,135.549z"
+                        />
+                        <path
+                          d="M202.914,119.066c-41.096,11.729-69.797,49.799-69.797,92.579c0,5.523,4.477,10,10,10s10-4.477,10-10
+                   c0-33.895,22.735-64.056,55.287-73.346c5.311-1.516,8.387-7.05,6.872-12.361C213.758,120.628,208.224,117.55,202.914,119.066z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+                <dialog class="hint-content" style="--hint: --H1">
+                  Fungsi di dalam akar dan hasil dari akar selalu bernilai tak
+                  negatif.
+                </dialog>
+              </div>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Ingat bahwa ekspresi di dalam akar selalu bernilai tak negatif.
+                \begin{align*} x^2-6x+9\geq0\\ (x-3)^2\geq0 \end{align*} Semua
+                bilangan real $x$ menghasilkan nilai $(x-3)^2\geq0$. Sekarang,
+                tinjau pertidaksamaan berikut. \begin{align*}
+                \sqrt{x^2-6x+9}-3x&\geq 12\\ \sqrt{x^2-6x+9}&\geq 3x+12
+                \end{align*} Semua nilai $x$ yang menyebabkan $3x+12\leq0$ sudah
+                pasti benar karena hasil dari akar pasti tak negatif.
+                $$3x+12\leq0\implies x\leq-4\dots(i)$$ Adapun semua nilai $x$
+                yang menyebabkan $3x+12>0$ termasuk penyelesaian jika memenuhi
+                pertidaksamaan berikut. \begin{align*} (\sqrt{x^2-6x+9})^2&\geq
+                (3x+12)^2\\ x^2-6x+9&\geq 9x^2+72x+144\\ 0&\geq 8x^2+78x+135\\
+                8x^2+78x+135&\leq0\\ (2x+15)(4x+9)&\leq0 \end{align*} Terdapat
+                $2$ titik pemisah, yaitu: $$2x+15=0\implies x=-\frac{15}{2}$$
+                $$4x+9=0\implies x=-\frac{9}{4}$$ Kedua titik pemisah tersebut
+                membagi himpunan bilangan real menjadi $3$ interval yang dengan
+                metode perkalian tanda menghasilkan nilai $(2x+15)(4x+9)$
+                berikut.
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th><strong>Titik $x$ pada interval</strong></th>
+                      <th><strong>Tanda $(2x+15)$</strong></th>
+                      <th><strong>Tanda $(4x+9)$</strong></th>
+                      <th><strong>Tanda $(2x+15)(4x+9)$</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>$(-\infty,-15/2)$</td>
+                      <td>$-$</td>
+                      <td>$-$</td>
+                      <td>$+$</td>
+                    </tr>
+                    <tr>
+                      <td>$(-15/2,-9/4)$</td>
+                      <td>$+$</td>
+                      <td>$-$</td>
+                      <td>$-$</td>
+                    </tr>
+                    <tr>
+                      <td>$(-9/4,+\infty)$</td>
+                      <td>$+$</td>
+                      <td>$+$</td>
+                      <td>$+$</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                Berdasarkan tabel di atas, didapati interval yang memenuhi
+                $(2x+15)(4x+9)\leq0$ adalah $[-15/2,-9/4]\dots(ii)$. Dengan
+                demikian, himpunan penyelesaian pertidaksamaan
+                $(2x+15)(4x+9)\leq0$ adalah gabungan dari $(i)$ dan $(ii)$,
+                yaitu: $$\boxed{\left\{x\Big|x \leq
+                -\frac{9}{4},x\in\R\right\}=\left(-\infty,-\frac{9}{4}\right].}$$
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Dapatkan himpunan penyelesaian pertidaksamaan
+              $$2\leq\frac{x^2+1}{x}&lt;x+3$$
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+              <div class="hint">
+                <button class="hint-button">
+                  <svg viewBox="0 0 500 500" width="30" height="30">
+                    <g>
+                      <path
+                        class="path_1"
+                        style="fill: #ffffff00"
+                        d="M352.583,211.919c0-67.689-54.588-122.629-122.143-123.197
+                 c-67.974-0.572-124.261,55.222-124.26,123.198c0,33.247,13.171,63.416,34.579,85.577c25.593,26.494,40.024,61.808,40.024,98.645
+                 v13.156h97.197v-13.15c0-36.544,13.862-71.932,39.432-98.042C339.169,275.889,352.583,245.472,352.583,211.919z"
+                      />
+                      <rect
+                        class="path_2"
+                        x="180.783"
+                        y="409.297"
+                        style="fill: #ffffff00"
+                        width="97.197"
+                        height="57.125"
+                      />
+                      <path
+                        class="path_3"
+                        style="fill: #ffffff00"
+                        d="M253.254,466.422c0,14.126-11.452,25.578-25.578,25.578s-25.578-11.452-25.578-25.578H253.254z"
+                      />
+                      <g>
+                        <path
+                          d="M230.523,78.722c-35.583-0.342-69.221,13.48-94.756,38.802C110.239,142.84,96.18,176.363,96.18,211.92
+                   c0,34.708,13.278,67.567,37.387,92.524c24,24.844,37.216,57.409,37.216,91.697v13.156v57.125c0,5.523,4.477,10,10,10h12.756
+                   C197.871,491.185,211.53,502,227.676,502s29.805-10.815,34.138-25.578h16.166c5.523,0,10-4.477,10-10v-57.125v-13.15
+                   c0-34.627,12.99-66.961,36.576-91.044c24.522-25.04,38.027-58.133,38.027-93.185c0-35.38-13.723-68.697-38.64-93.812
+                   C299.041,93.006,265.864,79.02,230.523,78.722z M227.676,482c-4.787,0-9.076-2.17-11.936-5.578h23.872
+                   C236.752,479.83,232.463,482,227.676,482z M267.98,456.422h-14.726h-51.156h-11.315v-37.125h77.197V456.422z M310.267,291.109
+                   c-27.269,27.844-42.287,65.148-42.287,105.039v3.15h-77.197v-3.156c0-39.5-15.211-77-42.832-105.593
+                   c-20.488-21.208-31.771-49.133-31.771-78.629c0-30.183,11.958-58.663,33.67-80.194c21.72-21.538,50.338-33.226,80.505-33.005
+                   c61.882,0.521,112.228,51.301,112.228,113.197C342.583,241.707,331.106,269.83,310.267,291.109z"
+                        />
+                        <path
+                          d="M229.381,55.584c5.523,0,10-4.477,10-10V10c0-5.523-4.477-10-10-10s-10,4.477-10,10v35.584
+                   C219.381,51.107,223.858,55.584,229.381,55.584z"
+                        />
+                        <path
+                          d="M85.246,29.896c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968
+                   l-7.108-9.783C91.073,3.89,84.82,2.9,80.351,6.146c-4.468,3.247-5.458,9.5-2.212,13.968L85.246,29.896z"
+                        />
+                        <path
+                          d="M124.729,84.239c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.246,5.458-9.5,2.212-13.968
+                   l-19.113-26.308c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.246-5.458,9.5-2.212,13.968L124.729,84.239z"
+                        />
+                        <path
+                          d="M37.031,160.15l33.843,10.996c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   c1.707-5.253-1.168-10.894-6.42-12.601l-33.843-10.996c-5.251-1.705-10.894,1.168-12.601,6.42
+                   C28.904,152.802,31.778,158.443,37.031,160.15z"
+                        />
+                        <path
+                          d="M84.808,260.51c-1.707-5.253-7.346-8.126-12.601-6.42l-33.843,10.996c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l33.843-10.996C83.64,271.404,86.514,265.763,84.808,260.51
+                   z"
+                        />
+                        <path
+                          d="M102.626,391.668c-4.467-3.246-10.721-2.255-13.968,2.212l-8.903,12.253c-3.246,4.468-2.256,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.903-12.253C108.085,401.168,107.095,394.915,102.626,391.668z
+                   "
+                        />
+                        <path
+                          d="M134.544,347.736c-4.468-3.246-10.722-2.255-13.968,2.212l-8.845,12.175c-3.246,4.468-2.255,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.845-12.175C140.003,357.236,139.012,350.982,134.544,347.736z
+                   "
+                        />
+                        <path
+                          d="M338.347,336.895c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.247-5.458,9.5-2.212,13.968l20.916,28.789
+                   c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968L338.347,336.895z"
+                        />
+                        <path
+                          d="M426.045,260.984l-33.843-10.997c-5.252-1.705-10.894,1.168-12.601,6.42c-1.707,5.252,1.168,10.894,6.42,12.601
+                   l33.843,10.997c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   C434.172,268.333,431.298,262.691,426.045,260.984z"
+                        />
+                        <path
+                          d="M471.39,130.367c-1.706-5.252-7.347-8.127-12.601-6.42l-14.678,4.769c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l14.678-4.769
+                   C470.222,141.261,473.096,135.62,471.39,130.367z"
+                        />
+                        <path
+                          d="M387.777,167.536c1.024,0,2.065-0.159,3.092-0.492l25.994-8.446c5.252-1.707,8.127-7.348,6.42-12.601
+                   c-1.707-5.252-7.347-8.127-12.601-6.42l-25.994,8.446c-5.252,1.707-8.127,7.348-6.42,12.601
+                   C379.642,164.849,383.562,167.536,387.777,167.536z"
+                        />
+                        <path
+                          d="M320.89,83.916c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l20.916-28.789
+                   c3.246-4.468,2.255-10.722-2.212-13.968c-4.469-3.246-10.722-2.255-13.968,2.212l-20.916,28.789
+                   C315.431,74.416,316.422,80.669,320.89,83.916z"
+                        />
+                        <path
+                          d="M288.349,135.549c-11.289-8.76-24.609-14.981-38.521-17.992c-5.395-1.169-10.721,2.26-11.889,7.659
+                   c-1.168,5.398,2.261,10.721,7.659,11.889c11.007,2.382,21.55,7.308,30.491,14.245c1.823,1.415,3.981,2.1,6.124,2.1
+                   c2.984,0,5.937-1.33,7.907-3.87C293.505,145.217,292.712,138.935,288.349,135.549z"
+                        />
+                        <path
+                          d="M202.914,119.066c-41.096,11.729-69.797,49.799-69.797,92.579c0,5.523,4.477,10,10,10s10-4.477,10-10
+                   c0-33.895,22.735-64.056,55.287-73.346c5.311-1.516,8.387-7.05,6.872-12.361C213.758,120.628,208.224,117.55,202.914,119.066z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+                <dialog class="hint-content" style="--hint: --H2">
+                  Pecah menjadi $2$ pertidaksamaan.
+                </dialog>
+              </div>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Pertidaksamaan $\displaystyle 2\leq\frac{x^2+1}{x}&lt;x+3$ dapat
+                dipecah menjadi $2$ pertidaksamaan, yaitu:
+                $$\frac{x^2+1}{x}\geq2\dots(i)$$ $$\frac{x^2+1}{x}&lt;
+                x+3\dots(ii)$$ dimana $x\neq0$.
+                <br /><br />
+                <ol class="itemaze roman">
+                  <li>
+                    Untuk $\displaystyle \frac{x^2+1}{x}\geq2$ \begin{align*}
+                    \frac{x^2+1}{x}&\geq2\\ \frac{x^2+1}{x}-2&\geq0\\
+                    \frac{x^2+1}{x}-\frac{2x}{x}&\geq0\\
+                    \frac{x^2-2x+1}{x}&\geq0\\ \frac{(x-1)^2}{x}&\geq0
+                    \end{align*} Nilai $(x-1)^2$ selalu bernilai tak negatif
+                    sehingga tanda dari $\displaystyle \frac{(x-1)^2}{x}$ hanya
+                    dipengaruhi oleh nilai penyebutnya, yaitu $x$. Jika
+                    $x&lt;0$, maka $\displaystyle \frac{(x-1)^2}{x}\leq0$.
+                    Adapun jika $x>0$, maka $\displaystyle
+                    \frac{(x-1)^2}{x}\geq0$. Dengan demikian, himpunan
+                    penyelesaian dari $\displaystyle \frac{(x-1)^2}{x}\leq0$
+                    adalah $$\{x|x>0,x\in\R\}=(0,+\infty).$$
+                  </li>
+                  <li>
+                    Untuk $\displaystyle\frac{x^2+1}{x}&lt; x+3$ \begin{align*}
+                    \frac{x^2+1}{x}&&lt; x+3\\ \frac{x^2+1}{x}-(x+3)&&lt;0\\
+                    \frac{x^2+1}{x}-\frac{x(x+3)}{x}&&lt;0\\
+                    \frac{x^2+1-(x^2+3x)}{x}&&lt;0\\
+                    \frac{x^2+1-x^2-3x}{x}&&lt;0\\ \frac{1-3x}{x}&&lt;0\\
+                    \end{align*} Terdapat $2$ titik pemisah, yaitu:
+                    $$1-3x=0\implies x=\frac{1}{3}$$ $$x=0$$ Kedua titik pemisah
+                    tersebut membagi himpunan bilangan real menjadi $3$ interval
+                    yang akan dicari masing-masing tandanya dengan metode titik
+                    uji. Ambil $x=1$ pada interval $(1/3,+\infty)$ dan didapati
+                    nilai $x$ tersebut menyebabkan $\displaystyle
+                    \frac{1-3x}{x}&lt;0$. Kedua titik pemisah berasal dari
+                    faktor berpangkat $1$ (ganjil) sehingga tanda dari tiap
+                    interval digambarkan pada garis bilangan berikut.
+                    <img
+                      src="img/1.1.12.svg"
+                      alt="Gambar 1.1.12"
+                      class="illust"
+                      style="width: 30%"
+                    />
+                    Dengan demikian, himpunan penyelesaian dari $\displaystyle
+                    \frac{1-3x}{x}&lt;0$ adalah $$\left\{x\Big|x&lt;0\cup
+                    x>\frac{1}{3},x\in\R\right\}=(-\infty,0)\cup\left(\frac{1}{3},+\infty\right).$$
+                  </li>
+                </ol>
+                Adapun himpunan penyelesaian dari $\displaystyle
+                2\leq\frac{x^2+1}{x}&lt;x+3$ adalah irisan dari penyelesaian
+                pertidaksamaan $(i)$ dan $(ii)$, yaitu:
+                $$\left\{x\,\Big|\,x>\frac{1}{3},x\in\R\right\}=\left(\frac{1}{3},+\infty\right).$$
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+
+      const correctAnswers = [
+        ce.parse("\\left\\lbrace x\\le\\frac94\\right\\rbrace"),
+        ce.parse("\\left\\lbrace x>\\frac13\\right\\rbrace"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          if (
+            index == 0 &&
+            (answerElement.value ===
+              "\\left(-\\infty,\\frac94\\right\\rbrack" ||
+              answerElement.value === "(-\\infty,\\frac94\\rbrack" ||
+              answerElement.value === "\\left(-\\infty,\\9/4\\right\\rbrack" ||
+              answerElement.value === "(-\\infty,\\9/4\\rbrack")
+          ) {
+            studentInput = expectedAnswer;
+          }
+
+          if (
+            studentInput.isSame(ce.parse("\\left(\\frac13,+\\infty\\right)"))
+          ) {
+            studentInput = expectedAnswer;
+          }
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

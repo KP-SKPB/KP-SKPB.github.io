@@ -1,8 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1738652529.99015 "c:/Users/teoso/OneDrive/Documents/KP SKPB 2024-2025/pdf to svg/tes.tex" "tes.pdf" "tes" 1738652531.3151 0
-  "C:/Users/teoso/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1736837536 84135 52204819c790bf1c694462447959e5a9 ""
+["pdflatex"] 1741079602.51741 "c:/Users/teoso/OneDrive/Documents/KP SKPB 2024-2025/pdf to svg/tes.tex" "tes.pdf" "tes" 1741079604.40863 0
+  "C:/Users/teoso/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1738933260 84135 52204819c790bf1c694462447959e5a9 ""
   "C:/Users/teoso/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729460530 24225047 7a372590eef44e2d1ee0d393f4bca787 ""
-  "C:/Users/teoso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/teoso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/teoso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
+  "C:/Users/teoso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Users/teoso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/teoso/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/teoso/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifluatex.sty" 1643997108 492 1994775aa15b0d1289725a0b1bbc2d4c ""
   "C:/Users/teoso/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1643997108 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -90,9 +93,9 @@
   "C:/Users/teoso/AppData/Local/Programs/MiKTeX/tex/latex/tools/shellesc.sty" 1700599895 4121 f96144e646260251ded7f19bcb6f4e71 ""
   "C:/Users/teoso/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/teoso/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/teoso/OneDrive/Documents/KP SKPB 2024-2025/pdf to svg/tes.tex" 1738652528 229 8837bf1e1357d88d2fbad0078a879fd8 ""
-  "tes.aux" 1738652530 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "tes.tex" 1738652528 229 8837bf1e1357d88d2fbad0078a879fd8 ""
+  "c:/Users/teoso/OneDrive/Documents/KP SKPB 2024-2025/pdf to svg/tes.tex" 1741079601 963 85e594287e01adbbd2ea6a068e39a121 ""
+  "tes.aux" 1741079604 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "tes.tex" 1741079601 963 85e594287e01adbbd2ea6a068e39a121 ""
   (generated)
   "tes.aux"
   "tes.log"

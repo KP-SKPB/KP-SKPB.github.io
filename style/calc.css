@@ -1,0 +1,343 @@
+/* STYLE INI BUAT TENTANG KALKULUS I & II */
+
+@import url("https://fonts.cdnfonts.com/css/latin-modern-sans");
+@font-face {
+  font-family: HYWenHei;
+  src: url(zhcn.ttf);
+}
+
+:root {
+  interpolate-size: allow-keywords;
+
+  --text-color: #000;
+  --bg-color: #fff;
+  --first-color: #69b7d9;
+  --second-color: #ffc410;
+  --third-color: #013880;
+  --sidebar-text-1: #fffefc;
+  --sidebar-text-2: #292929;
+
+  --submenu-color: #01224d;
+  --contoh-color: #2e1657;
+  --latihan-color: darkslategray;
+  --submit-bg: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+  --text-color: #dbdbdb;
+  --bg-color: #292929;
+
+  --contoh-color: #6e50a1;
+  --latihan-color: seagreen;
+  --submit-bg: rgba(255, 255, 255, 0.2);
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.5rem;
+  text-align: justify;
+  font-size: 20px;
+}
+
+body {
+  font-family: "LMSansDemiCond10", sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#menu > li > ol > div > li::marker {
+  content: counters(list-item, ".") " ";
+}
+#menu > li > ol > div > li {
+  margin-left: 25px;
+}
+
+#menu > li:nth-child(8) > ol > div > li::marker {
+  content: "A." counter(list-item);
+}
+
+#menu > li:nth-child(9) > ol > div > li::marker {
+  content: "B." counter(list-item);
+}
+
+main {
+  padding: min(30px, 7%);
+}
+
+main p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.sidebar {
+  color: #000;
+  box-sizing: border-box;
+  font-family: HYWenHei;
+  height: 100vh;
+  width: fit-content;
+  background-color: var(--third-color);
+  border-right: var(--second-color) 2px solid;
+  color: var(--sidebar-text-1);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow: hidden;
+  text-wrap: nowrap;
+  transition: 0.5s ease-in-out;
+  overflow-y: auto;
+  z-index: 10;
+  anchor-name: --open-close;
+}
+
+.logo {
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+#sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Elemen di sisi kiri dan kanan */
+}
+
+.sidebar.hidden-nav {
+  width: 0px;
+  #toggle-btn svg {
+    transform: rotate(180deg);
+  }
+  #toggle-btn {
+    left: 0;
+  }
+}
+
+.sidebar ol {
+  list-style-type: none;
+}
+
+.sidebar ol li.active {
+  .svg-icon {
+    width: 15px;
+    height: 100%;
+    margin: 0;
+    flex-shrink: 0;
+    color: var(--text-color);
+  }
+}
+
+.sidebar a,
+.sidebar .dropdown-btn {
+  padding: 0.3em;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  color: var(--sidebar-text-1);
+}
+
+.dropdown-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sidebar a span,
+.sidebar .dropdown-btn span {
+  flex-grow: 1;
+}
+
+.sidebar .active > a:hover {
+  .link-text {
+    color: var(--sidebar-text-2);
+  }
+  background-color: var(--second-color);
+}
+
+.active {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-color: var(--second-color);
+}
+
+.sidebar a:has(.dropdown-btn) {
+  background-color: var(--third-color);
+  border-radius: 0;
+}
+
+.sub-menu {
+  font-size: 12px;
+  background-color: var(--submenu-color);
+  color: var(--sidebar-text-1);
+  a {
+    color: var(--sidebar-text-1);
+  }
+  div li:hover {
+    color: var(--second-color);
+  }
+  div a:hover {
+    color: var(--second-color);
+  }
+}
+
+.sub-menu li:hover {
+  color: var(--bg-color);
+}
+
+.sidebar .sub-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+
+  > div {
+    overflow: hidden;
+  }
+}
+
+.sidebar .sub-menu.show {
+  grid-template-rows: 1fr;
+}
+
+#toggle-btn {
+  position: fixed;
+  left: 190px;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  background: none;
+  cursor: pointer;
+  svg {
+    transition: rotate 0.5s ease;
+  }
+  transition: 0.5s ease-in-out;
+  background-color: var(--third-color);
+  color: var(--sidebar-text-1);
+}
+
+#toggle-btn-inner {
+  background-color: var(--third-color);
+  display: flex;
+  align-items: center;
+  width: 28px;
+  height: 96px;
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  svg {
+    transition: rotate 0.5s linear;
+    fill: var(--sidebar-text-1);
+  }
+  clip-path: polygon(0 2px, 100% 20%, 100% 80%, 0 94px);
+}
+
+#toggle-btn:hover {
+  svg {
+    fill: var(--second-color);
+    transform: scale(1.2);
+  }
+}
+
+#SideBold {
+  /*untuk judul di Navbar */
+  font-weight: bold;
+}
+
+#sidebar-btn .logo {
+  font-family: Tahoma;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#Back {
+  font-weight: bold;
+}
+
+#size {
+  font-size: 1em;
+}
+
+#Back {
+  margin: 0 auto 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 100px;
+  padding: 30px auto 30px;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#Back:hover {
+  background-color: #013880;
+  color: white;
+}
+
+#bold {
+  font-weight: bold;
+}
+
+#toggle-btn:hover {
+  fill: red;
+  transform: scale(1.2);
+}
+
+#home {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  margin: 20px;
+  border: black 1px solid;
+  padding: 20px;
+  font-family: Tahoma;
+}
+
+#home h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.title {
+  padding-top: 20px;
+  display: inline-block;
+  /* border: #000 1px solid; */
+}
+
+#home ul {
+  list-style-type: circle;
+  padding-left: 40px;
+  font-size: 1.05em;
+}
+
+#home p {
+  font-size: 1.05em;
+}
+
+#pesan {
+  font-style: italic;
+}
+
+#AnakKP {
+  text-align: right;
+}
