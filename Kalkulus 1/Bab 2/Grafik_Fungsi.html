@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">2.3</section>
+        <span class="judul-bab">Grafik Fungsi</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 2.3.1.</div>
+        <div class="dfn-content">
+          Grafik suatu fungsi $f(x)$ pada bidang-$xy$ didefinisikan sebagai
+          himpunan semua titik koordinat $(x,y)$ yang memenuhi persamaan
+          $y=f(x)$.
+        </div>
+      </div>
+
+      Di bawah ini adalah tabel berisi sifat translasi atau pergeseran grafik
+      fungsi.
+      <table
+        border="1"
+        cellspacing="0"
+        cellpadding="10"
+        style="border-collapse: collapse; width: 100%; text-align: left"
+      >
+        <thead>
+          <tr>
+            <th style="width: 30%">
+              <strong>Operasi pada \( y = f(x) \)</strong>
+            </th>
+            <th style="width: 20%"><strong>Persamaan Baru</strong></th>
+            <th style="width: 50%"><strong>Efek Geometrik</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Penambahan dengan konstanta \( c &gt; 0 \) pada \( f(x) \)</td>
+            <td>\( y = f(x) + c \)</td>
+            <td>
+              Grafik \( y = f(x) \) bergeser ke atas sejauh \( c \) satuan
+            </td>
+          </tr>
+          <tr>
+            <td>Pengurangan dengan konstanta \( c &gt; 0 \) pada \( f(x) \)</td>
+            <td>\( y = f(x) - c \)</td>
+            <td>
+              Grafik \( y = f(x) \) bergeser ke bawah sejauh \( c \) satuan
+            </td>
+          </tr>
+          <tr>
+            <td>Penambahan dengan konstanta \( c &gt; 0 \) pada \( x \)</td>
+            <td>\( y = f(x + c) \)</td>
+            <td>
+              Grafik \( y = f(x) \) bergeser ke kiri sejauh \( c \) satuan
+            </td>
+          </tr>
+          <tr>
+            <td>Pengurangan dengan konstanta \( c &gt; 0 \) pada \( x \)</td>
+            <td>\( y = f(x - c) \)</td>
+            <td>
+              Grafik \( y = f(x) \) bergeser ke kanan sejauh \( c \) satuan
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      Berikut diuraikan sifat simetri grafik fungsi.
+      <ol class="itemaze arabic">
+        <li>
+          Grafik $y=f(x)$ dan $y=f(-x)$ adalah pencerminan satu sama lain
+          terhadap sumbu-$y$.
+        </li>
+        <li>
+          Grafik $y=f(x)$ dan $y=-f(x)$ adalah pencerminan satu sama lain
+          terhadap sumbu-$x$.
+        </li>
+      </ol>
+      Tidak semua grafik merepresentasikan fungsi. Untuk mengetahuinya, terdapat
+      $2$ cara yang bisa digunakan, yaitu:
+      <ol class="itemaze arabic">
+        <li>
+          Uji garis vertikal: Suatu grafik dalam bidang-$xy$ adalah grafik dari
+          $y=f(x)$ untuk suatu fungsi $f$ apabila tidak ada garis vertikal yang
+          memotong grafik di lebih dari satu titik.
+        </li>
+        <li>
+          Uji garis horizontal: Suatu grafik dalam bidang-$xy$ adalah grafik
+          dari $x=g(y)$ untuk suatu fungsi $g$ apabila tidak ada garis
+          horizontal yang memotong grafik di lebih dari satu titik.
+        </li>
+      </ol>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Gambarkan sketsa grafik dari fungsi $$\frac{x+x^3}{x}.$$
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Misalkan $f(x)=\displaystyle \frac{x+x^3}{x}$. Perhatikan bahwa
+              $f$ terdefinisi jika $x\neq0$.
+              $$f(x)=\frac{x+x^3}{x}=\frac{x(1+x^2)}{x}=x^2+1$$ Terlihat bahwa
+              $f$ memiliki kurva dasar $y=x^2$ yang digeser $1$ satuan ke atas
+              dan $x\neq0$ sehingga grafiknya adalah sebagai berikut.
+              <img src="img/2.3.1.svg" alt="Gambar 2.3.1" class="illust" />
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2</div>
+        <div class="dfn-content">
+          Sketsa di bawah ini merupakan grafik dari...
+          <img
+            src="img/2.3.2.svg"
+            alt="Gambar 2.3.2"
+            class="illust illust-outer"
+          />
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Grafik memiliki persamaan yang berbeda untuk
+              $x\in(-\infty,-2]\cup[0,+\infty)$ dan $x\in(-2,0)$. Pada
+              $x\in(-\infty,-2]\cup[0,+\infty)$, grafik memiliki kurva dasar
+              $y=x^2$ yang kemudian digeser ke bawah sejauh $1$ satuan dan
+              digeser ke kiri sejauh $1$ satuan. Dengan demikian, persamaan
+              untuk grafik pada interval $(-\infty,-2]\cup[0,+\infty)$ adalah
+              $$y=(x+1)^2-1=x^2+2x+1-1=x^2+2x\dots(i)$$ Adapun pada $x\in(-2,0)$
+              grafik memiliki persamaan yang merupakan pencerminan terhadap
+              sumbu-$x$ dari persamaan $(i)$, yaitu: $$y=-(x^2+2x)\dots(ii)$$
+              Dengan demikian, sketsa grafik tersebut apabila dituliskan dalam
+              bentuk persamaan adalah gabungan dari persamaan $(i)$ dan $(ii)$.
+              $$y=f(x)=\begin{cases} x^2+2x,\quad
+              x\in(-\infty,-2]\cup[0,+\infty)\\ -(x^2+2x),\quad x\in(-2,0)
+              \end{cases}=|x^2+2x|.$$
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <!-- <div class="evaluation-label"><span>ETS 2023/2024</span></div> -->
+            <div class="soal-latihan">
+              Sketsa di bawah ini merupakan grafik dari...
+              <img src="img/2.3.3.svg" alt="Gambar 2.3.3" class="illust" />
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Perhatikan bahwa grafik tersebut merupakan grafik berikut yang
+                digeser sejauh $2$ satuan ke atas.
+                <img src="img/2.3.4.svg" alt="Gambar 2.3.4" class="illust" />
+                Misalkan sketsa di atas merupakan grafik dari $y=f(x)$, grafik
+                yang kita cari memiliki persamaan $y=f(x)+2$. Oleh karena itu,
+                akan dicari terlebih dahulu $f(x)$. Asumsikan $f$ menyinggung
+                sumbu-$x$ di titik $(1,0)$ dan $(3,0)$. Grafik $f$ memiliki
+                persamaan yang berbeda untuk $x\in(-\infty,1]\cup[3,+\infty)$
+                dan $x\in(1,3)$. Pada $x\in(-\infty,1]\cup[3,+\infty)$, $f$
+                memiliki kurva dasar $y=x^2$ yang digeser sejauh $1$ satuan ke
+                bawah dan $2$ satuan ke kanan ($y=(x-2)^2-1$), kemudian
+                dicerminkan terhadap sumbu-$x$ sehingga
+                $y=-((x-2)^2-1)=1-(x-2)^2\dots(i)$. Adapun pada $x\in(1,3)$,
+                grafik $f$ memiliki persamaan yang merupakan pencerminan
+                terhadap sumbu-$y$ dari $(i)$, yaitu
+                $y=-(1-(x-2)^2)=(x-2)^2-1\dots(ii)$. Dengan demikian, sketsa
+                grafik $f$ tersebut apabila dituliskan dalam bentuk persamaan
+                adalah gabungan dari persamaan $(i)$ dan $(ii)$.
+                $$f(x)=\begin{cases} 1-(x-2)^2,\quad
+                x\in(-\infty,1]\cup[3,+\infty)\\ -(1-(x-2)^2),\quad x\in(1,3)
+                \end{cases}=|1-(x-2)^2|.$$ Ingat bahwa hasil dari tanda mutlak
+                selalu tak negatif sedangkan pada gambar, grafik berada di bawah
+                sumbu-$x$ yang berarti nilainya tak pernah positif. Oleh karena
+                itu, dapat disimpulkan bahwa $f(x)=-|1-(x-2)^2|$ dan grafik yang
+                ditanyakan memiliki persamaan $$y=f(x)+2=-|1-(x-2)^2|+2.$$
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Diberikan fungsi $f(x)=x^2-2x+1$. Sketsa grafik $f(x)$.
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Perhatikan bahwa $$f(x)=x^2-2x+1=(x-1)^2.$$ Dapat disimpulkan
+                bahwa grafik $f$ memiliki kurva dasar $y=x^2$ yang digeser
+                sejauh $1$ satuan ke kanan sehingga grafiknya, yaitu:
+                <img src="img/2.3.5.svg" alt="Gambar 2.3.5" class="illust" />
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Diberikan $g(x)=\sqrt{1-x}$, $f(x)=x^2+4$, dan $h(x)=(f\circ
+              g)(x)$. Sketsa fungsi $h(x)$.
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Pertama-tama, akan dicari $h(x)$ terlebih dahulu. $$h(x)=(f\circ
+                g)(x)=f(g(x))=f(\sqrt{1-x}=(\sqrt{1-x})^2+4=1-x+4=3-x=-(x-3)$$
+                Terlihat bahwa $h(x)$ memiliki bentuk dasar garis lurus $y=x$
+                yang digeser sejauh $3$ satuan ke kanan yang kemudian
+                dicerminkan terhadap sumbu-$x$. Dengan demikian, berikut adalah
+                grafik dari $h(x)$.
+                <img src="img/2.3.6.svg" alt="Gambar 2.3.6" class="illust" />
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Check Answer</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("\\{2/5,2\\}"),
+        ce.parse(
+          "\\left\\lbrace x\\leq\\frac14\\right\\rbrace\\cup\\left\\lbrace x\\geq\\frac52\\right\\rbrace"
+        ), // Jawaban benar untuk pertanyaan 2
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          if (
+            index == 0 &&
+            (studentInput.isSame(ce.parse("\\frac25,2")) ||
+              studentInput.isSame(ce.parse("2,\\frac25")))
+          ) {
+            studentInput = expectedAnswer;
+          }
+
+          if (
+            index == 1 &&
+            (answerElement.value ===
+              "\\left(-\\infty,\\frac14\\right\\rbrack\\cup\\left\\lbrack\\frac52,+\\infty\\right)" ||
+              answerElement.value ===
+                "\\left(-\\infty,\\frac14\\right\\rbrack\\cup\\left\\lbrack\\frac52,\\infty\\right)")
+          ) {
+            studentInput = expectedAnswer;
+          }
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

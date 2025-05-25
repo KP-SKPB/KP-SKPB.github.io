@@ -1,3 +1,10 @@
+//title update
+document.title = location.pathname
+  .substring(location.pathname.lastIndexOf("/") + 1)
+  .replace(".html", "");
+
+document.title = document.title.replace(/_/g, " ");
+
 // Dark mode
 const darkModeToggle = document.getElementById("darkmode-toggle");
 
@@ -63,10 +70,18 @@ window.onscroll = function () {
 document
   .querySelector(".progress-container")
   .addEventListener("click", (event) => {
-    let x = event.clientX; // Posisi X relatif terhadap viewport
-    let y = event.clientY; // Posisi Y relatif terhadap viewport
+    let progressBar = document.querySelector(".progress-container");
+    let documentHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
 
-    alert("Kursor diklik pada posisi: X = ${x}, Y = ${y}");
+    let clickY = event.clientY - progressBar.getBoundingClientRect().top;
+    let progressHeight = progressBar.clientHeight;
+    let scrollTo = (clickY / progressHeight) * documentHeight;
+
+    window.scrollTo({
+      top: scrollTo,
+      behavior: "smooth",
+    });
   });
 
 //hidden jawaban latihan

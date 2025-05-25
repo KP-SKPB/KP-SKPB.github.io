@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation*}",
+              right: "\\end{equation*}",
+              display: true,
+            },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">1.5</section>
+        <span class="judul-bab">Persamaan Lingkaran dan Parabola</span>
+      </h2>
+      <h3 style="color: navy">Lingkaran</h3>
+      <ul class="itemaze">
+        <li>
+          Bentuk baku persamaan lingkaran: $$\boxed{(x-x_0)^2+(y-y_0)^2=r^2}$$
+          dimana $(x_0,y_0)$ pusat lingkaran dan $r$ jari-jari lingkaran.
+          <img
+            src="img/1.5.1.svg"
+            alt="Gambar 1.5.1"
+            class="illust illust-outer"
+          />
+        </li>
+        <li>
+          Bentuk lain persamaan lingkaran: $$\boxed{Ax^2+Ay^2+Dx+Ey+F=0}$$
+          dimana $A,D,E$ dan $F$ konstanta, serta $A\neq 0$.
+        </li>
+        <li>
+          Kasus degenerasi dari lingkaran: $$(x-x_0)^2+(y-y_0)^2=k$$ bergantung
+          pada nilai $k$.
+          <ol class="itemaze arabic">
+            <li>
+              $k>0$: persamaan lingkaran dengan pusat $(x_0,y_0)$ dan jari-jari
+              $\sqrt{k}$.
+            </li>
+            <li>$k=0$: titik tunggal $(x_0,y_0)$.</li>
+            <li>
+              $k&lt;0$: tidak memiliki penyelesaian real sehingga bukan
+              lingkaran.
+            </li>
+          </ol>
+          <div class="dfn-box teorema">
+            <div class="dfn-header">Teorema 1.5.1.</div>
+            <div class="dfn-content">
+              Suatu persamaan dalam bentuk $$Ax^2+Ay^2+Dx+Ey+F=0$$ dengan $A\neq
+              0$, menyajikan suatu lingkaran, atau suatu titik, atau tidak
+              mempunyai grafik.
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h3 style="color: navy">Parabola</h3>
+
+      <ul class="itemaze">
+        <li>
+          Persamaan kuadrat dalam $x$: $$\boxed{y=ax^2+bx+c}$$ dimana $a\neq0$
+          dan grafiknya disebut parabola. Bentuk parabola bergantung pada nilai
+          $a$.
+          <ol class="itemaze arabic">
+            <li>
+              $a>0:$
+              <img
+                src="img/1.5.2.svg"
+                alt="Gambar 1.5.2"
+                class="illust illust-outer"
+                style="width: 20%"
+              />
+            </li>
+            <li>
+              $a&lt;0:$
+              <img
+                src="img/1.5.3.svg"
+                alt="Gambar 1.5.3"
+                class="illust illust-outer"
+                style="width: 20%"
+              />
+            </li>
+          </ol>
+          Adapun garis simetri parabola berada pada suatu titik yang disebut
+          puncak, yaitu: $$x=-\frac{b}{2a}$$
+        </li>
+        <li>
+          Persamaan kuadrat dalam $y$: $$\boxed{x=ay^2+by+c}$$ dimana $a\neq0$
+          dan grafiknya disebut parabola. Bentuk parabola bergantung pada nilai
+          $a$.
+          <ol class="itemaze arabic">
+            <li>
+              $a>0:$
+              <img
+                src="img/1.5.4.svg"
+                alt="Gambar 1.5.4"
+                class="illust illust-outer"
+              />
+            </li>
+            <li>
+              $a&lt;0:$
+              <img
+                src="img/1.5.5.svg"
+                alt="Gambar 1.5.5"
+                class="illust illust-outer"
+              />
+            </li>
+          </ol>
+          Adapun garis simetri parabola berada pada suatu titik yang disebut
+          puncak, yaitu: $$x=-\frac{b}{2a}$$
+        </li>
+      </ul>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Dapatkan persamaan baku lingkaran yang memenuhi syarat berikut.
+          <ol class="itemaze alpha">
+            <li>Pusat $(-4,8)$; lingkaran menyinggung sumbu-$x$.</li>
+            <li>Pusat $(-3,-4)$; lingkaran melalui asal $O(0,0)$.</li>
+          </ol>
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              <ol class="itemaze alpha">
+                <li>
+                  Lingkaran dengan pusat $(-4,8)$ dan menyinggung sumbu-$x$
+                  salah satu titik yang dilaluinya terdapat pada sumbu-$x$
+                  sehingga $y$-nya bernilai $0$ dan berada pada garis vertikal
+                  yang sama dengan pusat lingkaran sehingga $x$-nya sama dengan
+                  pada titik pusat, yaitu $x=-4$. Dengan demikian, titik pada
+                  sumbu-$x$ yang dilalui lingkaran tersebut adalah $(-4,0)$ dan
+                  jari-jari dari lingkaran tersebut dapat diperoleh dengan
+                  menghitung jarak antara pusat lingkaran dengan titik $(-4,0)$.
+                  Karena kedua titik tersebut berada pada garis vertikal yang
+                  sama, jarak antara keduanya didapatkan cukup dengan menghitung
+                  selisih $y$-nya. Misalkan $y_1=8$ dan $y_2=0$ sehingga
+                  jaraknya adalah $|y_1-y_2|=|8-0|=|8|=8$. Oleh karena itu,
+                  lingkaran tersebut memiliki titik pusat $(-4,8)$ dengan
+                  $x_0=-4$ dan $y_0=-4$, serta jari-jari $r=8$ sehingga
+                  persamaan baku lingkaran tersebut adalah \begin{align*}
+                  (x-x_0)^2+(y-y_0)^2&=r^2\\ (x-(-4))^2+(y-8)^2&=8^2\\
+                  (x+4)^2+(y-8)^2&=64. \end{align*}
+                </li>
+                <li>
+                  Lingkaran dengan titik pusat $(-3,-4)$ dan melewati titik asal
+                  $O(0,0)$ memiliki jari-jari jarak antara kedua titik tersebut.
+                  Misalkan $x_1=-3$, $y_1=-4$ dan $x_2=y_2=0$. \begin{align*}
+                  d&=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\
+                  &=\sqrt{(0-(-3))^2+(0-(-4))^2}\\ &=\sqrt{3^2+4^2}\\
+                  &=\sqrt{9+16}\\ &=\sqrt{25} &=5 \end{align*} Dengan demikian,
+                  lingkaran tersebut memiliki titik pusat $(-3,-4)$ dengan
+                  $x_0=-3$ dan $y_0=-4$ dan jari-jari $r=5$ sehingga
+                  persamaannya adalah \begin{align*} (x-x_0)^2+(y-y_0)^2&=r^2\\
+                  (x-(-3))^2+(y-(-4))^2&=5^2\\ (x+3)^2+(y+4)^2&=25. \end{align*}
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2</div>
+        <div class="dfn-content">
+          Dapatkan persamaan dari:
+          <ol class="itemaze alpha">
+            <li>Setengah bagian atas dari $x^2+y^2+2x-4y+1=0$.</li>
+            <li>Setengah bagian kanan dari parabola $y=3-x^2$.</li>
+          </ol>
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              <ol class="itemaze alpha">
+                <li>
+                  Pertama-tama, tuliskan persamaan lingkaran dalam bentuk
+                  persamaan bakunya. Perhatikan bahwa \begin{align*}
+                  x^2+y^2+2x-4y+1&=0\\ x^2+2x+y^2-4y+1&=0\\
+                  (x^2+2x+1)-1+(y^2-4y+4)-4+1&=0\\ (x+1)^2+(y-2)^2-4&=0\\
+                  (x-(-1))^2+(y-2)^2&=4\\ (x-(-1))^2+(y-2)^2&=2^2 \end{align*}
+                  Terlihat bahwa lingkaran memiliki pusat $(-1,2)$ dan jari-jari
+                  $r=2$. Untuk mendapatkan setengah bagian atas dari lingkaran,
+                  persamaan kemudian dituliskan sebagai $y$ dalam $x$.
+                  \begin{align*} (x-(-1))^2+(y-2)^2&=4\\ (y-2)^2&=4-(x-(-1))^2\\
+                  y-2&=\pm \sqrt{4-(x-(-1))^2} \end{align*} Bagian lingkaran
+                  yang dicari adalah bagian atas sehingga haruslah $y\geq2$.
+                  Dengan demikian, persamaan lingkarannya adalah \begin{align*}
+                  y-2&=\sqrt{4-(x-(-1))^2}\\ y&=2+\sqrt{4-(x+1)^2}. \end{align*}
+                </li>
+                <li>
+                  Untuk mendapatkan bagian kanan dari parabola, persamaan harus
+                  dituliskan sebagai $x$ dalam $y$. \begin{align*} y&=3-x^2\\
+                  x^2&=3-y\\ x&=\pm \sqrt{3-y} \end{align*} Bagian parabola yang
+                  dicari adalah bagian kanan sehingga $x$ harus bernilai lebih
+                  besar atau sama dengan puncaknya. Dari soal, diketahui $a=-1$
+                  dan $b=0$ sehingga puncak dari parabola adalah terletak pada
+                  $x=-\frac{b}{2a}=-\frac{0}{2(-1)}=0$. Dengan demikian,
+                  persamaan dari bagian kanan parabola adalah $$x=\sqrt{3-y}.$$
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>Kuis 2016</span></div>
+            <div class="soal-latihan">
+              Dapatkan pusat dan jari-jari lingkaran dengan persamaan
+              $x^2+y^2+2x=9$.
+            </div>
+            <br />
+            <div class="answer-container" style="--hint: --H1">
+              Pusat:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+              , Jari-jari:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+              <div class="hint">
+                <button class="hint-button">
+                  <svg viewBox="0 0 500 500" width="30" height="30">
+                    <g>
+                      <path
+                        class="path_1"
+                        style="fill: #ffffff00"
+                        d="M352.583,211.919c0-67.689-54.588-122.629-122.143-123.197
+                 c-67.974-0.572-124.261,55.222-124.26,123.198c0,33.247,13.171,63.416,34.579,85.577c25.593,26.494,40.024,61.808,40.024,98.645
+                 v13.156h97.197v-13.15c0-36.544,13.862-71.932,39.432-98.042C339.169,275.889,352.583,245.472,352.583,211.919z"
+                      />
+                      <rect
+                        class="path_2"
+                        x="180.783"
+                        y="409.297"
+                        style="fill: #ffffff00"
+                        width="97.197"
+                        height="57.125"
+                      />
+                      <path
+                        class="path_3"
+                        style="fill: #ffffff00"
+                        d="M253.254,466.422c0,14.126-11.452,25.578-25.578,25.578s-25.578-11.452-25.578-25.578H253.254z"
+                      />
+                      <g>
+                        <path
+                          d="M230.523,78.722c-35.583-0.342-69.221,13.48-94.756,38.802C110.239,142.84,96.18,176.363,96.18,211.92
+                   c0,34.708,13.278,67.567,37.387,92.524c24,24.844,37.216,57.409,37.216,91.697v13.156v57.125c0,5.523,4.477,10,10,10h12.756
+                   C197.871,491.185,211.53,502,227.676,502s29.805-10.815,34.138-25.578h16.166c5.523,0,10-4.477,10-10v-57.125v-13.15
+                   c0-34.627,12.99-66.961,36.576-91.044c24.522-25.04,38.027-58.133,38.027-93.185c0-35.38-13.723-68.697-38.64-93.812
+                   C299.041,93.006,265.864,79.02,230.523,78.722z M227.676,482c-4.787,0-9.076-2.17-11.936-5.578h23.872
+                   C236.752,479.83,232.463,482,227.676,482z M267.98,456.422h-14.726h-51.156h-11.315v-37.125h77.197V456.422z M310.267,291.109
+                   c-27.269,27.844-42.287,65.148-42.287,105.039v3.15h-77.197v-3.156c0-39.5-15.211-77-42.832-105.593
+                   c-20.488-21.208-31.771-49.133-31.771-78.629c0-30.183,11.958-58.663,33.67-80.194c21.72-21.538,50.338-33.226,80.505-33.005
+                   c61.882,0.521,112.228,51.301,112.228,113.197C342.583,241.707,331.106,269.83,310.267,291.109z"
+                        />
+                        <path
+                          d="M229.381,55.584c5.523,0,10-4.477,10-10V10c0-5.523-4.477-10-10-10s-10,4.477-10,10v35.584
+                   C219.381,51.107,223.858,55.584,229.381,55.584z"
+                        />
+                        <path
+                          d="M85.246,29.896c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968
+                   l-7.108-9.783C91.073,3.89,84.82,2.9,80.351,6.146c-4.468,3.247-5.458,9.5-2.212,13.968L85.246,29.896z"
+                        />
+                        <path
+                          d="M124.729,84.239c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.246,5.458-9.5,2.212-13.968
+                   l-19.113-26.308c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.246-5.458,9.5-2.212,13.968L124.729,84.239z"
+                        />
+                        <path
+                          d="M37.031,160.15l33.843,10.996c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   c1.707-5.253-1.168-10.894-6.42-12.601l-33.843-10.996c-5.251-1.705-10.894,1.168-12.601,6.42
+                   C28.904,152.802,31.778,158.443,37.031,160.15z"
+                        />
+                        <path
+                          d="M84.808,260.51c-1.707-5.253-7.346-8.126-12.601-6.42l-33.843,10.996c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l33.843-10.996C83.64,271.404,86.514,265.763,84.808,260.51
+                   z"
+                        />
+                        <path
+                          d="M102.626,391.668c-4.467-3.246-10.721-2.255-13.968,2.212l-8.903,12.253c-3.246,4.468-2.256,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.903-12.253C108.085,401.168,107.095,394.915,102.626,391.668z
+                   "
+                        />
+                        <path
+                          d="M134.544,347.736c-4.468-3.246-10.722-2.255-13.968,2.212l-8.845,12.175c-3.246,4.468-2.255,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.845-12.175C140.003,357.236,139.012,350.982,134.544,347.736z
+                   "
+                        />
+                        <path
+                          d="M338.347,336.895c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.247-5.458,9.5-2.212,13.968l20.916,28.789
+                   c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968L338.347,336.895z"
+                        />
+                        <path
+                          d="M426.045,260.984l-33.843-10.997c-5.252-1.705-10.894,1.168-12.601,6.42c-1.707,5.252,1.168,10.894,6.42,12.601
+                   l33.843,10.997c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   C434.172,268.333,431.298,262.691,426.045,260.984z"
+                        />
+                        <path
+                          d="M471.39,130.367c-1.706-5.252-7.347-8.127-12.601-6.42l-14.678,4.769c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l14.678-4.769
+                   C470.222,141.261,473.096,135.62,471.39,130.367z"
+                        />
+                        <path
+                          d="M387.777,167.536c1.024,0,2.065-0.159,3.092-0.492l25.994-8.446c5.252-1.707,8.127-7.348,6.42-12.601
+                   c-1.707-5.252-7.347-8.127-12.601-6.42l-25.994,8.446c-5.252,1.707-8.127,7.348-6.42,12.601
+                   C379.642,164.849,383.562,167.536,387.777,167.536z"
+                        />
+                        <path
+                          d="M320.89,83.916c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l20.916-28.789
+                   c3.246-4.468,2.255-10.722-2.212-13.968c-4.469-3.246-10.722-2.255-13.968,2.212l-20.916,28.789
+                   C315.431,74.416,316.422,80.669,320.89,83.916z"
+                        />
+                        <path
+                          d="M288.349,135.549c-11.289-8.76-24.609-14.981-38.521-17.992c-5.395-1.169-10.721,2.26-11.889,7.659
+                   c-1.168,5.398,2.261,10.721,7.659,11.889c11.007,2.382,21.55,7.308,30.491,14.245c1.823,1.415,3.981,2.1,6.124,2.1
+                   c2.984,0,5.937-1.33,7.907-3.87C293.505,145.217,292.712,138.935,288.349,135.549z"
+                        />
+                        <path
+                          d="M202.914,119.066c-41.096,11.729-69.797,49.799-69.797,92.579c0,5.523,4.477,10,10,10s10-4.477,10-10
+                   c0-33.895,22.735-64.056,55.287-73.346c5.311-1.516,8.387-7.05,6.872-12.361C213.758,120.628,208.224,117.55,202.914,119.066z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+                <dialog class="hint-content" style="--hint: --H1">
+                  Ubah bentuk persamaan lingkaran menjadi bentuk baku/standar
+                </dialog>
+              </div>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Untuk mendapatkan pusat dan jari-jari dari lingkaran, persamaan
+                harus diubah ke dalam bentuk persamaan bakunya. Perhatikan bahwa
+                \begin{align*} x^2+y^2+2x&=9\\ x^2+2x+y^2&=9\\
+                (x^2+2x+1)-1+y^2&=9\\ (x+1)^2+y^2&=8\\
+                (x-(-1))^2+(y-0)^2&=(\sqrt{8})^2. \end{align*} Oleh karena itu,
+                lingkaran memiliki pusat $(-1,0)$ dan jari-jari
+                $r=\sqrt{8}=2\sqrt{2}$.
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="soal-latihan">
+              Dapatkan persamaan baku lingkaran yang memenuhi syarat berikut.
+              <ol class="itemaze alpha">
+                <li>
+                  Pusat $(5,8)$; lingkaran menyinggung sumbu-$y$.
+                  <br />
+                  <br />
+                  <div class="answer-container" style="--hint: --H2">
+                    Jawab:
+                    <math-field
+                      class="answer"
+                      style="--math-field: --M2"
+                    ></math-field>
+                  </div>
+                </li>
+                <li>
+                  Pusat $(4,-5)$; lingkaran melalui $(1,3)$.
+                  <br />
+                  <br />
+                  <div class="answer-container" style="--hint: --H3">
+                    Jawab:
+                    <math-field
+                      class="answer"
+                      style="--math-field: --M3"
+                    ></math-field>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                <ol class="itemaze alpha">
+                  <li>
+                    Lingkaran dengan pusat $(5,8)$ dan menyinggung sumbu-$y$
+                    salah satu titik yang dilaluinya terdapat pada sumbu-$y$
+                    sehingga $x$-nya bernilai $0$ dan berada pada garis
+                    horizontal yang sama dengan pusat lingkaran sehingga $y$-nya
+                    sama dengan pada titik pusat, yaitu $y=8$. Dengan demikian,
+                    titik pada sumbu-$y$ yang dilalui lingkaran tersebut adalah
+                    $(0,8)$ dan jari-jari dari lingkaran tersebut dapat
+                    diperoleh dengan menghitung jarak antara pusat lingkaran
+                    dengan titik $(0,8)$. Karena kedua titik tersebut berada
+                    pada garis horizontal yang sama, jarak antara keduanya
+                    didapatkan cukup dengan menghitung selisih $x$-nya. Misalkan
+                    $x_1=5$ dan $x_2=0$ sehingga jaraknya adalah
+                    $|x_1-x_2|=|5-0|=|5|=5$. Oleh karena itu, lingkaran tersebut
+                    memiliki titik pusat $(5,8)$ dengan $x_0=5$ dan $y_0=8$,
+                    serta jari-jari $r=5$ sehingga persamaan baku lingkaran
+                    tersebut adalah \begin{align*} (x-x_0)^2+(y-y_0)^2&=r^2\\
+                    (x-5)^2+(y-8)^2&=5^2\\ (x-5)^2+(y-8)^2&=25. \end{align*}
+                  </li>
+                  <li>
+                    Lingkaran dengan titik pusat $(4,-5)$ dan melewati titik
+                    $(1,3)$ memiliki jari-jari jarak antara kedua titik
+                    tersebut. Misalkan $x_1=4$, $y_1=-5$, $x_2=1$, dan $y_2=3$.
+                    \begin{align*} d&=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\
+                    &=\sqrt{(1-4)^2+(3-(-5))^2}\\ &=\sqrt{(-3)^2+(3+5)^2}\\
+                    &=\sqrt{9+8^2}\\ &=\sqrt{9+64}\\ &=\sqrt{73} \end{align*}
+                    Dengan demikian, lingkaran tersebut memiliki titik pusat
+                    $(4,-5)$ dengan $x_0=4$ dan $y_0=-5$ dan jari-jari
+                    $r=\sqrt{73}$ sehingga persamaannya adalah \begin{align*}
+                    (x-x_0)^2+(y-y_0)^2&=r^2\\
+                    (x-4)^2+(y-(-5))^2&=(\sqrt{73})^2\\ (x-4)^2+(y+5)^2&=73.
+                    \end{align*}
+                  </li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="soal-latihan">
+              Dapatkan persamaan dari:
+              <ol class="itemaze alpha">
+                <li>
+                  setengah bagian kiri dari $x^2+y^2-4x+3=0$.
+                  <br />
+                  <br />
+                  <div class="answer-container" style="--hint: --H4">
+                    Jawab:
+                    <math-field
+                      class="answer"
+                      style="--math-field: --M4"
+                    ></math-field>
+                  </div>
+                </li>
+                <li>
+                  setengah bagian bawah dari parabola $x=y^2-y-2$.
+                  <br />
+                  <br />
+                  <div class="answer-container" style="--hint: --H5">
+                    Jawab:
+                    <math-field
+                      class="answer"
+                      style="--math-field: --M5"
+                    ></math-field>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                <ol class="itemaze alpha">
+                  <li>
+                    Pertama-tama, tuliskan persamaan lingkaran dalam bentuk
+                    persamaan bakunya. Perhatikan bahwa \begin{align*}
+                    x^2+y^2-4x+3&=0\\ x^2-4x+y^2+3&=0\\ (x^2-4x+4)-4+y^2+3&=0\\
+                    (x-2)^2+y^2-1&=0\\ (x-2)^2+y^2&=1\\ (x-2)^2+(y-0)^2&=1
+                    \end{align*} Terlihat bahwa lingkaran memiliki pusat $(2,0)$
+                    dan jari-jari $r=1$. Untuk mendapatkan bagian kiri dari
+                    lingkaran, persamaan kemudian dituliskan sebagai $x$ dalam
+                    $y$. \begin{align*} (x-2)^2+y^2&=1\\ (x-2)^2&=1-y^2\\
+                    x-2&=\pm \sqrt{1-y^2} \end{align*} Bagian lingkaran yang
+                    dicari adalah bagian kiri sehingga haruslah $x\leq2$. Dengan
+                    demikian, persamaan lingkarannya adalah \begin{align*}
+                    x-2&=-\sqrt{1-y^2}\\ x&=2-\sqrt{1-y^2}. \end{align*}
+                  </li>
+                  <li>
+                    Untuk mendapatkan bagian bawah dari parabola, persamaan
+                    harus dituliskan sebagai $y$ dalam $x$. \begin{align*}
+                    x&=y^2-y-2\\ x&=(y^2-y+1/4)-1/4-2\\ x&=(y-1/2)^2-9/4\\
+                    (y-1/2)^2&=x+9/4\\ y-1/2&=\pm \sqrt{x+9/4} \end{align*}
+                    Bagian parabola yang dicari adalah bagian bawah sehingga $y$
+                    harus bernilai lebih kecil atau sama dengan puncaknya. Dari
+                    soal, diketahui $a=1$ dan $b=-1$ sehingga puncak dari
+                    parabola adalah terletak pada
+                    $x=-\frac{b}{2a}=-\frac{-1}{2(1)}=\frac{1}{2}$. Dengan
+                    demikian, persamaan dari bagian kanan parabola adalah
+                    $$y-1/2=-\sqrt{x+9/4}\implies y=1/2-\sqrt{x+9/4}.$$
+                  </li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("\\left(-1,0\\right)"),
+        ce.parse("\\sqrt{8}").N(),
+        ce.parse("(x-5)^2+(y-8)^2=25"),
+        ce.parse("(x-4)^2+(y+5)^2=73"),
+        ce.parse("x=2-\\sqrt{1-y^2}"),
+        ce.parse("y=1/2-\\sqrt{x+9/4}"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -4,6 +4,10 @@
   font-family: HYWenHei;
   src: url(zhcn.ttf);
 }
+@font-face {
+  font-family: KurierCondHeavy;
+  src: url(KurierCondHeavy-Regular.otf);
+}
 
 :root {
   interpolate-size: allow-keywords;
@@ -41,6 +45,10 @@
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.katex {
+  font-size: 20px !important;
 }
 
 * {
@@ -103,7 +111,7 @@ main p {
   max-height: 100vh;
   overflow: hidden;
   text-wrap: nowrap;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
   overflow-y: auto;
   z-index: 10;
   anchor-name: --open-close;
@@ -271,12 +279,29 @@ main p {
   }
 }
 
-.no-subbab {
-  display: inline-block;
+.judul-bab-container::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color);
 }
 
-.subbab-container {
-  padding: 10px 0 20px 0;
+.judul-bab-container {
+  margin-bottom: 0.3em;
+}
+
+.judul-bab {
+  font-family: KurierCondHeavy;
+}
+
+.no-subbab {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  padding: 0.3em;
+  font-size: 2em;
+  font-family: KurierCondHeavy;
+  display: inline-block;
 }
 
 .dfn-box {
@@ -530,6 +555,11 @@ math-field {
   anchor-name: var(--hint);
 }
 
+.soal-latihan {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .hint {
   border: 2px solid var(--second-color);
   margin-left: -0.1em;
@@ -643,8 +673,9 @@ details.jawaban-latihan::details-content {
 }
 
 .illust-outer {
-  width: 50%;
+  width: 30%;
   background-color: white;
+  padding: 10px;
 }
 
 .illust-table {
@@ -858,6 +889,7 @@ header .navbar ul li a:hover {
   }
   header .fa-bars {
     font-size: larger;
+    color: var(--sidebar-text-1);
     margin-left: 15px;
   }
   .progress-container {

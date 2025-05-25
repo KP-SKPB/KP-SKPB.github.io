@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">2.2</section>
+        <span class="judul-bab">Operasi pada Fungsi</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 2.2.1.</div>
+        <div class="dfn-content">
+          Untuk fungsi $f$ dan $g$, operasi $f+g$, $f-g$, $f.g$, dan $f/g$
+          didefinisikan dengan \begin{align*} (f+g)(x)&=f(x)+g(x),\\
+          (f-g)(x)&=f(x)-g(x),\\ (f.g)(x)&=f(x).g(x),\text{ dan}\\
+          (f/g)(x)&=\frac{f(x)}{g(x)} \text{ dengan } g(x)\neq 0.\\ \end{align*}
+          Domain fungsi-fungsi $f+g$, $f-g$, dan $f.g$ didefinisikan sebagai
+          irisan dari domain $f$ dan $g$, atau
+          $$\mathcal{D}(f+g)=\mathcal{D}(f-g)=\mathcal{D}(f.g)=\mathcal{D}(f)\cap\mathcal{D}(g).$$
+          Sedangkan domain untuk $f/g$ adalah irisan domain $f$ dan $g$ kecuali
+          nilai $x$ yang menyebabkan $g(x)=0$, atau bisa dituliskan
+          $$\mathcal{D}(f/g)=(\mathcal{D}(f)\cap\mathcal{D}(g))\backslash
+          \{x|g(x)=0\}$$
+        </div>
+      </div>
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 2.2.2.</div>
+        <div class="dfn-content">
+          Komposisi fungsi $f$ dengan fungsi $g$ , ditulis $f\circ g$, adalah
+          sebuah fungsi yang didefinisikan dengan $$(f\circ g)(x)=f(g(x)).$$
+          Domain dari $f\circ g$ terdiri dari semua $x$ dalam domain $g(x)$
+          dimana $g(x)$ dalam domain $f$, atau dapat dituliskan
+          $$\mathcal{D}(f\circ g)=\{x\in
+          \mathcal{D}(g)|g(x)\in\mathcal{D}(f)\}.$$
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Diberikan $f(x)=x^2$ dan $g(x)=\sqrt{x-1}$. Dapatkan rumus dari
+          $(f-g)(x)$, $(f/g)(x)$, dan $(g\circ f)(x)$ beserta domainnya.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Diketahui $f(x)=x^2$ dan $g(x)=\sqrt{x-1}$. Fungsi $f(x)$
+              terdefinisi untuk semua bilangan real dan $g(x)$ sebagai fungsi
+              yang dalam bentuk akar akan terdefinisi ketika ekspresi di dalam
+              akar bernilai tak negatif. \begin{align*} x-1\geq 0\\ x\geq1
+              \end{align*} Dengan demikian, diperoleh domain dari $f$ dan $g$
+              adalah sebagai berikut.
+              $$\mathcal{D}(f)=\{x|x\in\R\}=(-\infty,+\infty)$$
+              $$\mathcal{D}(g)=\{x|x\geq1,x\in\R\}=[1,+\infty)$$ Selanjutnya,
+              akan dicari $(f-g)(x)$ beserta domainnya.
+              $$(f-g)(x)=f(x)-g(x)=x^2-\sqrt{x-1}$$
+              $$\mathcal{D}(f-g)=\mathcal{D}(f)\cap\mathcal{D}(g)=\{x|x\geq1,x\in\R\}=[1,+\infty)$$
+              Untuk $(f/g)(x)$, berikut adalah fungsi serta domainnya.
+              $$(f/g)(x)=\frac{f(x)}{g(x)}=\frac{x^2}{\sqrt{x-1}}$$
+              \begin{align*}
+              \mathcal{D}(f/g)&=(\mathcal{D}(f)\cap\mathcal{D}(g))\backslash
+              \{x|g(x)=0\}\\ &=(\mathcal{D}(f)\cap\mathcal{D}(g))\backslash
+              \{x|\sqrt{x-1}=0\}\\
+              &=(\mathcal{D}(f)\cap\mathcal{D}(g))\backslash \{x|x-1=0\}\\
+              &=\{x|x\geq1,x\in\R\}\backslash \{x|x=1\}\\ &=\{x|x>1,x\in\R\}\\
+              &=(1,+\infty) \end{align*} Terakhir, fungsi dan domain dari
+              $(g\circ f)(x)$. $$(g\circ f)(x)=g(f(x))=g(x^2)=\sqrt{x^2-1}$$
+              Untuk mendapatkan domain dari $(g\circ f)(x)$, digunakan konsep
+              berikut. \begin{align*} \mathcal{D}(g\circ f)&=\{x\in
+              \mathcal{D}(f)|f(x)\in\mathcal{D}(g)\}\\ &=\{x\in\R|f(x)\geq1\}\\
+              &=\{x\in\R|x^2\geq1\}\\ &=\{x\in\R|x^2-1\geq0\}\\
+              &=\{x\in\R|(x+1)(x-1)\geq0\} \end{align*} Dari $(x+1)(x-1)\geq0$,
+              diperoleh $2$ titik pemisah, yaitu $x=-1$ dan $x=1$. Dengan uji
+              titik pada garis bilangan, diketahui interval yang menghasilkan
+              nilai $(x+1)(x-1)\geq0$ adalah $(-\infty,-1]$ dan $[1,+\infty)$.
+              Domain $g\circ f$ adalah $$\mathcal{D}(g\circ
+              f)=\{x\in\R|x\leq-1\cup x\geq 1\}=\{x|x\leq-1\cup x\geq
+              1,x\in\R\}=(-\infty,-1]\cup[1,+\infty).$$
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2 (ETS 2021)</div>
+        <div class="dfn-content">
+          Diberikan suatu fungsi $f(x)=\sqrt{2x-4}$ dan $f(g(x))=2x-3$.
+          <ol class="itemaze alpha">
+            <li>Tentukan fungsi $g(x)$</li>
+            <li>Dapatkan domain dan range dari $f(g(x))$</li>
+          </ol>
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              <ol class="itemaze alpha">
+                <li>
+                  Diketahui fungsi $f(x)=\sqrt{2x-4}$ dan $f(g(x))=2x-3$. Akan
+                  dicari fungsi $g(x)$. \begin{align*} f(g(x))&=2x-3\\
+                  \sqrt{2g(x)-4}&=2x-3\\ 2g(x)-4&=(2x-3)^2\\
+                  2g(x)&=4x^2-12x+9+4\\ g(x)&=\frac{4x^2-12x+13}{2} \end{align*}
+                </li>
+                <li>
+                  Untuk mendapatkan domain $f(g(x))$, perlu diketahui terlebih
+                  dahulu domain dari fungsi $f$ dan $g$. Fungsi $g(x)$ sebagai
+                  polinomial terdefinisi untuk semua bilangan real dan $f(x)$
+                  sebagai fungsi yang mengandung bentuk akar akan terdefinisi
+                  ketika ekspresi di dalam akar bernilai tak negatif.
+                  \begin{align*} 2x-4\geq 0\\ 2x\geq4\\ x\geq2 \end{align*}
+                  Dengan demikian, domain dari fungsi $f$ dan $g$ adalah
+                  $$\mathcal{D}(f)=\{x|x\geq2,x\in\R\}=[2,+\infty)$$
+                  $$\mathcal{D}(g)=\{x|x\in\R\}=(-\infty,+\infty)$$ Domain dari
+                  $f(g(x))$ akan dicari dengan konsep berikut. \begin{align*}
+                  \mathcal{D}(f\circ g)&=\{x\in
+                  \mathcal{D}(g)\,|\,g(x)\in\mathcal{D}(f)\}\\
+                  &=\{x\in\R\,|\,g(x)\geq2\}\\
+                  &=\left\{x\in\R\,\left|\,\frac{4x^2-12x+13}{2}\geq2\right.\right\}\\
+                  &=\{x\in\R\,|\,4x^2-12x+13\geq4\}\\
+                  &=\{x\in\R\,|\,4x^2-12x+13-4\geq0\}\\
+                  &=\{x\in\R\,|\,4x^2-12x+9\geq0\}\\
+                  &=\{x\in\R\,|\,(2x-3)^2\geq0\} \end{align*} Perhatikan bahwa
+                  semua bilangan real $x$ menghasilkan $(2x-3)^2\geq0$ sehingga
+                  domain dari $f(g(x))$ adalah $$\mathcal{D}(f\circ
+                  g)=\{x|x\in\,|\,R\}=(-\infty,+\infty).$$ Domain dari $f(g(x))$
+                  adalah semua bilangan real $x$ sehingga ketika
+                  bilangan-bilangan tersebut disubstitusikan ke $f(g(x))=2x-3$,
+                  hasilnya adalah sebarang bilangan real $x$. Dengan demikian,
+                  range dari fungsi $f(g(x))$ adalah $$\mathcal{R}(f\circ
+                  g)=\{y|y\in\R\}.$$
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 3 (ETS 2021)</div>
+        <div class="dfn-content">
+          Diberikan fungsi $f(x)=\sqrt{x-1}$ dan $g(x)=x+2$ pada interval $1\leq
+          x \leq 5$. Dapatkan fungsi komposisi $f(g(x))$ beserta domainnya.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Diketahui fungsi $f(x)=\sqrt{x-1}$ dan $g(x)=x+2$ pada interval
+              $1\leq x \leq 5$. Pertama-tama, akan dicari fungsi $f(g(x))$.
+              $$f(g(x))=f(x+2)=\sqrt{x+2-1}=\sqrt{x+1}$$ Adapun untuk
+              mendapatkan domain $f(g(x))$, perlu diketahui terlebih dahulu
+              domain dari fungsi $f$ dan $g$. Fungsi $g(x)$ sebagai polinomial
+              terdefinisi untuk semua bilangan real dan $f(x)$ sebagai fungsi
+              yang mengandung bentuk akar akan terdefinisi ketika ekspresi di
+              dalam akar bernilai tak negatif. \begin{align*} x-1\geq 0\\ x\geq1
+              \end{align*} Ingat bahwa fungsi diberikan pada interval $1\leq x
+              \leq 5$ sehingga domain dari fungsi $f$ dan $g$ adalah
+              $$\mathcal{D}(f)=\{x|x\geq1,x\in\R\}=[1,+\infty)\longrightarrow\mathcal{D}(f)=\{x|1\leq
+              x\leq5,x\in\R\}=[1,5]$$
+              $$\mathcal{D}(g)=\{x|x\in\R\}=(-\infty,+\infty)\longrightarrow\mathcal{D}(g)=\{x|1\leq
+              x\leq5,x\in\R\}=[1,5]$$ Domain dari $f(g(x))$ akan dicari dengan
+              konsep berikut. \begin{align*} \mathcal{D}(f\circ g)&=\{x\in
+              \mathcal{D}(g)|g(x)\in\mathcal{D}(f)\}\\ &=\{1\leq x\leq5|1\leq
+              g(x)\leq5\}\\ &=\{1\leq x\leq5|1\leq x+2\leq5\}\\ &=\{1\leq
+              x\leq5|1-2\leq x\leq5-2\}\\ &=\{1\leq x\leq5|-1\leq x\leq3\}\\
+              &=\{1\leq x\leq3,x\in\R\}\\ &=[1,3] \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2021/2022</span></div>
+            <div class="soal-latihan">
+              Diberikan suatu fungsi $f(x)=\sqrt{x^2-1}$ dan
+              $g(x)=\dfrac{2}{x}$. Dapatkan fungsi $(f.g)(x)$ beserta domainnya.
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Diketahui fungsi $f(x)=\sqrt{x^2-1}$ dan $g(x)=\frac{2}{x}$.
+                Pertama-tama, akan dicari fungsi $(f.g)(x)$.
+                $$(f.g)(x)=f(x).g(x)=\left(\sqrt{x^2-1}\right)\left(\frac{2}{x}\right)=\frac{2\sqrt{x^2-1}}{x}$$
+                Adapun untuk mendapatkan domain $(f.g)(x)$, perlu diketahui
+                terlebih dahulu domain dari fungsi $f$ dan $g$. Fungsi $g(x)$
+                akan terdefinisi ketika penyebutnya, yaitu $x$, tidak bernilai
+                $0$. Fungsi $f(x)$ sebagai fungsi yang mengandung bentuk akar
+                akan terdefinisi ketika ekspresi di dalam akar bernilai tak
+                negatif. \begin{align*} x^2-1\geq 0\\ (x+1)(x-1)\geq0
+                \end{align*} Dari $(x+1)(x-1)\geq0$, diperoleh $2$ titik
+                pemisah, yaitu $x=-1$ dan $x=1$. Dengan uji titik pada garis
+                bilangan, didapatkan interval yang menghasilkan nilai
+                $(x+1)(x-1)\geq0$ adalah $(-\infty,-1]$ dan $[1,+\infty)$.
+                Domain dari $f$ dan $g$ adalah sebagai berikut.
+                $$\mathcal{D}(f)=\{x|x\leq-1\cup
+                x\geq1,x\in\R\}=(-\infty,-1]\cup[1,+\infty)$$
+                $$\mathcal{D}(g)=\{x|x&lt;0\cup
+                x0,x\in\R\}=(-\infty,0)\cup(0,+\infty)$$ Dengan demikian,
+                diperoleh domain $(f.g)(x)$, yaitu: \begin{align*}
+                \mathcal{D}(f.g)&=\mathcal{D}(f)\cap\mathcal{D}(g)\\
+                &=\{x\leq-1\cup x\geq1\}\cap\{x&lt;0\cup x>0\}\\
+                &=\{x|x\leq-1\cup x\geq1,x\in\R\}\\
+                &=(-\infty,-1]\cup[1,+\infty) \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Diberikan fungsi $f(x)=|x^2-1|$ dan $\displaystyle
+              g(x)=\frac{1}{x^2-9}$. Dapatkan $(g\circ f)(x)$ beserta domainnya.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Diketahui fungsi $f(x)=|x^2-1|$ dan $\displaystyle
+                g(x)=\frac{1}{x^2-9}$. Pertama-tama, akan dicari fungsi $(g\circ
+                f)(x)$. \begin{align*} (g\circ f)(x)&=g(f(x))\\ &=g(|x^2-1|)\\
+                &=\frac{1}{|x^2-1|^2-9}\\
+                &=\frac{1}{\left(\sqrt{(x^2-1)^2}\right)^2-9}\\
+                &=\frac{1}{(x^2-1)^2-9}\\ &=\frac{1}{x^4-2x^2+1-9}\\
+                &=\frac{1}{x^4-2x^2-8} \end{align*} Adapun untuk mendapatkan
+                domain $(g\circ f)(x)$, perlu diketahui terlebih dahulu domain
+                dari fungsi $f$ dan $g$. Fungsi $f(x)$ sebagai fungsi mutlak
+                dapat disederhanakan dengan definisi nilai mutlak.
+                $$f(x)=|x^2-1|=\begin{cases} x^2-1,\quad x^2-1\geq0\implies
+                \quad x\leq-1\cup x\geq1\quad\dots(i)\\ -(x^2-1),\quad
+                x^2-1&lt;0\implies\quad -1 &lt; x &lt; 1\quad \dots(ii)
+                \end{cases}$$ Sebagai fungsi sepotong-sepotong, domain $f$
+                adalah gabungan dari $(i)$ dan $(ii)$, yaitu:
+                $$\mathcal{D}(f)=\{x|x\in\R\}=(-\infty,+\infty).$$ Fungsi $g(x)$
+                akan terdefinisi ketika penyebutnya, yaitu $x^2-9$, tidak
+                bernilai $0$. \begin{align*} x^2-9\neq 0\\ (x+3)(x-3)\neq0\\
+                x\neq-3\quad\text{atau}\quad x\neq3 \end{align*} Dengan
+                demikian, domain dari $f$ dan $g$ adalah sebagai berikut.
+                $$\mathcal{D}(f)=\{x|x\in\R\}=(-\infty,+\infty)$$
+                $$\mathcal{D}(g)=\{x|x &lt; -3\cup-3&lt;x&lt;3\cup
+                x>3,x\in\R\}=(-\infty,-3)\cup(-3,3)\cup(3,+\infty)$$ Adapun
+                Domain dari $(g\circ f)(x)$ akan dicari dengan konsep di bawah
+                ini. \begin{align*} \mathcal{D}(g\circ f)&=\{x\in
+                \mathcal{D}(f)|f(x)\in\mathcal{D}(g)\}\\
+                &=\{x\in\R|f(x)\in(-\infty,+\infty)\backslash \{-3,3\}\}\\
+                &=\{|x^2-1|\in(-\infty,+\infty)\backslash \{-3,3\}\}
+                \end{align*} Perhatikan bahwa hasil dari nilai mutlak pasti tak
+                negatif sehingga $$\mathcal{D}(g\circ
+                f)=\{|x^2-1|\in[0,+\infty)\backslash \{3\}\}$$ Adapun $|x^2-1|$
+                hanya akan bernilai $3$ ketika $x^2-1=3$. \begin{align*}
+                |x^2-1|\neq3\\ x^2-1\neq3\\ x^2\neq4\\
+                x\neq-2\quad\text{atau}\quad x\neq2 \end{align*} Jadi, domain
+                dari $(g\circ f)(x)$ adalah $$\mathcal{D}(g\circ
+                f)=\{x|x&lt;-2\cup-2&lt;x&lt;2\cup
+                x>2,x\in\R\}=(-\infty,-2)\cup(-2,2)\cup(2,+\infty).$$
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Diketahui $\displaystyle f(x)=\frac{4}{x^2-1}$ dan
+              $g(x)=\sqrt{x+4}$. Dapatkan $(g\circ f)$ beserta domainnya.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Diberikan fungsi $ \displaystyle f(x)=\frac{4}{x^2-1}$ dan
+                $g(x)=\sqrt{x+4}$. Pertama-tama, akan dicari fungsi $(g\circ
+                f)(x)$. \begin{align*} (g\circ f)(x)&=g(f(x))\\
+                &=g\left(\frac{4}{x^2-1}\right)\\ &=\sqrt{\frac{4}{x^2-1}+4}\\
+                &=\sqrt{\frac{4+4(x^2-1)}{x^2-1}}\\
+                &=\sqrt{\frac{4+4x^2-4}{x^2-1}}\\ &=\sqrt{\frac{4x^2}{x^2-1}}\\
+                &=\frac{2x}{\sqrt{x^2-1}} \end{align*} Adapun untuk mendapatkan
+                domain $(g\circ f)(x)$, perlu diketahui terlebih dahulu domain
+                dari fungsi $f$ dan $g$. Fungsi $f(x)$ akan terdefinisi ketika
+                penyebutnya, yaitu $x^2-1$, bernilai tak nol. \begin{align*}
+                x^2-1\neq0\\ (x+1)(x-1)\neq 0\\ x\neq-1\quad\text{atau}\quad
+                x\neq1 \end{align*} Fungsi $g(x)$ sebagai fungsi yang mengandung
+                bentuk akar akan terdefinisi ketika ekspresi di dalam akar
+                bernilai tak negatif. \begin{align*} x+4\geq0\\ x\geq-4
+                \end{align*} Dengan demikian, diperoleh domain dari $f$ dan $g$,
+                yaitu: $$\mathcal{D}(f)=\{x|x&lt;-1\cup-1&lt;x&lt;1\cup
+                x>1,x\in\R\}=(-\infty,-1)\cup(-1,1)\cup(1,+\infty)$$
+                $$\mathcal{D}(g)=\{x|x\geq-4,x\in\R\}=[-4,+\infty)$$ Domain dari
+                fungsi $(g\circ f)(x)$ dicari dengan konsep berikut.
+                \begin{align*} \mathcal{D}(g\circ f)&=\{x\in
+                \mathcal{D}(f)|f(x)\in\mathcal{D}(g)\}\\ &=\left\{x\neq-1\cup
+                x\neq1\Big|f(x)\geq-4,x\in\R\right\}\\ &=\left\{x\neq-1\cup
+                x\neq1\Big|\frac{4}{x^2-1}\geq-4,x\in\R\right\}\\
+                &=\left\{x\neq-1\cup x\neq1\Big|\frac{4}{x^2-1}+4\geq0\right\}\\
+                &=\left\{x\neq-1\cup
+                x\neq1\Big|\frac{4+4(x^2-1)}{x^2-1}\geq0\right\}\\
+                &=\left\{x\neq-1\cup
+                x\neq1\Big|\frac{4+4x^2-4}{x^2-1}\geq0\right\}\\
+                &=\left\{x\neq-1\cup
+                x\neq1\Big|\frac{4x^2}{x^2-1}\geq0\right\}\\
+                &=\left\{x\neq-1\cup
+                x\neq1\Big|\frac{x^2}{(x+1)(x-1)}\geq0\right\} \end{align*} Dari
+                $\displaystyle \frac{x^2}{(x+1)(x-1)}\geq0$, diperoleh $3$ titik
+                pemisah, yaitu $x=0$, $x=-1$, dan $x=1$. Dengan uji titik pada
+                garis bilangan, diketahui interval yang menghasilkan nilai
+                $\displaystyle\frac{x^2}{(x+1)(x-1)}\geq0$ adalah
+                $(-\infty,-1)\cup(1,+\infty)$. Dengan demikian, domain dari
+                fungsi $(g\circ f)(x)$ adalah \begin{align*} \mathcal{D}(g\circ
+                f)&=\{x\neq-1\cup x\neq1|x&lt;-1\cup x>1\}\\ &=\{x|x&lt;-1\cup
+                x>1,x\in\R\}\\ &=(-\infty,-1)\cup(1,+\infty). \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

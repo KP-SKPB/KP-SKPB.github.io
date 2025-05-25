@@ -223,10 +223,12 @@ main p {
 
 #toggle-btn {
   position: fixed;
-  left: 190px;
+  left: 280px;
+  top: 0;
   padding: 1em;
   border: none;
-  border-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
   background: none;
   cursor: pointer;
   svg {
@@ -273,6 +275,12 @@ main p {
 
 #Back {
   font-weight: bold;
+  font-family: Tahoma;
+  svg {
+    fill: var(--sidebar-text-1);
+    width: 20px;
+    height: 20px;
+  }
 }
 
 #size {
@@ -283,7 +291,7 @@ main p {
   margin: 0 auto 0;
   border: 1px solid #000;
   border-radius: 5px;
-  width: 100px;
+  width: fit-content;
   padding: 30px auto 30px;
   display: block;
   text-align: center;
@@ -291,8 +299,11 @@ main p {
 }
 
 #Back:hover {
-  background-color: #013880;
-  color: white;
+  background-color: var(--second-color);
+  color: var(--sidebar-text-2);
+  svg {
+    fill: var(--sidebar-text-2);
+  }
 }
 
 #bold {
@@ -340,4 +351,13 @@ main p {
 
 #AnakKP {
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+  #home h1 {
+    font-size: 1.5em;
+  }
 }
