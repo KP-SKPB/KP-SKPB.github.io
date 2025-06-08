@@ -570,8 +570,8 @@ math-field {
   background-color: rgba(240, 240, 151);
   border: none;
   border-radius: 10px;
-  padding: 10px;
   border-left: 5px solid var(--second-color);
+  padding: 10px;
   position-anchor: var(--hint);
   position-area: right;
   transform: translateY(calc(50%));
