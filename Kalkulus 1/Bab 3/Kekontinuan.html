@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">3.4</section>
+        <span class="judul-bab">Kekontinuan</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 3.4.1.</div>
+        <div class="dfn-content">
+          Suatu fungsi $f$ dikatakan \textbf{kontinu} di $x=c$ apabila memenuhi
+          syarat-syarat berikut:
+          <ol class="itemaze arabic">
+            <li>$f(c)$ terdefinisi,</li>
+            <li>$\displaystyle \lim_{x\to c}f(x)$ ada,</li>
+            <li>$\displaystyle \lim_{x\to c}f(x)=f(c)$.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 3.4.2.</div>
+        <div class="dfn-content">
+          Suatu fungsi $f$ dikatakan kontinu pada selang tertutup $[a,b]$ jika
+          memenuhi:
+          <ol class="itemaze arabic">
+            <li>$f$ kontinu pada $(a,b)$,</li>
+            <li>$f$ kontinu dari kanan di $a$,</li>
+            <li>$f$ kontinu dari kiri di $b$.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.4.1.</div>
+        <div class="dfn-content">
+          Jika dua fungsi $f$ dan $g$ kontinu di $c$, maka
+          <ol class="itemaze arabic">
+            <li>$f+g$ kontinu di $c$</li>
+            <li>$f-g$ kontinu di $c$</li>
+            <li>$fg$ kontinu di $c$</li>
+            <li>
+              $f/g$ kontinu di $c$ jika $g(c)\neq0$ dan diskontinu di $c$ jika
+              $g(c)=0$
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.4.2.</div>
+        <div class="dfn-content">
+          <ol class="itemaze arabic">
+            <li>Setiap polinomial selalu kontinu di mana-mana.</li>
+            <li>
+              Setiap fungsi rasional kontinu di mana-mana kecuali di titik-titik
+              yang membuat penyebutnya nol.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.4.3.</div>
+        <div class="dfn-content">
+          Jika $\displaystyle \lim_{x\to c}g(x)=L$ dan jika fungsi $f$ kontinu
+          di $L$, maka $\displaystyle \lim_{x\to c}f(g(x))=f(L)$; yaitu
+          $$\lim_{x\to c}f(g(x))=f\left(\lim_{x\to c}g(x)\right).$$ Hal ini
+          masih berlaku jika $\displaystyle \lim_{x\to c}$ diganti dengan
+          $\displaystyle \lim_{x\to c^-}$, $\displaystyle \lim_{x\to c^+}$,
+          $\displaystyle \lim_{x\to -\infty}$, atau $\displaystyle \lim_{x\to
+          +\infty}$.
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.4.4.</div>
+        <div class="dfn-content">
+          <ol class="itemaze arabic">
+            <li>
+              Jika fungsi $g$ kontinu di $c$, dan fungsi $f$ kontinu di $g(c)$,
+              maka komposisi $f\circ g$ kontinu di $c$.
+            </li>
+            <li>
+              Jika fungsi $g$ kontinu di mana-mana, dan fungsi $f$ kontinu di
+              mana-mana, maka komposisi $f\circ g$ kontinu di mana-mana.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.4.5.(Teorema Nilai Antara)</div>
+        <div class="dfn-content">
+          Jika $f$ kontinu pada interval tertutup $[a,b]$ dan $k$ suatu bilangan
+          di antara $f(a)$ dan $f(b)$, maka terdapat bilangan $x$ di dalam
+          selang $[a,b]$ sehingga $f(x)=k$.
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.4.6.</div>
+        <div class="dfn-content">
+          Jika $f$ kontinu pada $[a,b]$ dan jika $f(a)$ dan $f(b)$ tidak nol
+          serta berlawanan tanda, maka sekurang-kurangnya ada satu penyelesaian
+          dari persamaan $f(x)=0$ di dalam selang $(a,b)$.
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Misalkan diketahui $f$ dan $g$ fungsi-fungsi kontinu serta
+          $\displaystyle \lim_{x\to 1^-} g(x)=-3$ dan $f(1)=-6$. Dapatkan:
+          <ol class="itemaze arabic">
+            <li>$\displaystyle \lim_{x\to 1} f(x)$.</li>
+            <li>$\displaystyle \lim_{x\to 1} f(x)-2g(1)$.</li>
+          </ol>
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Diketahui $f$ dan $g$ fungsi-fungsi kontinu. $$\displaystyle
+              \lim_{x\to 1^-} g(x)=\lim_{x\to 1^+} g(x)=\lim_{x\to 1} g(1)$$
+              $$\displaystyle \lim_{x\to 1^-} f(x)=\lim_{x\to 1^+}
+              f(x)=\lim_{x\to 1} f(1)$$
+              <ol class="itemaze latin">
+                <li>$\displaystyle \lim_{x\to 1} f(x)=f(1)=-6$.</li>
+                <li>
+                  Dari poin (a), diketahui $\displaystyle \lim_{x\to 1}
+                  f(x)=-6$. Adapun $g(1)=\displaystyle \lim_{x\to 1^-} g(x)=-3$.
+                  <br />
+                  \begin{align*} \displaystyle \lim_{x\to 1}
+                  f(x)-2g(1)&=\lim_{x\to 1} f(x)-2\lim_{x\to 1}g(1)\\
+                  &=-6-2\lim_{x\to 1}(-3)\\ &=-6-2(-3)\\ &=-6+6\\ \lim_{x\to 1}
+                  f(x)-2g(1)&=0 \end{align*}
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2 (ETS 2018/2019)</div>
+        <div class="dfn-content">
+          Diberikan $f(x)=\begin{cases} \displaystyle \frac{x^3-8}{x-2},\quad
+          x\neq 2\\ k,\quad x=2 \end{cases}$. Tentukan nilai $k$ sehingga
+          $\displaystyle \lim_{x\to 2} f(x)=f(2)$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Akan ditentukan nilai $k$ sehingga $\displaystyle \lim_{x\to 2}
+              f(x)=f(2)$. Pertama-tama, cari $\displaystyle \lim_{x\to 2} f(x)$
+              dan $f(2)$ secara terpisah untuk kemudian dibandingkan hasilnya.
+              Untuk $x=2$, $f(x)=k$ sehingga $f(2)=k$. Untuk $x\neq2$,
+              $f(x)=\displaystyle \frac{x^3-8}{x-2}$. Dengan demikian,
+              $\displaystyle \lim_{x\to 2^-} f(x)=\lim_{x\to 2^+}
+              f(x)=\lim_{x\to 2} f(x)=\lim_{x\to 2} \frac{x^3-8}{x-2}$.
+              \begin{align*} \lim_{x\to 2} \frac{x^3-8}{x-2}&=\lim_{x\to 2}
+              \frac{x^3-2^3}{x-2}\\ &=\lim_{x\to 2}
+              \frac{(x-2)(x^2+2x+4)}{x-2}\\ &=\lim_{x\to 2} (x^2+2x+4)\\
+              &=2^2+2(2)+4\\ &=4+4+4\\ &=12 \end{align*} Diperoleh bahwa
+              $\displaystyle \lim_{x\to 2} f(x)=12$. Agar $\displaystyle
+              \lim_{x\to 2} f(x)=f(2)$, haruslah $k=12$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2021/2022</span></div>
+            <div class="soal-latihan">
+              Tentukan nilai $a$ dan $b$ agar fungsi $f(x)=\begin{cases}
+              2x-3a,\quad x&lt;1\\ 5ax+2b,\quad 1\leq x \leq 2\\ 4x-6b,\quad x>2
+              \end{cases}$ kontinu di $x=1$ dan $x=2$.
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Akan di tentukan nilai $a$ dan $b$ agar $f(x)$ kontinu di $x=1$
+                dan $x=2$. Fungsi $f$ kontinu di $x=1$ bila memenuhi:
+                <ol class="itemaze arabic">
+                  <li>
+                    $f(1)$ terdefinisi.<br />
+                    $x=1$ termasuk dalam domain $[1,2]$ sehingga
+                    $f(1)=5a(1)+2b=5a+2b$.
+                  </li>
+                  <li>
+                    $\displaystyle \lim_{x\to 1}f(x)$ ada.<br />
+                    Untuk $x$ mendekati $1$ dari kiri, $f(x)=2x-3a$.<br />
+                    $$\displaystyle \lim_{x\to 1^-}f(x)=2(1)-3a=2-3a$$ Untuk $x$
+                    mendekati $1$ dari kanan, $f(x)=5ax+2b$.<br />
+                    $$\displaystyle \lim_{x\to 1^+}f(x)=5a(1)+2b=5a+2b$$ Agar
+                    limit ada, $\displaystyle \lim_{x\to 1^-}f(x)=\lim_{x\to
+                    1^+}f(x)$.<br />
+                    $$2-3a=5a+2b\implies 8a+2b=2\implies 4a+b=1$$
+                  </li>
+                  <li>$\displaystyle \lim_{x\to 1}f(x)=f(1)$.</li>
+                </ol>
+                Dengan demikian, agar $f$ kontinu di $x=1$, $a$ dan $b$ harus
+                memenuhi $4a+b=1\dots(i)$. Fungsi $f$ kontinu di $x=2$ bila
+                memenuhi:
+                <ol class="itemaze arabic">
+                  <li>
+                    $f(2)$ terdefinisi<br />
+                    $x=2$ termasuk dalam domain $[1,2]$ dengan $f(x)=5ax+2b$
+                    sehingga $f(2)=5a(2)+2b=10a+2b$.
+                  </li>
+                  <li>
+                    $\displaystyle \lim_{x\to 2}f(x)$ ada<br />
+                    Ketika $x$ mendekati $2$ dari kiri, maka $f(x)=5ax+2b$.<br />
+                    $$\displaystyle \lim_{x\to 2^-}f(x)=\lim_{x\to
+                    2^-}(5ax+2b)=5a(2)+2b=10a+2b$$ Ketika $x$ mendekati $2$ dari
+                    kanan, maka $f(x)=4x-6b$.<br />
+                    $$\displaystyle \lim_{x\to 2^+}f(x)=\lim_{x\to
+                    2^+}(4x-6b)=4(2)-6b=8-6b$$ Agar $\displaystyle \lim_{x\to
+                    2}f(x)$ ada, $\displaystyle \lim_{x\to
+                    2^-}f(x)=\displaystyle \lim_{x\to 2^+}f(x)$.<br />
+                    $$10a+2b=8-6b\implies 10a-4b=8\implies 5a-2b=4$$
+                  </li>
+                  <li>$\displaystyle \lim_{x\to 2}f(x)=f(2)$</li>
+                </ol>
+                Dengan demikian, agar $f$ kontinu di $x=2$, $a$ dan $b$ harus
+                memenuhi $5a-2b=4\dots(ii)$. Selanjutnya, nilai $a$ dan $b$
+                dicari melalui $2$ persamaan tersebut. Dari $(i)$, diperoleh
+                $b=1-4a$. Selanjutnya, substitusi $b=1-4a$ ke persamaan $(ii)$.
+                \begin{align*} 5a-2b&=4\\ 5a-2(1-4a)&=4\\ 5a-2+8a&=4\\ 13a&=6\\
+                a&=\frac{6}{13} \end{align*} Dengan demikian, $\displaystyle
+                b=1-4\left(\frac{6}{13}\right)=1-\frac{24}{13}=-\frac{11}{13}$.
+                Jadi, $\displaystyle a=\frac{6}{13}$ dan $\displaystyle
+                b=-\frac{11}{13}$.
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2020/2021</span></div>
+            <div class="soal-latihan">
+              Diberikan $\displaystyle f(x)=\frac{x-2}{|x|-2}$.
+              <ol class="itemaze arabic">
+                <li>Tentukan titik diskontinunya.</li>
+                <li>
+                  Selidiki apakah titik diskontinu tersebut dapat dihilangkan
+                  atau tidak dapat dihilangkan? Jika dapat dihilangkan,
+                  bagaimana caranya?
+                </li>
+              </ol>
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                <ol class="itemaze arabic">
+                  <li>
+                    Perhatikan bahwa $f$ tidak terdefinisi ketika
+                    $|x|-2=0\implies |x|=2$. Dengan definisi nilai mutlak,
+                    diperoleh bahwa $$|x|=\begin{cases} x,\quad x\geq0\\
+                    -x,\quad x&lt;0 \end{cases}.$$ Untuk $x\geq0$,
+                    $|x|=2\implies x=2$. Adapun untuk $x&lt;0$, $|x|=2\implies
+                    -x=2\implies x=-2$. Dengan demikian, ditemukan $2$ titik
+                    diskontinu $f$, yaitu $x=-2$ dan $x=2$.
+                  </li>
+                  <li>
+                    Dari poin (a), diperoleh bahwa $f$ memiliki $2$ titik
+                    diskontinu, yaitu $x=-2$ dan $x=2$. Akan dicek apakah titik
+                    diskontinu dapat dihilangkan atau tidak. $f$ diskontinu pada
+                    kedua titik tersebut karena $f$ tidak terdefinisi pada kedua
+                    titik tersebut. Perhatikan bahwa dengan definisi nilai
+                    mutlak, $f$ dapat ditulis menjadi $$f(x)=\begin{cases}
+                    \displaystyle \frac{x-2}{x-2}=1,\quad x\geq0\\ \displaystyle
+                    \frac{x-2}{-x-2},\quad x&lt;0 \end{cases}.$$ Syarat suatu
+                    fungsi $f$ kontinu di $x=c$ adalah:
+                    <ol class="itemaze arabic">
+                      <li>$f(c)$ terdefinisi,</li>
+                      <li>$\displaystyle \lim_{x\to c}f(x)$ ada,</li>
+                      <li>$\displaystyle \lim_{x\to c}f(x)=f(c)$.</li>
+                    </ol>
+                    Untuk $x=-2$, titik diskontinu tidak dapat dihilangkan
+                    karena $$\lim_{x\to -2^-}f(x)=\lim_{x\to
+                    -2^-}\frac{x-2}{-x-2}=\lim_{x\to
+                    -2^-}\left(-1+\frac{4}{x+2}\right)=-\infty$$ $$\lim_{x\to
+                    -2^+}f(x)=\lim_{x\to -2^+}\frac{x-2}{-x-2}=\lim_{x\to
+                    -2^+}\left(-1+\frac{4}{x+2}\right)=+\infty$$ sehingga
+                    $\displaystyle \lim_{x\to -2}f(x)$ tidak ada. Adapun untuk
+                    $x=2$, $\displaystyle \lim_{x\to 2}f(x)=\lim_{x\to
+                    2}\frac{x-2}{x-2}=1$. Dengan mendefinisikan $f(x)=1$ untuk
+                    $x=2$, titik diskontinu $x=2$ dapat dihilangkan.
+                    Kesimpulannya, titik diskontinu $x=-2$ tidak dapat
+                    dihilangkan dan titik diskontinu $x=2$ dapat dihilangkan
+                    dengan mendefinisikan $$f(x)=\begin{cases} \displaystyle
+                    \frac{x-1}{|x|-2},\quad x\neq0\\ 1,\quad x=2 \end{cases}.$$
+                  </li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

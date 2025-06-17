@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">5.2</section>
+        <span class="judul-bab"
+          >Interval Naik, Turun dan Kecekungan Fungsi</span
+        >
+      </h2>
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 5.2.1.</div>
+        <div class="dfn-content">
+          Diasumsikan $f$ terdefinisi pada interval $I$ dan $x_1,x_2$ menyatakan
+          titik-titik pada interval $I$
+          <ul class="itemaze">
+            <li>
+              $f$ naik pada interval $I$ jika $f(x_1)&lt;f(x_2)$ untuk
+              $x_1&lt;x_2$.
+            </li>
+            <li>
+              $f$ turun pada interval $I$ jika $f(x_1)>f(x_2)$ untuk
+              $x_1&lt;x_2$.
+            </li>
+            <li>
+              $f$ konstan pada interval $I$ jika $f(x_1)=f(x_2)$ untuk semua
+              $x_1$ dan $x_2$.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.2.1.</div>
+        <div class="dfn-content">
+          Dimisalkan $f$ suatu fungsi kontinu pada interval tertutup $[a,b]$ dan
+          dapat diturunkan pada interval terbuka $(a,b)$.
+          <ul class="itemaze">
+            <li>
+              Jika $f'(x)>0$ untuk setiap nilai $x$ dalam $(a,b)$ maka $f$ naik
+              pada $[a,b]$.
+            </li>
+            <li>
+              Jika $f'(x)&lt;0$ untuk setiap nilai $x$ dalam $(a,b)$ maka $f$
+              turun pada $[a,b]$.
+            </li>
+            <li>
+              Jika $f'(x)=0$ untuk setiap nilai $x$ dalam $(a,b)$ maka $f$
+              konstan pada $[a,b]$.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <img src="img/5.2.1.svg" alt="Gambar 5.2.1" class="illust illust-outer" />
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 5.2.2.</div>
+        <div class="dfn-content">
+          Misal $f$ dapat diturunkan pada suatu interval.
+          <ul class="itemaze">
+            <li>
+              $f$ disebut <b>cekung ke atas</b> pada suatu interval jika $f'$
+              naik pada interval tersebut.
+            </li>
+            <li>
+              $f$ disebut <b>cekung ke bawah</b> pada suatu interval jika $f'$
+              turun pada interval tersebut.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.2.2.</div>
+        <div class="dfn-content">
+          <ul class="itemaze">
+            <li>
+              Jika $f''(x)>0$ pada suatu interval terbuka $(a,b)$ maka $f$
+              cekung ke atas pada $(a,b)$.
+            </li>
+            <li>
+              Jika $f''(x)&lt;0$ pada suatu interval terbuka $(a,b)$ maka $f$
+              cekung ke bawah pada $(a,b)$.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 5.2.3.</div>
+        <div class="dfn-content">
+          Jika $f$ kontinu pada suatu interval terbuka yang memuat $x_0$ dan
+          jika $f$ mengubah arah kecekungannya pada $x_0$ maka titik
+          $(x_0,f(x_0))$ pada grafik $f$ disebut titik belok dan dikatakan $f$
+          mempunyai <strong>titik belok</strong> di $x_0$.
+        </div>
+      </div>
+
+      <img src="img/5.2.2.svg" alt="Gambar 5.2.2" class="illust illust-outer" />
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Tunjukkan bahwa $x+\frac{1}{x}>2$ jika $x>1$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Misalkan $f(x)=x+\frac{1}{x}$ sehingga $f(1)=1+\frac{1}{1}=1+1=2$.
+              Perhatikan bahwa \begin{align*} f'(x)&=1+(-x^{-2})\\
+              &=1-\frac{1}{x^2}\\ &=\frac{x^2-1}{x^2}\\ &=\frac{(x+1)(x-1)}{x^2}
+              \end{align*} Diperoleh 3 titik pemisah, yaitu $x=-1$, $x=1$, dan
+              $x=0$. Dengan uji titik menggunakan garis bilangan, diperoleh
+              interval yang menyebabkan nilai $f'(x)>0$ adalah
+              $(-\infty,-1)\cup(1,+\infty)$. Dengan demikian, $f(x)$ naik pada
+              interval $(-\infty,-1]\cup[1,+\infty)$. Jika $f(1)=2$, maka
+              $f(x)=x+\frac{1}{x}>2$ untuk $x>1$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2 (EAS 2023/2024)</div>
+        <div class="dfn-content">
+          Diberikan fungsi $f(x)=-3x^5+5x^3$.
+          <ol class="itemaze alpha">
+            <li>Tentukan selang dimana $f(x)$ naik dan turun.</li>
+            <li>
+              Tentukan selang kecekungan fungsi $f(x)$ dan titik belok (jika
+              ada).
+            </li>
+          </ol>
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <ol class="itemaze alpha">
+              <li>
+                Diberikan $f(x)=-3x^5+5x^3$. Untuk menentukan interval naik
+                turunnya fungsi $f$, perlu ditinjau nilai $f'(x)$.
+                \begin{align*} f'(x)&=-15x^4+15x^2\\ &=-15x^2(x^2-1)\\
+                &=-15x^2(x+1)(x-1) \end{align*} Diperoleh 3 titik pemisah, yaitu
+                $x=-1$, $x=1$, dan $x=0$. Dengan uji titik menggunakan garis
+                bilangan, diperoleh interval yang menyebabkan nilai $f'(x)&lt;0$
+                adalah $(-\infty,-1)\cup(1,+\infty)$ dan interval yang
+                menyebabkan nilai $f'(x)>0$ adalah $(-1,1)\backslash \{0\}$.
+                Dengan demikian, $f(x)$ naik pada selang $[-1,1]$ dan $f(x)$
+                turun pada selang $(-\infty,-1]\cup[1,+\infty)$.
+              </li>
+              <li>
+                Untuk menentukan selang kecekungan fungsi $f$, perlu ditinjau
+                nilai $f''(x)$. Dari poin $(a)$, didapatkan
+                $f'(x)=-15x^4+15x^2$. \begin{align*} f''(x)&=-60x^3+30x\\
+                &=-30x(2x^2-1)\\ &=-30x(\sqrt{2}x+1)(\sqrt{2}x-1) \end{align*}
+                Diperoleh 3 titik pemisah, yaitu $x=-\frac{1}{\sqrt{2}}$,
+                $x=\frac{1}{\sqrt{2}}$, dan $x=0$. Dengan uji titik menggunakan
+                garis bilangan, diperoleh interval yang menyebabkan nilai
+                $f''(x)&lt;0$ adalah
+                $(-\frac{1}{\sqrt{2}},0)\cup(\frac{1}{\sqrt{2}},+\infty)$ dan
+                interval yang menyebabkan nilai $f''(x)>0$ adalah
+                $(-\infty,-\frac{1}{\sqrt{2}})\cup(0,\frac{1}{\sqrt{2}})$.
+                Dengan demikian, $f(x)$ cekung ke atas pada selang
+                $(-\infty,-\frac{1}{\sqrt{2}})\cup(0,\frac{1}{\sqrt{2}})$ dan
+                $f(x)$ cekung ke bawah pada selang
+                $(-\frac{1}{\sqrt{2}},0)\cup(\frac{1}{\sqrt{2}},+\infty)$.
+                Adapun titik belok adalah titik dimana terjadi perubahan
+                kecekungan. Pada $x=-\frac{1}{\sqrt{2}}$, terjadi perubahan
+                kecekungan dari cekung ke atas menjadi cekung ke bawah. Pada
+                $x=0$, terjadi perubahan kecekungan dari cekung ke bawah menjadi
+                cekung ke atas. Pada $x=\frac{1}{\sqrt{2}}$, terjadi perubahan
+                kecekungan dari cekung ke bawah menjadi cekung ke atas. Dengan
+                demikian, $f$ memiliki 3 titik belok, yaitu
+                $x=-\frac{1}{\sqrt{2}}$, $x=\frac{1}{\sqrt{2}}$, dan $x=0$.
+              </li>
+            </ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>EAS 2024/2025</span></div>
+            <div class="soal-latihan">
+              Diberikan fungsi $f(x)=\frac{x}{x-2024}$. Tentukan selang dimana
+              fungsi $f(x)$ naik atau turun.
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Untuk menentukan interval naik turunnya fungsi $f$, perlu
+                ditinjau nilai $f'(x)$. Misalkan $u=x$ dan $v=x-2024$ sehingga
+                $u'=v'=1$. \begin{align*} f'(x)&=\frac{u'v-uv'}{v^2}\\
+                &=\frac{x-2024-x}{(x-2024)^2}\\ &=\frac{-2024}{(x-2024)^2}\\
+                &=-\frac{2024}{(x-2024)^2} \end{align*} Terlihat bahwa nilai
+                $f'(x)&lt;0$ untuk semua bilangan real $x$ kecuali $x=2024$
+                karena $f$ tidak terdefinisi pada titik tersebut. Dengan
+                demikian, $f$ turun pada selang $(-\infty,
+                2024)\cup(2024,+\infty)$. Adapun tidak terdapat selang dimana
+                $f$ naik.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>EAS 2024/2025</span></div>
+            <div class="soal-latihan">
+              Diberikan fungsi $f(x)=3x^4-8x^3+6x^2+1$. Tentukan selang
+              kecekungan fungsi $f(x)$ dan titik belok (jika ada).
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Diberikan $f(x)=3x^4-8x^3+6x^2+1$. Untuk menentukan selang
+                kecekungan fungsi $f$, perlu ditinjau nilai $f''(x)$.
+                \begin{align*} f'(x)&=12x^3-24x^2+12x\\ f''(x)&=36x^2-48x+12\\
+                &=12(3x^2-4x+1)\\ &=12(3x-1)(x-1) \end{align*} Diperoleh 2 titik
+                pemisah, yaitu $x=-\frac{1}{3}$, dan $x=1$. Dengan uji titik
+                menggunakan garis bilangan, diperoleh interval yang menyebabkan
+                nilai $f''(x)&lt;0$ adalah $(\frac{1}{3},1)$ dan interval yang
+                menyebabkan nilai $f''(x)>0$ adalah
+                $(-\infty,\frac{1}{3})\cup(1,+\infty)$. Dengan demikian, $f(x)$
+                cekung ke atas pada selang
+                $(-\infty,\frac{1}{3})\cup(1,+\infty)$ dan $f(x)$ cekung ke
+                bawah pada selang $(\frac{1}{3},1)$. Adapun titik belok adalah
+                titik dimana terjadi perubahan kecekungan. Pada $x=\frac{1}{3}$,
+                terjadi perubahan kecekungan dari cekung ke atas menjadi cekung
+                ke bawah. Pada $x=3$, terjadi perubahan kecekungan dari cekung
+                ke bawah menjadi cekung ke atas. Dengan demikian, $f$ memiliki 2
+                titik belok, yaitu $x=\frac{1}{3}$, dan $x=3$.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

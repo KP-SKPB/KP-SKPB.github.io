@@ -85,96 +85,84 @@
 
     <main class="content" id="main-content">
       <h2 class="judul-bab-container">
-        <section class="no-subbab">6.2</section>
-        <span class="judul-bab">Integrasi dengan Substitusi</span>
+        <section class="no-subbab">5.7</section>
+        <span class="judul-bab">Teorema Rolle dan Teorema Nilai Rata-Rata</span>
       </h2>
 
-      Berikut ini diuraikan cara menyelesaikan suatu permasalahan integral
-      dengan substitusi.
-      <ol class="itemaze arabic">
-        <li>Pilih $g(x)$ dan misalkan $u=g(x)$.</li>
-        <li>Dapatkan $\frac{du}{dx}=g'(x)$.</li>
-        <li>
-          Substitusi persamaan pada langkah 1 dan 2. Pastikan suku-suku pada
-          integrasi dalam $u$ dan tidak lagi dalam $x$.
-        </li>
-        <li>Selesaikan integral yang telah melalui proses substitusi.</li>
-        <li>
-          Ganti $u$ dengan $g(x)$ untuk memperoleh hasil integral dalam $x$.
-        </li>
-      </ol>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.7.1.(Teorema Rolle)</div>
+        <div class="dfn-content">
+          Diasumsikan $f$ dapat diturunkan pada $(a,b)$ dan kontinu pada
+          $[a,b]$. Jika $f(a)=f(b)=0$, maka terdapatlah sedikitnya satu titik
+          $c$ dalam $(a,b)$ dimana $f'(c)=0$.
+        </div>
+      </div>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.7.2.(Teorema Nilai Rata-Rata)</div>
+        <div class="dfn-content">
+          Jika $f$ dapat diturunkan pada $(a,b)$ dan kontinu pada $[a,b]$, maka
+          terdapat sedikitnya satu titik $c$ dalam $(a,b)$ sehingga
+          $$f'(c)=\frac{f(b)-f(a)}{b-a}$$
+        </div>
+      </div>
 
       <div class="dfn-box contoh">
         <div class="dfn-header">Contoh 1</div>
         <div class="dfn-content">
-          Hitunglah integral berikut. $$\int [\sin(\sin\theta)]\cos\theta
-          d\theta$$
+          Gunakan Teorema Rolle untuk membuktikan pernyataan di bawah ini:
+          <br />
+          Persamaan $6x^5-4x+1=0$ mempunyai sedikitnya satu penyelesaian dalam
+          interval $(0,1)$.
           <details class="solution">
             <summary>Pembahasan</summary>
             <div class="solution-step">
-              Pilih $u=\sin\theta$. \begin{align*}
-              \frac{du}{d\theta}&=\cos\theta\\ du&=\cos\theta d\theta
-              \end{align*} Dengan substitusi $u$ dan $du$, diperoleh hasil
-              integrasi sebagai berikut. \begin{align*} \int
-              [\sin(\sin\theta)]\cos\theta d\theta&=\int \sin u du\\ &=-\cos u +
-              C\\ \int [\sin(\sin\theta)]\cos\theta d\theta&=-\cos
-              (\sin\theta)+C \end{align*}
+              Misalkan $f(x)=x^6-2x^2+x$ sehingga $\displaystyle
+              f'(x)=\frac{d}{dx}(x^6-2x^2+x)=6x^5-4x+1$. Sebagai fungsi
+              polinomial, jelas bahwa $f$ dapat dapat diturunkan pada $(0,1)$
+              dan kontinu pada $[0,1]$. Perhatikan hasil perhitungan berikut.
+              $$f(0)=0^6-2(0)^2+(0)=0$$ $$f(1)=1^6-2(1)^2+1=1-2+1=0$$ Dengan
+              Teorema Rolle, jika $f(0)=f(1)=0$, maka terdapat sedikitnya satu
+              titik $c$ dalam $(0,1)$ dimana $f'(c)=0$. Dengan kata lain,
+              terdapat sedikitnya satu penyelesaian dari $f'(x)=6x^5-4x+1=0$
+              pada $(0,1)$.
             </div>
           </details>
         </div>
       </div>
       <div class="dfn-box contoh">
-        <div class="dfn-header">Contoh 2 (EAS 2018)</div>
+        <div class="dfn-header">Contoh 2</div>
         <div class="dfn-content">
-          Hitung integral di bawah ini dengan memilih substitusi yang
-          ditunjukkan. $$\int \frac{x}{\sqrt{x+1}}dx; \quad u=x+1$$
+          Sebuah mobil berjalan dari berhenti dan menempuh perjalanan $4$ mil
+          sepanjang jalan lurus selama $5$ menit. Gunakan Teorema Nilai
+          Rata-Rata untuk menunjukkan bahwa selama perjalanan kecepatannya tepat
+          $48$ mil/jam.
           <details class="solution">
             <summary>Pembahasan</summary>
             <div class="solution-step">
-              Diberikan $u=x+1$. \begin{align*} \frac{du}{dx}&=1\\ du&=dx
-              \end{align*} Dari $u=x+1$, dapat kita peroleh bahwa $x=u-1$.
-              Selanjutnya, lakukan substitusi $u$ dan $du$ untuk memperoleh
-              hasil integrasi. \begin{align*} \int \frac{x}{\sqrt{x+1}}dx&=\int
-              \frac{u-1}{\sqrt{u}}du\\ &=\int u^{-1/2}(u-1)du\\ &=\int
-              u^{1/2}-u^{-1/2}du\\ &=\frac{2}{3}u^{3/2}-2u^{1/2}+C\\
-              &=\frac{2}{3}(x+1)^{3/2}-2(x+1)^{1/2}+C\\
-              &=\frac{2}{3}(x+1)\sqrt{x+1}-2\sqrt{x+1}+C \end{align*}
-            </div>
-          </details>
-        </div>
-      </div>
-      <div class="dfn-box contoh">
-        <div class="dfn-header">Contoh 3 (EAS 2018)</div>
-        <div class="dfn-content">
-          Hitung integral di bawah ini dengan memilih substitusi yang
-          ditunjukkan. $$\int \frac{1}{\sqrt[5]{2}}\cos^2\frac{t}{2}dt;\quad
-          u=\frac{t}{2}$$
-          <details class="solution">
-            <summary>Pembahasan</summary>
-            <div class="solution-step">
-              Diberikan $u=\frac{t}{2}$. \begin{align*}
-              \frac{du}{dt}&=\frac{1}{2}\\ 2du&=dt \end{align*} Kemudian,
-              lakukan substitusi $u$ dan $du$. \begin{align*} \int
-              \frac{1}{\sqrt[5]{2}}\cos^2\frac{t}{2}dt&=\frac{1}{\sqrt[5]{2}}\int
-              \cos^2 u 2du\\ &=\frac{2}{\sqrt[5]{2}}\int \cos^2 u du
-              \end{align*} Selanjutnya, lakukan penyederhanaan pada integran
-              dengan identitas trigonometri berikut. \begin{align*}
-              \cos(2x)&=2\cos^2x-1\\ \cos(2x)+1&=2\cos^2x\\
-              \frac{1}{2}(\cos(2x)+1)&=\cos^2x\\
-              \cos^2x&=\frac{1}{2}(\cos(2x)+1) \end{align*} Berdasarkan
-              identitas trigonometri tersebut, di bawah ini diuraikan lanjutan
-              dari penyelesaian integral. \begin{align*}
-              \frac{2}{\sqrt[5]{2}}\int \cos^2 u du&=\frac{2}{\sqrt[5]{2}}\int
-              \frac{1}{2}(\cos(2u)+1) du\\
-              &=\frac{2}{\sqrt[5]{2}}\frac{1}{2}\int \cos(2u)+1 du\\
-              &=\frac{1}{\sqrt[5]{2}}\int \cos(2u)+1 du\\
-              &=\frac{1}{\sqrt[5]{2}}\left(\frac{1}{2}\sin(2u)+u\right)+C\\
-              &=\frac{1}{\sqrt[5]{2}}\left(\frac{1}{2}\sin\left(2.\frac{t}{2}\right)+\frac{t}{2}\right)+C\\
-              &=\frac{1}{\sqrt[5]{2}}\left(\frac{1}{2}\sin
-              t+\frac{t}{2}\right)+C\\ &=\frac{1}{2\sqrt[5]{2}}(\sin t+t)+C
-              \end{align*} Jadi, diperoleh hasil integral $\displaystyle \int
-              \frac{1}{\sqrt[5]{2}}\cos^2\frac{t}{2}dt=\frac{1}{2\sqrt[5]{2}}(\sin
-              t+t)+C$.
+              Diberikan $s(t)$ sebagai fungsi jarak terhadap waktu sehingga
+              $s'(t)=v(t)$ dimana $v(t)$ fungsi kecepatan terhadap waktu. Dari
+              soal, diketahui $3$ informasi berikut.
+              <ul class="itemaze">
+                <li>
+                  Mobil berjalan dari berhenti hingga menempuh perjalanan $4$
+                  mil sehingga $s(0)$ (jarak yang ditempuh mobil sebelum
+                  berjalan) = $0$ dan $s(5)$ (jarak yang ditempuh mobil setelah
+                  berjalan selama 5 menit) = $4$ mil.
+                </li>
+                <li>
+                  Mobil berjalan selama 5 menit sehingga interval waktunya
+                  adalah $(0,5)$
+                </li>
+              </ul>
+              Karena selama 5 menit tersebut jarak yang idtempuh mobil terus
+              bertambah dengan kecepatan tertentu, maka dengan Teorema Nilai
+              Rata-Rata, diketahui bahwa sedikitnya terdapat satu titik dalam
+              interval $(0,5)$ sehingga
+              $$s'(t)=\frac{s(5)-s(0)}{5-0}=\frac{4-0}{5}=\frac{4}{5}.$$
+              Perhatikan bahwa $v(t)=s'(t)$. Dengan kata lain, selama perjalanan
+              atau dalam rentang dari menit ke-$0$ hingga menit ke-$5$,
+              kecepatan mobil adalah $\frac{4}{5}$ mil/menit=$48$ mil/jam.
             </div>
           </details>
         </div>
@@ -184,10 +172,12 @@
         <div class="dfn-header">Latihan!</div>
         <div class="dfn-content">
           <div class="latihan-box">
-            <div class="evaluation-label"><span>EAS 2018</span></div>
+            <!-- <div class="evaluation-label"><span>EAS 2024/2025</span></div> -->
             <div class="soal-latihan">
-              Hitung integral berikut. $$\int
-              x\sqrt{\sin(x^2+9)}\cos{(x^2+9)}dx$$
+              Gunakan Teorema Rolle untuk membuktikan pernyataan di bawah ini:
+              <br />
+              Persamaan $3ax^2+2bx=a+b$ mempunyai sedikitnya satu penyelesaian
+              pada $(0,1)$.
             </div>
             <div class="answer-container" style="--hint: --H1">
               Jawab:
@@ -301,32 +291,23 @@
                   </svg>
                 </button>
                 <dialog class="hint-content" style="--hint: --H1">
-                  Lakukan $2$ kali substitusi.
+                  Misalkan $f(x)=ax^3+bx^2-ax-bx$.
                 </dialog>
               </div>
             </div>
             <details class="jawaban-latihan hidden">
               <summary>Lihat Solusi</summary>
               <div class="solution-step">
-                Pilih $u=x^2+9$. \begin{align*} \frac{du}{dx}&=2x\\
-                \frac{1}{2}du&=xdx \end{align*} Lakukan substitusi $u$ dan $du$.
-                \begin{align*} \int x\sqrt{\sin(x^2+9)}\cos{(x^2+9)}dx&=\int
-                \sqrt{\sin u}\cos u \frac{1}{2}du\\ &=\frac{1}{2}\int \sqrt{\sin
-                u}\cos u du\quad\dots(i) \end{align*} Misalkan $I=\int
-                \sqrt{\sin u}\cos u du$. Selanjutnya, substitusi akan kembali
-                dilakukan. Kali ini, pilih $t=\sin u$. \begin{align*}
-                \frac{dt}{du}&=\cos u\\ dt&=\cos u du \end{align*} Substitusi
-                $t$ dan $dt$ untuk memperoleh $I$. \begin{align*} I&=\int
-                \sqrt{\sin u}\cos u du\\ &=\int \sqrt{t} dt\\ &=\int t^{1/2}dt\\
-                &=\frac{2}{3}t^{3/2}+C\\ &=\frac{2}{3}(\sin u)^{3/2}+C\\
-                I&=\frac{2}{3}\sin u(\sin u)^{1/2}+C \end{align*} Selanjutnya,
-                substitusi hasil $I$ pada $(i)$. \begin{align*} \frac{1}{2}\int
-                \sqrt{\sin u}\cos u du&=\frac{1}{2}\left(\frac{2}{3}\sin u(\sin
-                u)^{1/2}+C\right)\\ &=\frac{1}{3}\sin u(\sin u)^{1/2}+C\\
-                &=\frac{1}{3}\sin (x^2+9)\sqrt{\sin (x^2+9)}+C \end{align*} Oleh
-                karena itu, hasil integral $$\int
-                x\sqrt{\sin(x^2+9)}\cos{(x^2+9)}dx=\frac{1}{3}\sin
-                (x^2+9)\sqrt{\sin (x^2+9)}+C.$$
+                Misalkan $f(x)=ax^3+bx^2-ax-bx$ sehingga $\displaystyle
+                f'(x)=\frac{d}{dx}=3ax^2+2bx-a-b$. Sebagai fungsi polinomial,
+                jelas bahwa $f$ dapat dapat diturunkan pada $(0,1)$ dan kontinu
+                pada $[0,1]$. Perhatikan hasil perhitungan berikut.
+                $$f(0)=a(0)^3+b(0)^2-(0)x-(0)x=0$$
+                $$f(1)=a(1)^3+b(1)^2-a(1)-b(1)=a+b-a-b=0$$ Dengan Teorema Rolle,
+                jika $f(0)=f(1)=0$, maka terdapat sedikitnya satu titik $c$
+                dalam $(0,1)$ dimana $f'(c)=0$. Dengan kata lain, terdapat
+                sedikitnya satu penyelesaian dari $f'(x)=3ax^2+2bx-a-b=0\implies
+                3ax^2+2bx=a+b$ pada $(0,1)$.
               </div>
             </details>
           </div>
@@ -334,9 +315,11 @@
 
         <div class="dfn-content">
           <div class="latihan-box">
-            <div class="evaluation-label"><span>EAS 2018</span></div>
+            <div class="evaluation-label"><span>EAS 2020</span></div>
             <div class="soal-latihan">
-              Hitung integral berikut. $$\int 18x\sqrt{3x^2+4}dx$$
+              Diberikan $f(x)=x^{2/3}$ pada selang $[-1,8]$. Gunakan Teorema
+              Nilai Rata-Rata untuk menentukan nilai $c$ sehingga
+              $f'(c)=\frac{f(8)-f(-1)}{8-(-1)}$.
             </div>
             <div class="answer-container" style="--hint: --H2">
               Jawab:
@@ -348,41 +331,16 @@
             <details class="jawaban-latihan hidden">
               <summary>Lihat Solusi</summary>
               <div class="solution-step">
-                Pilih $u=3x^2+4$. \begin{align*} \frac{du}{dx}&=6x\\ du&=6xdx
-                \end{align*} Lakukan substitusi $u$ dan $du$ untuk menyelesaikan
-                integral. \begin{align*} \int 18x\sqrt{3x^2+4}dx&=\int
-                3.6x\sqrt{3x^2+4}dx\\ &=3\int \sqrt{u}du\\ &=3\int u^{1/2}du\\
-                &=3\left(\frac{2}{3}u^{3/2}+C\right)\\
-                &=2(3x^2+4)\sqrt{3x^2+4}+C\\ \int
-                18x\sqrt{3x^2+4}dx&=(6x^2+8)\sqrt{3x^2+4}+C \end{align*}
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <div class="dfn-content">
-          <div class="latihan-box">
-            <div class="evaluation-label"><span>EAS 2018</span></div>
-            <div class="soal-latihan">
-              Hitung integral berikut. $$\int x\sqrt{x^2-1}dx$$
-            </div>
-            <div class="answer-container" style="--hint: --H3">
-              Jawab:
-              <math-field
-                class="answer"
-                style="--math-field: --M3"
-              ></math-field>
-            </div>
-            <details class="jawaban-latihan hidden">
-              <summary>Lihat Solusi</summary>
-              <div class="solution-step">
-                Pilih $u=x^2-1$. \begin{align*} \frac{du}{dx}&=2x\\
-                \frac{1}{2}du&=xdx \end{align*} Selanjutnya, substitusi $u$ dan
-                $du$ untuk menyelesaikan integral. \begin{align*} \int
-                x\sqrt{x^2-1}dx&=\int \sqrt{u}\frac{1}{2}du\\ &=\frac{1}{2}\int
-                u^{1/2} du\\ &=\frac{1}{2}\left(\frac{2}{3}u^{3/2}+C\right)\\
-                &=\frac{1}{3}u\sqrt{u}+C\\ \int
-                x\sqrt{x^2-1}dx&=\frac{1}{3}(x^2-1)\sqrt{x^2-1}+C \end{align*}
+                Diketahui $f(x)=x^{2/3}$ sehingga $\displaystyle
+                f'(x)=\frac{3}{5}x^{5/3}$. Adapun selang fungsi adalah $[-1,8]$
+                di mana $a=-1$ dan $b=8$. \begin{align*}
+                f'(c)&=\frac{f(8)-f(-1)}{8-(-1)}\\
+                \frac{3}{5}x^{5/3}|_{x=c}&=\frac{8^{2/3}-(-1)^{2/3}}{8+1}\\
+                \frac{3}{5}c^{5/3}&=\frac{4-1}{9}\\
+                \frac{3}{5}c^{5/3}&=\frac{3}{9}\\
+                \frac{3}{5}c^{5/3}&=\frac{1}{3}\\ c^{5/3}&=\frac{5}{9}\\
+                c&=\left(\frac{5}{9}\right)^{3/5}\\ c&=\sqrt[5]{\frac{125}{729}}
+                \end{align*}
               </div>
             </details>
           </div>

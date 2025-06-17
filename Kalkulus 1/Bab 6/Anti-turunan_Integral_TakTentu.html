@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">6.1</section>
+        <span class="judul-bab">Anti-turunan, Integral Taktentu</span>
+      </h2>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 6.1.1.</div>
+        <div class="dfn-content">
+          Diberikan tiga bilangan real $a,x,b$ dengan $a\leq x\leq b$ dan $f$
+          fungsi kontinu dan bernilai tak-negatif pada interval $[a,b]$. Jika
+          $L(x)$ menyatakan luas dari suatu daerah yang dibatasi sumbu-$x$ dan
+          kurva dari suatu fungsi $f$ atas interval $[a,x]$
+          <img src="img/6.1.1.svg" alt="Gambar 6.1.1" class="illust" />
+          atau untuk $x=b$, maka
+          <img src="img/6.1.2.svg" alt="Gambar 6.1.2" class="illust" />
+        </div>
+      </div>
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 6.1.1.</div>
+        <div class="dfn-content">
+          Suatu fungsi $F$ disebut anti-turunan dari fungsi $f$ pada interval
+          $I$, jika $F'(x)=f(x)$ untuk semua $x$ dalam $I$.
+        </div>
+      </div>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 6.1.2.</div>
+        <div class="dfn-content">
+          Jika $F(x)$ sebarang anti-turunan dari $f(x)$ pada interval tertentu,
+          maka untuk sebarang nilai $C$ fungsi $F(x)+C$ juga anti-turunan dari
+          $f(x)$ pada interval tersebut; selanjutnya setiap anti-turunan dari
+          $f(x)$ pada interval tersebut dapat dinyatakan dalam bentuk $F(x)+C$,
+          dengan $C$ konstan.
+        </div>
+      </div>
+
+      Jika terdapat suatu fungsi $F$ sedemikian hingga
+      $$\frac{d}{dx}[F(x)]=f(x),$$ maka fungsi $F(x)+C$ merupakan anti-turunan
+      dari $f(x)$. Proses mencari anti-turunan disebut anti-diferensiasi atau
+      integrasi dan dinotasikan dengan $$\int f(x)dx=F(x)+C$$ di mana simbol
+      $\int$ disebut tanda integral dan $f(x)$ disebut integran. <br />
+
+      Simbol $dx$ dalam operasi diferensiasi dan integrasi berperan untuk
+      mengenali peubah bebasnya. $$\frac{d}{dx}[\quad]\quad \text{dan} \quad
+      \int[\quad]dx$$
+
+      <table>
+        <thead>
+          <tr>
+            <th><strong>Rumus Diferensiasi</strong></th>
+            <th><strong>Rumus Integrasi</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [x] = 1\)</td>
+            <td>\(\displaystyle \int dx = x + C\)</td>
+          </tr>
+          <tr>
+            <td>
+              \(\displaystyle \frac{d}{dx} \left[ \frac{x^{n+1}}{n+1} \right] =
+              x^n,\quad (n \neq -1)\)
+            </td>
+            <td>
+              \(\displaystyle \int x^n dx = \frac{x^{n+1}}{n+1} + C,\quad (n
+              \neq -1)\)
+            </td>
+          </tr>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [\sin x] = \cos x\)</td>
+            <td>\(\displaystyle \int \cos x \,dx = \sin x + C\)</td>
+          </tr>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [-\cos x] = \sin x\)</td>
+            <td>\(\displaystyle \int \sin x \,dx = -\cos x + C\)</td>
+          </tr>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [\tan x] = \sec^2 x\)</td>
+            <td>\(\displaystyle \int \sec^2 x \,dx = \tan x + C\)</td>
+          </tr>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [-\cot x] = \csc^2 x\)</td>
+            <td>\(\displaystyle \int \csc^2 x \,dx = -\cot x + C\)</td>
+          </tr>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [\sec x] = \sec x \tan x\)</td>
+            <td>\(\displaystyle \int \sec x \tan x \,dx = \sec x + C\)</td>
+          </tr>
+          <tr>
+            <td>\(\displaystyle \frac{d}{dx} [-\csc x] = \csc x \cot x\)</td>
+            <td>\(\displaystyle \int \csc x \cot x \,dx = -\csc x + C\)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">
+          Teorema 6.1.3.(Sifat-Sifat Integral Tertentu)
+        </div>
+        <div class="dfn-content">
+          <ul class="itemaze">
+            <li>
+              Faktor konstan dapat dipindah melewati tanda integral, yaitu
+              $$\int cf(x)dx=c\int f(x)dx.$$
+            </li>
+            <li>
+              Anti-turunan dari jumlahan fungsi adalah jumlahan anti-turunan
+              suku-sukunya, yaitu $$\int [f(x)+g(x)]dx=\int f(x)dx+\int
+              g(x)dx.$$
+            </li>
+            <li>
+              Anti-turunan dari selisih dua fungsi adalah selisih anti-turunan,
+              yaitu $$\int [f(x)-g(x)]dx=\int f(x)dx-\int g(x)dx.$$
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      Pada suatu interval, grafik-grafik semua anti-turunan dari $f$ membentuk
+      kelas kurva yang merupakan translasi vertikal dari suatu anti-turunan.
+      Kelas kurva ini disebut kurva integral dari $f$.
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Hitung integral $$\int\frac{1}{1+\sin x}dx.$$
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Pertama-tama, sederhanakan bentuk integran ke bentuk umum yang
+              kita kenal. Caranya adalah dengan mengalikan pembilang dan
+              penyebut dengan $1+\sin x$. \begin{align*} \int\frac{1}{1+\sin
+              x}dx&=\int\frac{1}{1+\sin x}.\frac{1-\sin x}{1-\sin x}dx\\ &=\int
+              \frac{1-\sin x}{(1+\sin x)(1-\sin x)}dx\\ &=\int \frac{1-\sin
+              x}{1-\sin^2 x}dx\\ &=\int \frac{1-\sin x}{\cos^2}dx\\ &=\int
+              \frac{1}{\cos^2 x}-\frac{\sin x}{\cos^2 x}dx\\ &=\int
+              \frac{1}{\cos^2 x}-\frac{\sin x}{\cos x}.\frac{1}{\cos x}dx\\
+              &=\int \sec^2 x-\tan x\sec xdx\\ &=\int \sec^2 xdx-\int \sec x\tan
+              xdx \end{align*} Ingat bahwa $$\int \sec^2 xdx=\tan x+C \quad
+              $$dan$$\quad \int \sec x\tan xdx=\sec x+C.$$ Adapun konstanta yang
+              dijumlahkan dengan konstanta tetap merupakan suatu konstanta.
+              $$\int\frac{1}{1+\sin x}dx=\int \sec^2 xdx-\int \sec x\tan
+              xdx=\tan x-\sec x+C$$
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2 (EAS 2019/2020)</div>
+        <div class="dfn-content">
+          Tentukan fungsi $f$ sedemikian hingga $f'(x)+\sin x=0$ dan $f(0)=2$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Perhatikan bahwa $$f'(x)+\sin x=0\implies f'(x)=-\sin x$$ Fungsi
+              $f(x)$ dapat kita cari dengan mengintegralkan $f'(x)$. Diketahui
+              $\int \sin xdx=-\cos x+C$. \begin{align*} f(x)&=\int -\sin xdx\\
+              &=-\int \sin xdx\\ &=-(-\cos x+C)\\ f(x)&=\cos x+C\quad
+              \text{(konstanta yang dikalikan -1 tetaplah konstanta)}
+              \end{align*} Selanjutnya akan dicari nilai $C$. \begin{align*}
+              f(0)&=2\\ \cos (0)+C&=2\\ 1+C&=2\\ C&=1 \end{align*} Dengan
+              demikian, diperoleh $f(x)=\cos x+1$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <!-- <div class="evaluation-label"><span>EAS 2024/2025</span></div> -->
+            <div class="soal-latihan">
+              Hitung integral berikut. $$\int \sin^2(x/2)dx$$
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+              <div class="hint">
+                <button class="hint-button">
+                  <svg viewBox="0 0 500 500" width="30" height="30">
+                    <g>
+                      <path
+                        class="path_1"
+                        style="fill: #ffffff00"
+                        d="M352.583,211.919c0-67.689-54.588-122.629-122.143-123.197
+                 c-67.974-0.572-124.261,55.222-124.26,123.198c0,33.247,13.171,63.416,34.579,85.577c25.593,26.494,40.024,61.808,40.024,98.645
+                 v13.156h97.197v-13.15c0-36.544,13.862-71.932,39.432-98.042C339.169,275.889,352.583,245.472,352.583,211.919z"
+                      />
+                      <rect
+                        class="path_2"
+                        x="180.783"
+                        y="409.297"
+                        style="fill: #ffffff00"
+                        width="97.197"
+                        height="57.125"
+                      />
+                      <path
+                        class="path_3"
+                        style="fill: #ffffff00"
+                        d="M253.254,466.422c0,14.126-11.452,25.578-25.578,25.578s-25.578-11.452-25.578-25.578H253.254z"
+                      />
+                      <g>
+                        <path
+                          d="M230.523,78.722c-35.583-0.342-69.221,13.48-94.756,38.802C110.239,142.84,96.18,176.363,96.18,211.92
+                   c0,34.708,13.278,67.567,37.387,92.524c24,24.844,37.216,57.409,37.216,91.697v13.156v57.125c0,5.523,4.477,10,10,10h12.756
+                   C197.871,491.185,211.53,502,227.676,502s29.805-10.815,34.138-25.578h16.166c5.523,0,10-4.477,10-10v-57.125v-13.15
+                   c0-34.627,12.99-66.961,36.576-91.044c24.522-25.04,38.027-58.133,38.027-93.185c0-35.38-13.723-68.697-38.64-93.812
+                   C299.041,93.006,265.864,79.02,230.523,78.722z M227.676,482c-4.787,0-9.076-2.17-11.936-5.578h23.872
+                   C236.752,479.83,232.463,482,227.676,482z M267.98,456.422h-14.726h-51.156h-11.315v-37.125h77.197V456.422z M310.267,291.109
+                   c-27.269,27.844-42.287,65.148-42.287,105.039v3.15h-77.197v-3.156c0-39.5-15.211-77-42.832-105.593
+                   c-20.488-21.208-31.771-49.133-31.771-78.629c0-30.183,11.958-58.663,33.67-80.194c21.72-21.538,50.338-33.226,80.505-33.005
+                   c61.882,0.521,112.228,51.301,112.228,113.197C342.583,241.707,331.106,269.83,310.267,291.109z"
+                        />
+                        <path
+                          d="M229.381,55.584c5.523,0,10-4.477,10-10V10c0-5.523-4.477-10-10-10s-10,4.477-10,10v35.584
+                   C219.381,51.107,223.858,55.584,229.381,55.584z"
+                        />
+                        <path
+                          d="M85.246,29.896c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968
+                   l-7.108-9.783C91.073,3.89,84.82,2.9,80.351,6.146c-4.468,3.247-5.458,9.5-2.212,13.968L85.246,29.896z"
+                        />
+                        <path
+                          d="M124.729,84.239c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.246,5.458-9.5,2.212-13.968
+                   l-19.113-26.308c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.246-5.458,9.5-2.212,13.968L124.729,84.239z"
+                        />
+                        <path
+                          d="M37.031,160.15l33.843,10.996c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   c1.707-5.253-1.168-10.894-6.42-12.601l-33.843-10.996c-5.251-1.705-10.894,1.168-12.601,6.42
+                   C28.904,152.802,31.778,158.443,37.031,160.15z"
+                        />
+                        <path
+                          d="M84.808,260.51c-1.707-5.253-7.346-8.126-12.601-6.42l-33.843,10.996c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l33.843-10.996C83.64,271.404,86.514,265.763,84.808,260.51
+                   z"
+                        />
+                        <path
+                          d="M102.626,391.668c-4.467-3.246-10.721-2.255-13.968,2.212l-8.903,12.253c-3.246,4.468-2.256,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.903-12.253C108.085,401.168,107.095,394.915,102.626,391.668z
+                   "
+                        />
+                        <path
+                          d="M134.544,347.736c-4.468-3.246-10.722-2.255-13.968,2.212l-8.845,12.175c-3.246,4.468-2.255,10.722,2.212,13.968
+                   c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l8.845-12.175C140.003,357.236,139.012,350.982,134.544,347.736z
+                   "
+                        />
+                        <path
+                          d="M338.347,336.895c-3.246-4.468-9.499-5.459-13.968-2.212c-4.468,3.247-5.458,9.5-2.212,13.968l20.916,28.789
+                   c1.957,2.693,5.006,4.123,8.099,4.123c2.038,0,4.095-0.621,5.87-1.91c4.468-3.247,5.458-9.5,2.212-13.968L338.347,336.895z"
+                        />
+                        <path
+                          d="M426.045,260.984l-33.843-10.997c-5.252-1.705-10.894,1.168-12.601,6.42c-1.707,5.252,1.168,10.894,6.42,12.601
+                   l33.843,10.997c1.027,0.333,2.068,0.492,3.092,0.492c4.215,0,8.136-2.687,9.509-6.913
+                   C434.172,268.333,431.298,262.691,426.045,260.984z"
+                        />
+                        <path
+                          d="M471.39,130.367c-1.706-5.252-7.347-8.127-12.601-6.42l-14.678,4.769c-5.252,1.707-8.127,7.348-6.42,12.601
+                   c1.373,4.226,5.293,6.913,9.509,6.913c1.024,0,2.065-0.159,3.092-0.492l14.678-4.769
+                   C470.222,141.261,473.096,135.62,471.39,130.367z"
+                        />
+                        <path
+                          d="M387.777,167.536c1.024,0,2.065-0.159,3.092-0.492l25.994-8.446c5.252-1.707,8.127-7.348,6.42-12.601
+                   c-1.707-5.252-7.347-8.127-12.601-6.42l-25.994,8.446c-5.252,1.707-8.127,7.348-6.42,12.601
+                   C379.642,164.849,383.562,167.536,387.777,167.536z"
+                        />
+                        <path
+                          d="M320.89,83.916c1.775,1.29,3.832,1.91,5.87,1.91c3.092,0,6.142-1.43,8.099-4.123l20.916-28.789
+                   c3.246-4.468,2.255-10.722-2.212-13.968c-4.469-3.246-10.722-2.255-13.968,2.212l-20.916,28.789
+                   C315.431,74.416,316.422,80.669,320.89,83.916z"
+                        />
+                        <path
+                          d="M288.349,135.549c-11.289-8.76-24.609-14.981-38.521-17.992c-5.395-1.169-10.721,2.26-11.889,7.659
+                   c-1.168,5.398,2.261,10.721,7.659,11.889c11.007,2.382,21.55,7.308,30.491,14.245c1.823,1.415,3.981,2.1,6.124,2.1
+                   c2.984,0,5.937-1.33,7.907-3.87C293.505,145.217,292.712,138.935,288.349,135.549z"
+                        />
+                        <path
+                          d="M202.914,119.066c-41.096,11.729-69.797,49.799-69.797,92.579c0,5.523,4.477,10,10,10s10-4.477,10-10
+                   c0-33.895,22.735-64.056,55.287-73.346c5.311-1.516,8.387-7.05,6.872-12.361C213.758,120.628,208.224,117.55,202.914,119.066z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+                <dialog class="hint-content" style="--hint: --H1">
+                  $\displaystyle \sin^2\theta=\frac{1}{2}(1-\cos 2\theta)$
+                </dialog>
+              </div>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Pertama-tama, sederhanakan bentuk integran ke bentuk umum yang
+                kita kenal. Ingat bahwa $\displaystyle
+                \sin^2\theta=\frac{1}{2}(1-\cos 2\theta)$. \begin{align*}
+                \int\sin^2(x/2)dx&=\int \frac{1}{2}(1-\cos 2x)dx\\
+                &=\frac{1}{2}\int (1-\cos 2x) dx\\ &=\frac{1}{2}\left(\int
+                dx-\int \cos 2x dx\right) \end{align*} Perhatikan bahwa $$\int
+                dx=\int 1 dx=\int x^0
+                dx=\frac{x^{0+1}}{0+1}+C=\frac{x^1}{1}+C=x+C$$ dan
+                $$\frac{d}{dx}\left(\frac{1}{2}\sin 2x\right)=\cos 2x\implies
+                \int \cos 2x dx=\frac{1}{2}\sin 2x+C$$ Adapun konstanta yang
+                dijumlahkan dengan konstanta tetap merupakan suatu konstanta dan
+                konstanta yang dikalikan bilangan lain tetap merupakan
+                konstanta. $$\int\sin^2(x/2)dx=\frac{1}{2}\left(\int dx-\int
+                \cos 2x dx\right)=\frac{1}{2}\left(x-\frac{1}{2}\sin 2x
+                +C\right)=\frac{1}{2}x-\frac{1}{4}\sin 2x+C$$
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>EAS 2019/2020</span></div>
+            <div class="soal-latihan">
+              Dapatkan $g(t)$ jika $\displaystyle \int
+              g(t)dt=\frac{1}{\sqrt{4-t^2}}+C$.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Misalkan anti-turunan dari $g(t)$, $\displaystyle G(t)=\int
+                g(t)dt=\frac{1}{\sqrt{4-t^2}}+C$, sehingga $g(t)$ diperoleh
+                dengan mencari turunan dari anti-turunan tersebut. Ingat bahwa
+                turunan dari konstanta adalah nol.
+                $$g(t)=\frac{d}{dt}\left(\frac{1}{\sqrt{4-t^2}}\right)=\frac{d}{dt}(4-t^2)^{-1/2}$$
+                Misalkan $u=4-t^2$ sehingga $\displaystyle \frac{du}{dt}=-2t$.
+                Adapun $g(t)=u^{-1/2}$ sehingga $\displaystyle
+                \frac{dG}{du}=-\frac{1}{2}u^{-3/2}=-\frac{1}{2}\frac{1}{\sqrt{u^3}}$.
+                Dengan aturan rantai, diperoleh bahwa
+                $$g(t)=\frac{dG}{du}\frac{du}{dt}=-\frac{1}{2}.\frac{1}{\sqrt{u^3}}\frac{du}{dt}=-\frac{1}{2\sqrt{(4-t^2)^3}}(-2t)=\frac{t}{\sqrt{(4-t^2)^3}}$$
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

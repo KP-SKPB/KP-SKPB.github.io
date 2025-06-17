@@ -51,6 +51,13 @@
   font-size: 20px !important;
 }
 
+b,
+strong {
+  -webkit-text-fill-color: var(--second-color);
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: red;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -669,11 +676,11 @@ details.jawaban-latihan::details-content {
   margin-right: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  width: 25%;
+  width: max(25%, 300px);
 }
 
 .illust-outer {
-  width: 30%;
+  width: max(30%, 400px);
   background-color: white;
   padding: 10px;
 }
@@ -894,5 +901,8 @@ header .navbar ul li a:hover {
   }
   .progress-container {
     height: 96%;
+  }
+  .katex {
+    font-size: 16px !important;
   }
 }

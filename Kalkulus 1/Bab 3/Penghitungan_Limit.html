@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">3.2</section>
+        <span class="judul-bab">Perhitungan Limit</span>
+      </h2>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.2.1.</div>
+        <div class="dfn-content">
+          Diberikan $a$ dan $k$ bilangan-bilangan real.
+          <ol class="itemaze alpha">
+            <li>$\displaystyle \lim_{x\to a}k=k$</li>
+            <li>$\displaystyle \lim_{x\to a}x=a$</li>
+            <li>$\displaystyle \lim_{x\to 0^-}\frac{1}{x}=-\infty$</li>
+            <li>$\displaystyle \lim_{x\to 0^+}\frac{1}{x}=+\infty$</li>
+          </ol>
+        </div>
+      </div>
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.2.2.</div>
+        <div class="dfn-content">
+          Jika $a$ bilangan real dan $$\displaystyle \lim_{x\to a}f(x)=L_1\quad
+          \text{dan}\quad \lim_{x\to a}g(x)=L_2,$$ yakni limit-limit tersebut
+          \textbf{ada} dan bernilai $L_1$ dan $L_2$, maka:
+          <ol class="itemaze arabic">
+            <li>
+              $\displaystyle \lim_{x\to a}(f(x)+g(x))=\lim_{x\to
+              a}f(x)+\lim_{x\to a}g(x)=L_1+L_2$
+            </li>
+            <li>
+              $\displaystyle \lim_{x\to a}(f(x)-g(x))=\lim_{x\to
+              a}f(x)-\lim_{x\to a}g(x)=L_1-L_2$
+            </li>
+            <li>
+              $\displaystyle \lim_{x\to a}(f(x)g(x))=\left(\lim_{x\to
+              a}f(x)\right)\left(\lim_{x\to a}g(x)\right)=L_1L_2$
+            </li>
+            <li>
+              $\displaystyle \lim_{x\to a}\frac{f(x)}{g(x)}=\frac{\lim_{x\to
+              a}f(x)}{\lim_{x\to a}g(x)}=\frac{L_1}{L_2},$ dengan syarat
+              $L_2\neq0$
+            </li>
+            <li>
+              $\displaystyle \lim_{x\to a}\sqrt[n]{f(x)}=\sqrt[n]{\lim_{x\to
+              a}f(x)}=\sqrt[n]{L_1}$, dengan syarat $L_1>0$ jika $n$ genap
+            </li>
+          </ol>
+          Semua pernyataan di atas juga benar untuk limit satu-sisi, yaitu $x\to
+          a^-$ atau $x\to a^+$
+        </div>
+      </div>
+
+      Selain sifat-sifat pada teorema di atas, terdapat pula sifat berikut untuk
+      $\displaystyle \lim_{x\to a}f(x)$ ada.
+      <ol class="itemaze arabic">
+        <li>$\displaystyle \lim_{x\to a}kf(x)=k\lim_{x\to a}f(x)$.</li>
+        <li>
+          $\displaystyle \lim_{x\to a}(f(x))^n=\left(\lim_{x\to
+          a}f(x)\right)^n.$
+        </li>
+      </ol>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 3.2.3.</div>
+        <div class="dfn-content">
+          Untuk sebarang polinomial $$p(x)=a_0+a_1x+a_2x^2+\dots+a_nx^n$$ dan
+          sebarang bilangan real $a$, berlaku $$\displaystyle \lim_{x\to
+          a}p(x)=a_0+a_1a+a_2a^2+\dots+a_na^n=p(a).$$
+        </div>
+      </div>
+
+      Umumnya, perhitungan limit dilakukan dengan mensubstitusi nilai pendekatan
+      $x$. Namun pada kasus-kasus di mana hasil substitusi pada limit adalah
+      bentuk tak tentu seperti $\displaystyle \frac{0}{0}$, maka penyebab
+      munculnya bentuk tak tentu tersebut harus dihilangkan dengan manipulasi
+      aljabar.
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Dengan cara merasionalkan pembilang, dapatkan $$\displaystyle
+          \lim_{x\to 0}\frac{\sqrt{x+4}-2}{x}.$$
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Akan dicari nilai limit dengan merasionalkan pembilang (mengalikan
+              pembilang dan penyebut dengan bentuk sekawan dari pembilang).
+              Pembilang dari limit tersebut adalah $\sqrt{x+4}-2$ sehingga
+              bentuk sekawannya adalah $\sqrt{x+4}+2$. Setelah merasionalkan
+              pembilang, $x=0$ disubstitusi pada hasil manipulasi untuk
+              mendapatkan nilai limit. \begin{align*} \displaystyle \lim_{x\to
+              0}\frac{\sqrt{x+4}-2}{x}&=\lim_{x\to
+              0}\left(\frac{\sqrt{x+4}-2}{x}.\frac{\sqrt{x+4}+2}{\sqrt{x+4}+2}\right)\\
+              &=\lim_{x\to 0} \frac{(\sqrt{x+4})^2-2^2}{x(\sqrt{x+4}+2)}\\
+              &=\lim_{x\to 0} \frac{x+4-4}{x(\sqrt{x+4}+2)}\\ &=\lim_{x\to 0}
+              \frac{\cancel{x}}{\cancel{x}(\sqrt{x+4}+2)}\\ &=\lim_{x\to 0}
+              \frac{1}{\sqrt{x+4}+2}\\ &=\frac{1}{\sqrt{0+4}+2}\\ \lim_{x\to
+              0}\frac{\sqrt{x+4}-2}{x}&=\frac{1}{4} \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2</div>
+        <div class="dfn-content">
+          Diberikan $\displaystyle f(x)=\frac{x^3-1}{x-1}$. Dapatkan
+          $\displaystyle \lim_{x\to 1}f(x)$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Pertama-tama, hitung nilai limit dengan substitusi $x=1$.
+              $$\displaystyle \lim_{x\to 1}\frac{x^3-1}{x-1}=\frac{\displaystyle
+              \lim_{x\to 1}(x^3-1)}{\displaystyle \lim_{x\to
+              1}(x-1)}=\frac{1^3-1}{1-1}=\frac{0}{0}$$ Terlihat bahwa hasilnya
+              merupakan bentuk tak tentu $\displaystyle\frac{0}{0}$. Oleh karena
+              itu, perlu dilakukan manipulasi aljabar untuk menghilangkan
+              penyebab munculnya bentuk tak tentu. Dilihat dari bentuknya yang
+              merupakan fungsi rasional, manipulasi dilakukan dengan
+              memfaktorkan pembilang dan penyebut hingga ditemukan faktor yang
+              sama pada keduanya. Perhatikan bahwa pembilang ($x^3-1$) dapat
+              difaktorkan dengan rumus berikut. $$a^3-b^3=(a-b)(a^3+ab+b^2)$$
+              Misalkan $a=x$ dan $b=1$. $$x^3-1=(x-1)(x^2+x+1)$$ Adapun
+              penyebutnya ($x-1$) tidak perlu difaktorkan lagi. Setelah itu,
+              $x=1$ disubstitusi pada hasil manipulasi untuk memperoleh nilai
+              limitnya. \begin{align*} \displaystyle \lim_{x\to
+              1}\frac{x^3-1}{x-1}&=\lim_{x\to 1}\frac{(x-1)(x^2+x+1)}{x-1}\\
+              &=\lim_{x\to 1}\frac{\cancel{(x-1)}(x^2+x+1)}{\cancel{x-1}}\\
+              &=\lim_{x\to 1} (x^2+x+1)\\ &=1^2+1+1\\ \lim_{x\to
+              1}\frac{x^3-1}{x-1}&=3 \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 3 (ETS 2018/2019)</div>
+        <div class="dfn-content">
+          Hitung limit berikut ini. $$\displaystyle
+          \lim_{t\to-1}\frac{t^2+6t+5}{t^2-3t-4}$$
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Pertama-tama, hitung nilai limit dengan substitusi $t=-1$.
+              $$\displaystyle
+              \lim_{t\to-1}\frac{t^2+6t+5}{t^2-3t-4}=\frac{\displaystyle
+              \lim_{t\to -1}(t^2+6t+5)}{\displaystyle \lim_{t\to
+              -1}(t^2-3t-4)}=\frac{(-1)^2+6(-1)+5}{(-1)^2-3(-1)-4}=\frac{1-6+5}{1+3-4}=\frac{0}{0}$$
+              Terlihat bahwa hasilnya merupakan bentuk tak tentu $\displaystyle
+              \frac{0}{0}$. Oleh karena itu, perlu dilakukan manipulasi aljabar
+              untuk menghilangkan penyebab munculnya bentuk tak tentu. Dilihat
+              dari bentuknya yang merupakan fungsi rasional, manipulasi
+              dilakukan dengan memfaktorkan pembilang dan penyebut hingga
+              ditemukan faktor yang sama pada keduanya. Perhatikan bahwa
+              $t^2+6t+5$ dapat difaktorkan menjadi $(t+5)(t+1)$. Adapun
+              $t^2-3t-4$ dapat difaktorkan menjadi $(t-4)(t+1)$. Setelah itu,
+              $t=-1$ disubstitusi pada hasil manipulasi untuk memperoleh nilai
+              limitnya. \begin{align*} \displaystyle
+              \lim_{t\to-1}\frac{t^2+6t+5}{t^2-3t-4}&=
+              \lim_{t\to-1}\frac{(t+5)(t+1)}{(t-4)(t+1)}\\
+              &=\lim_{t\to-1}\frac{(t+5)\cancel{(t+1)}}{(t-4)\cancel{(t+1)}}\\
+              &=\lim_{t\to-1}\frac{t+5}{t-4}\\ &=\frac{-1+5}{-1-4}\\
+              &=\frac{4}{-5}\\
+              \lim_{t\to-1}\frac{t^2+6t+5}{t^2-3t-4}&=-\frac{4}{5} \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>Kuis 2022</span></div>
+            <div class="soal-latihan">
+              Dapatkan $\displaystyle \lim_{x\to 4^-}\frac{4-x}{2-\sqrt{x}}$
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Pertama-tama, hitung nilai limit dengan substitusi $x=4$.
+                $$\displaystyle \lim_{x\to
+                4^-}\frac{4-x}{2-\sqrt{x}}=\frac{\displaystyle \lim_{x\to
+                4^-}(4-x)}{\displaystyle \lim_{x\to
+                4^-}(2-\sqrt{x})}=\frac{4-4}{2-\sqrt{4}}=\frac{0}{2-2}=\frac{0}{0}$$
+                Terlihat bahwa hasilnya merupakan bentuk tak tentu
+                $\displaystyle \frac{0}{0}$. Oleh karena itu, perlu dilakukan
+                manipulasi aljabar untuk menghilangkan penyebab munculnya bentuk
+                tak tentu. Manipulasi dapat dilakukan dengan memfaktorkan
+                pembilang dan penyebut hingga ditemukan faktor yang sama pada
+                keduanya. Perhatikan bahwa pembilang $4-x=2^2-(\sqrt{x})^2$
+                dapat difaktorkan dengan rumus berikut. $$a^2-b^2=(a+b)(a-b)$$
+                Misalkan $a=2$ dan $b=\sqrt{x}$.
+                $$4-x=(2+\sqrt{x})(2-\sqrt{x})$$ Adapun penyebutnya
+                ($2-\sqrt{x}$) tidak perlu difaktorkan lagi. Setelah itu, $x=4$
+                disubstitusi pada hasil manipulasi untuk mendapatkan nilai
+                limitnya. \begin{align*} \displaystyle \lim_{x\to
+                4^-}\frac{4-x}{2-\sqrt{x}}&=\lim_{x\to
+                4^-}\frac{(2+\sqrt{x})(2-\sqrt{x})}{2-\sqrt{x}}\\ &=\lim_{x\to
+                4^-}\frac{(2+\sqrt{x})\cancel{(2-\sqrt{x})}}{\cancel{2-\sqrt{x}}}\\
+                &=\lim_{x\to 4^-} (2+\sqrt{x})\\ &=2+\sqrt{4}\\ &=2+2\\
+                \lim_{x\to 4^-}\frac{4-x}{2-\sqrt{x}}&=4 \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Hitunglah $\displaystyle \lim_{x\to 3}\frac{\sqrt
+              {x^2-5}-2}{x-3}$.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Pertama-tama, hitung nilai limit dengan substitusi $x=3$.
+                $$\displaystyle \lim_{x\to 3}\frac{\sqrt
+                {x^2-5}-2}{x-3}=\frac{\displaystyle \lim_{x\to 3}\left(\sqrt
+                {x^2-5}-2\right)}{\displaystyle \lim_{x\to
+                3}(x-3)}=\frac{\sqrt{3^2-5}-2}{3-3}=\frac{\sqrt{9-5}-2}{0}=\frac{\sqrt{4}-2}{0}=\frac{2-2}{0}=\frac{0}{0}$$
+                Terlihat bahwa hasilnya merupakan bentuk tak tentu
+                $\displaystyle \frac{0}{0}$. Oleh karena itu, perlu dilakukan
+                manipulasi aljabar untuk menghilangkan penyebab munculnya bentuk
+                tak tentu. Manipulasi dapat dilakukan dengan merasionalkan
+                pembilang yang mengandung bentuk akar. Pembilang dari fungsi
+                yang dilimitkan adalah $\sqrt {x^2-5}-2$ sehingga bentuk
+                sekawannya adalah $\sqrt {x^2-5}+2$. Pembilang dan penyebut
+                kemudian dikalikan dengan bentuk sekawan dari pembilang tersebut
+                untuk kemudian disederhanakan. Setelah itu, $x=3$ disubstitusi
+                pada hasil manipulasi untuk memperoleh nilai limitnya.
+                \begin{align*} \displaystyle \lim_{x\to 3}\frac{\sqrt
+                {x^2-5}-2}{x-3}&=\lim_{x\to 3}\left(\frac{\sqrt
+                {x^2-5}-2}{x-3}.\frac{\sqrt {x^2-5}+2}{\sqrt {x^2-5}+2}\right)\\
+                &=\lim_{x\to 3}\frac{(\sqrt{x^2-5})^2-2^2}{(x-3)(\sqrt
+                {x^2-5}+2)}\\ &=\lim_{x\to 3} \frac{x^2-5-4}{(x-3)(\sqrt
+                {x^2-5}+2)}\\ &=\lim_{x\to 3} \frac{x^2-9}{(x-3)(\sqrt
+                {x^2-5}+2)}\\ &=\lim_{x\to 3} \frac{(x+3)(x-3)}{(x-3)(\sqrt
+                {x^2-5}+2)}\\ &=\lim_{x\to 3}
+                \frac{(x+3)\cancel{(x-3)}}{\cancel{(x-3)}(\sqrt {x^2-5}+2)}\\
+                &=\lim_{x\to 3}\frac{x+3}{\sqrt {x^2-5}+2}\\
+                &=\frac{3+3}{\sqrt{3^2-5}+2}\\ &=\frac{6}{\sqrt{9-5}+2}\\
+                &=\frac{6}{\sqrt{4}+2}\\ &=\frac{6}{2+2}\\ &=\frac{6}{4}\\
+                \lim_{x\to 3}\frac{\sqrt {x^2-5}-2}{x-3}&=\frac{3}{2}
+                \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2023/2024</span></div>
+            <div class="soal-latihan">
+              Diketahui $f(x)=\begin{cases} 3x+1\quad x>2\\ -2x+11\quad x&lt;2
+              \end{cases}$. Hitunglah $\displaystyle \lim_{x\to2}f(x).$
+            </div>
+            <div class="answer-container" style="--hint: --H3">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M3"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Diberikan $f(x)=\begin{cases} 3x+1\quad x>2\\ -2x+11\quad x&lt;2
+                \end{cases}$. Akan dicari $\displaystyle \lim_{x\to2}f(x)$.
+                Pertama-tama, akan dicek terlebih dahulu nilai limit tersebut
+                ada atau tidak. Nilai $\displaystyle \lim_{x\to2}f(x)$ ada jika
+                nilai limit dari kiri dan kanannya sama atau dapat dituliskan
+                $$\displaystyle \lim_{x\to2^-}f(x)=\lim_{x\to2^+}f(x).$$
+                Selanjutnya, akan dicari nilai limit untuk masing-masing limit
+                satu-sisi tersebut. Untuk limit dari sisi kiri, fungsi yang
+                digunakan adalah $f(x)=-2x+11$ karena nilai $x$ yang mendekati
+                $2$ dari kiri berada pada domain $x&lt;2$. Adapun untuk limit
+                dari sisi kanan, fungsi yang digunakan adalah $f(x)=3x+1$ karena
+                nilai $x$ yang mendekati $2$ dari kanan berada pada domain
+                $x>2$. Dengan demikian, diperoleh masing-masing nilai untuk
+                limit satu-sisi adalah sebagai berikut. $$\displaystyle
+                \lim_{x\to2^-}f(x)=\lim_{x\to2^-}(-2x+11)=-2(2)+11=-4+11=7$$
+                $$\displaystyle
+                \lim_{x\to2^+}f(x)=\lim_{x\to2^-}(3x+1)=3(2)+1=6+1=7$$ Terlihat
+                bahwa nilai untuk kedua limit satu-sisi adalah sama sehingga
+                nilai limit $\displaystyle \lim_{x\to2}f(x)$ ada, yaitu:
+                $$\displaystyle
+                \lim_{x\to2}f(x)=\lim_{x\to2^-}f(x)=\lim_{x\to2^+}f(x)=7.$$
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

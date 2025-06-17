@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">3.3</section>
+        <span class="judul-bab">Limit di Tak-Hingga</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 3.3.1.</div>
+        <div class="dfn-content">
+          Jika nilai-nilai $f(x)$ menjadi sedekat mungkin ke suatu bilangan $L$
+          saat $x\to +\infty$, maka dapat dituliskan $$\displaystyle
+          \lim_{x\to+\infty}f(x)=L\quad \text{atau}\quad f(x)\to
+          L\quad\text{untuk}\quad x\to+\infty.$$ Sedangkan jika nilai-nilai
+          $f(x)$ menjadi sedekat mungkin ke suatu bilangan $L$ saat $x\to
+          -\infty$, maka dapat dituliskan $$\displaystyle
+          \lim_{x\to-\infty}f(x)=L\quad \text{atau}\quad f(x)\to
+          L\quad\text{untuk}\quad x\to-\infty.$$
+        </div>
+      </div>
+      Sifat-sifat limit pada subbab $3.2$ juga berlaku untuk limit tak hingga,
+      baik itu di $-\infty$ maupun di $+\infty$.
+      <ol class="itemaze arabic">
+        <li>$\displaystyle \lim_{x\to -\infty}k=\lim_{x\to +\infty}k=k$.</li>
+        <li>
+          $\displaystyle \lim_{x\to -\infty}kf(x)=k\lim_{x\to -\infty}f(x)$ dan
+          $\displaystyle \lim_{x\to +\infty}kf(x)=k\lim_{x\to +\infty}f(x)$
+          asalkan limit $f(x)$ ada.
+        </li>
+        <li>
+          $\displaystyle \lim_{x\to -\infty}(f(x))^n=\left(\lim_{x\to
+          -\infty}f(x)\right)^n$ dan $\displaystyle \lim_{x\to
+          +\infty}(f(x))^n=\left(\lim_{x\to +\infty}f(x)\right)^n$ untuk $n$
+          bilangan bulat positif.
+        </li>
+      </ol>
+      <br />
+      <h4>(LIMIT TAK-HINGGA DI TAK-HINGGA)</h4>
+      Jika nilai-nilai $f(x)$ naik tanpa batas saat $x\to-\infty$ atau saat
+      $x\to+\infty$, maka dapat ditulis $$\displaystyle
+      \lim_{x\to-\infty}f(x)=+\infty\quad
+      \text{dan}\quad\lim_{x\to+\infty}f(x)=+\infty,$$ dan jika nilai-nilai
+      $f(x)$ turun tanpa batas saat $x\to-\infty$ atau saat $x\to+\infty$, maka
+      dapat ditulis $$\displaystyle \lim_{x\to-\infty}f(x)=-\infty\quad
+      \text{dan}\quad\lim_{x\to+\infty}f(x)=-\infty.$$
+      <br />
+      <strong>Catatan Penting:</strong>
+      <ol class="itemaze arabic">
+        <li>
+          $\displaystyle
+          \lim_{x\to-\infty}\frac{1}{x}=\lim_{x\to+\infty}\frac{1}{x}=0$
+        </li>
+        <li>
+          $\displaystyle \lim_{x\to+\infty}x^n=+\infty,\quad n=1,2,3,\dots$ dan
+          $\displaystyle \lim_{x\to-\infty}x^n=\begin{cases} -\infty,\quad
+          n\quad \text{ganjil}\\ +\infty,\quad n\quad \text{genap} \end{cases}$
+        </li>
+      </ol>
+      <br />
+      <h4>(Limit Tak-Hingga untuk Fungsi Polinomial)</h4>
+      Jika $a_n\neq0$, maka $$\displaystyle \lim_{x\to
+      -\infty}(a_0+a_1x+a_2x^2+\dots+a_nx^n)=\lim_{x\to-\infty}a_nx^n,$$ dan
+      $$\displaystyle \lim_{x\to
+      +\infty}(a_0+a_1x+a_2x^2+\dots+a_nx^n)=\lim_{x\to+\infty}a_nx^n.$$
+      <br />
+      <h4>(Limit Tak-Hingga untuk Fungsi Rasional)</h4>
+      Jika $a_n\neq0$ dan $b_m\neq0$, maka $$\displaystyle \lim_{x\to -\infty}
+      \frac{a_0+a_1x+a_2x^2+\dots+a_nx^n}{b_0+b_1x+b_2x^2+\dots+b_mx^m}=\lim_{x\to
+      -\infty}\frac{a_nx^n}{b_mx^m},$$ dan $$\displaystyle \lim_{x\to +\infty}
+      \frac{a_0+a_1x+a_2x^2+\dots+a_nx^n}{b_0+b_1x+b_2x^2+\dots+b_mx^m}=\lim_{x\to
+      +\infty}\frac{a_nx^n}{b_mx^m}.$$
+
+      <br />
+      <h4>(Limit Tak-Hingga untuk Fungsi yang Memuat Akar)</h4>
+      Untuk fungsi yang memuat akar, perhitungan limit dilakukan dengan
+      manipulasi aljabar untuk memperoleh bentuk-bentuk dasar limit.
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Hitung $\displaystyle \lim_{x\to-\infty}(1-2x+3x^3-5x^5)$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              \begin{align*} \displaystyle
+              \lim_{x\to-\infty}(1-2x+3x^3-5x^5)&=\lim_{x\to-\infty}(-5x^5)\\
+              &=-5\lim_{x\to-\infty}x^5 \end{align*} Di sini pangkatnya adalah
+              $5$ yang merupakan bilangan ganjil sehingga $$\displaystyle
+              \lim_{x\to-\infty}(1-2x+3x^3-5x^5)=-5(-\infty)=+\infty.$$
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2 (ETS 2019/2020)</div>
+        <div class="dfn-content">
+          Tentukan nilai $$\displaystyle
+          \lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{2x-3}.$$
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Untuk fungsi yang memuat akar, perhitungan limit dilakukan dengan
+              manipulasi aljabar untuk memperoleh bentuk-bentuk dasar limit.
+              Ingat bahwa $|x|=\sqrt{x^2}$. Manipulasi aljabar dilakukan dengan
+              membagi penyebut dan pembilang dengan $|x|$. \begin{align*}
+              \displaystyle
+              \lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{2x-3}&=\lim_{x\to-\infty}\frac{\frac{\sqrt{x^2+1}}{|x|}}{\frac{2x-3}{|x|}}\\
+              &=\lim_{x\to-\infty}\frac{\frac{\sqrt{x^2+1}}{\sqrt{x^2}}}{\frac{2x-3}{|x|}}\\
+              &=\lim_{x\to-\infty}\frac{\sqrt{\frac{x^2+1}{x^2}}}{\frac{2x-3}{|x|}}
+              \end{align*} Berdasarkan definisi nilai mutlak $\displaystyle
+              |x|=\begin{cases} x,\quad x\geq0\\ -x,\quad x&lt;0 \end{cases}$,
+              $|x|$ dapat disubstitusi dengan $-x$. \begin{align*} \displaystyle
+              \lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{2x-3}&=\lim_{x\to-\infty}\frac{\sqrt{\frac{x^2+1}{x^2}}}{\frac{2x-3}{-x}}\\
+              &=\lim_{x\to-\infty}\frac{\sqrt{1+\frac{1}{x^2}}}{-2+\frac{3}{x}}\\
+              &=\frac{\sqrt{1+0}}{-2+0}\\
+              \lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{2x-3}&=-\frac{1}{2}
+              \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 3 (ETS 2021/2022)</div>
+        <div class="dfn-content">
+          Hitung $\displaystyle \lim_{x\to-\infty}\frac{4-x}{4+6x^2}$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              \begin{align*} \displaystyle
+              \lim_{x\to-\infty}\frac{4-x}{4+6x^2}&=\lim_{x\to-\infty}\frac{-x}{6x^2}\\
+              &=\lim_{x\to-\infty}\frac{-1}{6x}\\
+              &=-\frac{1}{6}\lim_{x\to-\infty}\frac{1}{x}\\ &=-\frac{1}{6}(0)\\
+              &=0 \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>Kuis 2022</span></div>
+            <div class="soal-latihan">
+              Dapatkan $\displaystyle
+              \lim_{x\to\infty^-}\sqrt[3]{\frac{8x^7-7x^6-6x^5}{1-2x^3-x^7}}$.
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Untuk fungsi yang memuat akar, perhitungan limit dilakukan
+                dengan manipulasi aljabar untuk memperoleh bentuk-bentuk dasar
+                limit. Manipulasi aljabar dilakukan dengan membagi penyebut dan
+                pembilang dengan $\sqrt[3]{x^7}$. \begin{align*} \displaystyle
+                \lim_{x\to\infty^-}\sqrt[3]{\frac{8x^7-7x^6-6x^5}{1-2x^3-x^7}}&=\lim_{x\to\infty^-}\frac{\sqrt[3]{8x^7-7x^6-6x^5}}{\sqrt[3]{1-2x^3-x^7}}\\
+                &=\lim_{x\to\infty^-}\frac{\frac{\sqrt[3]{8x^7-7x^6-6x^5}}{\sqrt[3]{x^7}}}{\frac{\sqrt[3]{1-2x^3-x^7}}{\sqrt[3]{x^7}}}\\
+                &=\lim_{x\to\infty^-}\frac{\sqrt[3]{\frac{8x^7-7x^6-6x^5}{x^7}}}{\sqrt[3]{\frac{1-2x^3-x^7}{x^7}}}\\
+                &=\lim_{x\to\infty^-}\frac{\sqrt[3]{8-\frac{7}{x}-\frac{6}{x^2}}}{\sqrt[3]{\frac{1}{x^7}-\frac{2}{x^4}-1}}\\
+                &=\frac{\sqrt[3]{8-0-0}}{\sqrt[3]{0-0-1}}\\ &=\frac{2}{-1}\\
+                \lim_{x\to\infty^-}\sqrt[3]{\frac{8x^7-7x^6-6x^5}{1-2x^3-x^7}}&=-2
+                \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2024</span></div>
+            <div class="soal-latihan">
+              Hitunglah $\displaystyle
+              \lim_{y\to-\infty}\frac{2-y}{\sqrt{7+4y^2}}$.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Untuk fungsi yang memuat akar, perhitungan limit dilakukan
+                dengan manipulasi aljabar untuk memperoleh bentuk-bentuk dasar
+                limit. Ingat bahwa $|y|=\sqrt{y^2}$. Manipulasi aljabar
+                dilakukan dengan membagi penyebut dan pembilang dengan $|y|$.
+                \begin{align*} \displaystyle
+                \lim_{y\to-\infty}\frac{2-y}{\sqrt{7+4y^2}}&=\lim_{y\to-\infty}\frac{\frac{2-y}{|y|}}{\frac{\sqrt{7+4y^2}}{|y|}}\\
+                &=\lim_{y\to-\infty}\frac{\frac{2-y}{|y|}}{\frac{\sqrt{7+4y^2}}{\sqrt{y^2}}}\\
+                &=\lim_{y\to-\infty}\frac{\frac{2-y}{|y|}}{\sqrt{\frac{7+4y^2}{y^2}}}
+                \end{align*} Berdasarkan definisi nilai mutlak
+                $|y|=\begin{cases} y,\quad y\geq0\\ -y,\quad y&lt;0
+                \end{cases}$, $|y|$ dapat disubstitusi dengan $-y$.
+                \begin{align*} \displaystyle
+                \lim_{y\to-\infty}\frac{2-y}{\sqrt{7+4y^2}}&=\lim_{y\to-\infty}\frac{\frac{2-y}{-y}}{\sqrt{\frac{7+4y^2}{y^2}}}\\
+                &=\lim_{y\to-\infty}\frac{-\frac{2}{y}+1}{\sqrt{\frac{7}{y^2}+4}}\\
+                &=\frac{0+1}{\sqrt{0+4}}\\
+                \lim_{y\to-\infty}\frac{2-y}{\sqrt{7+4y^2}}&=\frac{1}{2}
+                \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>ETS 2024</span></div>
+            <div class="soal-latihan">
+              Dapatkan nilai dari $\displaystyle
+              \lim_{x\to-\infty}\frac{\sqrt{3x^2+4x^4}}{\sqrt{x^4-x^2}}$
+            </div>
+            <div class="answer-container" style="--hint: --H3">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M3"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Untuk fungsi yang memuat akar, perhitungan limit dilakukan
+                dengan manipulasi aljabar untuk memperoleh bentuk-bentuk dasar
+                limit. Manipulasi aljabar dilakukan dengan membagi penyebut dan
+                pembilang dengan $x^2=\sqrt{x^4}$. \begin{align*} \displaystyle
+                \lim_{x\to-\infty}\frac{\sqrt{3x^2+4x^4}}{\sqrt{x^4-x^2}}&=\lim_{x\to-\infty}\frac{\frac{\sqrt{3x^2+4x^4}}{x^2}}{\frac{\sqrt{x^4-x^2}}{x^2}}\\
+                &=\lim_{x\to-\infty}\frac{\frac{\sqrt{3x^2+4x^4}}{\sqrt{x^4}}}{\frac{\sqrt{x^4-x^2}}{\sqrt{x^4}}}\\
+                &=\lim_{x\to-\infty}\frac{\sqrt{\frac{3x^2+4x^4}{x^4}}}{\sqrt{\frac{x^4-x^2}{x^4}}}\\
+                &=\lim_{x\to-\infty}\frac{\sqrt{\frac{3}{x^2}+4}}{\sqrt{1-\frac{1}{x^2}}}\\
+                &=\frac{\sqrt{0+4}}{\sqrt{1-0}}\\ &=\frac{2}{1}\\
+                \lim_{x\to-\infty}\frac{\sqrt{3x^2+4x^4}}{\sqrt{x^4-x^2}}&=2
+                \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

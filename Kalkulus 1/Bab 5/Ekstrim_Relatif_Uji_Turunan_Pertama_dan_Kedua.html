@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">5.3</section>
+        <span class="judul-bab"
+          >Ekstrim Relatif, Uji Turunan Pertama dan Kedua</span
+        >
+      </h2>
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 5.3.1.</div>
+        <div class="dfn-content">
+          <ol class="itemaze arabic">
+            <li>
+              Suatu fungsi $f$ dikatakan mempunyai maksimum relatif di $x_0$,
+              jika $f(x_0)\geq f(x)$ untuk semua $x$ dalam interval terbuka yang
+              memuat $x_0$.
+            </li>
+            <li>
+              Suatu fungsi $f$ dikatakan mempunyai minimum relatif di $x_0$,
+              jika $f(x_0)\leq f(x)$ untuk semua $x$ dalam interval terbuka yang
+              memuat $x_0$.
+            </li>
+            <li>
+              Suatu fungsi $f$ dikatakan mempunyai ekstrim relatif di $x_0$,
+              jika fungsi tersebut mempunyai maksimum relatif atau minimum
+              relatif.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.3.1.</div>
+        <div class="dfn-content">
+          Jika $f$ mempunyai sebuah ekstrim relatif di $x_0$, maka $f'(x)=0$
+          atau $f$ tidak dapat diturunkan di $x_0$.
+        </div>
+      </div>
+
+      Ekstrim relatif dari suatu fungsi terjadi di titik kritisnya.
+
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 5.3.2.</div>
+        <div class="dfn-content">
+          Titik kritis untuk fungsi $f$ adalah nilai $x$ dalam domain $f$ dimana
+          $f'(x)=0$ atau dimana $f$ tidak dapat diturunkan. Titik kritis dimana
+          $f'(x)=0$ disebut titik stasioner $f$.
+        </div>
+      </div>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.3.2.(Uji Turunan Pertama)</div>
+        <div class="dfn-content">
+          Misalkan $f$ kontinu di titik kritis $x_0$
+          <ul class="itemaze">
+            <li>
+              Jika $f'(x)>0$ pada interval terbuka di sebelah kiri dari $x_0$
+              dan $f'(x)&lt;0$ pada interval terbuka di sebelah kanan dari $x_0$
+              maka $f$ mempunyai sebuah maksimum relatif di $x_0$.
+            </li>
+            <li>
+              Jika $f'(x)&lt;0$ pada interval terbuka di sebelah kiri dari $x_0$
+              dan $f'(x)>0$ pada interval terbuka di sebelah kanan dari $x_0$
+              maka $f$ mempunyai sebuah minimum relatif di $x_0$.
+            </li>
+            <li>
+              Jika $f$ mempunyai tanda sama [$f'(x)>0$ maupun $f'(x)&lt;0$] baik
+              pada interval terbuka di sebelah kiri dari $x_0$ dan pada interval
+              terbuka di sebelah kanan dari $x_0$ maka $f$ tidak mempunyai
+              maksimum relatif di $x_0$.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <strong>Catatan:</strong> Jika pada interval terbuka terdapat ekstrim
+      relatif, maka ekstrim relatif terjadi pada titik-titik kritisnya yang di
+      kanan dan kiri titik ekstrim $f'$ berubah tanda dengan syarat $f$ kontinu
+      dan tidak konstan.
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 5.3.3.(Uji Turunan Kedua)</div>
+        <div class="dfn-content">
+          Misalkan $f$ dapat diturunkan dua kali di titik stasioner $x_0$.
+          <ul class="itemaze">
+            <li>
+              Jika $f''(x_0)>0$ maka $f$ mempunyai minimum relatif di $x_0$.
+            </li>
+            <li>
+              Jika $f''(x_0)&lt;0$ maka $f$ mempunyai maksimum relatif di $x_0$.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1 (EAS 2023/2024)</div>
+        <div class="dfn-content">
+          Diberikan fungsi $f(x)=-3x^5+5x^3$. Tentukan titik ekstrim relatif
+          fungsi tersebut.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Ekstrim relatif suatu fungsi terjadi pada titik kritisnya, yaitu
+              titik di mana $f'(x)=0$ atau $f$ tidak dapat diturunkan.
+              \begin{align*} f'(x)&=0\\ -15x^4+15x^2&=0\\ -15x^2(x^2-1)&=0\\
+              -15x^2(x+1)(x-1)&=0 \end{align*} Diperoleh $3$ titik di mana
+              $f'(x)=0$, yaitu $x=-1$, $x=1$, dan $x=0$. Dengan uji titik
+              menggunakan garis bilangan, diperoleh interval yang menyebabkan
+              nilai $f'(x)&lt;0$ adalah $(-\infty,-1)\cup(1,+\infty)$ dan
+              interval yang menyebabkan nilai $f'(x)>0$ adalah $(-1,1)\backslash
+              \{0\}$. Perhatikan bahwa $f'(x)&lt;0$ pada interval $(-\infty,-1)$
+              dan $f'(x)>0$ pada interval $(-1,0)$ sehingga $f$ mempunyai
+              minimum relatif pada $x=-1$. Adapun $f'(x)>0$ pada interval
+              $(0,1)$ dan $f'(x)&lt;0$ pada interval $(1,+\infty)$ sehingga $f$
+              mempunyai maksimum relatif pada $x=1$.\\ Ekstrim relatif dari $f$
+              juga dapat dicari dengan uji turunan kedua. Diketahui titik kritis
+              $f$ terjadi pada titik-titik dimana $f'(x)=0$, yaitu $x=-1$,
+              $x=1$, dan $x=0$. Titik-titik tersebut disebut juga titik
+              stasioner. $$f'(x)=-15x^4+15x^2\implies f''(x)=-60x^3+30x$$
+              Turunan kedua $f$, $f''(x)$, terdefinisi untuk semua $x$ bilangan
+              real, termasuk di titik-titik stasionernya.
+              $$f''(-1)=-60(-1)^3+30(-1)=-60(-1)-30=60-30=30$$
+              $$f''(0)=-60(0)^3+30(0)=0$$ $$f''(1)=-60(1)^3+30(1)=-60+30=-30$$
+              Perhatikan bahwa $f''(-1)>0$ sehingga $x=-1$ merupakan minimum
+              relatif dari $f$. Adapun $f''(1)&lt;0$ sehingga $x=1$ merupakan
+              maksimum relatif dari $f$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>EAS 2024/2025</span></div>
+            <div class="soal-latihan">
+              Diberikan fungsi $\displaystyle f(x)=\frac{x}{x-2024}$. Tentukan
+              titik ekstrim relatif fungsi tersebut.
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Ekstrim relatif suatu fungsi terjadi pada titik kritisnya, yaitu
+                titik di mana $f'(x)=0$ atau $f$ tidak dapat diturunkan.
+                Misalkan $u=x$ dan $v=x-2024$ sehingga $u'=v'=1$. \begin{align*}
+                f'(x)&=\frac{u'v-uv'}{v^2}\\ &=\frac{x-2024-x}{(x-2024)^2}\\
+                &=\frac{-2024}{(x-2024)^2}\\ &=-\frac{2024}{(x-2024)^2}
+                \end{align*} Terlihat bahwa nilai $f'(x)$ tidak terdefinisi pada
+                $x-2024=0 \implies x=2024$ sehingga $f$ tidak kontinu pada
+                $x=2024$. Selain itu, tidak kontinunya fungsi $f$ pada $x=2024$
+                juga ditunjukkan pada hal berikut.
+                $$f(x)=\frac{x}{x-2024}=1+\frac{2024}{x-2024}$$ $$\lim_{x\to
+                2024^-}f(x)=\lim_{x\to
+                2024^-}\left(1+\frac{2024}{x-2024}\right)=1+(-\infty)=-\infty$$
+                $$\lim_{x\to 2024^+}f(x)=\lim_{x\to
+                2024^+}\left(1+\frac{2024}{x-2024}\right)=1+\infty=+\infty$$
+                Berhubung $\displaystyle \lim_{x\to 2024^-}f(x)\neq \lim_{x\to
+                2024^+}f(x)$ sehingga $\displaystyle\lim_{x\to 2024}f(x)$ tidak
+                ada. Hal ini mengakibatkan $f(x)$ tidak kontinu pada $x=2024$.
+                Adapun $f'(x)&lt;0$ untuk semua bilangan real $x$ kecuali
+                $x=2024$. Karena $f'(x)$ tidak berganti tanda antara sebelah
+                kiri dan kanan $x=2024$ dan $f(x)$ tidak kontinu pada $x=2024$
+                yang merupakan titik kritisnya, dapat disimpulkan bahwa $f(x)$
+                tidak memiliki ekstrim relatif.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>EAS 2024/2025</span></div>
+            <div class="soal-latihan">
+              Diberikan fungsi $f(x)=3x^4-8x^3+6x^2+1$. Tentukan titik ekstrim
+              relatif fungsi tersebut.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Ekstrim relatif suatu fungsi terjadi pada titik kritisnya, yaitu
+                titik di mana $f'(x)=0$ atau $f$ tidak dapat diturunkan.
+                \begin{align*} f'(x)&=0\\ 12x^3-24x^2+12x&=0\\
+                12x(x^2-2x+1)&=0\\ 12x(x-1)^2&=0 \end{align*} Diperoleh $2$
+                titik di mana $f'(x)=0$, yaitu $x=0$ dan $x=1$. Titik-titik
+                tersebut disebut titik stasioner.
+                $$f'(x)=12x^3-24x^2+12x\implies f''(x)=36x^2-48x+12$$ Turunan
+                kedua $f$, $f''(x)$, terdefinisi untuk semua $x$ bilangan real,
+                termasuk di titik-titik stasionernya.
+                $$f''(0)=36(0)^2-48(0)+12=0+12=12$$
+                $$f''(1)=36(1)^2-48(1)+12=36-48+12=0$$ Perhatikan bahwa
+                $f''(0)>0$ sehingga $x=0$ merupakan minimum relatif dari $f$.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

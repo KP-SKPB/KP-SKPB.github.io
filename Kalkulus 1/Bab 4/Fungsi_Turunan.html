@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import.js" defer></script>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">4.2</section>
+        <span class="judul-bab">Fungsi Turunan</span>
+      </h2>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 4.2.1.</div>
+        <div class="dfn-content">
+          Turunan fungsi $f(x)$ terhadap $x$ didefinisikan dengan
+          $$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.$$ Domain $f'$ adalah semua
+          $x$ dalam domain $f$ sehingga limit tersebut ada.
+        </div>
+      </div>
+      <div class="dfn-box definisi">
+        <div class="dfn-header">Definisi 4.2.2.</div>
+        <div class="dfn-content">
+          Suatu fungsi $f$ dikatakan dapat diturunkan (differentiable) di
+          $x=x_0$ jika $$f'(x_0)=\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h}$$ ada.
+          Jika $f$ dapat diturunkan di setiap titik pada interval terbuka
+          $(a,b)$, maka dikatakan $f$ dapat diturunkan pada $(a,b)$.
+        </div>
+      </div>
+
+      Adapun fungsi $f$ yang tidak mempunyai turunan di $x_0$ diklasifikasikan
+      sebagai berikut.
+      <ol type="a">
+        <li>Grafik $f$ membentuk patahan atau sudut di $x_0$.</li>
+        <li>Grafik $f$ mempunyai garis singgung vertikal di $x_0$.</li>
+        <li>Fungsi $f$ tidak kontinu di $x_0$.</li>
+      </ol>
+
+      <div class="dfn-box teorema">
+        <div class="dfn-header">Teorema 4.2.1.</div>
+        <div class="dfn-content">
+          Jika suatu fungsi $f$ dapat diturunkan di $x_0$, maka $f$ kontinu di
+          $x_0$.
+        </div>
+      </div>
+      Turunan kiri $f'_-$ dan turunan kanan $f'_+$ masing-masing didefinisikan
+      oleh $$f'_-(x)=\lim_{h\to 0^-}\frac{f(x+h)-f(x)}{h}\quad \text{dan}\quad
+      f'_+(x)=\lim_{h\to 0^+}\frac{f(x+h)-f(x)}{h}$$ Pada titik-titik $x=x_0$ di
+      mana $f'_-(x_0)$ ada, dikatakan bahwa fungsi $f$ dapat diturunkan dari
+      arah kiri dan pada titik-titik $x=x_0$ di mana $f'_+(x_0)$ ada, dikatakan
+      bahwa fungsi $f$ dapat diturunkan dari arah kanan. Adapun turunan $f'(x)$
+      dikatakan ada jika turunan kiri $f'_-$ dan turunan kanan $f'_+$ ada, serta
+      memiliki nilai yang sama.
+      <br />
+      <br />
+      Turunan (derivatif) dari fungsi $y=f(x)$ memiliki beberapa notasi berikut.
+      $$f'(x)=\frac{d}{dx}[f(x)]=D_x[f(x)]=y'(x)=\frac{dy}{dx}$$ Untuk turunan
+      $f(x)$ di titik $x=x_0$, notasinya adalah
+      $$f'(x_0)=\frac{d}{dx}[f(x)]\Big|_{x=x_0}=y'(x_0)=\frac{dy}{dx}\Big|_{x=x_0}$$
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 1</div>
+        <div class="dfn-content">
+          Diberikan $f(t)=2t^2-t$. Dapatkan $f'(t)$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Diketahui $f(t)=2t^2-t$. \begin{align*} f'(t)&=\lim_{h\to
+              0}\frac{f(t+h)-f(t)}{h}\\ &=\lim_{h\to
+              0}\frac{2(t+h)^2-(t+h)-(2t^2-t)}{h}\\ &=\lim_{h\to
+              0}\frac{2(t^2+h^2+2th)-t-h-2t^2+t}{h}\\ &=\lim_{h\to
+              0}\frac{2t^2+2h^2+4th-h-2t^2}{h}\\ &=\lim_{h\to
+              0}\frac{2h^2+4th-h}{h}\\ &=\lim_{h\to 0}\frac{h(2h+4t-1)}{h}\\
+              &=\lim_{h\to 0}(2h+4t-1)\\ &=2(0)+4t-1\\ f'(t)&=4t-1 \end{align*}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box contoh">
+        <div class="dfn-header">Contoh 2</div>
+        <div class="dfn-content">
+          Tunjukkan bahwa $f(x)=\begin{cases} x^2+1,\quad x&lt;1\\ 2x,\quad
+          x\geq 1 \end{cases}$ kontinu dan dapat diturunkan di $x=1$.
+          <details class="solution">
+            <summary>Pembahasan</summary>
+            <div class="solution-step">
+              Perhatikan bahwa $x_0=2$ dan $x_1=4$ sehingga $h=x_1-x_0=4-2=2$.
+              Perhatikan bahwa untuk turunan dari kiri, fungsi yang digunakan
+              adalah $f(x)=x^2+1$. \begin{align*} f'_-(x)&=\lim_{h\to
+              0^-}\frac{f(x+h)-f(x)}{h}\\ f'_-(1)&=\lim_{h\to
+              0^-}\frac{f(1+h)-f(1)}{h}\\ &=\lim_{h\to
+              0^-}\frac{(1+h)^2+1-(1^2+1)}{h}\\ &=\lim_{h\to
+              0^-}\frac{1+h^2+2h+1-2}{h}\\ &=\lim_{h\to 0^-}\frac{h^2+2h}{h}\\
+              &=\lim_{h\to 0^-}\frac{h(h+2)}{h}\\ &=\lim_{h\to 0^-}(h+2)\\
+              &=0+2\\ f'_-(1)&=2 \end{align*} Adapun untuk turunan dari kanan ,
+              fungsi yang digunakan adalah $f(x)=2x$. \begin{align*}
+              f'_+(x)&=\lim_{h\to 0^+}\frac{f(x+h)-f(x)}{h}\\
+              f'_+(1)&=\lim_{h\to 0^+}\frac{f(1+h)-f(1)}{h}\\ &=\lim_{h\to
+              0^+}\frac{2(1+h)-2(1)}{h}\\ &=\lim_{h\to 0^+}\frac{2+2h-2}{h}\\
+              &=\lim_{h\to 0^+}\frac{2h}{h}\\ &=\lim_{h\to 0^+}2\\ f'_+(1)&=2
+              \end{align*} Terlihat bahwa turunan dari kiri dan turunan dari
+              kanan $f$ di $x=1$ ada dan nilainya sama. Dengan demikian, dapat
+              disimpulkan bahwa $f$ dapat diturunkan di $x=1$ dan karena hal
+              tersebut, $f$ kontinu di $x=1$.
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="dfn-box latihan">
+        <div class="dfn-header">Latihan!</div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <!-- <div class="evaluation-label"><span>ETS 2021/2022</span></div> -->
+            <div class="soal-latihan">
+              Dapatkan $\displaystyle \frac{dy}{dx}$ dari $\displaystyle
+              y=\frac{1}{x+1}$.
+            </div>
+            <div class="answer-container" style="--hint: --H1">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M1"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Diketahui $\displaystyle y=f(x)=\frac{1}{x+1}$. \begin{align*}
+                \frac{dy}{dx}&=f'(x)\\ &=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
+                &=\lim_{h\to 0}\frac{\displaystyle
+                \frac{1}{x+h+1}-\frac{1}{x+1}}{h}\\ &=\lim_{h\to
+                0}\frac{\displaystyle
+                \frac{x+1}{(x+h+1)(x+1)}-\frac{x+h+1}{(x+1)(x+h+1)}}{h}\\
+                &=\lim_{h\to 0}\frac{\displaystyle
+                \frac{x+1-(x+h+1)}{(x+h+1)(x+1)}}{h}\\ &=\lim_{h\to
+                0}\frac{\displaystyle \frac{x+1-x-h-1}{(x+h+1)(x+1)}}{h}\\
+                &=\lim_{h\to 0} \frac{-h}{(x+h+1)(x+1)h}\\ &=\lim_{h\to 0}
+                \frac{-1}{(x+h+1)(x+1)}\\ &=-\frac{1}{(x+0+1)(x+1)}\\
+                \frac{dy}{dx}&=-\frac{1}{(x+1)^2} \end{align*}
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="dfn-content">
+          <div class="latihan-box">
+            <div class="evaluation-label"><span>EAS 2018</span></div>
+            <div class="soal-latihan">
+              Tunjukkan bahwa $f(x)=\begin{cases} 2x+1,\quad x\leq 1\\ x+2,\quad
+              x>1 \end{cases}$ adalah fungsi kontinu tetapi tidak dapat
+              diturunkan di $x=1$.
+            </div>
+            <div class="answer-container" style="--hint: --H2">
+              Jawab:
+              <math-field
+                class="answer"
+                style="--math-field: --M2"
+              ></math-field>
+            </div>
+            <details class="jawaban-latihan hidden">
+              <summary>Lihat Solusi</summary>
+              <div class="solution-step">
+                Pertama-tama, akan ditunjukkan bahwa $f(x)$ tidak dapat
+                diturunkan di $x=1$. Perhatikan bahwa untuk turunan dari kiri,
+                fungsi yang digunakan adalah $f(x)=2x+1$. \begin{align*}
+                f'_-(x)&=\lim_{h\to 0^-}\frac{f(x+h)-f(x)}{h}\\
+                f'_-(1)&=\lim_{h\to 0^-}\frac{f(1+h)-f(1)}{h}\\ &=\lim_{h\to
+                0^-}\frac{2(1+h)+1-(2(1)+1)}{h}\\ &=\lim_{h\to
+                0^-}\frac{2+2h+1-(2+1)}{h}\\ &=\lim_{h\to
+                0^-}\frac{2+2h+1-3}{h}\\ &=\lim_{h\to 0^-}\frac{2h}{h}\\
+                &=\lim_{h\to 0^-}2\\ f'_-(1)&=2 \end{align*} Adapun untuk
+                turunan dari kanan , fungsi yang digunakan adalah $f(x)=x+2$.
+                \begin{align*} f'_+(x)&=\lim_{h\to 0^+}\frac{f(x+h)-f(x)}{h}\\
+                f'_+(1)&=\lim_{h\to 0^+}\frac{f(1+h)-f(1)}{h}\\ &=\lim_{h\to
+                0^+}\frac{1+h+2-(1+2)}{h}\\ &=\lim_{h\to
+                0^+}\frac{1+h+2-1-2}{h}\\ &=\lim_{h\to 0^+}\frac{h}{h}\\
+                &=\lim_{h\to 0^+}1\\ f'_+(1)&=1 \end{align*} Terlihat bahwa
+                turunan dari kiri dan turunan dari kanan $f$ di $x=1$ ada tetapi
+                nilainya berbeda. Dengan demikian, dapat disimpulkan bahwa $f$
+                tidak dapat diturunkan di $x=1$. Selanjutnya, akan ditunjukkan
+                bahwa $f$ fungsi kontinu di $x=1$. Syarat fungsi $f$ kontinu di
+                $x=1$ adalah:
+                <ol class="itemaze arabic">
+                  <li>
+                    $f(1)$ terdefinisi<br />
+                    Untuk $x=1$, fungsi $f(x)=2x+1$ sehingga
+                    $$f(1)=2(1)+1=2+1=3.$$ Jadi, $f(1)$ terdefinisi dan nilainya
+                    adalah $3$.
+                  </li>
+                  <li>
+                    $\displaystyle \lim_{x\to 1}f(x)$ ada<br />
+                    Perhatikan bahwa $$\lim_{x\to 1^-}f(x)=\lim_{x\to
+                    1^-}(2x+1)=2(1)+1=2+1=3$$ $$\lim_{x\to 1^+}f(x)=\lim_{x\to
+                    1^+}(x+2)=1+2=2+1=3$$ Karena limit dari kiri dan kanan $f$
+                    ada dan nilainya sama, $\displaystyle \lim_{x\to 1}f(x)$ ada
+                    dan nilainya adalah $3$.
+                  </li>
+                  <li>
+                    $\displaystyle \lim_{x\to 1}f(x)=f(1)$<br />
+                    Dari poin a dan b, terlihat bahwa $\displaystyle \lim_{x\to
+                    1}f(x)=f(1)=3$.
+                  </li>
+                </ol>
+                Karena ketiga syarat di atas terpenuhi, dapat disimpulkan bahwa
+                $f$ kontinu di $x=1$.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <button id="submitAnswer">Cek Jawaban</button>
+        <div id="loading" class="hidden"></div>
+      </div>
+    </main>
+    <script type="module">
+      import "//unpkg.com/mathlive?module";
+      import "//unpkg.com/@cortex-js/compute-engine";
+
+      const ce = MathfieldElement.computeEngine;
+
+      const answerButton = document.getElementById("submitAnswer");
+      const answerElements = document.querySelectorAll(".answer");
+      const bgColorAnswer = answerElements[0].style.backgroundColor;
+      const borderColorAnswer = answerElements[0].style.borderColor;
+
+      const correctAnswers = [
+        ce.parse("(-\\infty,-1]\\cup[1,+\\infty)"),
+        ce.parse("(-\\infty,-2)\\cup(-2,2)\\cup(2,+\\infty)"),
+        ce.parse("(-\\infty,-1)\\cup(1,+\\infty)"),
+      ];
+
+      answerButton.addEventListener("click", () => {
+        answerElements.forEach((answerElement) => {
+          answerElement.style.backgroundColor = bgColorAnswer;
+          answerElement.style.borderColor = borderColorAnswer;
+        });
+        answerElements.forEach((answerElement, index) => {
+          let studentInput = answerElement.expression;
+          const expectedAnswer = correctAnswers[index];
+
+          const loading = document.getElementById("loading");
+          const feedback = document.querySelectorAll(".jawaban-latihan");
+
+          loading.classList.remove("hidden");
+
+          setTimeout(() => {
+            loading.classList.add("hidden");
+            feedback.forEach((el) => {
+              el.classList.remove("hidden");
+            });
+            if (!studentInput.isSame(expectedAnswer)) {
+              answerElement.style.backgroundColor = "rgba(255, 192, 203, 0.5)";
+              answerElement.style.borderColor = "red";
+            } else {
+              answerElement.style.backgroundColor = "rgba(172, 255, 47, 0.5)";
+              answerElement.style.borderColor = "green";
+            }
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
