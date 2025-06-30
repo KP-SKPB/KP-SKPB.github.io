@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 5 : PERSAMAAN PARAMETRIK DAN KOODINAT KUTUB</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">5.4 Luas dan Volume dalam Koordinat Kutub</h2> <br>
+
+      
+<div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+
+      <h3 style="text-align: left;">1 Masalah Luasan dalam Koordinat Kutub</h3>
+
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (2).svg" alt="#" style="max-width: 850px;">
+</div>
+           <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 5.1</b> (Luas dalam Koordinat Kutub)
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+                <p style="font-style: italic; font-size: 115%; text-align: justify;">
+                Jika \( f(\theta) \) kontinu dan tak negatif untuk \( \alpha \leq \theta \leq \beta \) dan jika \( 0 \leq \beta - \alpha \leq 2\pi \), maka luasan \( A \) yang dibatasi oleh kurva kutub \( r = f(\theta) \) dan garis-garis \( \theta = \alpha \) dan \( \theta = \beta \) adalah
+                </p>
+                <div style="text-align: center; margin: 20px 0;">
+                    \[
+                    A = \int_{\alpha}^{\beta} \frac{1}{2} [f(\theta)]^2 \, d\theta = \int_{\alpha}^{\beta} \frac{1}{2} r^2 \, d\theta
+                    \]
+                </div>
+                <p style="font-size: 105%; margin-left: 2em;">
+                    
+                </p></div></div>
+                <b>Tips:</b> Untuk menentukan batas integrasi, bayangkan batas integrasi tersebut menyapu dari \( 0 - 2\pi \) atau yang sesuai.
+<h3>2 Menggunakan Simetri untuk Menghindari Nilai Negatif dari \(\r\)</h3>
+
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (3).svg" alt="#" style="max-width: 300px;">
+</div>
+
+Kita harus memperhantikan bahwa \(r = f (θ)\) pada integral untuk mencari haruslah tak negatif. Contohnya pada permasalahan ketika mencari luas daerah yang dibatasi oleh rose \(r = sin 2θ\). Namun perhatikan bahwa \(r = sin 2θ\) bernilai negatif saat \(π/2 < θ < π\) atau \(3π/2 < θ < 2π\), sehingga kita tidak dapat langsung mengaplikasikan
+
+<p>
+        \[ A = \int_{0}^{2\pi} (\sin 2\theta)^2 d\theta. \]
+    </p>
+
+    <p>
+        Caranya adalah carilah selang theta positif dan memiliki simetri terhadap bagian lain. Dapat dilihat bahwa kurva tersebut simetri pada selang \(0 \le \theta \le \pi/2\), \(\pi/2 \le \theta \le \pi\), \(\pi \le \theta \le 3\pi/2\), \(3\pi/2 \le \theta \le 2\pi\), sehingga luas daerah pada masing-masing selang (empat selang) tersebut sama. Dengan demikian kita dapat mencari luasnya sebagai berikut
+    </p>
+
+    <p>
+        \[ A = 4 \int_{0}^{\pi/2} \frac{1}{2} (\sin 2\theta)^2 d\theta. \]
+    </p>
+
+    <h3>3 Pemakaian Sudut Negatif Sebagai Batas Integrasi</h3>
+
+    <p>
+        Ingat bahwa untuk mencari luas haruslah \(\alpha < \beta\). Perhatikan kasus dibawah ini. Misalkan kita harus mencari luas daerah yang dibatasi \(r = 4 + 2\cos\theta\) yang diarsir di bawah ini
+    </p>
+
+
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (4).svg" alt="#" style="max-width: 300px;">
+</div>
+<p>
+        Kita tidak bisa mencari dengan
+    </p>
+
+    <p>
+        \[ A = \int_{5\pi/4}^{\pi/4} \frac{1}{2} (2 + 3\cos\theta)^2 d\theta, \]
+    </p>
+
+    <p>
+        karena seharusnya \(\alpha < \beta\), sedangkan pada integral tersebut \(\alpha = 5\pi/4\) dan \(\beta = \pi/4\).
+    </p>
+
+    <p>
+        Terdapat dua cara yang dapat kita lakukan.
+    </p>
+
+    <ol style="padding-left: 30px;">
+        <li>
+            Menggunakan simetri pada sebelumnya
+            <p>
+                \[ A = 2 \int_{0}^{\pi/4} \frac{1}{2} (2 + 3\cos\theta)^2 d\theta \]
+            </p>
+            <p>
+                (Terdapat dua daerah yang simetri yaitu pada selang \(0 \le \theta \le \pi/4\) dan \(5\pi/4 \le \theta \le 2\pi\).
+            </p>
+        </li>
+        <li>
+            Menggunakan sudut negatif sesuai pembahasan ini. Ingat bahwa \(5\pi/4\) ekuivalen dengan \(-\pi/4\), sehingga
+            <p>
+                \[ A = \int_{-\pi/4}^{\pi/4} \frac{1}{2} (2 + 3\cos\theta)^2 d\theta \]
+            </p>
+        </li>
+    </ol>
+
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (5).svg" alt="#" style="max-width: 300px;">
+</div>
+
+<h3>4 Volume Koordinat Kutub</h3>
+
+<p>
+        Volume benda putar yang diputar terhadap kurva \(x\) yang dibatasi dari \(\theta_1 = \alpha\) dan \(\theta_2 = \beta\) dapat dihitung dengan
+    </p>
+
+    <p>
+        \[ V = \int_{\alpha}^{\beta} \frac{2}{3}\pi r^3 \sin\theta \,d\theta \]
+    </p>
+
+  
+
+
+
+   </div>
+
+<div id="homeContoh">
+    <h2>B) Contoh Soal</h2> 
+    <br>
+      <h3>1. Soal EAS 2023</h3>
+
+    <p>
+        Hitung luas daerah tertutup dibatasi kurva \(r = 2(1 - \cos\theta)\) dan sebelah kanan garis \(x = 0\). Sketsa daerah tersebut.
+    </p>
+<b>Pembahasan: </b>
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (6).svg" alt="#" style="max-width: 300px;">
+</div>
+Tentu, berikut adalah konversi teks dan rumus dari gambar yang Anda berikan ke dalam kode HTML, dengan asumsi penggunaan MathJax atau KaTeX untuk rendering rumus matematika:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulasi Luas</title>
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+
+    <p>
+        Luas daerah yang kita cari adalah daerah berwarna abu-abu. Perhatikan bahwa daerah abu-abu simetri terhadap sumbu-\(x\), sehingga kita hanya perlu mencari salah satu daerah saja, pilih daerah
+    </p>
+
+    <p>4</p>
+
+    <p>
+        lalu dikali dengan 2.
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        A &= \int_{0}^{\pi/2} \frac{1}{2} (2(1 - \cos\theta))^2 d\theta \\
+        &= 2 \int_{0}^{\pi/2} (1 - \cos\theta)^2 d\theta \\
+        &= 2 \int_{0}^{\pi/2} (1 - 2\cos\theta + \cos^2\theta) d\theta \\
+        &= 2 \left[ \theta - 2\sin\theta + \frac{\theta + \sin\theta\cos\theta}{2} \right]_{0}^{\pi/2} \\
+        &= 2 \left[ \frac{\pi}{2} - 2 + \frac{\pi/2}{2} \right] \\
+        &= \frac{3\pi}{2} - 4.
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Jadi luas daerah tertutup dibatasi kurva \(r = 2(1 - \cos\theta)\) dan sebelah kanan garis \(x = 0\) adalah \(\frac{3\pi}{2} - 4\).
+    </p>
+    <hr><br>
+
+
+<h3>2. Soal EAS 2020</h3>
+
+    <p>
+        Sketsa grafik daerah di dalam kurva kutub \(r = 2 - 2\sin\theta\) dan di luar kurva kutub \(r = 2 + 2\sin\theta\), selanjutnya hitung luas daerah tersebut.
+    </p>
+
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+
+    <div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (7).svg" alt="#" style="max-width: 300px;">
+</div>
+
+Luas daerah yang kita cari adalah daerah berwarna abu-abu. Perhatikan bahwa daerah abu-abu
+simetri terhadap sumbu \(y\), sehingga kita hanya perlu mencari salah satu daerah saja (sebelah kanan sumbu \(y\). Daerah tersebut dapat dicari dengan daerah warna merah dikurangi daerah biru.
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (8).svg" alt="#" style="max-width: 200px;">
+</div>
+
+    <p>
+        \[
+        \begin{aligned}
+        A &= 2 \left[ \int_{\pi}^{3\pi/2} \frac{1}{2} (2 - 2\sin\theta)^2 d\theta - \int_{\pi}^{3\pi/2} \frac{1}{2} (2 + 2\sin\theta)^2 d\theta \right] \\
+        &= \int_{\pi}^{3\pi/2} \left( (2 - 2\sin\theta)^2 - (2 + 2\sin\theta)^2 \right) d\theta \\
+        &= \int_{\pi}^{3\pi/2} (4 - 8\sin\theta + 4\sin^2\theta - 4 - 8\sin\theta - 4\sin^2\theta) d\theta \\
+        &= \int_{\pi}^{3\pi/2} -16 \sin\theta \,d\theta \\
+        &= 16(\cos\theta)\Big|_{\pi}^{3\pi/2} \\
+        &= 16(0 - (-1)) \\
+        &= 16
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Jadi luas daerah di dalam kurva kutub \(r = 2 - 2\sin\theta\) dan di luar kurva kutub \(r = 2 + 2\sin\theta\) adalah 16.
+    </p>
+<hr><br>
+
+</div>
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+    
+   
+    <h3>1. Soal EAS 2024</h3>
+
+    <p>
+        Dapatkan luas daerah dari irisan kardioda \(r = 2 - 2\cos\theta\) dan kardioda \(r = 2 + 2\cos\theta\).
+    </p>
+       <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <div style="display: flex; justify-content: center;">
+    <img src="gambar 4 kedua/gambar_kp (2).svg" alt="#" style="max-width: 400px;">
+</div>
+    Perhatikan bahwa untuk mencari daerah irisan tersebut dapat diperoleh melalui 
+<div style="display: flex; justify-content: center;">
+  <img src="gambar 4 kedua/gambar_kp (3).svg" alt="#" style="max-width: 400px;">
+</div>
+<p>
+        Namun karena daerah I, II, III, IV simetri, kita cukup mencari luas satu daerah lalu kita kalikan dengan 4. Misalkan kita mencari luas daerah I, yaitu daerah yang dibatasi \(r = 2 - 2\cos\theta\) dengan
+    </p>
+
+    <p>1</p>
+
+    <p>
+        \(0 \le \theta \le \pi/2\). (Pada bagian ini tidak dibahas cara mengintegralkan secara detail. Jika ingin mempelajari integral secara detail, silakan ke bab 2 dan 3)
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        A &= 4 \int_{0}^{\pi/2} \frac{1}{2} (2 - 2\cos\theta)^2 d\theta \\
+        &= 2 \int_{0}^{\pi/2} (4 - 8\cos\theta + 4\cos^2\theta) d\theta \\
+        &= 8 \int_{0}^{\pi/2} (1 - 2\cos\theta + \cos^2\theta) d\theta \\
+        &= 8 \left[ \theta - 2\sin\theta + \frac{\cos\theta\sin\theta + \theta}{2} \right]_{0}^{\pi/2} \\
+        &= 8 \left[ \frac{3}{2}\theta - 2\sin\theta + \frac{\cos\theta\sin\theta}{2} \right]_{0}^{\pi/2} \\
+        &= 8 \left[ \frac{3\pi}{4} - 2 \right] \\
+        &= 6\pi - 16
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Jadi, luas daerah dari irisan kardioda \(r = 2 - 2\cos\theta\) dan kardioda \(r = 2 + 2\cos\theta\) adalah \(6\pi - 16\).
+    </p>
+
+</div> </details><hr><br>
+
+<h3>2. Soal EAS 2024</h3>
+  Dapatkan luas daerah yang berada di dalam lingkaran \(r = 3 sin θ\) dan di lingkaran \(r = 1 + sin θ.\)
+
+         <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+<div style="display: flex; justify-content: center;">
+  <img src="gambar 4 kedua/gambar_kp (4).svg" alt="#" style="max-width: 250px;">
+</div>
+    <p>
+        Luas daerah yang kita cari adalah daerah berwarna abu-abu. Perhatikan bahwa daerah abu-abu simetri terhadap sumbu-\(y\), sehingga kita hanya perlu mencari salah satu daerah saja. Pertama, kita akan mencari sudut irisan dari lingkaran merah dan biru
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        3\sin\theta &= 1 + \sin\theta \\
+        2\sin\theta &= 1 \\
+        \sin\theta &= \frac{1}{2}
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Karena terletak pada kuadran pertama, maka \(\theta\) yang memenuhi adalah \(\pi/6\). Perhatikan gambar berikut, untuk mencari luas daerah abu, dapat diperoleh dengan mencari luas daerah merah
+    </p>
+
+    <p>2</p>
+
+    <p>
+        dikurangi daerah biru.
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        A &= 2 \left[ \int_{\pi/6}^{\pi/2} \frac{1}{2} (3\sin\theta)^2 d\theta - \int_{\pi/6}^{\pi/2} \frac{1}{2} (1 + \sin\theta)^2 d\theta \right] \\
+        &= \int_{\pi/6}^{\pi/2} \left( (9\sin^2\theta - 1 - 2\sin\theta - \sin^2\theta) \right) d\theta \\
+        &= \int_{\pi/6}^{\pi/2} (8\sin^2\theta - 2\sin\theta - 1) d\theta \\
+        &= \left[ \frac{9}{2}\theta - \sin\theta\cos\theta - \theta + 2\cos\theta \right]_{\pi/6}^{\pi/2} \\
+        &= \frac{9}{2}\left(\frac{\pi}{2}\right) - \frac{\pi}{2} - \frac{9}{2}\left(\frac{\pi}{6}\right) - \frac{\sqrt{3}}{4} + \frac{\pi}{6} - \sqrt{3} \\ % corrected the line based on likely intent
+        &= \frac{7\pi}{8} + \frac{\sqrt{3}}{8}
+        \end{aligned}
+        \]
+
+            <p>
+        Jadi luas daerah yang berada di dalam lingkaran \(r = 3\sin\theta\) dan di lingkaran \(r = 1 + \sin\theta\) adalah \(\frac{7\pi}{6} + \frac{\sqrt{3}}{8}\).
+    </p>
+    </p></div></details> <hr><br>
+    <h3>3. Soal EAS 2024</h3>
+
+    <p>
+        Dapatkan luas daerah yang berada di dalam lingkaran \(r = 4\sin\theta\) dan di luar lingkaran \(r = 4\cos\theta\).
+    </p>
+         <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+          <div style="display: flex; justify-content: center;">
+  <img src="gambar 4 kedua/gambar_kp (5).svg" alt="#" style="max-width: 300px;">
+</div>
+    <p>
+        Luas daerah yang kita cari adalah daerah berwarna abu-abu. Pertama, kita akan mencari sudut irisan dari lingkaran merah dan biru
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        4 \sin\theta &= 4 \cos\theta \\
+        \frac{\sin\theta}{\cos\theta} &= 1 \\
+        \tan\theta &= 1
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Karena terletak pada kuadran pertama, maka \(\theta\) yang memenuhi adalah \(\pi/4\). Perhatikan gambar berikut, untuk mencari luas daerah abu, dapat diperoleh dengan mencari luas daerah merah dikurangi daerah biru.
+    </p>
+             <div style="display: flex; justify-content: center;">
+  <img src="gambar 4 kedua/gambar_kp (6).svg" alt="#" style="max-width: 500px;">
+</div>
+
+    <p>
+        Selanjutnya, ingat bahwa batas integrasi untuk mencari luas kurva \(r = 4\sin\theta\) cukup \(0 \le \theta \le \pi\).
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        A &= A_1 - A_2 \\
+        &= \int_{\pi/4}^{\pi} \frac{1}{2} (4\sin\theta)^2 d\theta - \int_{\pi/4}^{\pi/2} \frac{1}{2} (4\cos\theta)^2 d\theta \\
+        &= 8 \left[ \frac{\theta - \sin\theta\cos\theta}{2} \right]_{\pi/4}^{\pi} - 8 \left[ \frac{\theta + \sin\theta\cos\theta}{2} \right]_{\pi/4}^{\pi/2} \\
+        &= 8 \left[ \frac{\pi - 0}{2} - \frac{\pi/4 - 1/2}{2} \right] - 8 \left[ \frac{\pi/2 + 0}{2} - \frac{\pi/4 + 1/2}{2} \right] \\
+        &= 8 \left[ \frac{\pi}{2} - \frac{\pi}{8} + \frac{1}{4} \right] - 8 \left[ \frac{\pi}{4} - \frac{\pi}{8} - \frac{1}{4} \right] \\
+        % Corrected line based on the image's mathematical progression
+        &= 4 \left[ \pi - \frac{\pi}{4} + \frac{1}{2} \right] - 4 \left[ \frac{\pi}{2} - \frac{\pi}{4} - \frac{1}{2} \right] \\ % Adjusted coefficients based on common factor of 2
+        &= 4 \left[ \frac{3\pi}{4} + \frac{1}{2} \right] - 4 \left[ \frac{\pi}{4} - \frac{1}{2} \right] \\
+        &= 3\pi + 2 - \pi + 2 \\
+        &= 2\pi + 4
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Jadi luas daerah yang berada di dalam lingkaran \(r = 4\sin\theta\) dan di luar lingkaran \(r = 4\cos\theta\) adalah \(2\pi + 4\).
+    </p>
+        </div></details> <hr><br>
+
+        
+
+
+</div></div></div>
+
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

@@ -1,0 +1,208 @@
+<ol id="menu">
+  <div id="sidebar-btn">
+    <h1 class="logo"><a href="../index.html"> KALKULUS II</a></h1>
+    <button onclick="toggleSidebar()" id="toggle-btn">
+      <span id="toggle-btn-inner">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill=""
+        >
+          <path
+            d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+  <li class="active" style="border-top: 4px solid var(--second-color)">
+    <a>
+      <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+        <span class="link-text">Fungsi Transenden</span>
+      </button>
+    </a>
+    <ol class="sub-menu">
+      <div>
+        <li>
+          <a href="../Bab 1/Fungsi_Transenden.html"
+            >Fungsi Eksponensial dan Logaritma</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 1/Invers_n_Trigono.html"
+            >Fungsi Invers Trigonometri</a
+          >
+        </li>
+        <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+      </div>
+    </ol>
+  </li>
+  <li class="active" id="size">
+    <a>
+      <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+        <span class="link-text" id="bold" title="2. Teknik Integrasi"
+          >[2] Teknik Integrasi</span
+        >
+      </button>
+    </a>
+    <ol class="sub-menu">
+      <div>
+        <li>
+          <a
+            href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html"
+            >Integrasi Parsial dan Interaksi <br />
+            Fungsi Trigonometri</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html"
+            >Integrasi Fungsi Rasional <br />
+            dan Pecahan Rasional</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 2/Teknik-teknik integrasi yang lalu.html"
+            >Teknik-teknik integrasi <br />yang lalu</a
+          >
+        </li>
+      </div>
+    </ol>
+  </li>
+  <li class="active" id="size">
+    <a>
+      <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+        <span
+          class="link-text"
+          id="bold"
+          title="3. Integrasi Numerik Integrasi Tak Wajar"
+          >[3] Integrasi Numerik <br />dan Integrasi Tak Wajar</span
+        >
+      </button>
+    </a>
+    <ol class="sub-menu">
+      <div>
+        <li>
+          <a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a>
+        </li>
+        <li>
+          <a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a>
+        </li>
+        <li>
+          <a href="../Bab 3/Limit Bentuk Tak Tentu.html"
+            >Limit Bentuk Tak Tentu</a
+          >
+        </li>
+      </div>
+    </ol>
+  </li>
+  <li class="active" id="size">
+    <a>
+      <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+        <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu"
+          >[4] Aplikasi Integral Tertentu</span
+        >
+      </button>
+    </a>
+    <ol class="sub-menu">
+      <div>
+        <li>
+          <a href="../Bab 4/1Luas antara Dua Kurva.html"
+            >Luas antara Dua Kurva</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 4/2Menghitung Volume Benda Putar.html"
+            >Menghitung Volume Benda Putar</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a>
+        </li>
+        <li>
+          <a href="../Bab 4/4Luas Permukaan Benda Putar.html"
+            >Luas Permukaan Benda Putar</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html"
+            >Titik Berat (Pusat Massa <br />dan Centroid)</a
+          >
+        </li>
+      </div>
+    </ol>
+  </li>
+  <li class="active" id="size">
+    <a>
+      <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+        <span
+          class="link-text"
+          id="bold"
+          title="5. Persamaan Parametrik dan Koordinat Kutub"
+          >[5] Persamaan Parametrik <br />dan Koordinat Kutub</span
+        >
+      </button>
+    </a>
+    <ol class="sub-menu">
+      <div>
+        <li>
+          <a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a>
+        </li>
+        <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+        <li>
+          <a href="../Bab 5/3Grafik dalam Koordinat Kutub.html"
+            >Grafik dalam Koordinat Kutub</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html"
+            >Luas dan Volume dalam <br />Koordinat Kutub</a
+          >
+        </li>
+        <li>
+          <a
+            href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html"
+            >Garis Singgung dan Panjang <br />
+            Busur di Koordinat Kutub</a
+          >
+        </li>
+      </div>
+    </ol>
+  </li>
+  <li class="active" id="size">
+    <a>
+      <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+        <span class="link-text" id="bold" title="6. Barisan dan Deret"
+          >[6] Barisan dan Deret</span
+        >
+      </button>
+    </a>
+    <ol class="sub-menu">
+      <div>
+        <li>
+          <a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a>
+        </li>
+        <li>
+          <a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a>
+        </li>
+        <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+        <li>
+          <a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html"
+            >Deret Pangkat; Deret Taylor <br />
+            dan Mclaurin</a
+          >
+        </li>
+        <li>
+          <a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html"
+            >Diferensiasi dan Integrasi <br />
+            Deret Pangkat</a
+          >
+        </li>
+      </div>
+    </ol>
+  </li>
+  <li>
+    <a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a>
+  </li>
+</ol>

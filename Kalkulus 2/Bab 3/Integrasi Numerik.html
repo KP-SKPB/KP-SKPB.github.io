@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 3 : INTEGRASI TAK WAJAR DAN INTEGRASI</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">3.1 Integrasi Numerik</h2> <br>
+
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+
+<p style="font-size: 118%;"><b>1 Hampiran Jumlah Riemann</b> </p>
+     
+<table>
+  <tr>
+    <td>
+       <p style="display: flex; justify-content: center;">a. Hampiran Titik Ujung Kiri</p>
+      <img src="gambar/3.1.svg" alt="#" style="width:40%;">
+      <p style="text-align: center;">\(\int_a^b f(x) dx \approx (\frac{b-a}{n})[y_0 + y_1 + ... + y_{n-1}]\)</p> 
+      
+    </td>
+    <td>
+      <p style="text-align: center;">b. Hampiran Titik Ujung Kanan</p> <br>
+      
+      <div style="display: flex; justify-content: center;">
+      <img src="gambar/gambar_kp (2).svg" alt="#" style="width:40%;">
+    </div> 
+      <p style="text-align: center;">\(\int_a^b f(x) dx \approx (\frac{b-a}{n})[y_0 + y_1 + ... + y_{n}]\)</p>
+    </td>
+    <td>
+      <p style="text-align: center;">c. Hampiran Titik Tengah</p> <br>
+<div style="display: flex; justify-content: center;">
+  <img src="gambar/gambar_kp (3).svg" alt="#" style="width:40%;">
+</div>
+<p style="text-align: center;">\(\int_a^b f(x) dx \approx (\frac{b-a}{n})[y*_1 + y*_2 + ... + y*_{n}]\)</p>
+dengan \(y*_i = f(\frac{x_{i-1} + x_i}{2})\) <br> <br>
+
+    </td>
+  </tr>
+</table>
+<p style="font-size: 118%;"><b>2 Hampiran Trapezoidal</b> </p>
+        <div style="display: flex; justify-content: center;">
+          <img src="gambar/gambar_kp (4).svg" alt="#" style="width: 20%;">
+        </div>
+          <p style="text-align: center;">\(\int_a^b f(x) dx \approx \frac{(b-a)}{2n}[y_0 + 2y_1 + 2y_2 + ... + 2y_{n-1} + y_n]\)</p>
+          <p style="text-align: center;">\(\int_a^b f(x) dx \approx \frac{(b-a)}{2}[f(a) + f(b)]\)</p>
+
+
+<p style="font-size: 118%;"><b>3 Perbandingan Titik Tengah dan Trapezoidal</b> </p>
+          <table>
+            <tr>
+              <td>
+                
+          1. <b>Galat Hasil Hampiran Titik Tengah </b> <br>
+          <p style="text-align: center;">\(E_M = \int_a^b f(x) dx - M_n,\)</p>
+          dengan \(M_n\) adalah hasil hampiran titik tengah <br>
+
+              </td>
+              <td>
+                
+          2. <b>Galat Hasil Hampiran Trapezoidal</b> br
+
+          <p style="text-align: center;">\(E_T = \int_a^b f(x) dx - T_n,\)</p>
+          dengan \(T_n\) adalah hasil hampiran trapezoidal.
+              </td>
+            </tr>
+          </table>
+
+<p style="font-size: 118%;"><b>4 Aturan Simpson</b> </p>
+<div style="display: flex; justify-content: center;">
+  <img src="gambar/gambar_kp (5).svg" alt="#" style="width: 20%;">
+          </div>
+      <p style="text-align: center;">\(\int_a^b f(x) dx \approx \frac{(b-a)}{3n}[y_0 + 4y*_1 + 2y_2 + 4y*_3 + ... + 2y_{n-2} + 4y*_{n-1} + y_n]\)</p>
+      Galat hampiran Simpson adalah
+      <p style="text-align: center;">\(E_S = \int_a^b f(x) dx - S_n,\)</p>
+      dengan \(S_n\) adalah hasil hampiran Simpson.
+    
+
+</div>
+<div id="homeContoh">
+<h2>B) Contoh Soal</h2> <br><hr><br>
+
+1. Tentukan nilai integran menggunakan hampiran integral dengan aturan trapezoidal \( n = 6\) pada integral<br>
+<p style="text-align: center;">\(\int_1^4 x^2 dx\)</p>
+<br>
+
+(Catatan : Tuliskan setiap desimal ke dalam bentuk tiga angka di belakang koma, tanpa dibulatkan) <br>
+<b>Pembahasan:</b>
+<div style="display: flex; justify-content: center;">
+<img src="gambar/gambar_kp (6).svg" alt="#" style="width: 14%;">
+</div>
+Diketahui \(a = 1\), \(b = 4\), dan \(n = 6\), sehingga <br>
+<p style="text-align: center;">h = \(\frac{b-a}{n} = \frac{4-1}{6} = \frac{1}{2}\)</p>
+<p style="text-align: center;">\(\frac{b-a}{2n} = \frac{4-1}{2 \cdot 6} = \frac{1}{4}\)</p>
+
+<table>
+  <tr>
+    <th>i</th>
+    <th>Titik Ujung x_i</th>
+    <th>x^2</th>
+    <th>Pengali w_i</th>
+    <th>w_i y_y</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1.5</td>
+    <td>2.25</td>
+    <td>2</td>
+    <td>4.5</td>
+    </tr>
+  <tr>
+    <td>2</td>
+    <td>2</td>
+    <td>4</td>
+    <td>2</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>2.5</td>
+    <td>6.25</td>
+    <td>2</td>
+    <td>12.5</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>3</td>
+    <td>9</td>
+    <td>2</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>3.5</td>
+    <td>12.25</td>
+    <td>2</td>
+    <td>24.5</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>4</td>
+    <td>16</td>
+    <td>1</td>
+    <td>16</td>
+    </tr>
+  <tr>
+    <td><b>Total</b></td>
+    <td></td>
+    <td><b>50</b></td>
+    <td></td>
+    <td><b>84.5</b></td>
+</table>
+
+<p style="text-align: center;">\(\int_1^4 x^2 dx \approx \frac{1}{4} \cdot 84.5 = 21.125\)</p>
+Jadi nilai integralnya adalah 21.125 <br>
+<hr><br>
+2. Gunakan n = 10 untuk menghampiri nilai integral \(\int_0^3 \sqrt{x+1}dx\) dengan aturan Simpson. Dapatkan nilai eksak integral dan hampiri besar galatnya. <br>
+<b>Pembahasan:</b>
+<div style="display: flex; justify-content: center;">
+<img src="gambar/gambar_kp (7).svg" alt="#" style="width: 20%;">
+</div>
+Diketahui bahwa \(a = 0\), \(b = 3\), dan \(n = 10, f(x) = \sqrt{x+1}\) dan \(h=\frac{b-a}{n} = \frac{3-0}{10} = \frac{3}{10}\), sehingga
+<table>
+<tr>
+  <th>i</th>
+  <th>x_i</th>
+  <th>f(x_i)</th>
+  <th>w_i</th>
+  <th>w_i f(x_i)</th>
+</tr>
+<tr>
+  <td>0</td>
+  <td>0</td>
+  <td>1</td>
+  <td>1</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>0.3</td>
+  <td>1.144</td>
+  <td>2</td>
+  <td>2.289</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>0.6</td>
+  <td>1.225</td>
+  <td>4</td>
+  <td>4.9</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>0.9</td>
+  <td>1.346</td>
+  <td>2</td>
+  <td>2.692</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>1.2</td>
+  <td>1.414</td>
+  <td>4</td>
+  <td>5.656</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>1.5</td>
+  <td>1.581</td>
+  <td>2</td>
+  <td>3.162</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>1.8</td>
+  <td>1.802</td>
+  <td>4</td>
+  <td>7.208</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>2.1</td>
+  <td>1.732</td>
+  <td>2</td>
+  <td>3.464</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>2.4</td>
+  <td>1.549</td>
+  <td>4</td>
+  <td>6.196</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>2.7</td>
+  <td>1.414</td>
+  <td>2</td>
+  <td>2.828</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>3</td>
+  <td>1.732</td>
+  <td>1</td>
+  <td>1.732</td>
+</tr>
+<tr>
+  <td><b>Total</b></td>
+  <td></td>
+  <td><b>16.5</b></td>
+  <td></td>
+  <td><b>42.456</b></td>
+</table>
+<p style="text-align: center;">\(\int_0^3 \sqrt{x+1}dx \approx \frac{3}{30} \cdot 42.456 = 4.2456\)</p>
+<p style="text-align: center;">Nilai eksak integralnya adalah \(\int_0^3 \sqrt{x+1}dx = \frac{2}{3}(x+1)^{\frac{3}{2}}|_0^3 = \frac{2}{3}(4\sqrt{4}-1) = \frac{2}{3}(8-1) = \frac{14}{3} = 4.6667\)</p>
+ Jadi besar galatnya adalah
+<p style="text-align: center;">Galat = \(|4.6667 - 4.2456| = 0.4211\)</p>
+<hr><br>
+
+
+    </div>
+
+
+    </div>
+    <p style="font-size: 118%;"><b><i>References</i></b> </p>
+    L. Williams. Tikz snippets. <a href="https://www.integral-domain.org/lwilliams/Resources/tikzsnippets.php">https://www.integral-domain.org/lwilliams/Resources/tikzsnippets.php</a>, n.d. Accessed: 2025-06-21
+
+  </div>
+</div> </div> 
+  <br><br><br><br><br>
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

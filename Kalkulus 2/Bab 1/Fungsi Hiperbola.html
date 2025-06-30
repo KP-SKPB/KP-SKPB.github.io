@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+
+        <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 1 : FUNGSI TRANSENDEN</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">1.3 Fungsi Hiperbolik</h2> <br>
+
+    <div id="home">
+      <h2 style="display: flex; justify-content: center;">A) Rangkuman Materi</h2> <br>
+        <p style="font-size: 118%;"><b>1 Definisi Fungsi Hiperbolik</b> </p>
+    <div class="dfn-box definisi">
+      <div class="dfn-header">
+        Definisi 1.1</div>
+      <div class="dfn-content"> 
+        Fungsi sinus hiperbolik dan cosinus hiperbolik, masing-masing dinotasikan dengan \(\sinh\) dan \(\cosh\), dan didefinisikan dengan        
+        <p style="text-align: center;">\( \sinh x= \frac{e^x-e^{-x}}{2} \) &nbsp; \(\cosh x = \frac{e^x+e^{-x}}{2}\)</p>
+
+      </div>
+    </div>
+   <br>
+<p style="font-size: 118%;"><b>2 Kesamaan Hiperbolik</b> </p>
+
+<div style="text-align: center;">
+<p>\(\cosh (-x)=\cosh x\)</p>
+<p>\(\sinh (-x)=-\cosh x\)</p>
+<p>\(\cosh^2 x - \sinh^2 x =1 \)</p>
+<p>\(\tanh^2 x + \mathrm{sech}^2 {x} =1 \)</p>
+<p>\(\coth^2 x - \mathrm{csch}^2 {x} =1 \)</p>
+<p>\(\cosh x + \sinh x =e^x \)</p>
+<p>\(\cosh x - \sinh x =e^{-x} \)</p>
+<p>\(2\sinh x \cosh x =\sinh 2x \)</p>
+<p>\(\cosh^2 x + \sinh^2 x =\cosh 2x \)</p>
+<p>\(\sinh^2 x + 1 =\cosh 2x \)</p>
+<p>\(\cosh^2 x - 1 =\cosh 2x \)</p>
+<p>\(\sinh (x+y)=\sinh x \cosh y + \cosh x \sinh y\)</p>
+<p>\(\sinh(x-y)=\sinh x \cosh y - \cosh x \sinh y\)</p>
+<p>\(\cosh (x+y)=\cosh x \cosh y + \sinh x \sinh y\)</p>
+<p>\(\cosh(x-y)=\cosh x \cosh y - \sinh x \sinh y\)</p>
+</div><br>
+
+<p style="font-size: 118%;"><b>3 Rumus Turunan Fungsi Hiperbolik </b> </p>
+    <ol class="materi1">
+<div style="text-align: center;">
+<p>\(\frac{d}{dx}(\sinh u) = \cosh u \frac{du}{dx}\)</p>
+<p>\(\frac{d}{dx}(\cosh u) = \sinh u \frac{du}{dx}\)</p>
+<p>\(\frac{d}{dx}(\tanh u) = \mathrm{sech}^2 {u} \frac{du}{dx}\)</p>
+<p>\(\frac{d}{dx}(\coth u) = -\mathrm{csch}^2 {u} \frac{du}{dx}\)</p>
+<p>\(\frac{d}{dx}(\mathrm{sech} {u}) = -\mathrm{sech} {u} \tanh u \frac{du}{dx}\)</p>
+<p>\(\frac{d}{dx}(\mathrm{csch} {u}) = -\mathrm{csch} {u} \coth u \frac{du}{dx}\)</p>
+</div> <br>
+    <p style="font-size: 118%;"><b>4 Rumus Integral Fungsi Hiperbolik </b> </p> <br>
+<div style="text-align: center;">
+  \(\int \sinh u \, du = \cosh u + C\) <br> <br>
+  \(\int \cosh u \, du = \sinh u + C\) <br> <br>
+  \(\int \tanh u \, du = \ln |\cosh u| + C\) <br> <br>
+  \(\int \coth u \, du = \ln |\sinh u| + C\) <br> <br>
+  \(\int \mathrm{sech}^2 {u} \, du = \tanh u + C\) <br> <br>
+  \(\int \mathrm{csch}^2 {u} \, du = -\coth u + C\) <br> <br>
+  \(\int (\mathrm{sech} {u}\) \(\tanh u ) du = -\mathrm{sech} {u} + C\) <br> <br>
+  \(\int (\mathrm{csch} {u}\)  \(\mathrm{coth} {u}) du = -\mathrm{csch} {u} + C\) <br> <br>
+
+  </div>    
+ 
+
+<p style="font-size: 118%;"><b>5 Invers Fungsi Hiperbolik </b> </p>
+  <!-- Tambahkan MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<table> 
+  <tr style="background-color: rgb(209, 209, 209);">
+    <th>Fungsi</th>
+    <th>Domain</th>
+    <th>Range</th>
+    <th>Hubungan Dasar</th>
+  </tr>
+  <tr>
+    <td>\(\sinh^{-1} x\)</td>
+    <td>\((-\infty, +\infty)\)</td>
+    <td>\((-\infty, +\infty)\)</td>
+    <td>
+      \(\sinh^{-1}(\sinh x) = x \text{ jika } -\infty < x < +\infty\) <br>
+      \(\sinh(\sinh^{-1} x) = x \text{ jika } -\infty < x < +\infty\)
+    </td>
+  </tr>
+  <tr>
+    <td>\(\cosh^{-1} x\)</td>
+    <td>\([1, +\infty)\)</td>
+    <td>\([0, +\infty)\)</td>
+    <td>
+      \(\cosh^{-1}(\cosh x) = x \text{ jika } x \ge 0\) <br>
+      \(\cosh(\cosh^{-1} x) = x \text{ jika } x \ge 1\)
+    </td>
+  </tr>
+  <tr>
+    <td>\(\tanh^{-1} x\)</td>
+    <td>\((-1, 1)\)</td>
+    <td>\((-\infty, +\infty)\)</td>
+    <td>
+      \(\tanh^{-1}(\tanh x) = x \text{ jika } -\infty < x < +\infty\) <br>
+      \(\tanh(\tanh^{-1} x) = x \text{ jika } -1 < x < 1\)
+    </td>
+  </tr>
+  <tr>
+    <td>\(\coth^{-1} x\)</td>
+    <td>\((-\infty, -1) \cup (1, +\infty)\)</td>
+    <td>\((-\infty, 0) \cup (0, +\infty)\)</td>
+    <td>
+      \(\coth^{-1}(\coth x) = x \text{ jika } x < 0 \text{ atau } x > 0\) <br>
+      \(\coth(\coth^{-1} x) = x \text{ jika } x < -1 \text{ atau } x > 1\)
+    </td>
+  </tr>
+  <tr>
+    <td>\(\mathrm{sech}^{-1} {x}\)</td>
+    <td>\((0, 1]\)</td>
+    <td>\([0, +\infty)\)</td>
+    <td>
+      \(\mathrm{sech}^{-1}{\mathrm{(sech)} {x}} = x \text{ jika } x \ge 0\) <br>
+      \(\mathrm{sech}{\mathrm{(sech)}^{-1} {x}} = x \text{ jika } 0 < x \le 1\) <br>
+    </td>
+  </tr>
+  <tr>
+    <td>\(\mathrm{csch}^{-1} x\)</td>
+    <td>\((-\infty, 0) \cup (0, +\infty)\)</td>
+    <td>\((-\infty, 0) \cup (0, +\infty)\)</td>
+    <td>
+      \(\mathrm{csch}^{-1}(\mathrm{csch} {x}) = x \text{ jika } x < 0 \text{ atau } x > 0\) <br>
+      \(\mathrm{csch}(\mathrm{csch}^{-1} {x}) = x \text{ jika } x < 0 \text{ atau } x > 0\)
+    </td>
+  </tr>
+</table>
+<p style="text-align: center;"><b>Tabel 5.1</b> Hubungan Dasar Fungsi Invers Hiperbolik</p>
+
+    <div class="dfn-box teorema">
+      <div class="dfn-header" id="satulima">
+        Teorema 5.1</div>
+      <div class="dfn-content"> 
+        <p style="text-align: center;">\(y=\sinh^{-1}x \) ekuivalen dengan \(\sinh y = x\) untuk semua \(x,y\)</p>
+        <p style="text-align: center;">\(y=\cosh^{-1}x \) ekuivalen dengan \(\cosh y = x\) jika \(\begin{cases} x \ge 1 \\ y \ge 0. \end{cases}\)</p>
+        <p style="text-align: center;">\(y=\tanh^{-1}x \) ekuivalen dengan \(\tanh y = x\) jika \(\begin{cases} -1 < x < 1 \\ -\infty < y < +\infty. \end{cases}\)</p>
+        <p style="text-align: center;">\(y=\coth^{-1}x \) ekuivalen dengan \(\coth y = x\) jika \(\begin{cases} |x| > 1 \\ y &ne; 0 \end{cases}\)</p>
+        <p style="text-align: center;">\(y=\mathrm{sech}^{-1}x \) ekuivalen dengan \(\mathrm{sech} {y} = x\) jika \(\begin{cases} 0 < x \le 1 \\ y \ge 0. \end{cases}\)</p>
+        <p style="text-align: center;">\(y=\mathrm{csch}^{-1}x \) ekuivalen dengan \(\mathrm{csch} {y} = x\) jika \(\begin{cases} x &ne; 0 \\ y &ne; 0. \end{cases}\)</p>
+
+      </div>
+    </div> 
+    
+<p style="font-size: 118%;"><b>6 Bentuk Logaritma Fungsi Invers Hiperbolik</b> </p>
+    <div class="dfn-box teorema">
+      <div class="dfn-header">
+        Teorema 6.1</div>
+      <div class="dfn-content"> 
+        Hubungan berikut ini berlaku, dengan pembatasan pada \(x\) dalam <a href="#satulima">(1.5.1)</a>  <br>
+        <div style="text-align: center;">
+      <p>\(\sinh^{-1}x = \ln\left(x + \sqrt{x^2 + 1}\right)\)</p>
+      <p>\(\cosh^{-1}x = \ln\left(x + \sqrt{x^2 - 1}\right)\)</p>
+      <p>\(\tanh^{-1}x = \frac{1}{2} \ln\left(\frac{1 + x}{1 - x}\right)\)</p>
+      <p>\(\coth^{-1}x = \frac{1}{2} \ln\left(\frac{x + 1}{x - 1}\right)\)</p>
+      <p>\(\mathrm{sech}^{-1}x = \ln\left(\frac{1 + \sqrt{1 - x^2}}{x}\right)\)</p>
+      <p>\(\mathrm{csch}^{-1}x = \ln\left(\frac{1}{x} + \frac{\sqrt{1 + x^2}}{|x|}\right)\)</p>
+</div>
+
+      </div>
+    </div>
+   
+<p style="font-size: 118%;"><b>7 Rumus Turunan Fungsi Invers Hiperbolik</b> </p>
+    <div class="dfn-box teorema">
+      <div class="dfn-header" id="satutujuh">
+        Teorema 7.1</div>
+      <div class="dfn-content"> 
+        Hubungan berikut ini berlaku, dengan pembatasan pada \(x\) dalam <a href="#satulima">(1.5.1)</a>  <br>
+        <div style="text-align: center;">
+          <p>\(\frac{d}{dx}[\sinh^{-1}x] = \frac{1}{\sqrt{x^2 + 1}}\)</p>
+          <p>\(\frac{d}{dx}[\cosh^{-1}x] = \frac{1}{\sqrt{x^2 - 1}}\)</p>
+          <p>\(\frac{d}{dx}[\tanh^{-1}x] = \frac{1}{1 - x^2}\)</p>
+          <p>\(\frac{d}{dx}[\coth^{-1}x] = -\frac{1}{1 - x^2}\)</p>
+          <p>\(\frac{d}{dx}[\mathrm{sech}^{-1}x] = -\frac{1}{x\sqrt{1 - x^2}}\)</p>
+          <p>\(\frac{d}{dx}[\mathrm{csch}^{-1}x] = -\frac{1}{|x|\sqrt{1 + x^2}}\)</p>
+</div>
+        
+</div>
+
+</div>
+  Rumus integrasi berdasarkan teorema <a href="#satutujuh">(7.1)</a>
+    <div class="dfn-box teorema">
+      <div class="dfn-header" id="satutujuh">
+        Teorema 7.2</div>
+      <div class="dfn-content"> 
+        <div style="text-align: center;">
+          <p>\(\int \frac{dx}{\sqrt{x^2 + 1}} = \sinh^{-1}x + C\)</p>
+          <p>\(\int \frac{dx}{\sqrt{x^2 - 1}} = \cosh^{-1}x + C,\) &nbsp; untuk \(u > 1\)</p>
+          <p>\(\int \frac{dx}{1 - x^2} = \tanh^{-1}x + C,\) &nbsp; untuk \(|u| < 1\)</p>
+          <p>\(\int \frac{dx}{1 - x^2} = -\coth^{-1}x + C,\) &nbsp; untuk \(|u| > 1\)</p>
+          <p>\(\int \frac{dx}{x\sqrt{1 - x^2}} = -\mathrm{sech}^{-1}x + C\)</p>
+          <p>\(\int \frac{dx}{|x|\sqrt{1 + x^2}} = -\mathrm{csch}^{-1}x + C\)</p>
+</div>
+
+
+
+      </div>
+    </div>
+
+</div>
+
+<div id="homeContoh">
+<h2>B) Contoh Soal</h2> <br><hr><br>
+
+1. Dapatkan \(\frac{dy}{dx}\) dari <br>
+<p style="text-align: center;">\(y=\sinh (cos3x)\)</p>
+<br>
+<h4>Jawab:</h4>
+Diketahui bahwa \(\frac {d}{dx}[\sinh u]= \cosh u \frac{du}{dx}\), sehingga <br>
+<p style="text-align: center;">\(\frac{dy}{dx}=\frac{d}{dx}[\sinh (cos3x)]\)</p>
+<p style="text-align: center;">\(= \cosh (cos3x) \frac{d}{dx}(cos3x)\)</p>
+<p style="text-align: center;">\(= \cosh (cos3x) (-3 \sin 3x)\)</p>
+<p style="text-align: center;">\(= -3 \sin 3x \cosh (cos3x))\)</p> <br>
+
+<hr><br>
+2. Dapatkan \(\frac{dy}{dx}\) dari <br>
+<p style="text-align: center;">\(y=\sinh^{-1} (\tan x)\)</p>
+<br> 
+<h4>Jawab:</h4>
+Diketahui bahwa \(\frac {d}{dx}[\sinh^{-1} u]= \frac{1}{\sqrt{u^2 + 1}} \frac{du}{dx}\), sehingga <br>
+<p style="text-align: center;">\(\frac{dy}{dx}=\frac{d}{dx}[\sinh^{-1} (\tan x)]\)</p>
+<p style="text-align: center;">\(= \frac{1}{\sqrt{(\tan x)^2 + 1}} \frac{d}{dx}(\tan x)\)</p>
+<p style="text-align: center;">\(= \frac{1}{\sqrt{\sec^2 x}} \sec^2 x\)</p>
+<p style="text-align: center;">\(= \sec x\)</p><br>
+
+<hr><br>
+3. Hitung integral <br>
+<div style="text-align: center;"> \(\int \tanh 2x, dx\) </div>
+<br>
+<b>Jawab::</b><br>
+Misalkan \(u=sech 2x,\) sehingga \(du=-2 sech 2x \tanh 2x dx\) &hArr; \(\frac{du}{-2 sech 2x} = \frac{du}{-2u} = \tanh 2x dx\) <br> <br>
+
+<p style="text-align:center;">\(\int \tanh 2x dx = \int \frac{du}{2u}\)</p>
+<p style="text-align:center;">\(=-\frac{1}{2} ln u + C\)</p>
+<p style="text-align:center;">\(-\frac{1}{2} \ln(\mathrm{sech} 2x) + C\)</p> <hr><br>
+
+4. Hitung integral <br>
+<div style="text-align: center;">
+\(\frac{dx}{\sqrt{1-e^{2x}}}\) </div><br>
+<b>Jawab::</b><br>
+Misalkan \(u=e^x,\) sehingga \(du=e^xdx &hArr; dx=\frac{du}{e^x}=\frac{du}{u}\) <br> <br>
+
+<p style="text-align:center;">\(\int \frac{dx}{\sqrt{1-e^{2x}}} = \int \frac{1}{\sqrt{1-u^2}} \frac{du}{u}\)</p>
+<p style="text-align:center;">\(= \int \frac{1}{u \sqrt{1-u^2}} \frac{du}{u}\)</p>
+<p style="text-align: center;">\(= -\mathrm{sech}^{-1}|u| + C\)</p>
+<p style="text-align: center;">\(= -\mathrm{sech}^{-1}|e^x| + C\)</p>
+
+</div>
+</div>
+
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+1. <b>Soal ETS 2024</b><br>
+Dapatkan turunan dari <br><div style="text-align: center;">
+\(f(x) = \frac{e^x+ \ln x}{\sinh 3x}\)
+</div> <br>
+
+      <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+          Misalkan \(u=e^{x}+ \ln x\) dan \(v= \sinh 3x\), sehingga \(u'=e^x + \frac{1}{x} dan v'=3\cosh 3x\) <br>
+          Dengan rumus turunan fungsi pecahan, diperoleh
+          <p style="display: flex;justify-content: center;">\(f'(x)=\frac{u'v-uv'}{v^2}\)</p>
+          <p style="display: flex;justify-content: center;">\(=\frac{(e^x+\frac{1}{x})\sinh 3x- (e^x+ \ln x)3\cosh 3x}{\sinh^2 3x}\)</p>
+          <p style="display: flex;justify-content: center;">\(=\frac{e^x \sinh 3x+\frac{1}{x}\sinh 3x-3e^x\cosh 3x-3\ln x \cosh 3x}{\sinh^2 3x}\)</p>
+          Jadi, turunan dari fungsi tersebut adalah
+          <p style="display: flex;justify-content: center;">\(f'(x)=\frac{e^x \sinh 3x+\frac{1}{x}\sinh 3x-3e^x\cosh 3x-3\ln x \cosh 3x}{\sinh^2 3x}\)</p> 
+          <p style="text-align: center;">atau</p>
+          <p style="text-align: center;">\(= \frac{xe^x \sinh 3x + \sinh 3x - 3xe^x \cosh 3x - 3x \ln x cosh 3x}{x \sinh^2 3x} \)</p>
+
+          
+      </div>
+      </details>
+    </div>
+<hr><br> <br>
+2. <b>Soal ETS 2021</b><br>
+Dapatkan \(\frac{dy}{dx}\) dari  <br>
+<div style="text-align: center;">
+  \(y=\ln(\cosh^{-1}x)\)
+</div>
+      <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step" style="text-align: center;">
+          <p>\(\frac{dy}{dx}=\frac{d}{dx}[\ln(\cosh^{-1}x)]\)</p>
+          <p>=\(\frac{1}{\cosh^{-1}x}\frac{d}{dx}[\cosh^{-1}x]\)</p>
+           <p>=\(\frac{1}{\cosh^{-1}x}\cdot\frac{1}{\sqrt{x^2-1}}\)</p>
+          
+
+      </div>
+      </details>
+      <hr><br> <br>
+
+3. <b>Soal kuis</b>
+Dapatkan bahwa <br> 
+<p style="text-align: center;">\(\tanh^{-1}x = \frac{1}{2} \ln (\frac{1+x}{1-x}); -1 < x < 1 \)</p><br>
+
+<details class="solution">
+  <summary>Pembahasan:</summary>
+  <div class="solution-step">
+
+    Dapatkan \(y = \tanh^{-1}x, \) sehingga \(x = \tanh y\)
+    <div style="text-align: center;">
+\( x = \frac{\sinh y}{\cosh y} \)<br>
+\(= \frac{\frac{e^y - e^{-y}}{2}}{\frac{e^y+e^{-y}}{2}}\)<br>
+\(= \frac{e^y - e^{-y}}{e^y + e^{-y}}\) <br>
+\(= \frac{e^{2y} - 1}{e^{2y} + 1}\)<br><br>
+\(xe^{2y}+x = e^{2y}- 1 \)<br>
+\(e^{2y} - xe^{2y} = 1 + x\) <br>
+\(e^{2y}(1-x) = 1+x\) <br>
+\(e^{2y} = \frac{1+x}{1-x}\) <br>
+\(2y = \ln(\frac{1+x}{1-x})\) <br>
+\(y = \frac{1}{2} \ln(\frac{1+x}{1-x})\) <br>
+
+
+    </div>
+  </div>
+
+</details><hr><br> <br>
+
+
+
+4. <b>Soal Kuis</b>
+Selesaikan \(\int e^{-x} \tanh(2-e^{-x});dx \)<br>
+<b>Hint 1:</b> Substitusi \(u=2-e^{-x}\) <br>
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        Misalkan \(u=2-e{-x}\), sehingga \(du=e^{-x} dx\) 
+            <p style="display: flex; justify-content: center;">\(\int e^{-x} \tanh(2-e^{-x});dx = \int \tanh(u) du\)</p>
+        Misalkan \(a=\mathrm{sech} {u},\) sehingga \(da=-\mathrm{sech} {u} \tanh u du\) &hArr; \(\frac{da}{-\mathrm{sech}{u}} = \tanh u du\) <br> <br>
+            <p style="display: flex; justify-content: center;">\(\int \tanh(u) du = \int \frac{da}{-a}\)</p>
+            <p style="display: flex; justify-content: center;">\(= -\ln |a| + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= -\ln |\mathrm{sech} {u}| + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= -\ln |\mathrm{sech}(2-e^{-x})| + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= -\ln \left(\frac{1}{\sqrt{1-(2-e^{-x})^2}}\right) + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{1}{2} \ln(1-(2-e^{-x})^2) + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{1}{2} \ln(1-(4-4e^{-x}+e^{-2x})) + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{1}{2} \ln(e^{-2x}-4e^{-x}+3) + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{1}{2} \ln((e^{-x}-3)(e^{-x}-1)) + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{1}{2} \ln(e^{-x}-3) + \frac{1}{2} \ln(e^{-x}-1) + C\)</p>
+
+      </div>
+</details>
+    </div>
+<hr><br> <br>
+
+5. Hitung integral <br>
+<p style="text-align: center;">\(\int \frac{1}{\sqrt{9x^2-25}};dx \)</p><br>
+<b>Hint 1:</b> Substitusi \(x=5u\) <br>
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        Misalkan \(x=5u,\) sehingga \(dx=5du\) <br>
+        <p style="display: flex; justify-content: center;">\(\int \frac{1}{\sqrt{9x^2-25}};dx = 5\int \frac{1}{\sqrt{9(5u)^2-25}};du\)</p>
+        <p style="display: flex; justify-content: center;">\(= 5\int \frac{1}{\sqrt{225u^2-25}};du\)</p>
+        <p style="display: flex; justify-content: center;">\(= 5\int \frac{1}{\sqrt{25(9u^2-1)}};du\)</p>
+        <p style="display: flex; justify-content: center;">\(= \int \frac{1}{\sqrt{9u^2-1}};du\)</p> <br>
+
+
+        Misalkan \(u=\frac{1}{3} \sec v,\) sehingga \(du=\frac{1}{3} \sec v \tan v dv\) <br>
+        <p style="display: flex; justify-content: center;">\(= \int \frac{1}{\sqrt{9(\frac{1}{3} \sec v)^2-1}} \cdot \frac{1}{3} \sec v \tan v dv\)</p>
+        <p style="display: flex; justify-content: center;">\(= \int \frac{1}{\sqrt{\sec^2 v-1}} \cdot \frac{1}{3} \sec v \tan v dv\)</p>
+        <p style="display: flex; justify-content: center;">\(= \int \frac{1}{\tan v} \cdot \frac{1}{3} \sec v \tan v dv\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \int \sec v dv\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |\sec v + \tan v| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |\sec(\frac{1}{3} \sec^{-1}(3u)) + \tan(\frac{1}{3} \sec^{-1}(3u))| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |\sec(\sec^{-1}(3u)) + \tan(\sec^{-1}(3u))| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |3u + \sqrt{9u^2-1}| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |3(\frac{x}{5}) + \sqrt{9(\frac{x}{5})^2-1}| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |3(\frac{x}{5}) + \sqrt{\frac{9x^2}{25}-1}| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |3(\frac{x}{5}) + \sqrt{\frac{9x^2-25}{25}}| + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{1}{3} \ln |3x + \sqrt{9x^2-25}| - \frac{1}{3} \ln 5 + C\)</p>
+
+
+      </div>
+</details>
+<hr><br> <br>
+6. Hitung integral <br>
+<p style="text-align: center;">\(\int \sqrt{\tanh x} &nbsp;\mathrm{sech}^2{x};dx \)</p><br>
+<b>Hint 1:</b> Substitusi \(u = \tanh x\) <br>
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        Misalkan \(u= \tanh x,\) sehingga \(du= \mathrm{sech}^2x ;dx\) <br>
+        <p style="display: flex; justify-content: center;">\(\int \sqrt{\tanh x}\mathrm{sech}^2x;dx = \int \sqrt{u} du\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{2}{3} u^{\frac{3}{2}} + C\)</p>
+        <p style="display: flex; justify-content: center;">\(= \frac{2}{3} (\tanh x)^{\frac{3}{2}} + C\)</p>
+        </div>
+
+      </details>
+<hr><br>
+
+    </div>
+
+
+
+    </div>
+
+    </div>
+</div> </div> 
+  
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

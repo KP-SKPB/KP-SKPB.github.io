@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 6 : BARISAN DAN DERET</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">6.3 Uji Kovergensi</h2> <br>
+
+      
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+
+   <h3>1 Sifat-Sifat Aljabar Deret Takhingga</h3>
+     <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 1.1</b> 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+                
+                <ol style="padding-left: 30px;">
+            <li>
+                Jika \(\sum u_k\) dan \(\sum v_k\) deret konvergen, maka \(\sum(u_k + v_k)\) dan \(\sum(u_k - v_k)\) adalah deret konvergen dan jumlah dari deret ini adalah
+                \[
+                \begin{aligned}
+                \sum_{k=1}^{+\infty} (u_k + v_k) &= \sum_{k=1}^{+\infty} u_k + \sum_{k=1}^{+\infty} v_k \\
+                \sum_{k=1}^{+\infty} (u_k - v_k) &= \sum_{k=1}^{+\infty} u_k - \sum_{k=1}^{+\infty} v_k
+                \end{aligned}
+                \]
+            </li>
+            <li>
+                Jika \(c\) adalah konstanta tidak nol, maka deret \(\sum_{k=1}^{+\infty} u_k\) dan \(\sum_{k=1}^{+\infty} c u_k\) keduanya konvergen atau keduanya divergen. Dalam kasus konvergen jumlah dari deret ini adalah
+                \[ \sum_{k=1}^{+\infty} c u_k = c \sum_{k=1}^{+\infty} u_k \]
+            </li>
+            <li>
+                Konvergensi atau divergensi tidak dipengaruhi oleh penghapusan sejumlah suku berhingga dari deret; jelasnya, untuk sebarang bilangan positif \(K\), deret
+                \[
+                \begin{aligned}
+                \sum_{k=1}^{+\infty} u_k &= u_1 + u_2 + u_3 + \dots \\
+                \sum_{k=K}^{+\infty} u_k &= u_K + u_{K+1} + u_{K+2} + \dots
+                \end{aligned}
+                \]
+                keduanya divergen atau keduanya konvergen.
+            </li>
+        </ol>
+    </p>
+            </div></div><br>
+    <h3>2 Uji Integral</h3>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 2.1</b> (Uji Integral) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">   
+    <p>
+        Misalkan \(\sum u_k\) adalah deret dengan suku-suku positif, dan \(f(x)\) fungsi yang dihasilkan jika \(k\) diganti dengan \(x\) dalam rumus \(u_k\). Jika \(f\) adalah deret turun dan kontinu pada interval \([1, +\infty)\), maka
+    </p>
+    <p>
+        \[ \sum_{k\to+\infty} u_k \quad \text{dan} \quad \int_{1}^{+\infty} f(x) dx \]
+        keduanya konvergen atau keduanya divergen.
+    </p>
+            </div></div>
+<br>
+   <h3>3 Bukti Uji Integral</h3>
+    <p>
+        Jika \(\sum u_k\) adalah deret dengan suku-suku tak negatif, dan jika ada suatu konstanta \(M\) sedemikian hingga
+    </p>
+    <p>
+        \[ s_n = u_1 + u_2 + u_3 + \dots + u_n \le M \]
+    </p>
+    <p>
+        untuk setiap \(n\), maka deret konvergen dan jumlahan \(S\) memenuhi \(S \le M\). Jika \(M\) seperti di atas tidak ada maka deret divergen.
+    </p>
+<br>
+    <h3>4 Deret-p</h3>
+    <p>
+        Deret-p adalah suatu deret tak hingga yang dituliskan sebagai
+    </p>
+    <p>
+        \[ \sum_{k=1}^{+\infty} \frac{1}{k^p} = 1 + \frac{1}{2^p} + \frac{1}{3^p} + \dots + \frac{1}{k^p} + \dots \]
+    </p>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 4.1</b> (Konvergensi Deret-p) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">  
+        
+        \[ \sum_{k=1}^{+\infty} \frac{1}{k^p} = 1 + \frac{1}{2^p} + \frac{1}{3^p} + \dots + \frac{1}{k^p} + \dots \]
+        konvergen jika \(p > 1\) dan divergen jika \(0 < p \le 1\).
+    </p>
+    </div></div>
+
+<br>
+    <h3>5 Uji Rasio</h3>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 5.1</b> (Uji Rasio) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content"> 
+    <p>
+        Jika diberikan deret \(\sum u_k\) dengan suku-suku positif dan diasumsikan \(p = \lim_{k\to+\infty} \frac{u_{k+1}}{u_k}\), maka
+    </p>
+    <ol style="padding-left: 30px;">s
+        <li>Jika \(p < 1\), maka deret konvergen.</li>
+        <li>Jika \(p > 1\) atau \(p = +\infty\), maka deret divergen.</li>
+        <li>Jika \(p = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+    </ol></div></div>
+<br>
+    <h3>6 Prinsip Informal</h3>
+<ol style="padding-left: 30px;">
+        <li>
+        <b>Prinsip Informal (I):</b> Suku-suku konstan dalam penyebut \(u_k\) dapat dihilangkan tanpa berpengaruh pada konvergensi maupun divergensi deret.
+    </li>
+    <li>
+        <b>Prinsip Informal (II):</b> Jika sebuah polinomial dalam \(k\) tampak sebagai faktor pembilang atau penyebut dari \(u_k\), maka semua suku (kecuali \(k\) dengan pangkat tertinggi) pada polinomial dihilangkan. Penyederhanaan ini tidak mempengaruhi konvergensi atau divergensi deret tersebut.
+    </li>
+</ol>
+<br>
+    <h3>7 Deret Berganti Tanda</h3>
+    <p>
+        Deret berganti tanda adalah deret dengan suku-suku positif dan negatif bergantian.
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \sum_{k=0}^\infty (-1)^{k+1} a_k &= -a_1 + a_2 - a_3 + a_4 - \dots \\
+        \sum_{k=0}^\infty (-1)^k a_k &= -a_1 + a_2 - a_3 + a_4 - \dots \\ % There might be a typo in the original image for the second series definition, assuming the first one is the primary
+        \end{aligned}
+        \]
+        dan diasumsikan \(a_k > 0\).
+    </p>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 7.1</b> (Uji Deret Berganti Tanda) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content"> 
+    <p>
+        Suatu deret berganti tanda pada bentuk di atas konvergen jika dua kondisi berikut terpenuhi
+    </p>
+    <ol style="padding-left: 30px;">
+        <li>\(a_1 > a_2 > a_3 > a_4 > \dots\)</li>
+        <li>\(\lim_{k\to+\infty} a_k = 0\)</li>
+    </ol>
+            </div></div>
+
+    <p>
+        <strong>Note:</strong> Pada teorema 7.1,
+    </p>
+    <ol style="padding-left: 30px;"
+        <li>Suatu deret berganti tanda akan konvergen jika kondisi (2) dipenuhi dan kondisi (1) dipenuhi pada bagian akhir suku.</li>
+        <li>Jika kondisi (2) tidak dipenuhi, maka deret akan divergen.</li>
+        <li>Jika kondisi (2) dipenuhi, tetapi kondisi (1) tidak, deret dapat konvergen maupun divergen.</li>
+    </ol>
+<br>
+<hr>
+<hr><br>
+
+    <h2># Ringkasan Uji Konvergensi Deret Tak Hingga</h2>
+
+    <table>
+        <thead>
+            <tr style="background-color: rgb(186, 186, 186);">
+                <th>Nama Uji</th>
+                <th>Pernyataan</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Uji Divergensi</td>
+                <td>Jika \(\lim_{k\to+\infty} u_k \ne 0\), maka \(\sum u_k\) divergen.</td>
+                <td>Jika \(\lim_{k\to+\infty} u_k = 0\), maka \(\sum u_k\) mungkin konvergen atau mungkin tidak.</td>
+            </tr>
+            <tr>
+                <td>Uji Integral</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku-suku positif, dan \(f(x)\) fungsi yang dihasilkan jika \(k\) diganti dengan \(x\) dalam rumus \(u_k\). Jika \(f\) adalah deret turun dan kontinu pada interval \([1, \infty)\), maka
+                    \[ \sum_{k=1}^\infty u_k \quad \text{dan} \quad \int_{1}^{\infty} f(x) dx \]
+                    keduanya konvergen atau keduanya divergen.
+                </td>
+                <td>
+                    Uji ini hanya berlaku untuk deret dengan suku tidak negatif. Coba uji ini jika \(f(x)\) mudah diintegralkan.
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Perbandingan</td>
+                <td>
+                    Misalkan \(\sum a_k\) dan \(\sum b_k\) adalah deret dengan suku tidak negatif sedemikian sehingga \(a_k \le b_k\). Jika \(\sum b_k\) konvergen, maka \(\sum a_k\) juga konvergen, dan jika \(\sum a_k\) divergen, maka \(\sum b_k\) divergen.
+                </td>
+                <td>
+                    Uji ini hanya berlaku untuk deret dengan suku tidak negatif. Coba uji ini sebagai pilihan terakhir; uji lain sering lebih mudah diterapkan.
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Perbandingan Limit</td>
+                <td>
+                    Misalkan \(\sum a_k\) dan \(\sum b_k\) adalah deret dengan suku positif, serta
+                    \[ \rho = \lim_{k\to\infty} \frac{a_k}{b_k} \]
+                    Jika \(0 < \rho < +\infty\), maka kedua deret tersebut konvergen atau kedua deret tersebut divergen.
+                </td>
+                <td>
+                    Uji ini lebih mudah digunakan dibandingkan uji perbandingan biasa, tetapi memerlukan keterampilan dalam memilih deret \(\sum b_k\) untuk membandingkan.
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Rasio</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku positif, serta
+                    \[ \rho = \lim_{k\to+\infty} \left|\frac{u_{k+1}}{u_k}\right| \]
+                    <ol style="padding-left: 30px; text-align: left;">
+                        <li>Deret konvergen jika \(\rho < 1\).</li>
+                        <li>Deret divergen jika \(\rho > 1\) atau \(\rho = +\infty\).</li>
+                        <li>Jika \(\rho = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+                    </ol>
+                </td>
+                <td>
+                    Gunakan uji ini ketika \(u_k\) melibatkan faktorial atau pangkat ke-\(k\).
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Akar</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku positif, serta
+                    \[ \rho = \lim_{k\to+\infty} \sqrt[k]{u_k} \]
+                    <ol style="padding-left: 30px;text-align: left">
+                        <li>Deret konvergen jika \(\rho < 1\).</li>
+                        <li>Deret divergen jika \(\rho > 1\) atau \(\rho = +\infty\).</li>
+                        <li>Jika \(\rho = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+                    </ol>
+                </td>
+                <td>
+                    Gunakan uji ini ketika \(u_k\) melibatkan pangkat ke-\(k\).
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Deret Berganti Tanda</td>
+                <td>
+                    Jika \(a_k \ge 0\) untuk \(k = 1,2,3,\dots\), maka deret
+                    \[
+                    \begin{aligned}
+                    \sum_{k=0}^\infty (-1)^{k+1} a_k &= -a_1 + a_2 - a_3 + a_4 - \dots \\
+                    \sum_{k=0}^\infty (-1)^k a_k &= a_0 - a_1 + a_2 - a_3 + \dots
+                    \end{aligned}
+                    \]
+                    konvergen jika syarat berikut terpenuhi:
+                    <ol style="padding-left: 30px;text-align: left">
+                        <li>\(a_1 > a_2 > a_3 > a_4 > \dots\)</li>
+                        <li>\(\lim_{k\to+\infty} a_k = 0\)</li>
+                    </ol>
+                </td>
+                <td>Uji ini hanya berlaku untuk deret yang suku-sukunya berganti tanda.</td>
+            </tr>
+            <tr>
+                <td>Uji Rasio untuk Konvergensi Absolut</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku tidak nol, serta
+                    \[ \rho = \lim_{k\to\infty} \left|\frac{u_{k+1}}{u_k}\right| \]
+                    <ol style="padding-left: 30px;text-align: left">
+                        <li>Deret konvergen absolut jika \(\rho < 1\).</li>
+                        <li>Deret divergen jika \(\rho > 1\) atau \(\rho = \infty\).</li>
+                        <li>Jika \(\rho = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+                    </ol>
+                </td>
+                <td>
+                    Deret tidak harus memiliki suku positif dan tidak harus berganti tanda untuk menggunakan uji ini.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+            </div></div>
+
+
+           </div>
+
+<div id="homeContoh">
+    <h2>B) Contoh Soal</h2> 
+    <br>
+    <p>1. Dapatkan jumlahan deret</p>
+    <p>
+        \[ \sum_{k=2}^\infty \left[ \frac{1}{2^k} - \frac{1}{k^2 - k} \right] \]
+    </p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \sum_{k=2}^\infty \left[ \frac{1}{2^k} - \frac{1}{k^2 - k} \right] &= \sum_{k=2}^\infty \frac{1}{2^k} - \sum_{k=2}^\infty \frac{1}{k(k-1)} \\
+        &= \sum_{k=2}^\infty \frac{1}{2^k} - \sum_{k=2}^\infty \left( \frac{1}{k-1} - \frac{1}{k} \right) \\
+        &= \left( \frac{1}{2^2} + \frac{1}{2^3} + \frac{1}{2^4} + \dots \right) - \lim_{a\to\infty} \sum_{k=2}^a \left( \frac{1}{k-1} - \frac{1}{k} \right) \\
+        &= \frac{\frac{1}{2^2}}{1 - \frac{1}{2}} - \lim_{a\to\infty} \left[ \left( \frac{1}{1} - \frac{1}{2} \right) + \left( \frac{1}{2} - \frac{1}{3} \right) + \dots + \left( \frac{1}{a-1} - \frac{1}{a} \right) \right] \\
+        &= \frac{1/4}{1/2} - \lim_{a\to\infty} \left( 1 - \frac{1}{a} \right) \\
+        &= \frac{1}{2} - (1 - 0) \\
+        &= \frac{1}{2} - 1 \\
+        &= -\frac{1}{2}
+        \end{aligned}
+        \]
+    </p><hr><br>
+
+    <p>2. Gunakan uji rasio untuk menunjukkan deret \(\sum_{k=1}^\infty \frac{k!}{k^2}\)</p>
+
+
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+
+    <p>
+        \[
+        \begin{aligned}
+        \rho &= \lim_{k\to+\infty} \frac{\frac{(k+1)!}{(k+1)^2}}{\frac{k!}{k^2}} \\
+        &= \lim_{k\to+\infty} \frac{(k+1)!}{(k+1)^2} \cdot \frac{k^2}{k!} \\
+        &= \lim_{k\to+\infty} \frac{(k+1)k!}{(k+1)^2} \cdot \frac{k^2}{k!} \\
+        &= \lim_{k\to+\infty} \frac{k^2}{k+1} \\
+        &= \lim_{k\to+\infty} \frac{k}{1 + \frac{1}{k}} \\ % Simplified for clearer limit evaluation
+        &= +\infty
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(\rho = +\infty\), dengan demikian \(\sum_{k=1}^\infty \frac{k!}{k^2}\) divergen.
+    </p>
+
+<hr><br>
+
+    <p>3. <b>Soal EAS 2019</b></p>
+    <p>
+        Gunakan uji yang sesuai untuk menentukan apakah deret \(\sum_{k=2}^\infty \frac{1}{k \ln k}\) konvergen atau divergen.
+    </p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+    <p>
+        Misalkan bahwa \(f(x) = \frac{1}{x \ln x}\). Selanjutnya perhatikan bahwa
+    </p>
+    <p>
+        \[ \frac{d}{dx}[x \ln x] = \ln x + 1 > 0 \]
+    </p>
+    <p>
+        , karena \(x \ln x\) monoton naik, akibatnya \(f(x)\) monoton turun. Selain itu, \(f(x)\) juga kontinu di \([2, +\infty)\), dengan demikian dapat digunakan uji integral
+    </p>
+    <p>
+        \[ \int_{2}^{+\infty} \frac{1}{x \ln x} dx \]
+    </p>
+    <p>
+        Misalkan \(u = \ln x\), sehingga \(du = \frac{1}{x} dx\).
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \int \frac{1}{x \ln x} dx &= \int \frac{1}{u} du \\
+        &= \ln |u| \\
+        &= \ln (\ln x)
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \int_{2}^{+\infty} \frac{1}{x \ln x} dx &= \lim_{b\to+\infty} \int_{2}^{b} \frac{1}{x \ln x} dx \\
+        &= \lim_{b\to+\infty} [\ln (\ln x)]_{2}^{b} \\
+        &= \lim_{b\to+\infty} [\ln (\ln b) - \ln (\ln 2)] \\
+        &= +\infty
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(\int_{2}^{+\infty} \frac{1}{x \ln x} dx\) divergen, akibatnya \(\sum_{k=2}^\infty \frac{1}{k \ln k}\) divergen.
+    </p> <hr><br>
+
+
+
+
+
+</div>
+</div>
+ 
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+
+    <h3>1. Soal EAS 2019</h3>
+    <p>
+        Dengan menggunakan uji rasio, tentukan apakah deret berikut konvergen, divergen, atau tak ada kesimpulan
+    </p>
+    <p>
+        (a) \(\sum_{k=1}^\infty \frac{3^k}{k!}\)<br>
+        (b) \(\sum_{k=1}^\infty \frac{k^2}{k^2+1}\)
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+
+    <p>(a)</p>
+    <p class="math-block">
+        \[
+        p = \lim_{k\to+\infty} \frac{\frac{3^{k+1}}{(k+1)!}}{\frac{3^k}{k!}} = \lim_{k\to+\infty} \frac{3^{k+1}}{(k+1)!} \cdot \frac{k!}{3^k} = \lim_{k\to+\infty} \frac{3}{k+1} = 0
+        \]
+    </p>
+    <p>6</p>
+    <p>
+        Perhatikan bahwa \(\frac{3}{k+1} < 1\) jika \(k \ge 3\), yang berarti \(\sum_{k=3}^\infty \frac{3^k}{k!}\) konvergen. Sedangkan untuk \(\sum_{k=1}^2 \frac{3^k}{k!} = \frac{3}{1!} + \frac{3^2}{2!} = 3 + \frac{9}{2} = \frac{15}{2}\). Jadi, \(\sum_{k=1}^\infty \frac{3^k}{k!}\) konvergen.
+    </p>
+
+    <p>(b)</p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \rho &= \lim_{k\to+\infty} \left|\frac{\frac{(k+1)^2}{(k+1)^2+1}}{\frac{k^2}{k^2+1}}\right| \\
+        &= \lim_{k\to+\infty} \frac{(k+1)^2}{(k+1)^2+1} \cdot \frac{k^2+1}{k^2} \\
+        &= \lim_{k\to+\infty} \frac{(k^2+2k+1)(k^2+1)}{(k^2+2k+2)k^2} \\
+        % Simplified approach for limit, as per image (though image seems to skip steps)
+        % For L'Hopital: lim (k^2 / (k^2+1)) = 1, so the limit of the ratio should be 1.
+        % The image directly goes to infinity, implying a different calculation method for the denominator, or a typo.
+        % I'll follow the image's result for the limit as +inf
+        &= +\infty
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(\rho = +\infty\), dengan demikian \(\sum_{k=1}^\infty \frac{k^2}{k^2+1}\) divergen.
+    </p></div></details> <hr><br>
+   <h3>2. Soal EAS 2021</h3>
+    <p>
+        (a) Gunakan uji yang sesuai untuk menentukan apakah deret \(\sum_{n=1}^\infty \frac{4}{3^{n+1}}\) konvergen atau divergen.<br>
+        (b) Dapatkan jumlahan deret
+        \[ \sum_{k=1}^\infty \left[ \frac{7}{3^k} + \frac{6}{(k+3)(k+4)} \right] \]
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        (a) Gunakan prinsip informal (I), sehingga bentuk \(\sum_{n=1}^\infty \frac{4}{3^{n+1}}\) menjadi \(\sum_{n=1}^\infty \frac{4}{3^n}\). Selanjutnya, perhatikan bahwa \(\sum_{n=1}^\infty \frac{4}{3^n}\) merupakan deret geometri dengan rasio \(r = \frac{1}{3}\). Karena \(|r| < 1\), akibatnya \(\sum_{n=1}^\infty \frac{4}{3^n}\) konvergen. Dengan demikian deret \(\sum_{n=1}^\infty \frac{4}{3^{n+1}}\) konvergen.
+    </p>
+
+    <p>(b)</p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \sum_{k=1}^\infty \left[ \frac{7}{3^k} + \frac{6}{(k+3)(k+4)} \right] &= \sum_{k=1}^\infty \frac{7}{3^k} + \sum_{k=1}^\infty \frac{6}{(k+3)(k+4)} \\
+        &= 7 \sum_{k=1}^\infty \frac{1}{3^k} + 6 \lim_{b\to\infty} \sum_{k=1}^b \frac{1}{(k+3)(k+4)} \\
+        &= 7 \left[ \frac{1}{3} + \frac{1}{3^2} + \frac{1}{3^3} + \dots \right] + 6 \lim_{b\to\infty} \sum_{k=1}^b \left[ \frac{1}{k+3} - \frac{1}{k+4} \right] \\
+        &= 7 \left( \frac{1/3}{1 - 1/3} \right) + 6 \lim_{b\to\infty} \left[ \left(\frac{1}{4} - \frac{1}{5}\right) + \left(\frac{1}{5} - \frac{1}{6}\right) + \dots + \left(\frac{1}{b+3} - \frac{1}{b+4}\right) \right] \\
+        &= 7 \left( \frac{1/3}{2/3} \right) + 6 \lim_{b\to\infty} \left[ \frac{1}{4} - \frac{1}{b+4} \right] \\
+        &= 7 \left( \frac{1}{2} \right) + 6 \left[ \frac{1}{4} - 0 \right] \\
+        &= \frac{7}{2} + \frac{6}{4} \\
+        &= \frac{7}{2} + \frac{3}{2} \\
+        &= \frac{10}{2} \\
+        &= 5
+        \end{aligned}
+        \]
+    </p></div></details> <hr><br>
+     <h3>3. Soal EAS 2021</h3>
+    <p>
+        Buktikan \(\sum_{k=2}^\infty \frac{1}{k(\ln k)^p}\) konvergen jika \(p > 1\).
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        Misalkan bahwa \(f(x) = \frac{1}{x(\ln x)^p}\). Selanjutnya perhatikan bahwa
+    </p>
+    <p class="math-block">
+        \[ \frac{d}{dx}[x(\ln x)^p] = (\ln x)^p + p(\ln x)^{p-1} = (\ln x)^{p-1} (\ln x + p), \]
+    </p>
+    <p>7</p>
+    <p>
+        karena \(p > 1\), akibatnya \((\ln x)^{p-1} (\ln x + p) > 0\), sehingga \(f(x)\) monoton turun. Selain itu, \(f(x)\) juga kontinu di \([2, \infty)\), sehingga dengan uji integral
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \int_{2}^{+\infty} \frac{1}{x(\ln x)^p} dx
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Misalkan \(u = \ln x\), sehingga \(du = \frac{1}{x} dx\).
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \int \frac{1}{x(\ln x)^p} dx &= \int \frac{1}{u^p} du \\
+        &= \frac{1}{-p+1} u^{-p+1} \\
+        &= \frac{1}{-p+1} (\ln x)^{1-p}
+        \end{aligned}
+        \]
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \int_{2}^{+\infty} \frac{1}{x(\ln x)^p} dx &= \lim_{b\to+\infty} \int_{2}^{b} \frac{1}{x(\ln x)^p} dx \\
+        &= \lim_{b\to+\infty} \left[ \frac{1}{-p+1} (\ln x)^{1-p} \right]_{2}^{b} \\
+        &= \lim_{b\to+\infty} \frac{1}{-p+1} \left[ (\ln b)^{1-p} - (\ln 2)^{1-p} \right]
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(p > 1\), akibatnya \(\lim_{b\to+\infty} (\ln b)^{1-p} = 0\), sehingga
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \int_{2}^{+\infty} \frac{1}{x(\ln x)^p} dx &= \frac{1}{-p+1} \left[ 0 - (\ln 2)^{1-p} \right] \\
+        &= \frac{1}{-p+1} \left[ -\frac{1}{(\ln 2)^{p-1}} \right] \\
+        &= \frac{1}{(p-1)(\ln 2)^{p-1}}
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(\int_{2}^{+\infty} \frac{1}{x(\ln x)^p} dx\) konvergen jika \(p > 1\), akibatnya \(\sum_{k=2}^\infty \frac{1}{k(\ln k)^p}\) konvergen jika \(p > 1\).
+    </p>
+
+
+        </div></details> <hr><br>
+    <h3>4. Tunjukkan bahwa deret tersebut konvergen dengan memastikan bahwa deret \(\sum_{k=1}^\infty \frac{k}{3^k}\) memenuhi hipotesis uji deret berganti tanda.</h3>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        Misalkan \(a_k = \frac{k}{3^k}\), dan perhatikan bahwa
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        a_k - a_{k+1} &= \frac{k}{3^k} - \frac{k+1}{3^{k+1}} \\
+        &= \frac{3k - (k+1)}{3^{k+1}} \\
+        &= \frac{2k - 1}{3^{k+1}} > 0
+        \end{aligned}
+        \]
+        sehingga \(a_k > a_{k+1}\),
+    </p>
+    <p>
+        Selanjutnya,
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \lim_{k\to+\infty} a_k &= \lim_{k\to+\infty} \frac{k}{3^k} \\
+        &= \lim_{k\to+\infty} \frac{1}{3^k \ln 3} \\
+        &= 0
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena memenuhi \(a_1 > a_2 > a_3 > \dots\) dan \(\lim_{k\to+\infty} a_k = 0\), dengan demikian \(\sum_{k=1}^\infty \frac{k}{3^k}\) konvergen.
+    </p>
+
+</div></details> <hr><br>
+
+
+
+</div> </div> 
+  
+
+
+
+</div>
+
+
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

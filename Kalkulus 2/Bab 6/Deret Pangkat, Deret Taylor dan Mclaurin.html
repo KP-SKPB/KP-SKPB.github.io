@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 6 : BARISAN DAN DERET</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">6.4 Deret Pangkat, Deret Taylor dan Mclaurin</h2> <br>
+
+      
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+
+    <h3>1 Deret Pangkat</h3>
+    <p>
+        Secara umum deret pangkat didefinisikan sebagai
+    </p>
+    <p class="math-block">
+        \[ \sum_{n=0}^{+\infty} a_n (x-c)^n = a_0 + a_1(x-c) + a_2(x-c)^2 + a_3(x-c)^3 + \dots \]
+    </p>
+    <p>
+        dengan \(c \in \mathbb{R}\) dan \(a_n\) merupakan barisan tak hingga. Nilai \(c\) adalah pusat deret pangkat (deret pangkat berpusat di \(x = c\)).
+    </p>
+
+         <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 1.1</b> 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+    <p>
+         Untuk sebarang deret pangkat yang berpusat di \(x = c\), tepat satu kondisi berikut akan dipenuhi:
+    </p>
+    <ol class="list-indent" style="padding-left: 30px;">
+        <li>Deret tersebut hanya konvergensi \(x = c\).</li>
+        <li>Deret tersebut konvergen untuk semua bilangan real \(x\).</li>
+        <li>Deret tersebut konvergen untuk semua bilangan real di selang \((c - R, c + R)\). Untuk \(x = c - R\) atau \(x = c + R\), deret tersebut bisa konvergen maupun divergen.</li>
+    </ol></div></div>
+<div style="display: flex; justify-content: center;">
+    <img src="gambar 4/gambar_kp (2).svg" alt="#" style="max-width: 900px;"><br>
+</div><br>
+
+    <h3>2 Hampiran Fungsi Dengan Polinomial</h3>
+
+    
+         <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              <b>Definsi 2.1</b> 
+            </div>
+            <div class="definisi>
+                <div class="dfn-content"> 
+    <p>
+        Jika \(f\) dapat dideferensiasi \(n\) kali pada \(x = 0\), maka <b>Polinomial MacLaurin</b> derajat \(n\) dari \(f\) didefinisikan sebagai
+    </p>
+    <p class="math-block">
+        \[
+        p_n(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \dots + \frac{f^{(n)}(0)}{n!}x^n = \sum_{k=0}^n \frac{f^{(k)}(0)}{k!}x^k
+        \]
+    </p>
+    <p>
+        Polinomial ini memenuhi \(p_n(0) = f(0)\) dan \(p_n^{(k)}(0) = f^{(k)}(0)\) untuk \(1 \le k \le n\).
+    </p></div></div>
+
+    
+         <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              <b>Definisi 2.2</b> 
+            </div>
+            <div class="definisi>
+                <div class="dfn-content"> 
+    <p>
+        Jika \(f\) dapat dideferensiasi \(n\) kali pada \(a\), maka <b>Polinomial Taylor</b> derajat \(n\) dari \(f\) di sekitar titik \(x = a\) didefinisikan sebagai
+    </p>
+    <p class="math-block">
+        \[
+        p_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \dots + \frac{f^{(n)}(a)}{n!}(x-a)^n = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k
+        \]
+    </p></div></div>
+
+
+    <h3>1.3 Deret Taylor dan Maclaurin</h3>
+
+         <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              <b>Definisi 3.1</b> 
+            </div>
+            <div class="definisi>
+                <div class="dfn-content"> 
+    <p>
+        Jika \(f\) mempunyai turunan pada semua tingka di \(x = a\), maka <b>Deret Taylor</b> untuk \(f\) di sekitar titik \(x = a\) menjadi
+    </p>
+    <p class="math-block">
+        \[ \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!}(x-a)^k = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \dots + \frac{f^{(n)}(a)}{n!}(x-a)^n + \dots \]
+    </p>
+    <p>
+        Pada kejadian khusus di mana \(a = 0\), deret taylor disebut **Deret Maclaurin** untuk \(f\). Dalam hal ini deret mempunyai bentuk
+    </p>
+    <p class="math-block">
+        \[ \sum_{k=0}^\infty \frac{f^{(k)}(0)}{k!}x^k = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \dots + \frac{f^{(n)}(0)}{n!}x^n + \dots \]
+    </p>
+            </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <h3>1 Sifat-Sifat Aljabar Deret Takhingga</h3>
+     <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 1.1</b> 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+                
+                <ol style="padding-left: 30px;">
+            <li>
+                Jika \(\sum u_k\) dan \(\sum v_k\) deret konvergen, maka \(\sum(u_k + v_k)\) dan \(\sum(u_k - v_k)\) adalah deret konvergen dan jumlah dari deret ini adalah
+                \[
+                \begin{aligned}
+                \sum_{k=1}^{+\infty} (u_k + v_k) &= \sum_{k=1}^{+\infty} u_k + \sum_{k=1}^{+\infty} v_k \\
+                \sum_{k=1}^{+\infty} (u_k - v_k) &= \sum_{k=1}^{+\infty} u_k - \sum_{k=1}^{+\infty} v_k
+                \end{aligned}
+                \]
+            </li>
+            <li>
+                Jika \(c\) adalah konstanta tidak nol, maka deret \(\sum_{k=1}^{+\infty} u_k\) dan \(\sum_{k=1}^{+\infty} c u_k\) keduanya konvergen atau keduanya divergen. Dalam kasus konvergen jumlah dari deret ini adalah
+                \[ \sum_{k=1}^{+\infty} c u_k = c \sum_{k=1}^{+\infty} u_k \]
+            </li>
+            <li>
+                Konvergensi atau divergensi tidak dipengaruhi oleh penghapusan sejumlah suku berhingga dari deret; jelasnya, untuk sebarang bilangan positif \(K\), deret
+                \[
+                \begin{aligned}
+                \sum_{k=1}^{+\infty} u_k &= u_1 + u_2 + u_3 + \dots \\
+                \sum_{k=K}^{+\infty} u_k &= u_K + u_{K+1} + u_{K+2} + \dots
+                \end{aligned}
+                \]
+                keduanya divergen atau keduanya konvergen.
+            </li>
+        </ol>
+    </p>
+            </div></div><br>
+    <h3>2 Uji Integral</h3>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 2.1</b> (Uji Integral) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">   
+    <p>
+        Misalkan \(\sum u_k\) adalah deret dengan suku-suku positif, dan \(f(x)\) fungsi yang dihasilkan jika \(k\) diganti dengan \(x\) dalam rumus \(u_k\). Jika \(f\) adalah deret turun dan kontinu pada interval \([1, +\infty)\), maka
+    </p>
+    <p>
+        \[ \sum_{k\to+\infty} u_k \quad \text{dan} \quad \int_{1}^{+\infty} f(x) dx \]
+        keduanya konvergen atau keduanya divergen.
+    </p>
+            </div></div>
+<br>
+   <h3>3 Bukti Uji Integral</h3>
+    <p>
+        Jika \(\sum u_k\) adalah deret dengan suku-suku tak negatif, dan jika ada suatu konstanta \(M\) sedemikian hingga
+    </p>
+    <p>
+        \[ s_n = u_1 + u_2 + u_3 + \dots + u_n \le M \]
+    </p>
+    <p>
+        untuk setiap \(n\), maka deret konvergen dan jumlahan \(S\) memenuhi \(S \le M\). Jika \(M\) seperti di atas tidak ada maka deret divergen.
+    </p>
+<br>
+    <h3>4 Deret-p</h3>
+    <p>
+        Deret-p adalah suatu deret tak hingga yang dituliskan sebagai
+    </p>
+    <p>
+        \[ \sum_{k=1}^{+\infty} \frac{1}{k^p} = 1 + \frac{1}{2^p} + \frac{1}{3^p} + \dots + \frac{1}{k^p} + \dots \]
+    </p>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 4.1</b> (Konvergensi Deret-p) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">  
+        
+        \[ \sum_{k=1}^{+\infty} \frac{1}{k^p} = 1 + \frac{1}{2^p} + \frac{1}{3^p} + \dots + \frac{1}{k^p} + \dots \]
+        konvergen jika \(p > 1\) dan divergen jika \(0 < p \le 1\).
+    </p>
+    </div></div>
+
+<br>
+    <h3>5 Uji Rasio</h3>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 5.1</b> (Uji Rasio) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content"> 
+    <p>
+        Jika diberikan deret \(\sum u_k\) dengan suku-suku positif dan diasumsikan \(p = \lim_{k\to+\infty} \frac{u_{k+1}}{u_k}\), maka
+    </p>
+    <ol style="padding-left: 30px;">s
+        <li>Jika \(p < 1\), maka deret konvergen.</li>
+        <li>Jika \(p > 1\) atau \(p = +\infty\), maka deret divergen.</li>
+        <li>Jika \(p = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+    </ol></div></div>
+<br>
+    <h3>6 Prinsip Informal</h3>
+<ol style="padding-left: 30px;">
+        <li>
+        <b>Prinsip Informal (I):</b> Suku-suku konstan dalam penyebut \(u_k\) dapat dihilangkan tanpa berpengaruh pada konvergensi maupun divergensi deret.
+    </li>
+    <li>
+        <b>Prinsip Informal (II):</b> Jika sebuah polinomial dalam \(k\) tampak sebagai faktor pembilang atau penyebut dari \(u_k\), maka semua suku (kecuali \(k\) dengan pangkat tertinggi) pada polinomial dihilangkan. Penyederhanaan ini tidak mempengaruhi konvergensi atau divergensi deret tersebut.
+    </li>
+</ol>
+<br>
+    <h3>7 Deret Berganti Tanda</h3>
+    <p>
+        Deret berganti tanda adalah deret dengan suku-suku positif dan negatif bergantian.
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \sum_{k=0}^\infty (-1)^{k+1} a_k &= -a_1 + a_2 - a_3 + a_4 - \dots \\
+        \sum_{k=0}^\infty (-1)^k a_k &= -a_1 + a_2 - a_3 + a_4 - \dots \\ % There might be a typo in the original image for the second series definition, assuming the first one is the primary
+        \end{aligned}
+        \]
+        dan diasumsikan \(a_k > 0\).
+    </p>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 7.1</b> (Uji Deret Berganti Tanda) 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content"> 
+    <p>
+        Suatu deret berganti tanda pada bentuk di atas konvergen jika dua kondisi berikut terpenuhi
+    </p>
+    <ol style="padding-left: 30px;">
+        <li>\(a_1 > a_2 > a_3 > a_4 > \dots\)</li>
+        <li>\(\lim_{k\to+\infty} a_k = 0\)</li>
+    </ol>
+            </div></div>
+
+    <p>
+        <strong>Note:</strong> Pada teorema 7.1,
+    </p>
+    <ol style="padding-left: 30px;"
+        <li>Suatu deret berganti tanda akan konvergen jika kondisi (2) dipenuhi dan kondisi (1) dipenuhi pada bagian akhir suku.</li>
+        <li>Jika kondisi (2) tidak dipenuhi, maka deret akan divergen.</li>
+        <li>Jika kondisi (2) dipenuhi, tetapi kondisi (1) tidak, deret dapat konvergen maupun divergen.</li>
+    </ol>
+<br>
+<hr>
+<hr><br>
+
+    <h2># Ringkasan Uji Konvergensi Deret Tak Hingga</h2>
+
+    <table>
+        <thead>
+            <tr style="background-color: rgb(186, 186, 186);">
+                <th>Nama Uji</th>
+                <th>Pernyataan</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Uji Divergensi</td>
+                <td>Jika \(\lim_{k\to+\infty} u_k \ne 0\), maka \(\sum u_k\) divergen.</td>
+                <td>Jika \(\lim_{k\to+\infty} u_k = 0\), maka \(\sum u_k\) mungkin konvergen atau mungkin tidak.</td>
+            </tr>
+            <tr>
+                <td>Uji Integral</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku-suku positif, dan \(f(x)\) fungsi yang dihasilkan jika \(k\) diganti dengan \(x\) dalam rumus \(u_k\). Jika \(f\) adalah deret turun dan kontinu pada interval \([1, \infty)\), maka
+                    \[ \sum_{k=1}^\infty u_k \quad \text{dan} \quad \int_{1}^{\infty} f(x) dx \]
+                    keduanya konvergen atau keduanya divergen.
+                </td>
+                <td>
+                    Uji ini hanya berlaku untuk deret dengan suku tidak negatif. Coba uji ini jika \(f(x)\) mudah diintegralkan.
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Perbandingan</td>
+                <td>
+                    Misalkan \(\sum a_k\) dan \(\sum b_k\) adalah deret dengan suku tidak negatif sedemikian sehingga \(a_k \le b_k\). Jika \(\sum b_k\) konvergen, maka \(\sum a_k\) juga konvergen, dan jika \(\sum a_k\) divergen, maka \(\sum b_k\) divergen.
+                </td>
+                <td>
+                    Uji ini hanya berlaku untuk deret dengan suku tidak negatif. Coba uji ini sebagai pilihan terakhir; uji lain sering lebih mudah diterapkan.
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Perbandingan Limit</td>
+                <td>
+                    Misalkan \(\sum a_k\) dan \(\sum b_k\) adalah deret dengan suku positif, serta
+                    \[ \rho = \lim_{k\to\infty} \frac{a_k}{b_k} \]
+                    Jika \(0 < \rho < +\infty\), maka kedua deret tersebut konvergen atau kedua deret tersebut divergen.
+                </td>
+                <td>
+                    Uji ini lebih mudah digunakan dibandingkan uji perbandingan biasa, tetapi memerlukan keterampilan dalam memilih deret \(\sum b_k\) untuk membandingkan.
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Rasio</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku positif, serta
+                    \[ \rho = \lim_{k\to+\infty} \left|\frac{u_{k+1}}{u_k}\right| \]
+                    <ol style="padding-left: 30px; text-align: left;">
+                        <li>Deret konvergen jika \(\rho < 1\).</li>
+                        <li>Deret divergen jika \(\rho > 1\) atau \(\rho = +\infty\).</li>
+                        <li>Jika \(\rho = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+                    </ol>
+                </td>
+                <td>
+                    Gunakan uji ini ketika \(u_k\) melibatkan faktorial atau pangkat ke-\(k\).
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Akar</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku positif, serta
+                    \[ \rho = \lim_{k\to+\infty} \sqrt[k]{u_k} \]
+                    <ol style="padding-left: 30px;text-align: left">
+                        <li>Deret konvergen jika \(\rho < 1\).</li>
+                        <li>Deret divergen jika \(\rho > 1\) atau \(\rho = +\infty\).</li>
+                        <li>Jika \(\rho = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+                    </ol>
+                </td>
+                <td>
+                    Gunakan uji ini ketika \(u_k\) melibatkan pangkat ke-\(k\).
+                </td>
+            </tr>
+            <tr>
+                <td>Uji Deret Berganti Tanda</td>
+                <td>
+                    Jika \(a_k \ge 0\) untuk \(k = 1,2,3,\dots\), maka deret
+                    \[
+                    \begin{aligned}
+                    \sum_{k=0}^\infty (-1)^{k+1} a_k &= -a_1 + a_2 - a_3 + a_4 - \dots \\
+                    \sum_{k=0}^\infty (-1)^k a_k &= a_0 - a_1 + a_2 - a_3 + \dots
+                    \end{aligned}
+                    \]
+                    konvergen jika syarat berikut terpenuhi:
+                    <ol style="padding-left: 30px;text-align: left">
+                        <li>\(a_1 > a_2 > a_3 > a_4 > \dots\)</li>
+                        <li>\(\lim_{k\to+\infty} a_k = 0\)</li>
+                    </ol>
+                </td>
+                <td>Uji ini hanya berlaku untuk deret yang suku-sukunya berganti tanda.</td>
+            </tr>
+            <tr>
+                <td>Uji Rasio untuk Konvergensi Absolut</td>
+                <td>
+                    Misalkan \(\sum u_k\) adalah deret dengan suku tidak nol, serta
+                    \[ \rho = \lim_{k\to\infty} \left|\frac{u_{k+1}}{u_k}\right| \]
+                    <ol style="padding-left: 30px;text-align: left">
+                        <li>Deret konvergen absolut jika \(\rho < 1\).</li>
+                        <li>Deret divergen jika \(\rho > 1\) atau \(\rho = \infty\).</li>
+                        <li>Jika \(\rho = 1\), maka deret mungkin konvergen atau divergen, sehingga diperlukan uji yang lain.</li>
+                    </ol>
+                </td>
+                <td>
+                    Deret tidak harus memiliki suku positif dan tidak harus berganti tanda untuk menggunakan uji ini.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+            </div></div>
+
+
+           </div>
+
+<div id="homeContoh">
+    <h2>B) Contoh Soal</h2> 
+    <br>
+
+    <b>1. Soal EAS 2024</b>
+    <p>
+        Diberikan fungsi \(f(x) = e^{-2x}\).
+    </p>
+    <p>
+        (a) Dapatkan polinomial Maclaurin derajat 4 dari fungsi tersebut.<br>
+        (b) Dapatkan deret Maclaurin fungsi tersebut.
+    </p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+
+    <p>
+        (a) Diketahui bahwa polinomial Maclaurin derajat 4 adalah
+        \[ p_4(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f^{(3)}(0)}{3!}x^3 + \frac{f^{(4)}(0)}{4!}x^4. \]
+    </p>
+    <p>
+        Perhatikan bahwa
+        \[
+        \begin{aligned}
+        f(0) &= e^0 = 1 \\
+        f'(x) &= -2e^{-2x} \\
+        f'(0) &= -2 \\
+        f''(x) &= 4e^{-2x} \\
+        f''(0) &= 4 \\
+        f^{(3)}(x) &= -8e^{-2x} \\
+        f^{(3)}(0) &= -8 \\
+        f^{(4)}(x) &= 16e^{-2x} \\
+        f^{(4)}(0) &= 16,
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        sehingga
+        \[
+        \begin{aligned}
+        p_4(x) &= f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f^{(3)}(0)}{3!}x^3 + \frac{f^{(4)}(0)}{4!}x^4 \\
+        &= 1 - 2x + \frac{4}{2!}x^2 + \frac{-8}{3!}x^3 + \frac{16}{4!}x^4 \\
+        &= 1 - 2x + \frac{4}{2}x^2 - \frac{8}{6}x^3 + \frac{16}{24}x^4 \\
+        &= 1 - 2x + 2x^2 - \frac{4}{3}x^3 + \frac{2}{3}x^4
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        (b) Dari perhitungan pada poin (a), diperoleh bahwa \(f^{(n)}(x) = (-2)^n e^{-2x}\) (silakan pastikan kebenarannya dengan induksi matematika), sehingga \(f^{(n)}(0) = (-2)^n\). Dengan demikian,
+    </p>
+    <p>
+        deret Maclaurinnya adalah
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \sum_{k=0}^\infty \frac{f^{(k)}(0)}{k!}x^k &= f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \dots + \frac{f^{(n)}(0)}{n!}x^n + \dots \\
+        \sum_{k=0}^\infty \frac{(-2)^k}{k!}x^k &= \frac{(-2)^0}{0!}x^0 + \frac{(-2)^1}{1!}x^1 + \frac{(-2)^2}{2!}x^2 + \frac{(-2)^3}{3!}x^3 + \frac{(-2)^4}{4!}x^4 + \dots \\
+        &= 1 - 2x + \frac{4}{2!}x^2 - \frac{8}{3!}x^3 + \frac{16}{4!}x^4 + \dots \\
+        &= 1 - 2x + 2x^2 - \frac{4}{3}x^3 + \frac{2}{3}x^4 + \dots
+        \end{aligned}
+        \]
+    </p>
+    
+    <hr><br>
+
+       <b>2. Soal EAS 2022</b>
+    <p>
+        Diberikan fungsi \(f(x) = \frac{1}{1+x}\).
+    </p>
+    <p>
+        (a) Dapatkan polinomial Taylor derajat 4 dari fungsi tersebut di sekitar \(x = -2\).<br>
+        (b) Dapatkan deret Taylor fungsi tersebut di sekitar \(x = -2\) dan nyatakan dalam notasi sigma.
+    </p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+
+    <p>
+        (a) Diketahui bahwa polinomial Maclaurin derajat 4 di sekitar titik \(x = -2\) adalah
+        \[ p_4(x) = f(-2)+f'(-2)(x-(-2))+\frac{f''(-2)}{2!}(x-(-2))^2+\frac{f^{(3)}(-2)}{3!}(x-(-2))^3+f^{(4)}(-2)(x-(-2))^4. \]
+    </p>
+    <p>
+        Perhatikan bahwa
+        \[
+        \begin{aligned}
+        f(-2) &= \frac{1}{1-2} = -1 \\
+        f'(x) &= -\frac{1}{(1+x)^2} \\
+        f'(-2) &= -\frac{1}{(1-2)^2} = -1 \\
+        f''(x) &= \frac{1 \cdot 2}{(1+x)^3} \\
+        f''(-2) &= \frac{2}{(1-2)^3} = -2! \\
+        f^{(3)}(x) &= -\frac{1 \cdot 2 \cdot 3}{(1+x)^4} \\
+        f^{(3)}(-2) &= -\frac{6}{(1-2)^4} = -3! \\
+        f^{(4)}(x) &= \frac{1 \cdot 2 \cdot 3 \cdot 4}{(1+x)^5} \\
+        f^{(4)}(-2) &= \frac{24}{(1-2)^5} = -4!,
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        sehingga
+        \[
+        \begin{aligned}
+        p_4(x) &= -1 - 1(x-(-2)) + \frac{-2!}{2!}(x-(-2))^2 + \frac{-3!}{3!}(x-(-2))^3 + \frac{-4!}{4!}(x-(-2))^4 \\
+        &= -1 - (x+2) - (x+2)^2 - (x+2)^3 - (x+2)^4
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        (b) Dari perhitungan pada poin (a), diperoleh bahwa \(f^{(n)}(x) = (-1)^n \frac{n!}{(1+x)^{n+1}}\) (silakan pastikan kebenarannya dengan induksi matematika), sehingga \(f^{(n)}(-2) = (-1)^n \frac{n!}{(1-2)^{n+1}} = (-1)^n \frac{n!}{(-1)^{n+1}} = -n!\). Dengan demikian,
+    </p>
+    <p>3</p>
+    <p>
+        deret Taylornya adalah
+    </p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        \sum_{k=0}^\infty \frac{f^{(k)}(-2)}{k!}(x-(-2))^k &= f(-2) + f'(-2)(x-(-2)) + \frac{f''(-2)}{2!}(x-(-2))^2 + \dots \\
+        &= \sum_{k=0}^\infty \frac{-k!}{k!}(x-(-2))^k \\
+        &= \sum_{k=0}^\infty (-1)(x+2)^k \\
+        &= -1 - (x+2) - (x+2)^2 - (x+2)^3 - (x+2)^4 - \dots
+        \end{aligned}
+        \]
+    </p>
+<hr><br>
+
+
+
+
+</div>
+</div>
+ 
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+
+
+    <b>1. Soal EAS 2024</b>
+    <p>
+        Dapatkan lima suku pertama polinomial Maclaurin untuk fungsi \(f(x) = e^{-x^2}\).
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        Diketahui bahwa lima suku pertama polinomial Maclaurin adalah
+        \[ p_4(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f^{(3)}(0)}{3!}x^3 + \frac{f^{(4)}(0)}{4!}x^4. \]
+    </p>
+    <p>
+        Perhatikan bahwa
+        \[
+        \begin{aligned}
+        f(0) &= e^{-0^2} = 1 \\
+        f'(x) &= -2xe^{-x^2} \\
+        f'(0) &= 0 \\
+        f''(x) &= -2e^{-x^2} + 4x^2e^{-x^2} \\
+        f''(0) &= -2 \\
+        f^{(3)}(x) &= (4xe^{-x^2}) + (8xe^{-x^2} - 8x^3e^{-x^2}) = 12xe^{-x^2} - 8x^3e^{-x^2} \\
+        f^{(3)}(0) &= 0 \\
+        f^{(4)}(x) &= (12e^{-x^2} - 24x^2e^{-x^2}) + (-24x^2e^{-x^2} + 16x^4e^{-x^2}) = (12 - 48x^2 + 16x^4)e^{-x^2} \\ % Corrected based on standard derivative
+        f^{(4)}(0) &= 12,
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        sehingga
+        \[
+        \begin{aligned}
+        p_4(x) &= 1 + (0)x + \frac{-2}{2!}x^2 + \frac{0}{3!}x^3 + \frac{12}{4!}x^4 \\
+        &= 1 - \frac{2}{2}x^2 + 0x^3 + \frac{12}{24}x^4 \\
+        &= 1 - x^2 + \frac{1}{2}x^4
+        \end{aligned}
+        \]
+    </p>
+        </div></details> <hr><br>
+    <b>2. Soal EAS 2024</b>
+    <p>
+        Dapatkan deret Maclaurin untuk fungsi \(f(x) = \ln(1+x)\).
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+
+    <p>
+        Perhatikan bahwa
+        \[
+        \begin{aligned}
+        f(0) &= \ln(1+0) = 0 \\
+        f'(x) &= \frac{1}{1+x} \\
+        f'(0) &= 1 \\
+        f''(x) &= -\frac{1}{(1+x)^2} \\
+        f''(0) &= -1 \\
+        f^{(3)}(x) &= \frac{1 \cdot 2}{(1+x)^3} \\
+        f^{(3)}(0) &= 2! \\
+        f^{(4)}(x) &= -\frac{1 \cdot 2 \cdot 3}{(1+x)^4} \\
+        f^{(4)}(0) &= -3! \\
+        & \dots
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        sehingga diperoleh deret Maclaurin dari \(f(x) = \ln(1+x)\) adalah
+        \[
+        \begin{aligned}
+        \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n &= \frac{f^{(0)}(0)}{0!}x^0 + \frac{f^{(1)}(0)}{1!}x^1 + \sum_{n=2}^\infty \frac{f^{(n)}(0)}{n!}x^n \\
+        f^{(n)}(x) &= (-1)^{n+1} \frac{(n-1)!}{(1+x)^n} \\
+        f^{(n)}(0) &= (-1)^{n+1} (n-1)!, \quad \text{untuk } n > 1, \\
+        &= 0 + x + \sum_{n=2}^\infty \frac{(-1)^{n+1} (n-1)!}{n!}x^n \\
+        &= x + \sum_{n=2}^\infty (-1)^{n+1} \frac{x^n}{n}
+        \end{aligned}
+        \]
+    </p>
+
+        </div></details> <hr><br>
+
+  <b>3. Soal EAS 2024</b>
+    <p>
+        Dapatkan deret Taylor untuk fungsi \(f(x) = \frac{1}{5-4x}\) di sekitar \(x = 1\).
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        Perhatikan bahwa
+        \[
+        \begin{aligned}
+        f(1) &= \frac{1}{5-4} = 1 \\
+        f'(x) &= -\frac{-4}{(5-4x)^2} = \frac{4}{(5-4x)^2} \\
+        f'(1) &= \frac{4}{(5-4)^2} = 4 \\
+        f''(x) &= 4 \cdot (-2) \cdot (5-4x)^{-3} \cdot (-4) = \frac{32}{(5-4x)^3} \\ % corrected derivation based on image's next line
+        f''(1) &= \frac{32}{(5-4)^3} = 32 \\
+        f^{(3)}(x) &= 32 \cdot (-3) \cdot (5-4x)^{-4} \cdot (-4) = \frac{32 \cdot 12}{(5-4x)^4} = \frac{384}{(5-4x)^4} \\ % corrected derivation
+        f^{(3)}(1) &= \frac{384}{(5-4)^4} = 384 \\
+        & \dots \\
+        f^{(n)}(x) &= \frac{(-4)^n n!}{(5-4x)^{n+1}} \\
+        f^{(n)}(1) &= \frac{(-4)^n n!}{(5-4)^{n+1}} = (-4)^n n!,
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        sehingga diperoleh deret Maclaurin dari \(f(x) = \frac{1}{5-4x}\) adalah
+        \[
+        \begin{aligned}
+        \sum_{k=0}^\infty \frac{f^{(k)}(1)}{k!}(x-1)^k &= f(1) + f'(1)(x-1) + \frac{f''(1)}{2!}(x-1)^2 + \dots \\
+        &= \sum_{k=0}^\infty \frac{(-4)^k k!}{k!}(x-1)^k \\
+        &= \sum_{k=0}^\infty (-4)^k (x-1)^k \\
+        &= 1 - 4(x-1) + 4^2(x-1)^2 - 4^3(x-1)^3 + \dots
+        \end{aligned}
+        \]
+    </p>
+        </div></details><hr><br>
+
+    <b>4. Soal EAS 2024</b>
+    <p>
+        Diberikan barisan aritmatika \(\sum_{n=1}^\infty \frac{6-n}{4}\)
+    </p>
+    <p>
+        (a) Tentukan 5 suku pertama barisan tersebut<br>
+        (b) Tentukan \(n\) sehingga \(S_n = 0\).
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        (a) 5 suku pertama dari barisan adalah
+        \[
+        \begin{aligned}
+        a_1 &= \frac{6-1}{4} = \frac{5}{4} \\
+        a_2 &= \frac{6-2}{4} = \frac{4}{4} = 1 \\
+        a_3 &= \frac{6-3}{4} = \frac{3}{4} \\
+        a_4 &= \frac{6-4}{4} = \frac{2}{4} = \frac{1}{2} \\
+        a_5 &= \frac{6-5}{4} = \frac{1}{4}
+        \end{aligned}
+        \]
+        (Catatan: Deret yang diberikan adalah \(\sum_{n=1}^\infty \frac{6-n}{4}\). Pertanyaan (a) meminta "suku pertama barisan", bukan "jumlah 5 suku pertama". Jadi `p5` di gambar mungkin adalah typo atau notasi yang berbeda.)
+    </p>
+
+    <p>(b)</p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        S_n &= \sum_{k=1}^n \frac{6-k}{4} \\
+        &= \frac{(6-1) + (6-2) + (6-3) + \dots + (6-n)}{4} \\
+        &= \frac{\overbrace{6+6+\dots+6}^{n \text{ kali}} - (1+2+3+\dots+n)}{4} \\
+        &= \frac{6n - \frac{n(n+1)}{2}}{4} \\
+        &= \frac{12n - n(n+1)}{8} \\
+        &= \frac{12n - n^2 - n}{8} \\
+        &= \frac{11n - n^2}{8} \\
+        &= \frac{n(11-n)}{8}
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Agar \(S_n = 0\), haruslah \(\frac{n(11-n)}{8} = 0 \iff n(11-n) = 0\). Karena \(n > 1\), dengan demikian \(n\) yang memenuhi adalah 11.
+    </p>
+
+        </div></details><hr><br>
+
+    <b>5. Soal EAS 2024</b>
+    <p>
+        Diberikan fungsi \(f(x) = \cosh(6x - 12)\).
+    </p>
+    <p>
+        (a) Dapatkan polinomial Taylor derajat 5 dari fungsi tersebut di sekitar \(x = 2\).<br>
+        (b) Dapatkan deret Taylor fungsi tersebut di sekitar \(x = 2\) dan nyatakan dalam notasi sigma.
+    </p>
+   <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+
+    <p>(a) Perhatikan bahwa</p>
+    <p class="math-block">
+        \[
+        \begin{aligned}
+        f(2) &= \cosh(6 \cdot 2 - 12) = \cosh(0) = 1 \\
+        f'(x) &= 6\sinh(6x - 12) \\
+        f'(2) &= 6\sinh(0) = 0 \\
+        f''(x) &= 6^2\cosh(6x - 12) \\
+        f''(2) &= 6^2 \\
+        f^{(3)}(x) &= 6^3\sinh(6x - 12) \\
+        f^{(3)}(2) &= 0 \\
+        f^{(4)}(x) &= 6^4\cosh(6x - 12) \\
+        f^{(4)}(2) &= 6^4 \\
+        f^{(5)}(x) &= 6^5\sinh(6x - 12) \\
+        f^{(5)}(2) &= 0,
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        sehingga
+        \[
+        \begin{aligned}
+        p_5(x) &= 1 + 0(x-2) + \frac{6^2}{2!}(x-2)^2 + \frac{0}{3!}(x-2)^3 + \frac{6^4}{4!}(x-2)^4 + \frac{0}{5!}(x-2)^5 \\
+        &= 1 + \frac{36}{2}(x-2)^2 + \frac{1296}{24}(x-2)^4 \\
+        &= 1 + 18(x-2)^2 + 54(x-2)^4
+        \end{aligned}
+        \]
+    </p>
+
+    <p>(b) Dari perhitungan poin (a) diperoleh pola bahwa</p>
+    <p class="math-block">
+        \[
+        f^{(n)}(x) = \begin{cases}
+        6^n \cosh(6x - 12), & \text{jika } n \text{ genap} \\
+        6^n \sinh(6x - 12), & \text{jika } n \text{ ganjil}
+        \end{cases}
+        \]
+        \[
+        f^{(n)}(2) = \begin{cases}
+        6^n, & \text{jika } n \text{ genap} \\
+        0, & \text{jika } n \text{ ganjil}
+        \end{cases}
+        \]
+    </p>
+    <p>
+        sehingga deret Taylor fungsi di sekitar \(x = 2\) adalah
+        \[
+        \begin{aligned}
+        \sum_{n=0}^\infty \frac{f^{(n)}(2)}{n!}(x-2)^n &= \sum_{k=0}^\infty \frac{f^{(2k)}(2)}{(2k)!}(x-2)^{2k} + \sum_{k=0}^\infty \frac{f^{(2k+1)}(2)}{(2k+1)!}(x-2)^{2k+1} \\
+        &= \sum_{k=0}^\infty \frac{6^{2k}}{(2k)!}(x-2)^{2k} + \sum_{k=0}^\infty \frac{0}{(2k+1)!}(x-2)^{2k+1} \\
+        &= \sum_{k=0}^\infty \frac{6^{2k}}{(2k)!}(x-2)^{2k}
+        \end{aligned}
+        \]
+    </p>
+        </div></details><hr><br>
+
+
+
+
+
+
+</div> </div> 
+  
+
+
+
+</div>
+
+
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

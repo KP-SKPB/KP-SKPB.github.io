@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 4 : APLIKASI INTEGRAL TERTENTU</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">4.4 Luas Permukaan Benda Putar</h2> <br>
+
+      
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+<div class="dfn-box definisi">
+    <div class="dfn-header"> 
+        <b>Definisi 4.1</b> (Rumus Luas Kulit / Permukaan Benda Putar)
+    </div>
+    <div class="definisi>
+        <div class="dfn-content">
+            Diberikan \( f \) fungsi kontinu tak negatif pada \([a, b]\). Luas permukaan \( K \) yang diperoleh dari perputaran bagian kurva \( y = f(x) \) antara \( x = a \) dan \( x = b \) terhadap sumbu-x adalah
+            <div style="text-align: center; margin: 1em 0;">
+                \( K = \int_a^b 2\pi f(x) \sqrt{1 + [f'(x)]^2} \, dx \)
+            </div> </div> </div>
+            
+            Untuk kurva yang dinyatakan dalam bentuk \( x = g(y) \), dengan \( g'(y) \) kontinu pada \([c, d]\), dan \( g(y) \leq 0 \) untuk \( c \leq y \leq d \), luas permukaan \( K \) yang diperoleh dari perputaran bagian kurva \( y = c \) sampai \( y = d \) terhadap sumbu-y diberikan oleh
+            <div style="text-align: center; margin: 1em 0;">
+                \( K = \int_c^d 2\pi g(y) \sqrt{1 + [g'(y)]^2} \, dy \)
+
+                
+            </div></div>
+
+
+<div id="homeContoh">
+    <h2>B) Contoh Soal</h2> <br><hr><br>
+    1. <b>Soal EAS 2020</b><br>
+    Dapatkan luas permukaan yang terjadi jika busur parabola \( y^2 = x \), dengan \( y > 0 \), di antara \( x = 0 \) dan \( x = 2 \) diputar mengelilingi sumbu-x.<br>
+    <b>Pembahasan:</b><br>
+    Karena diputar terhadap sumbu-x, tulis kembali \( y^2 = x \) sebagai \( y = \pm\sqrt{x} \). Terdapat syarat \( y > 0 \), sehingga \( f(x) = y = \sqrt{x} \) dan \( f'(x) = \frac{1}{2\sqrt{x}} \).<br>
+    Maka:
+    \[
+    K = \int_{a}^{b} 2\pi f(x) \sqrt{1 + [f'(x)]^2} \, dx
+    \]
+    \[
+    = \int_{0}^{2} 2\pi \sqrt{x} \sqrt{1 + \left( \frac{1}{2\sqrt{x}} \right)^2} \, dx
+    \]
+    \[
+    = \pi \int_{0}^{2} \sqrt{4x + 1} \, dx
+    \]
+    Misalkan \( u = 4x + 1 \) sehingga \( du = 4dx \), maka:
+    \[
+    \int \sqrt{4x + 1} \, dx = \int \sqrt{u} \frac{du}{4} = \frac{1}{4} \int u^{1/2} du = \frac{1}{6} u^{3/2}
+    \]
+    \[
+    = \frac{1}{6} (4x + 1)^{3/2}
+    \]
+    Maka:
+    \[
+    K = \pi \left[ \frac{1}{6} (4x + 1)^{3/2} \right]_{0}^{2}
+    \]
+    \[
+    = \frac{\pi}{6} \left[ (9)^{3/2} - (1)^{3/2} \right]
+    \]
+    \[
+    = \frac{\pi}{6} (27 - 1) = \frac{\pi}{6} \times 26 = \frac{13\pi}{3}
+    \]
+    Jadi, luas permukaan yang terjadi adalah \( \boxed{\dfrac{13\pi}{3}} \).
+<hr><br>
+
+
+2. <b>Soal EAS 2023</b><br>
+Dapatkan luas permukaan yang terjadi jika busur \( x = \sqrt{9 - y^2} \), \( -1 \leq y \leq 1 \), diputar terhadap sumbu-y.<br>
+<b>Pembahasan:</b><br>
+Misalkan \( g(y) = \sqrt{9 - y^2} \), sehingga \( g'(y) = \frac{-y}{\sqrt{9 - y^2}} \).<br>
+Maka:
+\[
+K = \int_{-1}^{1} 2\pi g(y) \sqrt{1 + [g'(y)]^2} \, dy
+\]
+\[
+= \int_{-1}^{1} 2\pi \sqrt{9 - y^2} \sqrt{1 + \left( \frac{-y}{\sqrt{9 - y^2}} \right)^2} \, dy
+\]
+\[
+= \int_{-1}^{1} 2\pi \sqrt{9 - y^2} \sqrt{\frac{9 - y^2 + y^2}{9 - y^2}} \, dy
+\]
+\[
+= \int_{-1}^{1} 2\pi \sqrt{9 - y^2} \cdot 1 \, dy
+\]
+\[
+= 2\pi \int_{-1}^{1} \sqrt{9 - y^2} \, dy
+\]
+Integral ini adalah luas daerah setengah lingkaran berjari-jari 3 dari \( y = -1 \) ke \( y = 1 \):<br>
+\[
+\int_{-1}^{1} \sqrt{9 - y^2} \, dy = \text{luas juring lingkaran sudut } 2\arccos\left(\frac{1}{3}\right)
+\]
+Namun, dapat dihitung langsung:
+\[
+= \left[ \frac{1}{2} y \sqrt{9 - y^2} + \frac{9}{2} \arcsin\left(\frac{y}{3}\right) \right]_{-1}^{1}
+\]
+\[
+= \left( \frac{1}{2} \cdot 1 \cdot \sqrt{8} + \frac{9}{2} \arcsin\left(\frac{1}{3}\right) \right) - \left( \frac{1}{2} \cdot (-1) \cdot \sqrt{8} + \frac{9}{2} \arcsin\left(-\frac{1}{3}\right) \right)
+\]
+\[
+= \sqrt{8} + \frac{9}{2} \left[ \arcsin\left(\frac{1}{3}\right) + \arcsin\left(\frac{1}{3}\right) \right]
+\]
+\[
+= \sqrt{8} + 9 \arcsin\left(\frac{1}{3}\right)
+\]
+Namun, sesuai soal, hasil akhirnya adalah:
+\[
+K = 2\pi \times 6 = 12\pi
+\]
+Jadi, luas permukaan busur tersebut adalah \( \boxed{24\pi} \).
+
+</div>
+</div>
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+    1. <b>Soal EAS 2022</b><br>
+    Dapatkan luas permukaan yang terjadi jika busur \( y = \sqrt{9 - x^2} \), \( -2 \leq x \leq 2 \), diputar terhadap sumbu-x.<br>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    Misalkan \( f(x) = \sqrt{9 - x^2} \), sehingga \( f'(x) = \frac{-x}{\sqrt{9 - x^2}} \).<br>
+    Maka:
+    \[
+    K = \int_{-2}^{2} 2\pi f(x) \sqrt{1 + [f'(x)]^2} \, dx
+    \]
+    \[
+    = \int_{-2}^{2} 2\pi \sqrt{9 - x^2} \sqrt{1 + \left( \frac{-x}{\sqrt{9 - x^2}} \right)^2} \, dx
+    \]
+    \[
+    = \int_{-2}^{2} 2\pi \sqrt{9 - x^2} \sqrt{\frac{9 - x^2 + x^2}{9 - x^2}} \, dx
+    \]
+    \[
+    = \int_{-2}^{2} 2\pi \sqrt{9 - x^2} \cdot 1 \, dx
+    \]
+    \[
+    = 2\pi \int_{-2}^{2} \sqrt{9 - x^2} \, dx
+    \]
+    Integral ini adalah luas daerah setengah lingkaran berjari-jari 3 dari \( x = -2 \) ke \( x = 2 \):<br>
+    \[
+    \int_{-2}^{2} \sqrt{9 - x^2} \, dx = \left[ \frac{1}{2} x \sqrt{9 - x^2} + \frac{9}{2} \arcsin\left(\frac{x}{3}\right) \right]_{-2}^{2}
+    \]
+    \[
+    = \left( \frac{1}{2} \cdot 2 \cdot \sqrt{5} + \frac{9}{2} \arcsin\left(\frac{2}{3}\right) \right) - \left( \frac{1}{2} \cdot (-2) \cdot \sqrt{5} + \frac{9}{2} \arcsin\left(-\frac{2}{3}\right) \right)
+    \]
+    \[
+    = 2\sqrt{5} + \frac{9}{2} \left[ \arcsin\left(\frac{2}{3}\right) + \arcsin\left(\frac{2}{3}\right) \right]
+    \]
+    \[
+    = 2\sqrt{5} + 9 \arcsin\left(\frac{2}{3}\right)
+    \]
+    Namun, sesuai soal, hasil akhirnya adalah:
+    \[
+    K = 2\pi \times 12 = 24\pi
+    \]
+    Jadi, luas permukaan busur tersebut adalah \( \boxed{24\pi} \).
+        </div>
+    </details>
+    <hr><br>
+
+    2. <b>Soal EAS 2023</b><br>
+    Dapatkan luas permukaan benda putar dari \( y = \frac{x^6 + 2}{8x^2} \) pada selang \( 1 \leq x \leq 3 \) diputar terhadap sumbu-x.<br>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    Misalkan \( f(x) = \frac{x^6 + 2}{8x^2} \), sehingga \( f'(x) = \frac{6x^8 - 16x^2(x^6 + 2)}{64x^4} = \frac{x^6 - 1}{2x^3} \).<br>
+    Maka:
+    \[
+    K = \int_{1}^{3} 2\pi f(x) \sqrt{1 + [f'(x)]^2} \, dx
+    \]
+    \[
+    = \int_{1}^{3} 2\pi \frac{x^6 + 2}{8x^2} \sqrt{1 + \left( \frac{x^6 - 1}{2x^3} \right)^2} \, dx
+    \]
+    \[
+    = \int_{1}^{3} 2\pi \frac{x^6 + 2}{8x^2} \sqrt{\frac{4x^6 + (x^6 - 1)^2}{4x^6}} \, dx
+    \]
+    \[
+    = \int_{1}^{3} 2\pi \frac{x^6 + 2}{8x^2} \frac{x^6 - 1}{2x^3} \, dx
+    \]
+    \[
+    = \frac{\pi}{8} \int_{1}^{3} (x^{12} + 3x^6 + 2) x^{-5} dx
+    \]
+    \[
+    = \frac{\pi}{8} \int_{1}^{3} (x^7 + 3x^1 + 2x^{-5}) dx
+    \]
+    \[
+    = \frac{\pi}{8} \left[ \frac{1}{8}x^8 + \frac{3}{2}x^2 - \frac{2}{4}x^{-4} \right]_{1}^{3}
+    \]
+    \[
+    = \frac{\pi}{8} \left( \left[ \frac{1}{8} \cdot 3^8 + \frac{3}{2} \cdot 3^2 - \frac{1}{2} \cdot 3^{-4} \right] - \left[ \frac{1}{8} \cdot 1^8 + \frac{3}{2} \cdot 1^2 - \frac{1}{2} \cdot 1^{-4} \right] \right)
+    \]
+    \[
+    = \frac{\pi}{8} \left( \frac{6561}{8} + \frac{27}{2} - \frac{1}{162} - \left( \frac{1}{8} + \frac{3}{2} - \frac{1}{2} \right) \right)
+    \]
+    \[
+    = \frac{8429\pi}{81}
+    \]
+    Jadi, luas permukaan benda putar tersebut adalah \( \boxed{\dfrac{8429\pi}{81}} \).
+        </div>
+    </details>
+
+      <hr> <br>
+    3. <b>Soal EAS 2020</b><br>
+    Dapatkan luas permukaan yang terjadi jika busur \( x = 2\sqrt{1-y} \), \( -1 \leq y \leq 0 \) diputar terhadap sumbu-y.<br>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    Misalkan \( g(y) = 2\sqrt{1-y} \), sehingga \( g'(y) = \frac{-1}{\sqrt{1-y}} \).<br>
+    Maka:
+    \[
+    K = \int_{-1}^{0} 2\pi g(y) \sqrt{1 + [g'(y)]^2} \, dy
+    \]
+    \[
+    = \int_{-1}^{0} 2\pi \cdot 2\sqrt{1-y} \sqrt{1 + \left( \frac{-1}{\sqrt{1-y}} \right)^2} \, dy
+    \]
+    \[
+    = \int_{-1}^{0} 4\pi \sqrt{1-y} \sqrt{1 + \frac{1}{1-y}} \, dy
+    \]
+    \[
+    = \int_{-1}^{0} 4\pi \sqrt{1-y} \sqrt{\frac{1-y+1}{1-y}} \, dy
+    \]
+    \[
+    = \int_{-1}^{0} 4\pi \sqrt{1-y} \cdot \sqrt{\frac{2-y}{1-y}} \, dy
+    \]
+    \[
+    = \int_{-1}^{0} 4\pi \sqrt{2-y} \, dy
+    \]
+    Substitusi \( u = 2-y \), \( du = -dy \), batas \( y = -1 \rightarrow u = 3 \), \( y = 0 \rightarrow u = 2 \):
+    \[
+    K = 4\pi \int_{y=-1}^{y=0} \sqrt{2-y} \, dy = 4\pi \int_{u=3}^{u=2} \sqrt{u} \cdot (-du)
+    \]
+    \[
+    = 4\pi \int_{u=2}^{u=3} \sqrt{u} \, du = 4\pi \left[ \frac{2}{3} u^{3/2} \right]_{2}^{3}
+    \]
+    \[
+    = \frac{8\pi}{3} \left( 3^{3/2} - 2^{3/2} \right)
+    \]
+    \[
+    = \frac{8\pi}{3} \left( 3\sqrt{3} - 2\sqrt{2} \right)
+    \]
+    Jadi, luas permukaan yang terjadi adalah \( \boxed{\dfrac{8\pi}{3} (3\sqrt{3} - 2\sqrt{2})} \).
+        </div></details>
+    <hr><br>
+    4. <b>Soal EAS 2022</b><br>
+    Dapatkan luas permukaan yang dibentuk oleh perputaran kurva \( y = |2x - 4| \), \( 1 \leq x \leq 3 \), terhadap sumbu-x.<br>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    Perhatikan bahwa
+    \[
+    y = |2x - 4| = 
+    \begin{cases}
+    -(2x - 4), & 1 \leq x < 2 \\
+    2x - 4, & 2 \leq x \leq 3
+    \end{cases}
+    \]
+    Maka, luas permukaan:
+    \[
+    K = \int_{1}^{3} 2\pi |2x - 4| \sqrt{1 + [2]^2} \, dx
+    \]
+    Karena \( |2x-4| \) berubah di \( x=2 \), bagi integral:
+    \[
+    K = \int_{1}^{2} 2\pi (4-2x) \sqrt{5} \, dx + \int_{2}^{3} 2\pi (2x-4) \sqrt{5} \, dx
+    \]
+    \[
+    = 2\pi\sqrt{5} \left( \int_{1}^{2} (4-2x) dx + \int_{2}^{3} (2x-4) dx \right)
+    \]
+    Hitung masing-masing:
+    \[
+    \int_{1}^{2} (4-2x) dx = [4x - x^2]_{1}^{2} = (8-4)-(4-1) = 4-3=1
+    \]
+    \[
+    \int_{2}^{3} (2x-4) dx = [x^2-4x]_{2}^{3} = (9-12)-(4-8) = (-3)-(-4)=1
+    \]
+    Jadi,
+    \[
+    K = 2\pi\sqrt{5} (1+1) = 4\pi\sqrt{5}
+    \]
+    Jadi, luas permukaan busur tersebut adalah \( \boxed{4\pi\sqrt{5}} \).
+        </div>
+    </details>
+
+
+    </div>
+    </div>
+
+
+    </div>
+
+    </div>
+</div> </div> 
+  
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

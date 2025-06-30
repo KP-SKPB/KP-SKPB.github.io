@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+
+        <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 2 : TEKNIK INTEGRASI</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">2.1 Integrasi Parsial dan Integrasi Fungsi Trigonometri</h2> <br>
+
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+        <p style="font-size: 118%;"><b>1 Integrasi Parsial</b> </p>
+<div style="text-align: center;">
+    \(\int u \, dv = uv - \int v \, du\)
+</div>
+ <br>
+<p style="font-size: 118%;"><b>2 Reduksi untuk Integral Fungsi Trigonometri</b> </p>
+untuk \(n \geq 2\) dan \(n \in Z\), berlaku
+    <p style="text-align: center;">\(\int sin^n x dx = -\frac{1}{n} sin^{n-1}x cos x+ \frac{n-1}{n} \int sin^{n-2} x dx\)</p>
+    <p style="text-align: center;">\(\int cos^n x dx = \frac{1}{n} cos^{n-1}x sin x+ \frac{n-1}{n} \int cos^{n-2} x dx\)</p>
+
+<p style="font-size: 118%;"><b>3 Pengintegralan Perpangkatan Sinus dan Cosinus</b> </p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; max-width: 1000px; font-family: 'Times New Roman', Times, serif;">
+  <tr>
+    <th style="text-align: center; background-color:rgb(209, 209, 209);">\(\int \sin^m x \cos^n x \, dx\)</th>
+    <th style="text-align: left; background-color: rgb(209, 209, 209);"><B>LANGKAH</B></th>
+</tr>
+  <tr>
+    <td style="vertical-align: top; width: 180px;"><i>m</i> ganjil</td>
+    <td style="text-align: left;">
+      <ol type="a" style="margin: 0; padding-left: 20px;">
+        <li>Substitusi \(m = 2k + 1\).</li>
+        <li>Substitusi \(\sin^2 x = 1 - \cos^2 x\), sehingga \(\sin^{2k} x \sin x \cos^n x\) menjadi \((1 - \cos^2 x)^k \sin x \cos^n x\).</li>
+        <li>Substitusi \(u = \cos x\).</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><i>n</i> ganjil</td>
+    <td style="text-align: left;">
+      <ol type="a" style="margin: 0; padding-left: 20px;">
+        <li>Substitusi \(n = 2k + 1\).</li>
+        <li>Substitusi \(\cos^2 x = 1 - \sin^2 x\), sehingga \(\sin^m x \cos^{2k} x \cos x\) menjadi \(\sin^m x (1 - \sin^2 x)^k \cos x\).</li>
+        <li>Substitusi \(u = \sin x\).</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><i>m</i> dan <i>n</i> genap</td>
+    <td style="text-align: left;">
+      <ol type="a" style="margin: 0; padding-left: 20px;">
+        <li>Substitusi \(\sin^2 x = \frac{1}{2}(1 - \cos 2x)\) dan \(\cos^2 x = \frac{1}{2}(1 + \cos 2x)\).</li>
+        <li>Ingat \((1 - \cos 2x)(1 + \cos 2x) = 1 - \cos^2 2x\).</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+
+<!-- Tabel rumus integral hasil kali sinus dan cosinus -->
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; max-width: 400px; font-family: 'Times New Roman', Times, serif; margin-top: 24px;">
+  <tr>
+    <td style="text-align: center;">\(\sin mx \cos nx\)</td>
+    <td style="text-align: center;">
+      \(\displaystyle \frac{\sin((m+n)x) + \sin((m-n)x)}{2}\)
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\sin mx \sin nx\)</td>
+    <td style="text-align: center;">
+      \(\displaystyle \frac{\cos((m-n)x) - \cos((m+n)x)}{2}\)
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\cos mx \cos nx\)</td>
+    <td style="text-align: center;">
+      \(\displaystyle \frac{\cos((m+n)x) + \cos((m-n)x)}{2}\)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center; background-color:antiquewhite">
+      Ingat: \(\displaystyle \int \sin ax = -\frac{1}{a} \cos ax\) &nbsp; dan &nbsp; \(\displaystyle \int \cos ax = \frac{1}{a} \sin ax\)
+    </td>
+  </tr>
+</table>
+
+<p style="font-size: 118%;"><b>4 Integrasi Perpangkatan Secan dan Tangen </b> </p> 
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; max-width: 2000px; font-family: 'Times New Roman', Times, serif;">
+  <tr>
+    <th style="text-align: center; background-color:rgb(209,209,209);">\(\int \tan^m x \sec^n x \, dx\)</th>
+    <th style="text-align: left; background-color:rgb(209,209,209);">LANGKAH</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 180px;"><i>n</i> genap</td>
+    <td style="text-align: left;">
+      <ol type="a" style="margin:0; padding-left:20px;">
+        <li>Substitusi \(m = 2l,\, l \geq 0\).</li>
+        <li>Substitusi \(\sec^2 x = \tan^2 x + 1\), sehingga <br>
+          \(\tan^m x (\sec^2 x)^{l-1} \sec^2 x\) menjadi \(\tan^m x (\tan^2 x + 1)^{l-1} \sec^2 x\).
+        </li>
+        <li>Substitusi \(u = \tan x\).</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><i>m</i> ganjil</td>
+    <td style="text-align: left;">
+      <ol type="a" style="margin:0; padding-left:20px;">
+        <li>Substitusi \(m = 2l + 1,\, l \geq 0\).</li>
+        <li>Substitusi \(\tan^2 x = \sec^2 x - 1\), sehingga <br>
+          \((\tan^2 x)^k \sec^{n-1} x \sec x \tan x\) menjadi <br>
+          \((\sec^2 x - 1)^k \sec^{n-1} x \sec x \tan x\).
+        </li>
+        <li>Substitusi \(u = \sec x\).</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><i>m</i> genap dan <i>n</i> ganjil</td>
+    <td style="text-align: left;">
+      <ol type="a" style="margin:0; padding-left:20px;">
+        <li>Substitusi \(m = 2l,\, l \geq 0\).</li>
+        <li>Substitusi \(\tan^2 x = \sec^2 x - 1\), sehingga <br>
+          \((\tan^2 x)^k \sec^n x\) menjadi \((\sec^2 x - 1)^k \sec^n x\).
+        </li>
+        <li>Substitusi \(u = \sec x\).</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+
+<p style="font-size: 118%;"><b>5 Rumus-rumus penting Trigonometri</b></p>
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; max-width: 1000px; font-family: 'Times New Roman', Times, serif;">
+  <tr>
+    <td style="text-align: center;">\(\tan x = \frac{\sin x}{\cos x}\)</td>
+    <td style="text-align: center;">\(\cos 2x = 2\cos^2 x - 1\)</td>
+  </tr>
+  <tr">
+    <td style="text-align: center;">\(\cot x = \frac{\cos x}{\sin x}\)</td>
+    <td style="text-align: center;">\(\cos 2x = 1 - 2\sin^2 x\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\sec x = \frac{1}{\cos x}\)</td>
+    <td style="text-align: center;">\(\tan 2x = \frac{2\tan x}{1 - \tan^2 x}\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\csc x = \frac{1}{\sin x}\)</td>
+    <td style="text-align: center;">\(\sin 3x = 3\sin x - 4\sin^3 x\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\sin^2 x + \cos^2 x = 1\)</td>
+    <td style="text-align: center;">\(\cos 3x = 4\cos^3 x - 3\cos x\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(1 + \tan^2 x = \sec^2 x\)</td>
+    <td style="text-align: center;">\(2\sin x \cos y = \sin(x+y) + \sin(x-y)\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(1 + \cot^2 x = \csc^2 x\)</td>
+    <td style="text-align: center;">\(2\cos x \sin y = \sin(x+y) - \sin(x-y)\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\sin 2x = 2\sin x \cos x\)</td>
+    <td style="text-align: center;">\(2\cos x \cos y = \cos(x+y) + \cos(x-y)\)</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">\(\cos 2x = \cos^2 x - \sin^2 x\)</td>
+    <td style="text-align: center;">\(2\sin x \sin y = \cos(x-y) - \cos(x+y)\)</td>
+  </tr>
+</table>
+</div>
+
+<div id="homeContoh">
+<h2>B) Contoh Soal</h2> <br><hr><br>
+
+1. Hitung integral \(\int x \ln (x)\) dari <br>
+<b>Pembahasan:</b>
+Misalkan 
+<p style="text-align: center;">\(u = \ln (x)\) dan \(dv = x \, dx\)</p>
+Sehingga, 
+<br>
+<p style="text-align: center;">\(du = \frac{1}{x} \, dx\) dan \(v = \frac{x^2}{2}\)</p>
+Dengan menggunakan integral parsial, diperoleh
+<p style="text-align: center;">\(\int u dv = uv - \int v du\)</p>
+<p style="text-align: center;">\(= \int x \ln (x) \, dx = \ln(x) \cdot \frac{x^2}{2} - \int \frac{x^2}{2} \cdot \frac{1}{x} \, dx\)</p>
+<p style="text-align: center;">\(= \frac{x^2}{2} \ln (x) - \frac{1}{2} \int x \, dx\)</p>
+<p style="text-align: center;">\(= \frac{x^2}{2} \ln (x) - \frac{1}{2} \cdot \frac{x^2}{2} + C\)</p>
+<p style="text-align: center;">\(= \frac{x^2}{2} \ln (x) - \frac{x^2}{4} + C\)</p>
+<hr> <br>
+
+2. <b>(Soal ETS 2020)</b> <br>
+Dapatkan integral \(\int \sin^2 x \cos^3 x dx\)<br>
+<b>Pembahasan:</b>
+<p style="text-align: center;">\(\int (\sin^2 x \cos^2 x) \cos x dx\)</p> 
+<p style="text-align: center;">=\(\int \sin^2 x(1-\sin^2 x) \cos x dx\)</p>
+Misalkan u = \(\sin x\), sehingga \(du = \cos x dx\) <br>
+<p style="text-align: center;">=\(\int sin^2 x cos^3 x dx= \int (sin^2 x(1-sin^2 x)) cos x dx\)</p>
+<p style="text-align: center;">=\(\int (u^2(1-u^2)) du\)</p>
+<p style="text-align: center;">=\(\int (u^2 - u^4) du\)</p>
+<p style="text-align: center;">=\(\frac{u^3}{3} - \frac{u^5}{5} + C\)</p>
+<p style="text-align: center;">=\(\frac{\sin^3 x}{3} - \frac{\sin^5 x}{5} + C\)</p>
+
+<hr><br>
+
+3. Selesaikan \(\int \mathrm{sec}^4 x \, dx\)<br>
+<b>Pembahasan:</b>
+
+Gunakan integral perpangkatan secant dan tangent untuk \(n\) genap,
+<p style="text-align: center;"> \(\int \mathrm{sec}^4 x \, dx=\int (\mathrm{sec}^2 x)(\mathrm{sec}^2 x) \, dx\)</p>
+<p style="text-align: center;">=\(\int (tan^2 x + 1)(\mathrm{sec}^2 x) \, dx\)</p>
+
+Misalkan \(u = \tan x\), sehingga \(du = \mathrm{sec}^2 x \, dx\) <br>
+<p style="text-align: center;">=\(\int \mathrm{sec}^2 x \, dx = \int (u^2 +1) \, du\)</p>
+<p style="text-align: center;">=\(\frac{u^3}{3} + u + C\)</p>
+<p style="text-align: center;">=\(\frac{\tan^3 x}{3} + \tan x + C\)</p>
+
+<hr><br>
+</div>
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+1. <b>Soal Kuis</b><br>
+Dapatkan \(\int (e^{2x}sin(3x)) dx\) 
+<br>
+
+<b>Hint 1:</b> Gunakan integrasi parsial dengan memisahkan \(u = e^{2x}\) dan \(dv = \sin(3x)dx\) <br>
+<b>Hint 2:</b> Integrasi parsial sebanyak dua kali <br>
+<details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+          Misalkan 
+          <p style="text-align: center;">\(u = e^{2x}\) dan \(dv = \sin(3x)dx\)</p>
+          Sehingga,
+          <p style="text-align: center;">\(du = 2e^{2x}dx\) dan \(v = -\frac{1}{3}\cos(3x)\)</p>
+          Dengan menggunakan integral parsial, diperoleh
+          <p style="text-align: center;">\(\int u \, dv = uv - \int v \, du\)</p>
+          <p style="text-align: center;">\(\int e^{2x} \sin(3x)dx = -\frac{1}{3}e^{2x}\cos(3x) - \int -\frac{1}{3}\cos(3x)(2e^{2x})dx\)</p>
+          <p style="text-align: center;">\(= -\frac{1}{3}e^{2x}\cos(3x) + \frac{2}{3}\int e^{2x}\cos(3x)dx\)</p>
+          Perhatikan bahwa integral \(\int e^{2x}\cos(3x)dx\) harus dilakukan integrasi parsial lagi. Misalkan
+          <p style="text-align: center;">\(u = e^{2x}\) dan \(dv = \cos(3x)dx\)</p>
+          Sehingga,
+          <p style="text-align: center;">\(du = 2e^{2x}dx\) dan \(v = \frac{1}{3}\sin(3x)\)</p>
+          Dengan menggunakan integral parsial lagi, diperoleh
+          <p style="text-align: center;">\(\int e^{2x} \cos(3x)dx = \frac{1}{3}e^{2x}\sin(3x) + \int \frac{2}{3}\cos(3x)(e^{2x})dx\)</p>
+          <p style="text-align: center;">\(= \frac{1}{3}e^{2x}\sin(3x) + \frac{2}{3}\int e^{2x}\cos(3x)dx\)</p>
+          Sehingga, kita dapat menyusun kembali integral awal:
+          <p style="text-align: center;">\(\int e^{2x} \sin(3x)dx = -\frac{1}{3}e^{2x}\cos(3x) + \frac{2}{3}\left(\frac{1}{3}e^{2x}\sin(3x) + \frac{2}{3}\int e^{2x}\cos(3x)dx\right)\)</p>
+          <p style="text-align: center;">\(= -\frac{1}{3}e^{2x}\cos(3x) + \frac{2}{9}e^{2x}\sin(3x) + \frac{4}{9}\int e^{2x}\cos(3x)dx\)</p>
+          Dengan menyusun kembali, kita mendapatkan:
+          <p style="text-align: center;">\(\frac{13}{9}\int e^{2x}\sin(3x)dx = -\frac{1}{3}e^{2x}\cos(3x) + \frac{2}{9}e^{2x}\sin(3x)\)</p>
+          Sehingga, integralnya adalah:
+          <p style="text-align: center;">\(\int e^{2x}\sin(3x)dx = -\frac{3}{13}e^{2x}\cos(3x) + \frac{2}{13}e^{2x}\sin(3x) + C\)</p>
+          
+      </div>
+      </details>
+    </div>
+<hr><br> <br>
+2. <b>Soal ETS 2024</b><br>
+Hitung integral \(\int \ln (t^2 + 1 dt)\)  <br>
+<b>Hint 1:</b> Gunakan integrasi parsial dengan \( u = \ln(t^2 + 1) \) <br>
+<b>Hint 2:</b> \(\int \frac{1}{x^2+1} dx = \arctan x\) <br>
+      <details class="solution">
+        <summary>Pembahasan</summary>
+
+        Misalkan 
+        <p style="text-align: center;">\(u = \ln(t^2 + 1)\) dan \(dv = dt\)</p>
+        Sehingga,
+        <p style="text-align: center;">\(du = \frac{2t}{t^2 + 1} dt\) dan \(v = t\)</p>
+        Dengan menggunakan integral parsial, diperoleh
+        <p style="text-align: center;">\(\int u \, dv = uv - \int v \, du\)</p>
+        <p style="text-align: center;">\(\int \ln(t^2 + 1) dt = t \ln(t^2 + 1) - \int t \cdot \frac{2t}{t^2 + 1} dt\)</p>
+        <p style="text-align: center;">\(= t \ln(t^2 + 1) - 2\int \frac{t^2}{t^2 + 1} dt\)</p>
+        Perhatikan bahwa integral \(\int \frac{t^2}{t^2 + 1} dt\) dapat disederhanakan:
+        <p style="text-align: center;">\(\int \frac{t^2}{t^2 + 1} dt = \int \left(1 - \frac{1}{t^2 + 1}\right) dt\)</p>
+        <p style="text-align: center;">\(= \int dt - \int \frac{1}{t^2 + 1} dt\)</p>
+        <p style="text-align: center;">\(= t - \arctan(t) + C\)</p>
+        Sehingga, kita dapat menyusun kembali integral awal:
+        <p style="text-align: center;">\(\int \ln(t^2 + 1) dt = t \ln(t^2 + 1) - 2\left(t - \arctan(t) + C\right)\)</p>
+        <p style="text-align: center;">\(= t \ln(t^2 + 1) - 2t + 2\arctan(t) + C\)</p>
+        Dengan demikian, integralnya adalah:
+        <p style="text-align: center;">\(\int \ln(t^2 + 1) dt = t \ln(t^2 + 1) - 2t + 2\arctan(t) + C\)</p>
+
+      </details>
+      <hr> <br>
+
+3. <b>Soal ETS 2020</b>
+Selesaikan \(\int (sin x cos 3x)\) <br>
+<b>Hint 1:</b> Gunakan |(sin x cos y = \(\frac{1}{2}(\sin(x+y) + \sin(x-y))\)| <br>
+<details class="solution">
+  <summary>Pembahasan:</summary>
+  <div class="solution-step">
+    <p style="text-align: center;">\(\int (sin x cos 3x) dx = \int \frac{sin(4x) +sin (-2x)}{2} dx\)</p>
+    <p style="text-align: center;">\(= \frac{1}{2} \int sin(4x) dx + \frac{1}{2} \int sin(-2x) dx\)</p>
+    <p style="text-align: center;">\(= -\frac{1}{8} cos(4x) - \frac{1}{4} cos(-2x) + C\)</p>
+
+    </div>
+  </div>
+
+</details><hr><br> <br>
+
+
+
+4. <b>Soal ETS 2020</b>
+Selesaikan \(\int (sin^5(4x)cos^2(4x) \)<br>
+<b>Hint 1:</b> Gunakan "Pengintegralan Perpangkatan Sinus dan Cosinus" dengan m ganjil <br>
+
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+<p style="text-align: center;">\(\int (sin^5(4x)cos^2(4x)) dx = \int ((sin^2(4x)))^2sin(4x)cos^2(4x) dx\) </p> 
+<p style="text-align: center;">\(= \int ((1-cos^2(4x)))^2sin(4x)cos^2(4x) dx\)</p>      
+Misalkan \(u = cos(4x)\), sehingga \(du = -4sin(4x)dx\) &harr; \(\frac{-1}{4}du = sin(4x)dx\) <br>
+<p style="text-align: center;">\(= \int sin^5(4x)cos^2(4x) dx = \int (1-u^2)^2u^2 \cdot \frac{-1}{4}du\)</p>
+<p style="text-align: center;">\((1-u^2)^2 (\frac{-1}{4}du) </p>
+<p style="text-align: center;">\(= \frac{-1}{4} \int (1-2u^2+u^4)u^2 du\)</p>
+<p style="text-align: center;">\(= \frac{-1}{4} \int (u^2 - 2u^4 + u^6) du\)</p>
+<p style="text-align: center;">\(= \frac{-1}{4} (\frac{u^3}{3} - \frac{2u^5}{5} + \frac{u^7}{7}) + C\)</p>
+<p style="text-align: center;">\(= \frac{-1}{12} cos^3(4x) + \frac{2}{10} cos^5(4x) - \frac{1}{28} cos^7(4x) + C\)</p>
+
+      </div>
+</details>
+<hr><br> <br>
+
+5. Selesaikan \(\int (\mathrm{sec}^5 x tan^3 x) dx\)<br>
+<b>Hint 1:</b> Gunakan "Pengintegralan Perpangkatan Secan dan Tangen" dengan m ganjil <br>
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        <p style="text-align: center;">\(\int (\mathrm{sec}^5 x tan^3 x) dx = \int (\mathrm{sec}^4 x tan^2 x) \mathrm{sec} x tan x dx\)</p>
+        <p style="text-align: center;">\(= \int (\mathrm{sec}^4 x (\mathrm{sec}^2 x - 1)) \mathrm{sec} x tan x dx\)</p>
+        Misalkan \(u = \mathrm{sec} x\), sehingga \(du = \mathrm{sec} x \tan x dx\) <br>
+        <p style="text-align: center;">\(= \int (\mathrm{sec}^4 x (\mathrm{sec}^2 x - 1)) \mathrm{sec} x tan x dx\)</p>
+        <p style="text-align: center;">\(= \int (u^4(u^2 - 1)) du\)</p>
+        <p style="text-align: center;">\(= \int (u^6 - u^4) du\)</p>
+        <p style="text-align: center;">\(= \frac{u^7}{7} - \frac{u^5}{5} + C\)</p>
+        <p style="text-align: center;">\(= \frac{\mathrm{sec}^7 x}{7} - \frac{\mathrm{sec}^5 x}{5} + C\)</p>
+
+      </div>
+</details>
+<hr><br> <br>
+6. Dapatkan \(\int (\cot^3 x csc^3 x) dx\) <br>
+<b>Hint 1:</b> Substitusi \(\cot^2 x = \csc^2 x - 1\) <br>
+<b>Hint 2:</b> Substitusi \(u = \csc x\) <br>
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        <p style="text-align: center;">\(\int (\cot^3 x \mathrm{csc}^3 x) dx = \int (\cot^2 x \csc^2 x \cot x \mathrm{csc} x) dx\)</p>
+        <p style="text-align: center;">\(= \int ((\csc^2 x - 1) \csc^2 x \cot x \mathrm{csc} x) dx\)</p>
+        Misalkan \(u = \csc x\), sehingga \(du = -\csc x \cot x dx\) &harr; \(-du = \csc x \cot x dx\) <br>
+        <p style="text-align: center;">\(= -\int ((u^2 - 1) u^2) du\)</p>
+        <p style="text-align: center;">\(= -\int (u^4 - u^2) du\)</p>
+        <p style="text-align: center;">\(= -\left(\frac{u^5}{5} - \frac{u^3}{3}\right) + C\)</p>
+        <p style="text-align: center;">\(= -\left(\frac{\mathrm{csc}^5 x}{5} - \frac{\mathrm{csc}^3 x}{3}\right) + C\)</p>
+
+        </div>
+
+      </details>
+<hr><br>
+
+    </div>
+    </div>
+
+
+    </div>
+
+    </div>
+</div> </div> 
+  
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

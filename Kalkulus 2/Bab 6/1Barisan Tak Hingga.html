@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 6 : BARISAN DAN DERET</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">6.1 Barisan Takhingga</h2> <br>
+
+      
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+
+    <h3>1.1 Barisan Takhingga</h3>
+    <p>
+        Barisan tak hingga adalah suatu fungsi dengan domain himpunan bilangan bulat positif dan range himpunan bilangan bilangan real. Barisan takhingga \(a_1, a_2, a_3, a_4, \dots\) dapat dituliskan
+    </p>
+    <p>
+        \[ \{a_n\}_{n=1}^\infty \quad \text{atau} \quad \{a_n\} \]
+    </p>
+
+    <h3>1.2 Konvergensi Barisan</h3>
+                           <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              <b>Definisi 6.1</b> 
+            </div>
+            <div class="definisi>
+                <div class="dfn-content">
+    <p> 
+        Suatu barisan \(\{a_n\}\) dikatakan konvergen ke limit \(L\), ditulis,
+    </p>
+    <p>
+        \[ \lim_{n\to+\infty} a_n = L \]
+    </p>
+    <p>
+        jika dan hanya jika untuk sebarang \(\epsilon > 0\), terdapat suatu bilangan bulat positif \(N\) sehingga \(|a_n - L| < \epsilon\) untuk \(n \ge N\). Suatu barisan yang tidak konvergen ke suatu limit berhingga disebut barisan *divergen*.
+    </p>
+            </div></div>
+
+                           <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 6.1</b> 
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+    <p>
+        Jika diberikan barisan \(\{a_n\}\) dan \(\{b_n\}\) masing-masing konvergen ke limit \(L_1\) dan \(L_2\) dan \(c\) adalah suatu konstanta, maka berlaku
+    </p>
+    <ol style="padding-left: 30px;">
+        <li>\(\lim_{n\to+\infty} c = c\)</li>
+        <li>\(\lim_{n\to+\infty} ca_n = c \lim_{n\to+\infty} a_n = cL_1\)</li>
+        <li>\(\lim_{n\to+\infty} (a_n \pm b_n) = \lim_{n\to+\infty} a_n \pm \lim_{n\to+\infty} b_n = L_1 \pm L_2\)</li>
+        <li>\(\lim_{n\to+\infty} (a_n b_n) = \lim_{n\to+\infty} a_n \lim_{n\to+\infty} b_n = L_1 L_2\)</li>
+        <li>\(\lim_{n\to+\infty} \left(\frac{a_n}{b_n}\right) = \frac{\lim_{n\to+\infty} a_n}{\lim_{n\to+\infty} b_n} = \frac{L_1}{L_2}\), jika \(L_2 \ne 0\)</li>
+    </ol>
+            </div></div>
+            <div class="dfn-box teorema">
+                <div class="dfn-header"> 
+                    <b>Teorema 6.2</b> 
+                </div>
+                <div class="teorema>
+                    <div class="dfn-content">
+                    <p>
+        Jika \(\{a_n\}\) dan \(\{c_n\}\) masing-masing konvergen ke \(L\) dan \(a_n \le b_n \le c_n\) untuk \(n \ge K\) (\(K\) bilangan bulat tertentu), maka \(\{b_n\}\) juga konvergen ke \(L\).
+    </p>
+    </div></div>
+    <h3>1.3 Barisan Monoton</h3>
+    <div class="dfn-box definisi">
+<div class="dfn-header"> 
+ <b>Teorema 6.2</b> 
+</div>
+<div class="definisi">
+   <div class="dfn-content">
+    <p>
+        Suatu barisan \(\{a_n\}_{n=1}^{+\infty}\)
+    </p>
+
+    <p>
+        <div style="margin-left: 2em;">
+            Naik jika \(\quad a_1 < a_2 < a_3 < \dots < a_n < \dots\) <br>
+            Tidak turun jika \(\quad a_1 \le a_2 \le a_3 \le \dots \le a_n \le \dots\) <br>
+            Turun jika \(\quad a_1 > a_2 > a_3 > \dots > a_n > \dots\) <br>
+            Tidak naik jika \(\quad a_1 \ge a_2 \ge a_3 \ge \dots \ge a_n \ge \dots\)
+        </div>
+    </p>
+
+    <p>
+        Suatu barisan disebut **monoton** jika **tidak naik** atau **tidak turun**, sedangkan disebut **monoton sempurna** jika **naik** atau **turun**.
+    </p></div></div></div>
+
+
+    <h3>1.4 Uji Kemonotonan</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Selisih Dua Suku yang Berurutan</th>
+                <th>Klasifikasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>\(a_{n+1} - a_n > 0\)</td>
+                <td>naik</td>
+            </tr>
+            <tr>
+                <td>\(a_{n+1} - a_n < 0\)</td>
+                <td>turun</td>
+            </tr>
+            <tr>
+                <td>\(a_{n+1} - a_n \ge 0\)</td>
+                <td>tidak turun</td>
+            </tr>
+            <tr>
+                <td>\(a_{n+1} - a_n \le 0\)</td>
+                <td>tidak naik</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Rasio dari Suku yang Berurutan</th>
+                <th>Klasifikasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>\(a_{n+1}/a_n > 1\)</td>
+                <td>naik</td>
+            </tr>
+            <tr>
+                <td>\(a_{n+1}/a_n < 1\)</td>
+                <td>turun</td>
+            </tr>
+            <tr>
+                <td>\(a_{n+1}/a_n \ge 1\)</td>
+                <td>tidak turun</td>
+            </tr>
+            <tr>
+                <td>\(a_{n+1}/a_n \le 1\)</td>
+                <td>tidak naik</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>1.5 Barisan Monoton di Akhir (Eventually Monotone)</h3>
+    <p>
+        Barisan mempunyai sifat di akhir bila suku-suku dari barisan tersebut tidak mempunyai sifat tertentu di awal, tetapi mempunyai sifat tertentu dari suku tertentu.
+    </p>
+
+    <h3>1.6 Konvergensi Barisan Monoton</h3>
+    <div class="dfn-box teorema">
+        <div class="dfn-header"> 
+            <b>Teorema 6.3</b> 
+        </div>
+        <div class="teorema">
+            <div class="dfn-content">
+                <p>
+                Jika \(a_1 \le a_2 \le a_3 \le \dots \le a_n \le \dots\) suatu barisan tidak turun, maka terdapat dua kemungkinan
+    </p>
+    <ol style="padding-left: 30px;">
+        <li>
+            Terdapat konstanta A, yang disebut <b>batas atas</b> barisan, sedemikian sehingga \(a_n \le A\) untuk semua \(n\), dan dalam kasus ini barisan tersebut konvergen ke suatu limit \(L \le A\).
+        </li>
+        <li>
+            Tidak terdapat batas atas, dan dalam kasus ini \(\lim_{n\to\infty} a_n = +\infty\).
+        </li>
+    </ol>
+
+            </div></div></div>
+        <div class="dfn-box teorema">
+        <div class="dfn-header"> 
+            <b>Teorema 6.4</b> 
+        </div>
+        <div class="teorema">
+            <div class="dfn-content">
+            <p>
+                Jika \(b_1 \ge b_2 \ge b_3 \ge \dots \ge b_n \ge \dots\) suatu barisan tidak naik, maka terdapat dua kemungkinan
+    </p>
+    <ol style="padding-left: 30px;">
+        <li>
+            Terdapat konstanta B, yang disebut **batas bawah** barisan, sedemikian sehingga \(b_n \ge B\) untuk semua \(n\), dan dalam kasus ini barisan tersebut konvergen ke suatu limit \(L \ge B\).
+        </li>
+        <li>
+            Tidak terdapat batas atas, dan dalam kasus ini \(\lim_{n\to\infty} b_n = -\infty\).
+        </li>
+    </ol>
+    <p>
+        (Catatan: Barisan \(\{a_n\}\) dan \(\{b_n\}\) tidak perlu monoton pada bagian awal, hanya pada suatu titik tertentu)
+    </p></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+
+
+           </div>
+
+<div id="homeContoh">
+    <h2>B) Contoh Soal</h2> 
+    <br>
+     <p>1. Tuliskan lima suku pertama barisan \(\left\{\frac{n}{2n+1}\right\}_{n=1}^\infty\). Tentukan apakah barisan konvergen; jika konvergen dapatkan limitnya.</p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+    <p>
+        Lima suku pertama barisan tersebut adalah
+        \[ \frac{1}{3}, \frac{2}{5}, \frac{3}{7}, \frac{4}{9}, \frac{5}{11} \]
+    </p>
+
+
+    <p>
+        Perhatikan bahwa \(\lim_{n\to+\infty} \frac{n}{2n+1}\) mempunyai bentuk tak tentu tipe \(\infty/\infty\), selanjutnya gunakan aturan L'Hopital untuk mendapatkan limitnya
+    </p>
+    <p>
+        \[
+        \lim_{n\to+\infty} \frac{n}{2n+1} = \lim_{n\to+\infty} \frac{1}{2} = \frac{1}{2}
+        \]
+    </p>
+    <p>
+        Karena \(\lim_{n\to+\infty} \frac{n}{2n+1} = \frac{1}{2}\), maka barisan tersebut konvergen ke \(\frac{1}{2}\).
+    </p>
+
+
+    <p>
+        sehingga \(b_{n+1} < b_n < 1\) untuk semua \(n \in \mathbb{N}\). Dengan demikian \(\frac{a_{n+1}}{a_n} < 1\) atau \(\{ne^{-n}\}_{n=1}^{+\infty}\) monoton sempurna dengan klasifikasi turun.
+    </p>
+
+ <hr><br>
+
+    <p>2. Tuliskan lima suku pertama barisan \(\left\{\frac{n^2}{2n^2+1}\right\}_{n=1}^\infty\). Tentukan apakah barisan konvergen; jika konvergen dapatkan limitnya.</p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+    <p>
+        Lima suku pertama barisan tersebut adalah
+        \[ \frac{1}{3}, \frac{4}{9}, \frac{9}{19}, \frac{16}{33}, \frac{25}{51} \]
+    </p>
+    <p>
+        Perhatikan bahwa
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \lim_{n\to+\infty} \frac{n^2}{2n^2+1} &= \lim_{n\to+\infty} \frac{n^2}{n^2\left(2+\frac{1}{n^2}\right)} \\
+        &= \lim_{n\to+\infty} \frac{1}{2+\frac{1}{n^2}} \\
+        &= \frac{1}{2+0} \\
+        &= \frac{1}{2}
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(\lim_{n\to+\infty} \frac{n^2}{2n^2+1} = \frac{1}{2}\), maka barisan \(\left\{\frac{n^2}{2n^2+1}\right\}_{n=1}^\infty\) konvergen.
+    </p><hr><br>
+
+    <p>3. Gunakan \(\frac{a_{n+1}}{a_n}\) untuk menunjukkan bahwa barisan \(\{ne^{-n}\}_{n=1}^\infty\) yang diberikan adalah monoton sempurna dan klasifikasikan sebagai barisan naik atau turun.</p>
+    <p>
+        <strong>Pembahasan:</strong>
+    </p>
+    <p>
+        Diketahui bahwa \(a_{n+1} = (n+1)e^{-(n+1)}\) dan \(a_n = ne^{-n}\), sehingga
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \frac{a_{n+1}}{a_n} &= \frac{(n+1)e^{-(n+1)}}{ne^{-n}} \\
+        &= \frac{(n+1)e^{-n}e^{-1}}{ne^{-n}} \\
+        &= \frac{n+1}{ne} \\
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Misalkan \(b_n = \frac{n+1}{ne}\). Jika \(n=1\), maka \(b_1 = \frac{2}{e} < 1\). Selanjutnya perhatikan \(b_{n+1} - b_n\):
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        b_{n+1} - b_n &= \frac{(n+1)+1}{(n+1)e} - \frac{n+1}{ne} \\
+        &= \frac{n+2}{(n+1)e} - \frac{n+1}{ne} \\
+        &= \frac{n(n+2) - (n+1)^2}{ne(n+1)} \\
+        &= \frac{n^2+2n - (n^2+2n+1)}{ne(n+1)} \\
+        &= \frac{-1}{ne(n+1)} \\
+        &< 0.
+        \end{aligned}
+        \]
+    </p>
+
+<hr><br>
+
+
+
+
+
+
+
+</div>
+</div>
+ 
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+
+    <h3>1. Soal EAS 2021</h3>
+    <p>
+        Tentukan konvergensi barisan \(\{n \sin \frac{\pi}{n}\}_{n=1}^\infty\). Dari jawaban tersebut, tentukan konvergensi \(\left\{\frac{n^2}{2n+1} \sin \frac{\pi}{n}\right\}_{n=1}^\infty\).
+    </p>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        \(\lim_{n\to+\infty} n \sin \frac{\pi}{n}\) mempunyai bentuk tak tentu \(0 \cdot \infty\), akan dilakukan ubah bentuk menjadi \(0/0\) dan dilakukan L'Hopital
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \lim_{n\to+\infty} n \sin \frac{\pi}{n} &= \lim_{n\to+\infty} \frac{\sin \frac{\pi}{n}}{\frac{1}{n}} \\
+        &= \lim_{n\to+\infty} \frac{\cos \frac{\pi}{n} \left(-\frac{\pi}{n^2}\right)}{-\frac{1}{n^2}} \\
+        &= \lim_{n\to+\infty} \pi \cos \frac{\pi}{n} \\
+        &= \pi \cos 0 \\
+        &= \pi
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        Karena \(\lim_{n\to+\infty} n \sin \frac{\pi}{n} = \pi\), maka barisan \(\{n \sin \frac{\pi}{n}\}_{n=1}^\infty\) konvergen ke \(\pi\). Selanjutnya untuk mengetahui konvergensi barisan \(\left\{\frac{n^2}{2n+1} \sin \frac{\pi}{n}\right\}_{n=1}^\infty\), kita perlu menyelidiki \(\lim_{n\to+\infty} \frac{n^2}{2n+1}\). Perhatikan bahwa \(\frac{n^2}{2n+1} \sin \frac{\pi}{n} = \frac{n}{2n+1} n \sin \frac{\pi}{n}\) dan kita tahu bahwa \(\lim_{n\to+\infty} \frac{n}{2n+1} = \frac{1}{2}\), sehingga berdasarkan teorema 1.2.2
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \lim_{n\to+\infty} \frac{n^2}{2n+1} \sin \frac{\pi}{n} &= \lim_{n\to+\infty} \frac{n}{2n+1} \cdot \lim_{n\to+\infty} n \sin \frac{\pi}{n} \\
+        &= \frac{1}{2} \cdot \pi \\
+        &= \frac{\pi}{2}
+        \end{aligned}
+        \]
+    </p>  
+
+    <p>
+        Dapatkan kemiringan garis singgung dari kurva \(r = 5 \sec(2\theta)\) di titik dengan \(\theta = \frac{\pi}{6}\).
+    </p>
+
+
+
+
+    <p>
+        \[
+        \begin{aligned}
+        \frac{dy}{dx} &= \frac{5\sec(2\theta) \cos\theta + \sin\theta \frac{d}{d\theta}[5\sec(2\theta)]}{-5\sec(2\theta) \sin\theta + \cos\theta \frac{d}{d\theta}[5\sec(2\theta)]}\Bigg|_{\theta=\frac{\pi}{6}} \\
+        &= \frac{5\sec(2\theta) \cos\theta + \sin\theta\, 10\sec(2\theta)\tan(2\theta)}{-5\sec(2\theta) \sin\theta + \cos\theta\, 10\sec(2\theta)\tan(2\theta)}\Bigg|_{\theta=\frac{\pi}{6}} \\
+        &= \frac{\cos\theta + 2\sin\theta\tan(2\theta)}{-\sin\theta + 2\cos\theta\tan(2\theta)}\Bigg|_{\theta=\frac{\pi}{6}} \\
+        &= \frac{\frac{\sqrt{3}}{2} + 2 \cdot \frac{1}{2} \cdot \sqrt{3}}{-\frac{1}{2} + 2 \cdot \frac{\sqrt{3}}{2} \cdot \sqrt{3}} \\
+        &= \frac{\frac{\sqrt{3}}{2} + \sqrt{3}}{-\frac{1}{2} + 3} \\
+        &= \frac{\frac{3\sqrt{3}}{2}}{\frac{5}{2}} \\
+        &= \frac{3\sqrt{3}}{5}
+        \end{aligned}
+        \]
+    </p>
+
+    <p>
+        Jadi, kemiringan garis singgung dari kurva \(r = 5\sec(2\theta)\) di titik dengan \(\theta = \frac{\pi}{6}\) adalah \(\frac{3\sqrt{3}}{5}\).
+    </p> </div></details><hr> <br>    
+    
+     <h3>2. Soal EAS 2019</h3>
+    <p>
+        Diketahui barisan \(\left\{\frac{n^n}{n!}\right\}_{n=1}^\infty\).
+    </p>
+    <p>
+        (a) Tuliskan lima suku pertama dari barisan tersebut<br>
+        (b) Dengan \(\frac{a_{n+1}}{a_n}\), tunjukkan bahwa barisan tersebut monoton sempurna.
+    </p>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        (a) Lima suku pertama dari barisan tersebut adalah
+        \[ \frac{1}{1}, \frac{4}{2}, \frac{27}{6}, \frac{256}{24}, \frac{3125}{120} \]
+    </p>
+    <p>
+        (b) Diketahui bahwa \(a_{n+1} = \frac{(n+1)^{n+1}}{(n+1)!}\) dan \(a_n = \frac{n^n}{n!}\) sehingga
+        \[
+        \begin{aligned}
+        \frac{a_{n+1}}{a_n} &= \frac{\frac{(n+1)^{n+1}}{(n+1)!}}{\frac{n^n}{n!}} \\
+        &= \frac{(n+1)^{n+1}}{(n+1)!} \cdot \frac{n!}{n^n} \\
+        &= \frac{(n+1)^{n+1}}{(n+1)n!} \cdot \frac{n!}{n^n} \\
+        &= \frac{(n+1)^{n+1}}{(n+1)n^n} \\
+        &= \frac{(n+1)^n (n+1)}{(n+1)n^n} \\
+        &= \frac{(n+1)^n}{n^n} \\
+        &= \left(\frac{n+1}{n}\right)^n \\
+        &= \left(1 + \frac{1}{n}\right)^n
+        \end{aligned}
+        \]
+    </p>
+
+
+    <p>
+        Karena \(\frac{1}{n} > 0\), maka \(\frac{a_{n+1}}{a_n} = \left(1 + \frac{1}{n}\right)^n > 1\) atau barisan \(\left\{\frac{n^n}{n!}\right\}_{n=1}^\infty\) naik, monoton sempurna.
+    </p>
+
+</div></details> <hr><br>
+    <h3>3. Perhatikan barisan \(\{a_n\}_{n=1}^\infty\) yang mempunyai suku ke-n</h3>
+    <p>
+        \[ a_n = \sum_{k=1}^{n} \frac{1}{1 + \frac{k}{n}} \]
+    </p>
+    <p>
+        Tunjukkan bahwa \(\lim_{n\to+\infty} a_n = \ln 2\).<br>
+        <strong>Hint:</strong> Interpretasikan \(\lim_{n\to+\infty} a_n\) sebagai integral tertentu.
+    </p>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <p>
+        Ingat bahwa definisi integral tertentu dalam limit jumlah riemann
+    </p>
+    <p>
+        \[ \int_{a}^{b} f(x) dx = \lim_{n\to\infty} \sum_{k=1}^{n} f(x_k^*) \Delta x_k, \]
+    </p>
+    <p>
+        dengan \(\Delta x_k = \frac{b-a}{n}\), sehingga \(x_k = a + k\Delta x\). Identifikasi bahwa \(\Delta x_k = \frac{b-a}{n} = \frac{1}{n} \to b-a = 1\), sehingga \(f(\overline{x}_k) = \frac{1}{1 + \frac{k}{n}}\). Pilih \(a=1 \to b=2\), sehingga \(f(\overline{x}_k) = \frac{1}{x}\). Dengan demikian dengan definisi di atas diperoleh
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        \lim_{n\to\infty} a_n &= \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{1 + \frac{k}{n}} \cdot \frac{1}{n} \\
+        &= \int_{1}^{2} \frac{1}{x} dx \\
+        &= [\ln |x|]_{1}^{2} \\
+        &= \ln 2 - \ln 1 \\
+        &= \ln 2
+        \end{aligned}
+        \]
+    </p>
+</div></details> <hr><br>
+
+
+</div> </div> 
+  
+
+
+
+</div>
+
+
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

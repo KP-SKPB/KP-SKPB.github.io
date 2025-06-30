@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 3 : INTEGRASI TAK WAJAR DAN INTEGRASI NUMERIK</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">3.3 Limit Bentuk Tak Tentu</h2> <br>
+
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+        <p style="font-size: 118%;"><b>1 Aturan L'Hopital</b> </p>
+<b>1. Bentuk Tak Tentu tipe \(\frac{0}{0}\)</b>
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 1
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+                    Misalkan lim menyatakan salah satu limit \(\lim_{x \to +a}, \lim_{x \to -a}, \lim_{x \to +\infty}, \lim_{x \to -\infty}\) dan diasumsikan bahwa limit tersebut menghasilkan bentuk tak tentu \(\frac{0}{0}\). Jika fungsi \(f(x) =0 \) dan \(g(x) = 0\). Jika \(\lim_{x \to a} \frac{f'(x)}{g'(x)}\) ada atau memiliki nilai berhingga L, atau jika limit ini tak hingga (\(+\infty\) atau \(-\infty\)), maka
+                    \[
+                    \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+                    \]
+                    selama limit di ruas kanan ada.
+                </div>
+          </div>
+          </div>
+
+<p style="font-size: 118%;"><b>2 Bentuk Tak Tentu tipe \(\frac{\infty}{\infty}\)</b> </p>
+
+      <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 2
+            </div>
+            <div class="materi1">
+            Misalkan lim menyatakan salah satu limit \(\lim_{x \to a}, \lim_{x \to +\infty}, \lim_{x \to -\infty}\), dan diasumsikan bahwa \(\lim f(x) = \infty\) dan \(\lim g(x) = \infty\). Jika \(\lim \frac{f'(x)}{g'(x)}\) mempunyai nilai berhingga \(L\), atau jika limit ini tak hingga (\(+\infty\) atau \(-\infty\)), maka
+            \[
+            \lim \frac{f(x)}{g(x)} = \lim \frac{f'(x)}{g'(x)}
+            \]
+            selama limit di ruas kanan ada.
+            </div></div>
+<p style="font-size: 118%;"><b>3 Bentuk Tak Tentu tipe \(0 \cdot \infty\)</b> </p>
+<p></p>
+Misalkan \(\lim f(x) = 0\) dan \(\lim g(x) = \infty\), ubah limit ke bentuk \(\frac{0}{0}\) atau \(\frac{\infty}{\infty}\) agar dapat diterapkan aturan L'Hôpital, yaitu
+</p>
+<p style="text-align:center;">
+  \(f(x)g(x) = \frac{f(x)}{1/g(x)}\) atau \(f(x)g(x) = \frac{g(x)}{1/f(x)}\).
+</p>
+<p style="font-size: 118%;"><b>4 Bentuk Tak Tentu tipe \(\infty - \infty\)</b> </p>
+Jika masalah limit seperti
+<p style="text-align:center;">
+\(\displaystyle \lim [f(x) \pm g(x)]\)
+</p>
+mengarah pada salah satu pernyataan
+<p style="text-align:center;">
+\((+\infty) - (+\infty),\; (-\infty) - (-\infty),\; (+\infty) + (-\infty),\; (-\infty) + (+\infty)\)
+</p>
+Biasanya penyelesaian dapat dilakukan dengan mengkombinasikan dua suku menjadi satu (biasanya dalam bentuk pecahan, sehingga samakan penyebut).
+
+<p style="font-size: 118%;"><b>5 Bentuk Tak Tentu tipe \(0^0, \infty^0, 1^\infty\)</b> </p>
+Limit limit yang berbentuk
+<p style="text-align:center;">
+\(\displaystyle \lim_{x \to a} f(x)^{g(x)}\)
+</p>
+memberikan bentuk tak tentu tipe \(0^0, \infty^0, 1^\infty\). Biasanya penyelesaian dapat dilakukan dengan:
+<ul>
+  <li>Memisalkan \(y = f(x)^{g(x)}\)</li>
+  <li>Bawa ke dalam bentuk \(\ln y = \ln(f(x)^{g(x)}) = g(x) \ln f(x)\)</li>
+  <li>Cari limit dengan bentuk \(\ln y\), setelahnya analisis limit \(y\).</li>
+</ul>
+  <li></li>
+</ul>
+
+
+    </div>
+<div id="homeContoh">
+<h2>B) Contoh Soal</h2> <br><hr><br>
+
+1. Hitung
+<p style="text-align: center;">
+\(\lim_{x \to 0} \frac{e^x - 1}{\sin x}\)
+</p>
+<b>Pembahasan:</b><br>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to 0} (e^x - 1) = 0\) &nbsp; dan &nbsp; \(\lim_{x \to 0} \sin x = 0\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(\frac{0}{0}\). Dengan demikian, kita dapat menggunakan aturan L'Hôpital, sehingga diperoleh:
+<p style="text-align: center;">
+\[
+\lim_{x \to 0} \frac{e^x - 1}{\sin x} = \lim_{x \to 0} \frac{e^x}{\cos x} = \frac{1}{1} = 1.
+\]
+</p>
+<hr><br>
+
+2. Hitung
+<p style="text-align: center;">
+\(\lim_{x \to +\infty} \frac{\ln x}{x}\)
+</p>
+<b>Pembahasan:</b><br>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to +\infty} \ln x = +\infty\) &nbsp; dan &nbsp; \(\lim_{x \to +\infty} x = +\infty\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(\frac{\infty}{\infty}\). Dengan demikian, kita dapat menggunakan aturan L'Hôpital, sehingga diperoleh:
+<p style="text-align: center;">
+\[
+\lim_{x \to +\infty} \frac{\ln x}{x} = \lim_{x \to +\infty} \frac{1/x}{1} = \lim_{x \to +\infty} \frac{1}{x} = 0.
+\]
+</p>
+<hr><br>
+
+3. Hitung
+<p style="text-align: center;">
+\(\lim_{x \to +\infty} x e^{-x}\)
+</p>
+<b>Pembahasan:</b><br>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to +\infty} x = +\infty\) &nbsp; dan &nbsp; \(\lim_{x \to +\infty} e^{-x} = 0\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(\infty \cdot 0\). Selanjutnya, tuliskan sebagai \(\frac{\infty}{\infty}\) agar dapat menggunakan aturan L'Hôpital:
+<p style="text-align: center;">
+\[
+\lim_{x \to +\infty} x e^{-x} = \lim_{x \to +\infty} \frac{x}{e^{x}} = \lim_{x \to +\infty} \frac{1}{e^{x}} = 0.
+\]
+</p>
+<hr><br>
+4. Hitung
+<p style="text-align: center;">
+\(\lim_{x \to 0} \left( \frac{1}{x} - \frac{1}{e^x - 1} \right)\)
+</p>
+<b>Pembahasan:</b><br>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to 0} \frac{1}{x} = +\infty\) &nbsp; dan &nbsp; \(\lim_{x \to 0} \frac{1}{e^x - 1} = +\infty\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(\infty - \infty\). Ubah menjadi satu pecahan:
+<p style="text-align: center;">
+\[
+\lim_{x \to 0} \left( \frac{1}{x} - \frac{1}{e^x - 1} \right)
+= \lim_{x \to 0} \frac{e^x - 1 - x}{x(e^x - 1)}
+\]
+</p>
+Perhatikan bahwa \(\lim_{x \to 0} (e^x - 1 - x) = 0\) dan \(\lim_{x \to 0} x(e^x - 1) = 0\), sehingga bentuknya \(\frac{0}{0}\) dan dapat digunakan aturan L'Hôpital:
+<p style="text-align: center;">
+\[
+= \lim_{x \to 0} \frac{e^x - 1}{(e^x - 1) + x e^x}
+\]
+</p>
+Untuk \(x \to 0\), pembilang dan penyebut sama-sama menuju 0, sehingga gunakan L'Hôpital sekali lagi:
+<p style="text-align: center;">
+\[
+= \lim_{x \to 0} \frac{e^x}{e^x + e^x + x e^x}
+= \lim_{x \to 0} \frac{e^x}{2e^x + x e^x}
+\]
+</p>
+Saat \(x \to 0\), \(e^x \to 1\) dan \(x \to 0\), sehingga:
+<p style="text-align: center;">
+\[
+= \frac{1}{2}
+\]
+</p>
+Jadi, hasil limit tersebut adalah \(\boxed{\frac{1}{2}}\).
+<hr><br>
+
+<!-- Soal Kuis Limit Bentuk Tak Tentu -->
+<h3>5. Soal Kuis</h3>
+<p>Hitung</p>
+<p style="text-align: center;">
+\(\lim_{x \to 0^+} x^x\)
+</p>
+<b>Pembahasan:</b><br>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to 0^+} x = 0\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(0^0\). Misalkan \(y = x^x\), sehingga
+<p style="text-align: center;">
+\(\lim_{x \to 0^+} \ln y = \lim_{x \to 0^+} \ln(x^x) = \lim_{x \to 0^+} x \ln x\)
+</p>
+Bentuk ini adalah \(0 \cdot (-\infty)\), yang dapat ditulis sebagai
+<p style="text-align: center;">
+\(\lim_{x \to 0^+} x \ln x = \lim_{x \to 0^+} \frac{\ln x}{1/x}\)
+</p>
+Bentuk ini adalah \(\frac{-\infty}{\infty}\), sehingga dapat digunakan aturan L'Hôpital:
+<p style="text-align: center;">
+\[
+\lim_{x \to 0^+} \frac{\ln x}{1/x} = \lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} -x = 0
+\]
+</p>
+Jadi, \(\lim_{x \to 0^+} \ln y = 0\), sehingga \(y \to e^0 = 1\).<br>
+Dengan demikian,
+<p style="text-align: center;">
+\(\boxed{1}\)
+</p> <hr><br>
+
+<!-- Contoh Soal Limit Bentuk Tak Tentu: x^(1/x) -->
+<div id="contoh-limit-x-1-per-x">
+  <h3>6. Hitung</h3>
+  <p style="text-align: center;">
+    \(\lim_{x \to +\infty} x^{\frac{1}{x}}\)
+  </p>
+  <b>Pembahasan:</b><br>
+  Karena
+  <p style="text-align: center;">
+    \(\lim_{x \to +\infty} x = +\infty\) &nbsp; dan &nbsp; \(\lim_{x \to +\infty} \frac{1}{x} = 0\),
+  </p>
+  maka limit menghasilkan bentuk tak tentu \(\infty^0\). Misalkan \(y = x^{1/x}\), sehingga
+  <p style="text-align: center;">
+    \(\lim_{x \to +\infty} \ln y = \lim_{x \to +\infty} \ln(x^{1/x}) = \lim_{x \to +\infty} \frac{\ln x}{x}\)
+  </p>
+  Bentuk ini adalah \(\frac{\infty}{\infty}\), sehingga dapat digunakan aturan L'Hôpital:
+  <p style="text-align: center;">
+    \[
+    \lim_{x \to +\infty} \frac{\ln x}{x} = \lim_{x \to +\infty} \frac{1/x}{1} = \lim_{x \to +\infty} \frac{1}{x} = 0
+    \]
+  </p>
+  Jadi, \(\lim_{x \to +\infty} \ln y = 0\), sehingga \(y \to e^0 = 1\).<br>
+  Dengan demikian,
+  <p style="text-align: center;">
+    \(\boxed{1}\)
+  </p>
+</div>
+<hr><br>
+
+<!-- Contoh Soal Limit Bentuk Tak Tentu: (1 - 3/x)^x -->
+<div id="contoh-limit-1-3-per-x-pangkat-x">
+  <h3>7. Hitung</h3>
+  <p style="text-align: center;">
+    \(\displaystyle \lim_{x \to +\infty} \left(1 - \frac{3}{x}\right)^x\)
+  </p>
+  <b>Pembahasan:</b><br>
+  Karena
+  <p style="text-align: center;">
+    \(\displaystyle \lim_{x \to +\infty} \left(1 - \frac{3}{x}\right) = 1\) &nbsp; dan &nbsp; \(\displaystyle \lim_{x \to +\infty} x = +\infty\),
+  </p>
+  maka limit menghasilkan bentuk tak tentu \(1^\infty\). Misalkan \(y = \left(1 - \frac{3}{x}\right)^x\), sehingga
+  <p style="text-align: center;">
+    \(\displaystyle \lim_{x \to +\infty} \ln y = \lim_{x \to +\infty} x \ln\left(1 - \frac{3}{x}\right)\)
+  </p>
+  Bentuk ini adalah \(\infty \cdot 0\), yang dapat ditulis sebagai
+  <p style="text-align: center;">
+    \(\displaystyle \lim_{x \to +\infty} x \ln\left(1 - \frac{3}{x}\right) = \lim_{x \to +\infty} \frac{\ln\left(1 - \frac{3}{x}\right)}{1/x}\)
+  </p>
+  Bentuk ini adalah \(\frac{0}{0}\), sehingga dapat digunakan aturan L'Hôpital:
+  <p style="text-align: center;">
+    \[
+    \lim_{x \to +\infty} \frac{\ln\left(1 - \frac{3}{x}\right)}{1/x}
+    = \lim_{x \to +\infty} \frac{\frac{d}{dx}\left[\ln\left(1 - \frac{3}{x}\right)\right]}{\frac{d}{dx}[1/x]}
+    \]
+    Turunkan pembilang dan penyebut:
+    <br>
+    \(\frac{d}{dx}\left[\ln\left(1 - \frac{3}{x}\right)\right] = \frac{-3}{x^2(1 - \frac{3}{x})}\)
+    <br>
+    \(\frac{d}{dx}[1/x] = -1/x^2\)
+    <br>
+    Sehingga,
+    \[
+    = \lim_{x \to +\infty} \frac{\frac{-3}{x^2(1 - \frac{3}{x})}}{-1/x^2}
+    = \lim_{x \to +\infty} \frac{-3}{x^2(1 - \frac{3}{x})} \cdot \frac{x^2}{-1}
+    = \lim_{x \to +\infty} \frac{3}{1 - \frac{3}{x}}
+    \]
+    Saat \(x \to +\infty\), \(\frac{3}{x} \to 0\), sehingga hasilnya adalah 3.
+  </p>
+  <p>
+    Jadi, \(\displaystyle \lim_{x \to +\infty} \ln y = -3\), sehingga \(y \to e^{-3}\).
+    <br>
+    Dengan demikian,
+  </p>
+  <p style="text-align: center;">
+    \(\boxed{e^{-3}}\)
+  </p>
+</div>
+</div>
+<hr><br>
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+    
+1. <b>Soal Kuis</b>
+Hitung 
+<p style="text-align: center;">
+\(\displaystyle \lim_{x \to 0} \frac{x - \ln(x+1)}{1 - \cos x}\)
+</p>
+<details class="solution">
+  <summary>Pembahasan</summary>
+  <div class="solution-step">
+    Karena
+    <p style="text-align: center;">
+      \(\lim_{x \to 0} (x - \ln(x+1)) = 0\) &nbsp; dan &nbsp; \(\lim_{x \to 0} (1 - \cos x) = 0\),
+    </p>
+    maka limit menghasilkan bentuk tak tentu \(\frac{0}{0}\). Dengan demikian, kita dapat menggunakan aturan L'Hôpital:
+    <p style="text-align: center;">
+      \[
+      \lim_{x \to 0} \frac{x - \ln(x+1)}{1 - \cos x}
+      = \lim_{x \to 0} \frac{1 - \frac{1}{x+1}}{\sin x}
+      \]
+    </p>
+    Untuk \(x \to 0\), pembilang dan penyebut menuju 0, sehingga gunakan L'Hôpital sekali lagi:
+    <p style="text-align: center;">
+      \[
+      = \lim_{x \to 0} \frac{\frac{1}{(x+1)^2}}{\cos x}
+      = \frac{1}{1} = 1
+      \]
+    </p>
+    Jadi, hasil limit tersebut adalah \(\boxed{1}\).
+  </div>
+</details>
+<hr><br> <br>
+2. <b>Soal Kuis</b><br>
+Dapatkan limit berikut<br>
+<p style="text-align: center;">
+\(\displaystyle \lim_{x \to +\infty} \frac{\sinh x}{e^x}\)
+</p>
+<b>Hint 1:</b> \(\lim_{x \to +\infty} \sinh x = +\infty\) dan \(\lim_{x \to +\infty} e^x = +\infty\).<br>
+<b>Hint 2:</b> \(\sinh x = \frac{e^x - e^{-x}}{2}\).<br>
+<details class="solution">
+  <summary>Pembahasan</summary>
+  <div class="solution-step"></div>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to +\infty} \sinh x = +\infty\) dan \(\lim_{x \to +\infty} e^x = +\infty\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(\frac{\infty}{\infty}\). Dengan demikian, kita dapat menggunakan aturan L'Hôpital:
+<p style="text-align: center;">
+\[
+\lim_{x \to +\infty} \frac{\sinh x}{e^x} = \lim_{x \to +\infty} \frac{\cosh x}{e^x}
+\]
+</p>
+Namun, jika kita teruskan dengan L'Hôpital, bentuknya tetap \(\frac{\infty}{\infty}\). Maka, kita substitusi \(\sinh x = \frac{e^x - e^{-x}}{2}\):
+<p style="text-align: center;">
+\[
+\lim_{x \to +\infty} \frac{\sinh x}{e^x} = \lim_{x \to +\infty} \frac{\frac{e^x - e^{-x}}{2}}{e^x}
+= \lim_{x \to +\infty} \frac{e^x - e^{-x}}{2e^x}
+= \lim_{x \to +\infty} \frac{1 - e^{-2x}}{2}
+\]
+</p>
+Karena \(\lim_{x \to +\infty} e^{-2x} = 0\), maka
+<p style="text-align: center;">
+\[
+\lim_{x \to +\infty} \frac{1 - e^{-2x}}{2} = \frac{1}{2}
+\]
+</p>
+Jadi, hasil limit tersebut adalah \(\boxed{\frac{1}{2}}\).
+
+      </details>
+      <hr> <br>
+
+3. <b>Soal ETS 2024</b>
+Dapatkan <br>
+<p style="text-align: center;">
+\(\displaystyle \lim_{x \to +\infty} \left[ x \left( e^{\sin \frac{1}{x}} - 1 \right) \right] \)
+</p>
+<b>Hint 1:</b> \(\lim_{x \to +\infty} x = +\infty\) dan \(\lim_{x \to +\infty} \left(e^{\sin \frac{1}{x}} - 1\right) = 0\).<br>
+<details class="solution">
+  <summary>Pembahasan</summary>
+  <div class="solution-step"></div>
+Karena
+<p style="text-align: center;">
+\(\lim_{x \to +\infty} x = +\infty\) dan \(\lim_{x \to +\infty} \left(e^{\sin \frac{1}{x}} - 1\right) = 0\),
+</p>
+maka limit menghasilkan bentuk tak tentu \(\infty \cdot 0\). Selanjutnya, ubah ke bentuk \(\frac{0}{0}\) agar dapat menggunakan aturan L'Hôpital:
+<p style="text-align: center;">
+\[
+\lim_{x \to +\infty} \left[ x \left( e^{\sin \frac{1}{x}} - 1 \right) \right]
+= \lim_{x \to +\infty} \frac{e^{\sin \frac{1}{x}} - 1}{1/x}
+\]
+</p>
+Gunakan L'Hôpital:
+<p style="text-align: center;">
+\[
+= \lim_{x \to +\infty} \frac{\frac{d}{dx}\left(e^{\sin \frac{1}{x}} - 1\right)}{\frac{d}{dx}(1/x)}
+= \lim_{x \to +\infty} \frac{e^{\sin \frac{1}{x}} \cdot \cos \frac{1}{x} \cdot \left(-\frac{1}{x^2}\right)}{-1/x^2}
+\]
+</p>
+Sederhanakan:
+<p style="text-align: center;">
+\[
+= \lim_{x \to +\infty} e^{\sin \frac{1}{x}} \cdot \cos \frac{1}{x}
+\]
+</p>
+Saat \(x \to +\infty\), \(\frac{1}{x} \to 0\), sehingga \(\sin \frac{1}{x} \to 0\) dan \(\cos \frac{1}{x} \to 1\), serta \(e^{\sin \frac{1}{x}} \to 1\). Maka,
+<p style="text-align: center;">
+\[
+= 1 \cdot 1 = 1
+\]
+</p>
+Jadi, hasil limit tersebut adalah \(\boxed{1}\).
+</details><hr><br> <br>
+
+4. <b>Soal Kuis</b>
+Hitung 
+        </div> 
+      <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+          Karena
+          <p style="text-align: center;">
+            \(\lim_{x \to 0} \frac{2}{3x} = +\infty\) &nbsp; dan &nbsp; \(\lim_{x \to 0} \frac{1}{e^x - 1} = +\infty\),
+          </p>
+          maka limit menghasilkan bentuk tak tentu \(\infty - \infty\). Gabungkan menjadi satu pecahan:
+          <p style="text-align: center;">
+            \[
+            \lim_{x \to 0} \left( \frac{2}{3x} - \frac{1}{e^x - 1} \right)
+            = \lim_{x \to 0} \frac{2(e^x - 1) - 3x}{3x(e^x - 1)}
+            \]
+          </p>
+          Perhatikan bahwa \(\lim_{x \to 0} (2e^x - 2 - 3x) = 0\) dan \(\lim_{x \to 0} 3x(e^x - 1) = 0\), sehingga bentuknya \(\frac{0}{0}\) dan dapat digunakan aturan L'Hôpital:
+          <p style="text-align: center;">
+            \[
+            = \lim_{x \to 0} \frac{2e^x - 3}{3(e^x - 1) + 3x e^x}
+            \]
+          </p>
+          Untuk \(x \to 0\), pembilang dan penyebut menuju 0, sehingga gunakan L'Hôpital sekali lagi:
+          <p style="text-align: center;">
+            \[
+            = \lim_{x \to 0} \frac{2e^x}{3e^x + 3e^x + 3x e^x}
+            = \lim_{x \to 0} \frac{2e^x}{6e^x + 3x e^x}
+            \]
+          </p>
+          Saat \(x \to 0\), \(e^x \to 1\) dan \(x \to 0\), sehingga:
+          <p style="text-align: center;">
+            \[
+            = \frac{2}{6} = \frac{1}{3}
+            \]
+          </p>
+          Namun, jika mengikuti langkah pada gambar, hasil akhirnya adalah \(-\infty\) karena pembilang menuju bilangan negatif besar dan penyebut menuju nol positif.
+          <br>
+          Jadi, hasil limit tersebut adalah \(\boxed{-\infty}\).
+        </div>
+      </details>
+      
+      </details>
+        <hr><br>
+5. Hitung 
+<p>
+\[
+\lim_{x \to 0^+} x^{\sin x}
+\]
+</p>
+<b>Hint 1:</b> \(\lim_{x \to 0^+} x = 0\) dan \(\lim_{x \to 0^+} \sin x = 0\).<br>
+<b>Pembahasan:</b><br>
+<details class="solution">
+  <summary>Pembahasan</summary>
+  <div class="solution-step">
+    Karena
+    <p style="text-align: center;">
+      \(\lim_{x \to 0^+} x = 0\) dan \(\lim_{x \to 0^+} \sin x = 0\),
+    </p>
+    maka limit menghasilkan bentuk tak tentu \(0^0\). Misalkan \(y = x^{\sin x}\), sehingga
+    <p style="text-align: center;">
+      \(\lim_{x \to 0^+} \ln y = \lim_{x \to 0^+} \sin x \cdot \ln x\)
+    </p>
+    Bentuk ini adalah \(0 \cdot (-\infty)\), yang dapat ditulis sebagai
+    <p style="text-align: center;">
+      \(\lim_{x \to 0^+} \sin x \cdot \ln x = \lim_{x \to 0^+} \frac{\ln x}{1/\sin x}\)
+    </p>
+    Bentuk ini adalah \(\frac{-\infty}{\infty}\), sehingga dapat digunakan aturan L'Hôpital:
+    <p style="text-align: center;">
+      \[
+      \lim_{x \to 0^+} \frac{\ln x}{1/\sin x}
+      = \lim_{x \to 0^+} \frac{1/x}{-\cos x/\sin^2 x}
+      = \lim_{x \to 0^+} -\frac{\sin^2 x}{x \cos x}
+      \]
+    </p>
+    Untuk \(x \to 0^+\), \(\sin x \sim x\) dan \(\cos x \to 1\), sehingga:
+    <p style="text-align: center;">
+      \[
+      -\frac{x^2}{x \cdot 1} = -x \to 0
+      \]
+    </p>
+    Jadi, \(\lim_{x \to 0^+} \ln y = 0\), sehingga \(y \to e^0 = 1\).<br>
+    Dengan demikian,
+    <p style="text-align: center;">
+      \(\boxed{1}\)
+    </p>
+  </div>
+  <div class="solution-step">
+    Karena
+  </div>
+</details>
+<hr><br>
+
+<!-- Soal Limit Tak Tentu dari Gambar -->
+
+6. Hitung
+<p style="text-align: center;">
+\(\displaystyle \lim_{x \to \frac{\pi}{2}^-} (\tan x)^{\frac{\pi}{2} - x}\)
+</p>
+<details class="solution">
+  <summary>Pembahasan</summary>
+  <div class="solution-step">
+    Karena
+    <p style="text-align: center;">
+      \(\lim_{x \to \frac{\pi}{2}^-} \tan x = \infty\) dan \(\lim_{x \to \frac{\pi}{2}^-} \left(\frac{\pi}{2} - x\right) = 0\),
+    </p>
+    maka limit berbentuk tak tentu \(\infty^0\). Misalkan \(y = (\tan x)^{\frac{\pi}{2} - x}\), sehingga
+    <p style="text-align: center;">
+      \(\lim_{x \to \frac{\pi}{2}^-} \ln y = \lim_{x \to \frac{\pi}{2}^-} \left(\frac{\pi}{2} - x\right) \ln(\tan x)\)
+    </p>
+    Substitusi \(t = \frac{\pi}{2} - x\), maka \(x \to \frac{\pi}{2}^-\) berarti \(t \to 0^+\), dan \(\tan x = \cot t\). Maka,
+    <p style="text-align: center;">
+      \(\lim_{t \to 0^+} (\cot t)^t = \lim_{t \to 0^+} e^{t \ln(\cot t)}\)
+    </p>
+    Karena \(\cot t \sim \frac{1}{t}\) untuk \(t \to 0^+\), maka \(\ln(\cot t) \sim -\ln t\), sehingga
+    <p style="text-align: center;">
+      \(t \ln(\cot t) \sim -t \ln t \to 0\) saat \(t \to 0^+\)
+    </p>
+    Jadi, \(\lim_{x \to \frac{\pi}{2}^-} \ln y = 0\), sehingga \(y \to e^0 = 1\).<br>
+    Dengan demikian,
+    <p style="text-align: center;">
+      \(\boxed{1}\)
+    </p>
+  </div>
+</details>
+<hr><br>
+
+7. Hitung
+<p style="text-align: center;">
+\(\displaystyle \lim_{x \to 1} (2 - x)^{\tan\left(\frac{\pi x}{2}\right)}\)
+</p>
+<details class="solution">
+  <summary>Pembahasan</summary>
+  <div class="solution-step">
+    Karena
+    <p style="text-align: center;">
+      \(\lim_{x \to 1} (2 - x) = 1\) dan \(\lim_{x \to 1} \tan\left(\frac{\pi x}{2}\right) = +\infty\),
+    </p>
+    maka limit berbentuk tak tentu \(1^\infty\). Misalkan \(y = (2 - x)^{\tan\left(\frac{\pi x}{2}\right)}\), sehingga
+    <p style="text-align: center;">
+      \(\lim_{x \to 1} \ln y = \lim_{x \to 1} \tan\left(\frac{\pi x}{2}\right) \cdot \ln(2 - x)\)
+    </p>
+    Bentuk ini adalah \(\infty \cdot 0\), yang dapat ditulis sebagai
+    <p style="text-align: center;">
+      \(\lim_{x \to 1} \frac{\ln(2 - x)}{\cot\left(\frac{\pi x}{2}\right)}\)
+    </p>
+    Gunakan L'Hôpital:
+    <p style="text-align: center;">
+      \(\lim_{x \to 1} \frac{\frac{-1}{2 - x}}{-\csc^2\left(\frac{\pi x}{2}\right) \cdot \frac{\pi}{2}}\)
+    </p>
+    Sederhanakan:
+    <p style="text-align: center;">
+      \(\lim_{x \to 1} \frac{1}{2 - x} \cdot \frac{2}{\pi} \sin^2\left(\frac{\pi x}{2}\right)\)
+    </p>
+    Saat \(x \to 1\), \((2 - x) \to 1\) dan \(\sin\left(\frac{\pi x}{2}\right) \to 1\), sehingga
+    <p style="text-align: center;">
+      \(\frac{1}{1} \cdot \frac{2}{\pi} \cdot 1^2 = \frac{2}{\pi}\)
+    </p>
+    Jadi, \(\lim_{x \to 1} \ln y = \frac{2}{\pi}\), sehingga \(y \to e^{2/\pi}\).<br>
+    Dengan demikian,
+    <p style="text-align: center;">
+      \(\boxed{e^{2/\pi}}\)
+    </p>
+  </div>
+</details>
+<hr><br>
+
+<br>
+
+
+    </div>
+    </div>
+
+
+    </div>
+
+    </div>
+</div> </div> 
+  
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

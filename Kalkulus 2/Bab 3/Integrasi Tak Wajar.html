@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 3 : INTEGRASI TAK WAJAR DAN INTEGRASI NUMERIK</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">3.2 Integral Tak Wajar</h2> <br>
+
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+        <p style="font-size: 118%;"><b>1 Integral pada Selang Tak Hingga</b> </p>
+<table>
+    <tr>
+        <td>
+                       <p style="text-align: left;">1. Jika \(f\) kontinu pada selang \([a, \infty)\), maka integral tak wajar \(\int_a^\infty f(x)dx\) pada selang tersebut didefinisikan sebagai limit dengan cara <br></p>
+
+        <p style="text-align: center;">\(
+        \int_a^\infty f(x)dx = \lim_{b \to \infty} \int_a^b f(x)dx
+        \)</p> <br>
+        Jika limitnya ada, maka integral tersebut disebut <b>konvergen</b>, dan jika limitnya tidak ada, maka integral tersebut disebut <b>divergen</b>.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="text-align: left;">2. Teorema</p> <br>
+        <p style="text-align: center;">\(\int_1^+\infty \frac{dx}{x^p} = \begin{cases}
+            \frac{1}{p-1} & \text{jika } p > 1 \\
+            divergen (\infty) & \text{jika } p \leq 1            
+            \end{cases}
+        \)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+                        <p style="text-align: left;">
+            3. Jika \(f\) kontinu pada selang \((-infty, b)\), maka integral tak wajar \(\int_{-\infty}^b f(x)dx\) pada selang tersebut didefinisikan sebagai limit dengan cara </p> <br>
+        <p style="text-align: center;"> \(\int_{-\infty}^b f(x)dx = \lim_{a \to -\infty} \int_a^b f(x)dx\)</p> <br>
+        Jika limitnya ada, maka integral tersebut disebut <b>konvergen</b>, dan jika limitnya tidak ada, maka integral tersebut disebut <b>divergen</b>.
+        </td>
+    </tr>
+    <tr>
+        <td>
+             <p style="text-align: left;">4. Jika \(f\) kontinu pada selang \((-\infty, +\infty)\), maka didefinisikan integral tak wajar \(\int_{-\infty}^{+\infty} f(x)dx\) pada selang tersebut sebagai </p><br>
+
+        <p style="text-align: center;">\(\int_{-\infty}^{+\infty} f(x)dx = \int _{-\infty}^c f(x)dx + \int_c^{+\infty} f(x)dx\)</p>
+        di mana \(c\) adalah sembarang bilangan real. Selanjutnya jika kedua integral tersebut konvergen, maka integral tak wajar tersebut juga konvergen.
+        </td>
+    </tr>
+</table>
+
+
+<p style="font-size: 118%;"><b>2 Integral yang mencakup \(ax^2+bx+c\)</b> </p>
+<table>
+    <tr>
+        <td>
+            <p style="text-align: left;">1. Jika \(f(x)\) tak terbatas di \(x = b\), yaitu batas atas selang integrasi, maka integral tak wajar \(\int_a^b f(x) dx\) didefinisikan sebagai limit dengan cara <br>
+<p style="text-align: center;">\(\int_a^b f(x) dx = \lim_{l \to b^-} \int_a^l f(x) dx\)</p></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="text-align: left;">2. Jika \(f(x)\) tak terbatas di \(x = a\), yaitu batas bawah selang integrasi, maka integral tak wajar \(\int_a^b f(x) dx\) didefinisikan sebagai limit sebagai suatu limit <br>
+<p style="text-align: center;">\(\int_a^b f(x) dx = \lim_{l \to a^+} \int_l^b f(x) dx\)</p></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="text-align: left;">3. Jika \(f(x)\) kontinu pada selang \((a, b)\) kecuali pada beberapa titik \(c\) dengan \( a < c < b, f(x) \) menjadi tak hingga (menuju \(\infty\) atau \(-\infty\)) bila \(x\) mendekati \(c\) dari kiri atau kanan, maka integral tak wajar \(\int_a^b f(x) dx\) didefinisikan sebagai limit dengan cara <br>
+            <p style="text-align: center;">\(\int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx\)</p> <br>
+            <p style="text-align: center;">\(\int_a^b f(x) dx = \lim_{l \to c^-} \int_a^l f(x) dx + \lim_{k \to c^+} \int_k^b f(x) dx\)</p> <br>
+            Selanjutnya \(\int_a^b f(x) dx\) dikatakan <b>konvergen</b> jika kedua limit tersebut ada, dan <b>divergen</b> jika salah satu atau kedua limit tersebut tidak ada. <br>
+            </p>
+        </td>
+    </tr>
+</table>
+
+
+    </div>
+<div id="homeContoh">
+<h2>B) Contoh Soal</h2> <br><hr><br>
+
+1. <b>Soal ETS 2020</b>
+Selesaikan integral<br>
+<p style="text-align: center;">\(\int_{-1}^+\infty \frac{x}{1+x^2}dx\)</p>
+<b>Pembahasan:</b> 
+<p style="text-align: center;">(\int_{-1}^+\infty \frac{x}{1+x^2}dx = \lim_{b \to +\infty} \int_{-1}^b \frac{x}{1+x^2}dx\)</p>
+<p style="text-align: center;">=\(\lim_{b \to +\infty} \frac{1}{2}ln(1+x^2)\Big|_{-1}^b\)</p>
+<p style="text-align: center;">=\(\lim_{b \to +\infty} \frac{1}{2}ln(1+b^2) - \frac{1}{2}ln(2)\)</p>
+<p style="text-align: center;">=\(\lim_{b \to +\infty} \frac{1}{2}ln(b^2) - \frac{1}{2}ln(2)\)</p>
+<p style="text-align: center;">=\(\lim_{b \to +\infty} ln(b) - \frac{1}{2}ln(2)\)</p>
+<p style="text-align: center;">=\(\infty - \frac{1}{2}ln(2)\)</p>
+<p style="text-align: center;">=\(+\infty\)</p>
+
+<hr><br>
+2. <b>(Soal ETS 2024)</b> <br>
+Selesaikan integral tak wajar berikut 
+<p style="text-align: center;">\(\int_3^4 \frac{1}{(x-3)^2}dx\)</p>
+<b>Pembahasan:</b>
+<p style="text-align: center;">\(\int_3^4 \frac{1}{(x-3)^2}dx = \lim_{b \to 3^+} \int_b^4 \frac{1}{(x-3)^2}dx\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 3^+} -\frac{1}{x-3}\Big|_b^4\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 3^+} -\frac{1}{4-3} + \frac{1}{b-3}\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 3^+} -1 + \frac{1}{b-3}\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 3^+} -1 + \infty\)</p>
+<p style="text-align: center;">=\(\infty\)</p>
+
+3. Selesaikan integral tak wajar berikut
+<p style="text-align: center;">\(\int_0^1 \frac{dx}{\sqrt{1-x^2}}\)</p>
+
+<b>Pembahasan:</b>
+<p style="text-align: center;">\(\int_0^1 \frac{dx}{\sqrt{1-x^2}} = \lim_{b \to 1^-} \int_0^b \frac{dx}{\sqrt{1-x^2}}\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 1^-} \sin^{-1}(x)\Big|_0^b\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 1^-} \sin^{-1}(b) - \sin^{-1}(0)\)</p>
+<p style="text-align: center;">=\(\lim_{b \to 1^-} \frac{\pi}{2} - 0\)</p>
+<p style="text-align: center;">=\(\frac{\pi}{2}\)</p>
+
+</div>
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+1. Selesaikan integral dari
+<p style="text-align: center;">\(\int_{-\infty}^0e^{3x}\)</p><br>
+<details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+<p style="text-align: center;">=\(\lim_{b \to -\infty} \int_b^0 e^{3x}dx\)</p>
+<p style="text-align: center;">=\(\lim_{b \to -\infty} \frac{1}{3}e^{3x}\Big|_b^0\)</p>
+<p style="text-align: center;">=\(\lim_{b \to -\infty} \frac{1}{3}(1 - e^{3b})\)</p>
+<p style="text-align: center;">=\(\frac{1}{3}(1 - 0)\)</p>
+<p style="text-align: center;">=\(\frac{1}{3}\)</p>
+      </div>
+      </details>
+    </div>
+<hr><br> <br>
+2. <b>Soal ETS 2021</b><br>
+Selesaikan integral dari<br>
+<p style="text-align: center;">\(\int_{-\infty}^{+\infty} \frac{e^{-t}}{1+e^{-2t}}dt\)</p>
+      <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+            <p style="text-align: center;">\(\int_{-\infty}^{+\infty} \frac{e^{-t}}{1+e^{-2t}}dt = \int_{-\infty}^{+\infty} \frac{1}{e^t + e^{-t}}dt\)</p>
+            <p style="text-align: center;">=\(\int_{-\infty}^{+\infty} \frac{1}{2\cosh(t)}dt\)</p>
+            <p style="text-align: center;">=\(\frac{1}{2}\int_{-\infty}^{+\infty} \text{sech}(t)dt\)</p>
+            <p style="text-align: center;">=\(\frac{1}{2}\cdot 2\pi = \pi\)</p>
+            <p style="text-align: center;">=\(\pi\)</p>
+
+
+      </details>
+      <hr> <br>
+
+3. <b>Soal ETS 2024</b>
+Selesaikan integral dari<br>
+<p style="text-align: center;">\(\int_{0}^{\pi /2} \frac{cosx}{\sqrt{1-2sinx}}dx\)</p>
+      <details class="solution">
+    <summary>Pembahasan</summary>
+
+    <div class="solution-step">
+      Perhatikan bahwa integran mendekati \(+\infty\) bila \(x\) mendekati batas bawah \(\frac{\pi}{6}\) dari kiri, sehingga kita perlu mendefinisikan integral ini sebagai limit:
+      <p style="text-align: center;">\(\int_{0}^{\pi /2} \frac{cosx}{\sqrt{1-2sinx}}dx = \lim_{t \to 0^+} \int_{t}^{\pi /2} \frac{cosx}{\sqrt{1-2sinx}}dx\)</p>
+Selanjutnya akan diselesaikan terlebih dahulu \(\int \frac{cosx}{\sqrt{1-2sinx}}dx\). Misalkan \(u=1-2sinx,\) sehingga \(du=-2cosx dx\) atau \(dx=-\frac{du}{2cosx}\). Maka integral tersebut menjadi:
+        <p style="text-align: center;">\(\int \frac{cosx}{\sqrt{1-2sinx}}dx = -\frac{1}{2}\int \frac{1}{2}\int \frac{du}\sqrt{u}\)</p>
+        <p style="text-align: center;">=\(-\frac{1}{2}\cdot 2\sqrt{u} + C</p>
+        <p style="text-align: center;">=\(-\sqrt{1-2sinx} + C\)</p>
+
+        Kemudian,
+        <p style="text-align: center;">\(\int_{0}^{\pi /2} \frac{cosx}{\sqrt{1-2sinx}}dx = \lim_{t \to 0^+} \int_{0}^{t}\frac{cosx}{\sqrt{1-2sinx}}dx\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to {\frac{\pi}{6}}} -\sqrt{1-2sinx}\Big|_{0}^{t}\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to {\frac{\pi}{6}}} -\sqrt{1-2sin(\frac{\pi}{6})} + \sqrt{1-2sin(0)}\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to {\frac{\pi}{6}}} -\sqrt{1-2\cdot \frac{1}{2}} + \sqrt{1-0}\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to {\frac{\pi}{6}}} -\sqrt{0} + \sqrt{1}\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to {\frac{\pi}{6}}} 0 + 1\)</p>
+        <p style="text-align: center;">=\(1\)</p>
+
+    </div>
+  </div>
+
+</details><hr><br> <br>
+
+4. <b>Soal ETS 2022</b>
+Hitung integral berikut
+<p style="text-align: center;">\(\int_{\frac{\pi}{3}}^{\frac{\pi}{2}}\frac{sinx}{\sqrt{1-2cosx}}dx\)</p>
+
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        Perhatikan bahwa integran mendekati \(+\infty\) bila \(x\) mendekati batas bawah \(\frac{\pi}{3}\) dari kiri, sehingga kita perlu mendefinisikan integral ini sebagai limit:
+        <p style="text-align: center;">\(\int_{\frac{\pi}{3}}^{\frac{\pi}{2}}\frac{sinx}{\sqrt{1-2cosx}}dx = \lim_{t \to \frac{\pi}{3}^-} \int_{t}^{\frac{\pi}{2}}\frac{sinx}{\sqrt{1-2cosx}}dx\)</p>
+        Selanjutnya akan diselesaikan terlebih dahulu \(\int \frac{sinx}{\sqrt{1-2cosx}}dx\). Misalkan \(u=1-2cosx,\) sehingga \(du=2sinx dx\) atau \(dx=\frac{du}{2sinx}\). Maka integral tersebut menjadi:
+        <p style="text-align: center;">\(\int \frac{sinx}{\sqrt{1-2cosx}}dx = \frac{1}{2}\int \frac{1}{\sqrt{u}}du\)</p>
+        <p style="text-align: center;">=\(\frac{1}{2}\cdot 2\sqrt{u} + C\)</p>
+        <p style="text-align: center;">=\(\sqrt{1-2cosx} + C\)</p>
+        Kemudian,
+        <p style="text-align: center;">\(\int_{\frac{\pi}{3}}^{\frac{\pi}{2}}\frac{sinx}{\sqrt{1-2cosx}}dx = \lim_{t \to \frac{\pi}{3}^+} \sqrt{1-2cosx}\Big|_{t}^{\frac{\pi}{2}}\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to \frac{\pi}{3}^+} \sqrt{1-2cos(\frac{\pi}{2})} - \sqrt{1-2cos(t)}\)</p>
+        <p style="text-align: center;">=\(\lim_{t \to \frac{\pi}{3}^+} \sqrt{1-0} - \sqrt{1-2cos(t)}\)</p>
+        <p style="text-align: center;">=\(1 - \lim_{t \to \frac{\pi}{3}^+} \sqrt{1-2cos(t)}\)</p>
+        <p style="text-align: center;">Karena \(cos(\frac{\pi}{3}) = \frac{1}{2}\), maka \(\sqrt{1-2cos(\frac{\pi}{3})} = \sqrt{1-2 \cdot \frac{1}{2}} = \sqrt{1-1} = 0\)</p>
+        <p style="text-align: center;">Jadi, hasilnya adalah \(1 - 0 = 1\)</p>
+        </div> </details>
+        <hr><br>
+5. Hitung integral berikut:
+    <p style="text-align: center;">\(\int_0^4 \frac{1}{(x-3)^2}dx\)</p>
+    <details class="solution">
+        <summary>Pembahasan:</summary>
+        <div class="solution-step">
+            
+            <p style="text-align: left;">
+            Perhatikan bahwa integran diskontinu pada \(x = 3\), sehingga
+            </p>
+            <p style="text-align: center;">
+            \(\int_0^4 \frac{1}{(x-3)^2}dx = \int_0^3 \frac{1}{(x-3)^2}dx + \int_3^4 \frac{1}{(x-3)^2}dx\)
+            </p>
+            <p style="text-align: center;">
+            \(= \lim_{r \to 3^-} \int_0^r \frac{1}{(x-3)^2}dx + \lim_{s \to 3^+} \int_s^4 \frac{1}{(x-3)^2}dx\)
+            </p>
+            <p style="text-align: left;">
+            Selanjutnya, akan diselesaikan terlebih dahulu \(\int \frac{1}{(x-3)^2}dx\). Misalkan \(u = x-3\), sehingga \(du = dx\).
+            </p>
+            <p style="text-align: center;">
+            \(\int \frac{1}{(x-3)^2}dx = \int \frac{1}{u^2} du = -\frac{1}{u} = -\frac{1}{x-3}\)
+            </p>
+            <p style="text-align: left;">
+            Kemudian,
+            </p>
+            <p style="text-align: center;">
+            \(\int_0^4 \frac{1}{(x-3)^2}dx = \lim_{r \to 3^-} \int_0^r \frac{1}{(x-3)^2}dx + \lim_{s \to 3^+} \int_s^4 \frac{1}{(x-3)^2}dx\)
+            </p>
+            <p style="text-align: center;">
+            \(= \lim_{r \to 3^-} \left( -\frac{1}{x-3} \right)\Big|_0^r + \lim_{s \to 3^+} \left( -\frac{1}{x-3} \right)\Big|_s^4\)
+            </p>
+            <p style="text-align: center;">
+            \(= \lim_{r \to 3^-} \left( -\frac{1}{r-3} + \frac{1}{0-3} \right) + \lim_{s \to 3^+} \left( -\frac{1}{4-3} + \frac{1}{s-3} \right)\)
+            </p>
+            <p style="text-align: center;">
+            \(= \lim_{r \to 3^-} \left( -\frac{1}{r-3} - \frac{1}{3} \right) + \lim_{s \to 3^+} \left( -1 + \frac{1}{s-3} \right)\)
+            </p>
+            <p style="text-align: center;">
+            \(= -\infty - \frac{1}{3} + (-1 + \infty)\)
+            </p>
+            <p style="text-align: center;">
+            \(= \frac{1}{3} - (\infty) - 1 + (\infty)\)
+            </p>
+            <p style="text-align: center;">
+            \(= +\infty\)
+            </p>
+      </div>
+</details>
+<hr><br> <br>
+
+
+    </div>
+    </div>
+
+
+    </div>
+
+    </div>
+</div> </div> 
+  
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

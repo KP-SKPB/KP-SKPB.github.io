@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/4Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 4 : Aplikasi Integral Tertentu</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">4.1 Luas Antara Dua Kurva</h2> <br>
+
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+        <p style="font-size: 118%;"><b>1 Luas Antara \(y=f(x)\) dan \(y=g(x)\)</b> </p>
+      <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              <b>Definisi 4.1</b> (Rumus Luas)
+            </div>
+            <div class="definisi>
+                <div class="dfn-content">
+                    Jika <b>f</b> dan <b>g</b> fungsi kontinu pada <b>[a, b]</b> dan jika <b>f(x) ≤ g(x)</b> untuk semua <b>x</b> dalam <b>[a, b]</b>, maka luas daerah yang dibatasi bagian atas oleh <b>y = f(x)</b>, bagian bawah oleh <b>y = g(x)</b>, sisi kiri oleh garis <b>x = a</b> dan sisi kanan oleh garis <b>x = b</b> adalah
+                    </p>
+                    <p style="text-align: center;">
+                    \( L = \int_a^b [f(x) - g(x)]\,dx \) &emsp; (1)
+                    </p>
+                    <p style="font-style: italic;">
+                    Pada kasus luas daerah yang dibatasi sumbu-x dan kurva <b>y = f(x)</b> dengan <b>f(x) &lt; 0</b> untuk <b>a ≤ x ≤ b</b>, luas daerahnya dirumuskan menjadi
+                    </p>
+                    <p style="text-align: center;">
+                    \( L = -\int_a^b f(x)\,dx \)
+                    </p>
+    <div style="display: flex; justify-content: center;";">
+        <img src="gambar/gambar_kp (2).svg" alt="#" style="width: 45%">
+    </div>
+    </div></div>
+<p style="font-size: 118%;"><b>2 Luas Antara \(x=f(y)\) dan \(x=g(y)\)</b> </p>
+      <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              <b>Definisi 4.2</b>
+            </div>
+            <div class="definisi">
+                <div class="dfn-content">
+                    Jika \(w\) dan \(v\) fungsi kontinu dan jika \(w(y) \leq v(y)\) untuk semua \(y\) di \([c, d]\), maka luas daerah yang dibatasi sebelah kiri oleh \(x = v(y)\), sebelah kanan oleh \(x = w(y)\), sebelah kanan oleh \(x = w(y)\), bawah oleh \(y = c\) dan atas oleh \(y = d\) adalah
+                    <p style="text-align: center;">
+                    \( L = \int_c^d [w(y) - v(y)]\,dy \)
+                    </p>
+
+                    <div style="display: flex; justify-content: center;";">
+        <img src="gambar/gambar_kp (3).svg" alt="#" style="width: 45%">
+    </div>
+    <b>Tips:</b>
+    <table>
+        <tr style="background-color: rgb(198, 198, 198);">
+            <th>Arah arsiran</th>
+            <th>Batas integral</th>
+            <th>Variabel Fungsi</th>
+            <th>Integran</th>
+            <th>Luas</th>
+        </tr>
+        <tr>
+            <td><b>Vertikal</b></td>
+            <td>\(x_1 = b\) dan \(x_2 = a\)</td>
+            <td>\(x\)</td>
+            <td>batas atas \((f(x))\) - batas bawah \((g(x))\)</td>
+            <td>\(\displaystyle \int_a^b [f(x) - g(x)]\,dx\)</td>
+        </tr>
+        <tr>
+            <td><b>Horizontal</b></td>
+            <td>\(y_1 = d\) dan \(y_2 = c\)</td>
+            <td>\(y\)</td>
+            <td>batas kanan \((w(y))\) - batas kiri \((v(y))\)</td>
+            <td>\(\displaystyle \int_c^d [w(y) - v(y)]\,dy\)</td>
+        </tr>
+    </table>
+            </div></div> </div>
+
+
+<div id="homeContoh">
+<h2>B) Contoh Soal</h2> <br><hr><br>
+
+<!-- Contoh Soal Luas Daerah antara Kurva -->
+1. Dapatkan luas daerah yang dibatasi oleh \(y = x^3 - 4x\), \(y = 0\), \(x = 0\), dan \(x = 2\). <br>
+    <b>Pembahasan:</b>
+    <div style="display: flex; justify-content: center;">
+        <img src="gambar/gambar_kp (4).svg" alt="#" style="width: 45%">
+    </div>
+    <div style="margin: 0 auto; width: 80%; font-size: 110%;">
+        Karena pada soal diketahui bahwa luas yang dicari dari \(x = 0\) sampai \(x = 2\), sehingga kita akan menggunakan arsiran vertikal (arsiran jalan dari kiri ke kanan).
+        <br><br>
+        \[
+        \begin{aligned}
+        L &= \int_{0}^{2} \left[0 - (x^3 - 4x)\right]\,dx \\
+            &= \int_{0}^{2} \left[-x^3 + 4x\right]\,dx \\
+            &= \left[ -\frac{1}{4}x^4 + 2x^2 \right]_{0}^{2} \\
+            &= \left( -\frac{1}{4}(2)^4 + 2(2)^2 \right) - \left( -\frac{1}{4}(0)^4 + 2(0)^2 \right) \\
+            &= \left( -\frac{1}{4} \cdot 16 + 2 \cdot 4 \right) - (0) \\
+            &= (-4 + 8) \\
+            &= 4
+        \end{aligned}
+        \]
+        Jadi, luas daerah yang dibatasi oleh \(y = x^3 - 4x\), \(y = 0\), \(x = 0\), dan \(x = 2\) adalah \(\boxed{4}\).
+    </div>
+
+<hr><br>
+
+2. Dapatkan luas daerah yang dibatasi oleh \(y = \sqrt{x+2}\), \(y = x\), dan \(y = 0\). <br>
+<b>Pembahasan:</b>
+<div style="display: flex; justify-content: center;">
+    <img src="gambar/gambar_kp (5).svg" alt="#" style="width: 45%">
+</div>
+
+<div style="margin: 0 auto; width: 80%; font-size: 110%;">
+    Pada kasus grafik seperti ini, pilih arsiran (vertikal atau horizontal) yang menyebabkan perhitungannya lebih mudah. Jika menggunakan arsiran horizontal, batas bawah dan atas adalah grafik \(y = x\) (oranye) dan \(y = \sqrt{x+2}\) (hijau), dengan batas bawah \(y = 0\) dan batas atas \(y = 2\) (hasil dari \(x = 2\)).<br><br>
+    Langkah pertama adalah mencari titik potong kedua kurva dan sumbu \(y\):<br>
+    \[
+    \begin{aligned}
+    y &= x \\
+    y &= \sqrt{x+2} \\
+    x &= \sqrt{x+2} \\
+    x^2 = x + 2 \\
+    x^2 - x - 2 = 0 \\
+    (x-2)(x+1) = 0 \\
+    x = 2 \quad \text{atau} \quad x = -1
+    \end{aligned}
+    \]
+    Karena \(x\) positif, ambil \(x = 2\), sehingga \(y = 2\).<br><br>
+    Selanjutnya, ubah fungsi ke dalam variabel \(y\):<br>
+    \[
+    \begin{aligned}
+    y &= x \implies x = y \\
+    y &= \sqrt{x+2} \implies x = y^2 - 2
+    \end{aligned}
+    \]
+    Maka, luas daerah adalah:
+    \[
+    \begin{aligned}
+    L &= \int_{0}^{2} \left[ (y^2 - 2) - y \right]\,dy \\
+      &= \int_{0}^{2} (y^2 - y - 2)\,dy \\
+      &= \left[ \frac{1}{3}y^3 - \frac{1}{2}y^2 - 2y \right]_{0}^{2} \\
+      &= \left( \frac{1}{3}(8) - \frac{1}{2}(4) - 2(2) \right) - (0) \\
+      &= \left( \frac{8}{3} - 2 - 4 \right) \\
+      &= \frac{8}{3} - 6 \\
+      &= \frac{8 - 18}{3} \\
+      &= -\frac{10}{3}
+    \end{aligned}
+    \]
+    Karena luas harus positif, ambil nilai mutlak:<br>
+    \[
+    L = \left| -\frac{10}{3} \right| = \frac{10}{3}
+    \]
+    Jadi, luas daerah yang dibatasi oleh \(y = \sqrt{x+2}\), \(y = x\), dan \(y = 0\) adalah \(\boxed{\dfrac{10}{3}}\).
+</div>
+<hr><br>
+
+
+
+
+    </div>
+    </div>
+
+
+    </div>
+
+    </div>
+</div> </div> 
+  
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

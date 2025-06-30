@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../styles/Subbab.css">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <title>Kalkulus II</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom js file -->
+    <script type="text/javascript" src="../../jscript/learn.js" defer></script>
+    <!-- mathjax for equation -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <style>
+      body {
+        background-image: url(../images/Rectorate\ of\ ITS.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+
+      
+    </style>
+    
+</head>
+<body>
+  <!-- <header>RANGKUMAN MATERI BAB </header> -->
+    <!-- MENU SIDEBAR -->
+    <nav class="sidebar">
+      <ol id="menu">
+        <div id="sidebar-btn">
+          <span class="logo" title="Beranda"><a href="../Kalkulus_2.html"> KALKULUS II</a></span>
+          <button onclick="toggleSidebar()" id="toggle-btn" title="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+          </button>
+        </div>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this.parentElement)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="1. Fungsi Transenden">[1] Fungsi Transenden</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 1/1F Eksponen dan Log.html">Fungsi Eksponensial dan Logaritma</a></li>
+              <li><a href="../Bab 1/2F Invers n Trigono.html">Fungsi Invers Trigonometri</a></li>
+              <li><a href="../Bab 1/Fungsi Hiperbola.html">Fungsi Hiperbola</a></li>
+            </div>
+            </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="2. Teknik Integrasi">[2] Teknik Integrasi</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 2/1Integrasi Parsial dan Integrasi Fungsi Trigonometri.html">Integrasi Parsial dan Interaksi <br> Fungsi Trigonometri</a></li>
+            <li><a href="../Bab 2/Integrasi Fungsi Rasional dan Pecahan Rasional.html">Integrasi Fungsi Rasional <br> dan Pecahan Rasional</a></li>
+            <li><a href="../Bab 2/Teknik-teknik integrasi yang lalu.html">Teknik-teknik integrasi <br>yang lalu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="3. Integrasi Numerik Integrasi Tak Wajar" >[3] Integrasi Numerik <br>dan Integrasi Tak Wajar</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 3/Integrasi Numerik.html">Integrasi Numerik</a></li>
+            <li><a href="../Bab 3/Integrasi Tak Wajar.html">Integrasi Tak Wajar</a></li>
+            <li><a href="../Bab 3/Limit Bentuk Tak Tentu.html">Limit Bentuk Tak Tentu</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="4. Aplikasi Integral Tertentu">[4] Aplikasi Integral Tertentu</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+            <li><a href="../Bab 4/1Luas antara Dua Kurva.html">Luas antara Dua Kurva</a></li>
+            <li><a href="../Bab 4/2Menghitung Volume Benda Putar.html">Menghitung Volume Benda Putar</a></li>
+            <li><a href="../Bab 4/3Panjang suatu Kurva.html">Panjang Suatu Kurva</a></li>
+            <li><a href="../Bab 4/Luas Permukaan Benda Putar.html">Luas Permukaan Benda Putar</a></li>
+            <li><a href="../Bab 4/Titik Berat (Pusat Massa dan Centroid).html">Titik Berat (Pusat Massa <br>dan Centroid)</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="5. Persamaan Parametrik dan Koordinat Kutub">[5] Persamaan Parametrik <br>dan Koordinat Kutub</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 5/1Persamaan Parametrik.html">Persamaan Parametrik</a></li>
+              <li><a href="../Bab 5/2Koordinat Kutub.html">Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/3Grafik dalam Koordinat Kutub.html">Grafik dalam Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/4Luas dan Volume dalam Koordinat Kutub.html">Luas dan Volume dalam <br>Koordinat Kutub</a></li>
+              <li><a href="../Bab 5/Garis Singgung dan Panjang Busur di Koordinat Kutub.html">Garis Singgung dan Panjang <br> Busur di Koordinat Kutub</a></li>
+            </div>
+          </ol>
+        </li>
+        <li class="active" id="size">
+          <a>
+            <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+              <span class="link-text" id="bold" title="6. Barisan dan Deret">[6] Barisan dan Deret</span>
+            </button>
+          </a>
+          <ol class="sub-menu">
+            <div>
+              <li><a href="../Bab 6/1Barisan Tak Hingga.html">Barisan Tak Hingga</a></li>
+              <li><a href="../Bab 6/2Deret Tak Hingga.html">Deret Tak Hingga</a></li>
+              <li><a href="../Bab 6/3Uji Konvergensi.html">Uji Konvergensi</a></li>
+              <li><a href="../Bab 6/Deret Pangkat, Deret Taylor dan Mclaurin.html">Deret Pangkat; Deret Taylor <br> dan Mclaurin</a></li>
+              <li><a href="../Bab 6/Diferensiasi dan Integrasi Deret Pangkat.html">Diferensiasi dan Integrasi <br> Deret Pangkat</a></li>
+            </div>
+          </ol>
+        </li>
+        <li><a href="../../mainWeb/Web.html" title="Beranda SKPB" id="Back">Kembali</a></li>
+      </ol>
+    </nav>
+
+   <main class="content">
+      <h1 style="display: flex; justify-content: left; font-family:Verdana;"> <u>BAB 5 : PERSAMAAN PARAMETRIK DAN KOODINAT KUTUB</u></h1><br>
+      <h2 style="display: flex; justify-content: left; font-family:Arial;">5.1 Persamaan Parametrik</h2> <br>
+
+      
+    <div id="home">
+      <h2 style="text-align: center;">A) Rangkuman Materi</h2> <br>
+      <p style="font-size: 118%;"><b>1 Persamaan parametrik</b> </p>
+      Persamaan parametrik adalah cara merepresentasikan suatu kurva atau lintasan menggunakan satu atau lebih variabel bebas, yang disebut parameter. Koordinat \(x\) dan koordinat \(y\) pada persamaan parametrik adalah fungsi waktu, yaitu <br>
+      <p style="text-align: center;"> \(x=f(t), y=g(t)\)</p>
+
+      <div style="display: flex; justify-content: center;">
+        <img src="gambar/gambar_kp (7).svg" alt="" style="width: 100%; max-width: 400px;">
+      </div>
+<p style="text-align: justify;">
+Apabila tidak tertulis batasan <i>t</i>, maka <i>t</i> bergerak antara \( (-\infty, +\infty) \). Sedangkan jika <i>t</i> dibatasi pada suatu selang <i>[a, b]</i>, maka dituliskan dengan
+</p>
+<div style="text-align: center;">
+    \[
+    x = x(t), \quad y = y(t), \quad (a \leq t \leq b)
+    \]
+</div>
+
+<p style="font-size: 118%;"><b>2 Orientasi Kurva Parametrik</b> </p>
+
+    Persamaan parametrik yang berbeda dapat menghasilkan orientasi(arah) berbeda untuk kurva yang sama. Contohnya pada persamaan paramterik berikut
+    
+    <table style="border-color:white">
+        <tr>
+            <td>
+                <div style="display: flex; justify-content: center;">
+                    <img src="gambar/gambar_kp (8).svg" alt="" style="width: 100%; max-width: 400px;">
+                </div>
+            </td>
+            <td>
+                <div style="display: flex; justify-content: center;">
+                    <img src="gambar/gambar_kp (9).svg" alt="" style="width: 100%; max-width: 400px;">
+                </div>
+            </td>
+        </tr>
+
+    </table>
+Selain itu, tidak semua persamaan parametrik menghasilkan kurva dengan orientasi.
+<p style="font-size: 118%;"><b>3 Mengeliminasi Parameter</b> </p>
+Hal ini dapat dilakukan dengan mensubstitusikan nilai \(x\) pada \(y\) ataupun sebaliknya. Namun perlu diperhatikan bahwa mengeliminasi parameter dari persamaan parametrik dapat mengubah perluasan grafik. (Contoh Soal pada bagian bawah).
+
+
+
+<p style="font-size: 118%;"><b>4 Menyajikan Grafik Fungsi Secara Parametrik</b> </p>
+<p>
+    Kebalikan dari bagian "Mengeliminasi parameter", pada bagian ini diberikan bagaimana untuk menyajikan kurva berbentuk \( y = f(x) \) dan \( x = g(y) \) secara parametrik. Hal ini dapat dilakukan dengan memisalkan salah satu dari \( x \) atau \( y \) sebagai \( t \). (Contoh Soal pada bagian bawah).
+</p>
+
+<p style="font-size: 118%;"><b>5 Garis Singgung Pada Kurva yang Didefinisikan Secara Parametrik</b> </p>
+<p>
+    Jika \( x(t) \) dan \( y(t) \) mempunyai turunan pertama terhadap \( t \) yang kontinu dan jika \( dx/dt \neq 0 \), maka \( y \) adalah suatu fungsi terdiferensial dari \( x \). Untuk memperoleh \( dy/dx \) tanpa mengeliminasi parameter \( t \) dapat didapatkan dengan aturan rantai
+</p>
+<div style="text-align: center;">
+    \[
+    \frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}
+    \]
+</div>
+<table style="margin: 0 auto; border-collapse: collapse; font-size: 95%;">
+    <tr>
+        <td style="border: 1px solid #333; padding: 4px;">Garis singgung vertikal pada suatu \((x, y)\)</td>
+        <td style="border: 1px solid #333; padding: 4px;">\(\frac{dx}{dt} = 0\) dan \(\frac{dy}{dt} \neq 0\)</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #333; padding: 4px;">Garis singgung horisontal pada suatu \((x, y)\)</td>
+        <td style="border: 1px solid #333; padding: 4px;">\(\frac{dy}{dt} = 0\) dan \(\frac{dx}{dt} \neq 0\)</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #333; padding: 4px;">Titik-titik singular</td>
+        <td style="border: 1px solid #333; padding: 4px;">\(\frac{dx}{dt} = 0\) dan \(\frac{dy}{dt} = 0\)</td>
+    </tr>
+</table>
+<br>
+
+<p style="font-size: 118%;"><b>6 Panjang Busur dari Kurva Persamaan Parametrik</b> </p>
+
+           <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b>Teorema 6.1</b> (Panjang Busur Kurva Parametrik)
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+                    <p style="font-style: italic; text-align: justify;">
+                    Jika tidak ada ruas kurva yang disajikan oleh persamaan parametrik
+                    </p>
+                    <div style="text-align: center;">
+                    \( x = x(t), \quad y = y(t) \quad a \leq t \leq b \)
+                    </div>
+                    <p style="font-style: italic; text-align: justify;">
+                    ditelusuri lebih dari sekali saat t bertambah dari a ke b, dan jika dx/dt dan dy/dt fungsi-fungsi kontinu untuk \( a \leq t \leq b \), maka panjang busur dari kurva, S, diberikan oleh
+                    </p>
+                    <div style="text-align: center;">
+                    \( S = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2 }\, dt \)
+                    </div></div></div>
+                    <br>
+
+
+<h3>7 Sikloida</h3>
+    <p>
+    Jika sebuah roda menggelinding sepanjang garis lurus tanpa tergelincir, maka suatu titik pada peleg roda membentuk suatu kurva yang dinamakan <b>sikloida</b>.
+    </p>
+
+    <div style="display: flex; justify-content: center;">
+        <img src="gambar/gambar_kp (10).svg" alt="" style="width: 100%; max-width: 400px;">
+    </div>
+
+                    
+<h3>8 Luas Permukaan dari Kurva Persamaan Parametrik</h3>
+
+           <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              <b> Teorema 8.1</b> (Luas Perumukaan Kurva Parametrik)
+            </div>
+            <div class="teorema>
+                <div class="dfn-content">
+                    <p style="font-style: italic; text-align: justify;">
+                    Jika \( x'(t) \) dan \( y'(t) \) adalah fungsi kontinu dan jika tidak ada potongan dari kurva
+                    </p>
+                    <div style="text-align: center;">
+                    \( x = x(t), \quad y = y(t), \quad a \leq t \leq b \)
+                    </div>
+                    <p style="font-style: italic; text-align: justify;">
+                    ditelusuri lebih dari satu kali, maka dapat ditunjukkan bahwa luas permukaan yang terjadi oleh pemutaran kurva ini terhadap sumbu-\(x\) adalah
+                    </p>
+                    <div style="text-align: center;">
+                    \( S = \int_a^b 2\pi y(t) \sqrt{[x'(t)]^2 + [y'(t)]^2} \, dt \)
+                    </div>
+                    <p style="font-style: italic; text-align: justify;">
+                    dan luas permukaan yang terjadi oleh pemutaran kurva ini terhadap sumbu-\(y\) adalah
+                    </p>
+                    <div style="text-align: center;">
+                    \( S = \int_a^b 2\pi x(t) \sqrt{[x'(t)]^2 + [y'(t)]^2} \, dt \)
+                    </div>
+           </div>
+    </div></div>
+
+<div id="homeContoh">
+    <h2>B) Contoh Soal</h2> 
+    <br>
+    1. <b>Soal EAS 2024</b><br>
+Diberikan persamaan parametrik \( x = \sin t,\, y = 1 + 2\sin t \) pada \( 0 \leq t \leq \frac{\pi}{2} \).
+<ol type="a" style="padding-left: 30px;">
+  <li><b>Dapatkan panjang kurva dari persamaan parametrik</b></li>
+  <li><b>Buatlah sketsa kurva tersebut.</b></li>
+</ol>
+<b>Pembahasan:</b>
+<ol type="a" style="padding-left: 30px;">
+  <li>
+    <b>Panjang Kurva:</b><br>
+    Rumus panjang kurva parametrik:
+    <div style="text-align:center;">
+      \( S = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2 }\, dt \)
+    </div>
+    Untuk \( x = \sin t \), \( y = 1 + 2\sin t \), \( 0 \leq t \leq \frac{\pi}{2} \):
+    <ul>
+      <li>\( \frac{dx}{dt} = \cos t \)</li>
+      <li>\( \frac{dy}{dt} = 2\cos t \)</li>
+    </ul>
+    Maka,
+    <div style="text-align:center;">
+      \( S = \int_0^{\frac{\pi}{2}} \sqrt{ (\cos t)^2 + (2\cos t)^2 }\, dt = \int_0^{\frac{\pi}{2}} \sqrt{ \cos^2 t + 4\cos^2 t }\, dt = \int_0^{\frac{\pi}{2}} \sqrt{5}\,|\cos t|\, dt \)
+    </div>
+    Karena \( 0 \leq t \leq \frac{\pi}{2} \), \( \cos t \geq 0 \), sehingga:
+    <div style="text-align:center;">
+      \( S = \sqrt{5} \int_0^{\frac{\pi}{2}} \cos t\, dt = \sqrt{5} [\sin t]_0^{\frac{\pi}{2}} = \sqrt{5} (1 - 0) = \sqrt{5} \)
+    </div>
+    Jadi, panjang kurva adalah \( \boxed{\sqrt{5}} \).
+  </li>
+  <li> 
+    <b>Sketsa Kurva:</b><br>
+    <div style="display: flex; justify-content: center;">
+        <img src="gambar/gambar_kp (11).svg" alt="#" style="max-width: 300px">
+
+    </div>
+    Karena \( x = \sin t \), \( y = 1 + 2\sin t \), untuk \( t \) dari 0 ke \( \frac{\pi}{2} \):
+    <ul>
+      <li>Saat \( t = 0 \): \( x = 0,\, y = 1 \)</li>
+      <li>Saat \( t = \frac{\pi}{2} \): \( x = 1,\, y = 3 \)</li>
+    </ul>
+    Hubungan antara \( x \) dan \( y \):
+    <div style="text-align:center;">
+      \( x = \sin t \implies t = \arcsin x \) <br>
+      \( y = 1 + 2x \)
+    </div>
+    Jadi, kurva adalah garis lurus dari (0, 1) ke (1, 3).
+  </li>
+</ol>
+<hr><br>
+
+2. Dapatkan persamaan garis singgung pada kurva \( x = t^2 + 1,\, y = 2t^3 - 1 \) saat \( t = 1 \).<br>
+<b>Pembahasan:</b><br>
+Pertama, kita cari gradien garis singgung:
+\[
+m = \frac{dy}{dx}\Bigg|_{t=1} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}\Bigg|_{t=1}
+\]
+\[
+\frac{dy}{dt} = 6t^2,\quad \frac{dx}{dt} = 2t
+\]
+\[
+m = \frac{6t^2}{2t}\Bigg|_{t=1} = \frac{6 \times 1^2}{2 \times 1} = 3
+\]
+Titik pada kurva saat \( t = 1 \):
+\[
+x_0 = 1^2 + 1 = 2,\quad y_0 = 2 \times 1^3 - 1 = 1
+\]
+Persamaan garis singgung:
+\[
+y - y_0 = m(x - x_0)
+\]
+\[
+y - 1 = 3(x - 2)
+\]
+\[
+y = 3x - 5
+\]
+Jadi, persamaan garis singgungnya adalah
+\[
+\boxed{y = 3x - 5}
+\]
+<hr><br>
+3. Sajikan kurva \( y = 3x^3 - 1 \) secara parametrik.<br>
+<b>Pembahasan:</b><br>
+Misalkan \( x = t \), sehingga \( y = 3t^3 - 1 \).<br>
+Jadi, persamaan parametriknya adalah:
+\[
+\boxed{
+\begin{cases}
+x = t \\
+y = 3t^3 - 1
+\end{cases}
+}
+\]
+<hr><br>
+</div>
+</div>
+
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+    1. <b>Soal EAS 2024</b><br>
+    Diberikan persamaan parametrik \( x = t^2 + 1,\, y = t,\, 0 \leq t \leq 5 \).
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+    <ol type="a" style="padding-left: 30px;">
+        <li>
+            <b>Buatlah sketsa kurva tersebut dengan mengeliminasi parameter \( t \)</b><br>
+            Eliminasi parameter:<br>
+            Dari \( y = t \), maka \( t = y \).<br>
+            Substitusi ke \( x \):<br>
+            \( x = t^2 + 1 = y^2 + 1 \).<br>
+            Jadi, persamaan kurva:<br>
+            <div style="text-align:center;">
+                \( x = y^2 + 1 \), dengan \( 0 \leq y \leq 5 \)
+            </div>
+            Sketsa kurva adalah parabola yang terbuka ke kanan, mulai dari titik (1, 0) sampai (26, 5).
+            <div style="display: flex; justify-content: center;">
+                <img src="gambar 5 ke dua/gambar_kp (1).svg" alt="#" style="width: 100%; max-width: 350px;">
+            </div>
+        </li>
+        <li>
+            <b>Dapatkan persamaan garis singgung dari persamaan parametrik tersebut saat \( t = \frac{1}{2} \)</b><br>
+            Cari gradien garis singgung:
+            <div style="text-align:center;">
+                \( \frac{dx}{dt} = 2t \), \( \frac{dy}{dt} = 1 \) <br>
+                \( \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{1}{2t} \)
+            </div>
+            Saat \( t = \frac{1}{2} \):
+            <div style="text-align:center;">
+                \( \frac{dy}{dx} = \frac{1}{2 \times \frac{1}{2}} = 1 \)
+            </div>
+            Titik pada kurva saat \( t = \frac{1}{2} \):
+            <div style="text-align:center;">
+                \( x_0 = (\frac{1}{2})^2 + 1 = \frac{1}{4} + 1 = \frac{5}{4} \) <br>
+                \( y_0 = \frac{1}{2} \)
+            </div>
+            Persamaan garis singgung:
+            <div style="text-align:center;">
+                \( y - y_0 = m(x - x_0) \) <br>
+                \( y - \frac{1}{2} = 1 \left(x - \frac{5}{4}\right) \) <br>
+                \( y = x - \frac{5}{4} + \frac{1}{2} = x - \frac{5}{4} + \frac{2}{4} = x - \frac{3}{4} \)
+            </div>
+            Jadi, persamaan garis singgungnya adalah
+            <div style="text-align:center;">
+                \( \boxed{y = x - \frac{3}{4}} \)
+            </div>
+        </li>
+    </ol>
+        </div></details> <hr><br>
+
+2. <b>Soal EAS 2024</b><br>
+Diberikan persamaan parametrik \( x = \cos 2t,\, y = 3 - 2\cos 2t \) pada \( 0 \leq t \leq \frac{\pi}{2} \).
+
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+<ol type="a" style="padding-left: 30px;">
+    <li><b>Dapatkan panjang kurva dari persamaan parametrik</b></li>
+    <li><b>Buatlah sketsa kurva tersebut.</b></li>
+</ol>
+<b>Pembahasan:</b>
+<ol type="a" style="padding-left: 30px;">
+    <li>
+        <b>Panjang Kurva:</b><br>
+        Rumus panjang kurva parametrik:
+        <div style="text-align:center;">
+            \( S = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2 }\, dt \)
+        </div>
+        Untuk \( x = \cos 2t \), \( y = 3 - 2\cos 2t \), \( 0 \leq t \leq \frac{\pi}{2} \):
+        <ul>
+            <li>\( \frac{dx}{dt} = -2\sin 2t \)</li>
+            <li>\( \frac{dy}{dt} = 4\sin 2t \)</li>
+        </ul>
+        Maka,
+        <div style="text-align:center;">
+            \( S = \int_0^{\frac{\pi}{2}} \sqrt{ (-2\sin 2t)^2 + (4\sin 2t)^2 }\, dt = \int_0^{\frac{\pi}{2}} \sqrt{4\sin^2 2t + 16\sin^2 2t}\, dt \)
+            <br>
+            \( = \int_0^{\frac{\pi}{2}} \sqrt{20\sin^2 2t}\, dt = \int_0^{\frac{\pi}{2}} 2\sqrt{5}|\sin 2t|\, dt \)
+        </div>
+        Karena \( 0 \leq t \leq \frac{\pi}{2} \), \( \sin 2t \geq 0 \), sehingga:
+        <div style="text-align:center;">
+            \( S = 2\sqrt{5} \int_0^{\frac{\pi}{2}} \sin 2t\, dt = 2\sqrt{5} \left[ -\frac{1}{2}\cos 2t \right]_0^{\frac{\pi}{2}} \)
+            <br>
+            \( = 2\sqrt{5} \left( -\frac{1}{2}[\cos \pi - \cos 0] \right) = 2\sqrt{5} \left( -\frac{1}{2}[-1 - 1] \right) = 2\sqrt{5} \left( 1 \right) = 2\sqrt{5} \)
+        </div>
+        Jadi, panjang kurva adalah \( \boxed{2\sqrt{5}} \).
+    </li>
+    <li>
+        <b>Sketsa Kurva:</b><br>
+        <div style="display: flex; justify-content: center;">
+            <img src="gambar 5 ke dua/gambar_kp (2).svg" alt="#" style="max-width: 300px">
+        </div>
+        Karena \( x = \cos 2t \), \( y = 3 - 2\cos 2t \), untuk \( t \) dari 0 ke \( \frac{\pi}{2} \):
+        <ul>
+            <li>Saat \( t = 0 \): \( x = 1,\, y = 1 \)</li>
+            <li>Saat \( t = \frac{\pi}{2} \): \( x = -1,\, y = 5 \)</li>
+        </ul>
+        Hubungan antara \( x \) dan \( y \):
+        <div style="text-align:center;">
+            \( x = \cos 2t \implies t = \frac{1}{2}\arccos x \) <br>
+            \( y = 3 - 2x \)
+        </div>
+        Jadi, kurva adalah garis lurus dari (1, 1) ke (-1, 5).
+    </li>
+</ol>
+        </div></details>
+<hr><br>
+
+3. <b>Soal EAS 2023</b><br>
+Dapatkan semua nilai parameter \( t \) yang menyebabkan kurva parameter \( x = 2t^3 - 15t^2 + 24t + 7 \) dan \( y = t^2 + t + 1 \) mempunyai garis singgung
+<ol type="a" style="padding-left: 30px;">
+    <li>horisontal</li>
+    <li>vertikal</li>
+</ol>
+    <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+Langkah pertama adalah mencari turunan terhadap \( t \):
+<div style="text-align:center;">
+    \( \frac{dy}{dt} = 2t + 1 \) <br>
+    \( \frac{dx}{dt} = 6t^2 - 30t + 24 \)
+</div>
+<ol type="a" style="padding-left: 30px;">
+    <li>
+        <b>Garis singgung horisontal</b><br>
+        Syarat: \( \frac{dy}{dt} = 0 \) dan \( \frac{dx}{dt} \neq 0 \)<br>
+        <ul>
+            <li>\( 2t + 1 = 0 \implies t = -\frac{1}{2} \)</li>
+            <li>\( \frac{dx}{dt} = 6(-\frac{1}{2})^2 - 30(-\frac{1}{2}) + 24 = 6 \cdot \frac{1}{4} + 15 + 24 = 1.5 + 15 + 24 = 40.5 \neq 0 \)</li>
+        </ul>
+        Jadi, semua \( t \) agar titik \((x, y)\) memiliki garis singgung horisontal adalah
+        <div style="text-align:center;">
+            \( \boxed{t = -\frac{1}{2}} \)
+        </div>
+    </li>
+    <li>
+        <b>Garis singgung vertikal</b><br>
+        Syarat: \( \frac{dx}{dt} = 0 \) dan \( \frac{dy}{dt} \neq 0 \)<br>
+        <ul>
+            <li>\( 6t^2 - 30t + 24 = 0 \implies t^2 - 5t + 4 = 0 \implies (t-4)(t-1) = 0 \implies t = 1 \) atau \( t = 4 \)</li>
+            <li>Untuk \( t = 1 \): \( \frac{dy}{dt} = 2 \cdot 1 + 1 = 3 \neq 0 \)</li>
+            <li>Untuk \( t = 4 \): \( \frac{dy}{dt} = 2 \cdot 4 + 1 = 9 \neq 0 \)</li>
+        </ul>
+        Jadi, semua \( t \) agar titik \((x, y)\) memiliki garis singgung vertikal adalah
+        <div style="text-align:center;">
+            \( \boxed{t = 1 \text{ atau } t = 4} \)
+        </div>
+    </li>
+</ol>
+        </div></details>
+<hr><br>
+
+4. <b>Soal EAS 2022</b><br>
+Misalkan posisi suatu partikel pada saat \( t \) diberikan dalam dua fungsi parametrik \( x = \ln t - 1 \) dan \( y = \frac{t}{t^2 - 1} \).
+<ol type="a" style="padding-left: 30px;">
+    <li>Nyatakan posisi partikel tersebut ke dalam bentuk koordinat kartesius</li>
+    <li>Gambarkan grafik lintasan partikel untuk \( t \geq 2 \).</li>
+</ol>
+<details class="solution">
+    <summary>Pembahasan</summary>
+    <div class="solution-step">
+        <ol type="a" style="padding-left: 30px;">
+            <li>
+                Diketahui \( x = \ln t - 1 \).<br>
+                Maka \( x + 1 = \ln t \implies t = e^{x+1} \).<br>
+                Substitusi ke \( y \):<br>
+                \( y = \frac{t}{t^2 - 1} = \frac{e^{x+1}}{(e^{x+1})^2 - 1} = \frac{e^{x+1}}{e^{2x+2} - 1} \).<br>
+                Jadi, persamaan kartesiusnya:<br>
+                <div style="text-align:center;">
+                    \( \boxed{y = \frac{e^{x+1}}{e^{2x+2} - 1}} \)
+                </div>
+            </li>
+            <li>
+                Grafik lintasan partikel untuk \( t \geq 2 \) berarti \( x \geq \ln 2 - 1 \).<br>
+                Berikut adalah ilustrasi grafik lintasan:<br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="gambar/gambar_kp (14).svg" alt="Grafik lintasan partikel" style="max-width: 350px;">
+                </div>
+            </li>
+        </ol>
+    </div>
+</details>
+<hr><br>
+
+5. Dapatkan luas permukaan yang terjadi bila \( x = \cos^2 t,\, y = \sin^2 t,\, 0 \leq t \leq \frac{\pi}{2} \) diputar terhadap sumbu-\(y\).  
+<b>Pembahasan:</b><br>
+Luas permukaan yang terjadi oleh pemutaran kurva ini terhadap sumbu-\(y\) adalah  
+<div style="text-align:center;">
+\( S = \int_a^b 2\pi x(t) \sqrt{[x'(t)]^2 + [y'(t)]^2} \, dt \)
+</div>
+Dengan \( x(t) = \cos^2 t \), \( y(t) = \sin^2 t \), \( x'(t) = -2\cos t \sin t \), \( y'(t) = 2\sin t \cos t \), maka:
+<div style="text-align:center;">
+\[
+\begin{align*}
+S &= \int_0^{\frac{\pi}{2}} 2\pi \cos^2 t \sqrt{[-2\cos t \sin t]^2 + [2\sin t \cos t]^2} \, dt \\
+    &= \int_0^{\frac{\pi}{2}} 2\pi \cos^2 t \sqrt{4\cos^2 t \sin^2 t + 4\sin^2 t \cos^2 t} \, dt \\
+    &= \int_0^{\frac{\pi}{2}} 2\pi \cos^2 t \sqrt{8\cos^2 t \sin^2 t} \, dt \\
+    &= \int_0^{\frac{\pi}{2}} 2\pi \cos^2 t \cdot 2\sqrt{2} \cos t \sin t \, dt \\
+    &= 4\sqrt{2}\pi \int_0^{\frac{\pi}{2}} \cos^3 t \sin t \, dt \\
+\end{align*}
+\]
+</div>
+Gunakan substitusi \( u = \cos t \), \( du = -\sin t dt \), batas \( t = 0 \rightarrow u = 1 \), \( t = \frac{\pi}{2} \rightarrow u = 0 \):
+<div style="text-align:center;">
+\[
+\int_0^{\frac{\pi}{2}} \cos^3 t \sin t \, dt = -\int_1^0 u^3 du = \int_0^1 u^3 du = \left. \frac{u^4}{4} \right|_0^1 = \frac{1}{4}
+\]
+</div>
+Jadi,
+<div style="text-align:center;">
+\( S = 4\sqrt{2}\pi \cdot \frac{1}{4} = \sqrt{2}\pi \)
+</div>
+Sehingga, luas permukaan yang terjadi adalah  
+<div style="text-align:center;">
+\[
+\boxed{S = \sqrt{2}\pi}
+\]
+</div>
+<hr><br>
+
+</div> </div> 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>

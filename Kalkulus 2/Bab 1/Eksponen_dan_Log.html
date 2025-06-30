@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- shorcout icon -->
+    <link
+      rel="shortcut icon"
+      href="https://www.its.ac.id/pendidikan/wp-content/themes/UnitITS/assets/img/favicon.png"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../style/learn.css" />
+
+    <title>Kalkulus 1</title>
+
+    <!-- font awesome for logo FB, IG, etc-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- custom js file -->
+    <!-- <script type="text/javascript" src="../../Js/learn.js" defer></script> -->
+
+    <!-- katex for equation -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            {
+              left: "\\begin{equation*}",
+              right: "\\end{equation*}",
+              display: true,
+            },
+            {
+              left: "\\begin{equation}",
+              right: "\\end{equation}",
+              display: true,
+            },
+            { left: "\\begin{align}", right: "\\end{align}", display: true },
+            { left: "\\begin{align*}", right: "\\end{align*}", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+    <!-- math input -->
+    <script src="https://unpkg.com/mathlive"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="sidebar hidden-nav" id="sidebar"></nav>
+    <header id="header"></header>
+    <script type="text/javascript" src="../../Js/import2.js" async></script>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+   <main class="content" id="main-content">
+      <h2 class="judul-bab-container">
+        <section class="no-subbab">1.1</section>
+        <span class="judul-bab">Fungsi Transenden</span>
+      </h2>
+
+    <div id="home">
+      <h2 style="display: flex; justify-content: center;">A) Rangkuman Materi</h2> <br>
+        <p style="font-size: 118%;"><b>1 Bilangan Berpangkat</b> </p>
+    <div class="dfn-box definisi">
+      <div class="dfn-header">
+        Definisi 1.1</div>
+      <div class="dfn-content"> 
+        Jika n bilangan positif, maka        
+        <p style="text-align: center;">\( a^n = \underbrace{a \cdot a \cdot a \cdots a}_{n\ \text{faktor}} \)</p>
+
+      </div>
+    </div>
+        <ol class="materi1">
+          <li>\( a^m \cdot a^n = a^{m+n} \)</li>
+          <li>\( \frac{a^m}{a^n} = a^{m-n} \)</li>
+          <li>\( (a^m)^n = a^{mn} \)</li>
+          <li>\( a^0 = 1 \)</li>
+          <li>\( a^{-n} = \frac{1}{a^n} \)</li>
+        </ol> <br>
+<div class="dfn-box definisi">
+  <div class="dfn-header">
+    Definisi 1.2</div>
+  <div class="dfn-content">
+    jika r adalah bilangan rasional dengan \(r = \frac{p}{q} \),  \(r>0\), maka 
+
+        <ol class="materi1">
+          <li>\(a^r = a^{\frac{p}{q}} = \sqrt[q]{a^p} = \)</li>
+          <li>\(a^{\frac{-p}{q}} = \frac{1}{a^{\frac{p}{q}}} \)</li>
+          </ol>
+    </div>  
+</div>
+        <p style="font-size: 118%;"><b>2 Fungsi Eksponensial</b> </p>
+        <div style="text-align: center;">
+<img src="../gambar/gambar_1.1.1.svg" alt="Grafik Eksponensial" style="width: 45%;"><br>
+<p><b>Gambar 2.1</b> Grafik Eksponensial</p>
+        </div>
+            <p style="font-size: 118%;"><b>3 Fungsi Eksponensial Natural </b> </p>
+    <ol class="materi1">
+      <li>\(\lim_{x \to +\infty} (1 + \frac{1}{x})^x = e\)</li>
+      <li>\(\lim_{x \to -\infty} (1 + \frac{1}{x})^x = e\)</li>
+    </ol> <br>
+
+    <p style="font-size: 118%;"><b>4 Fungsi Logaritma </b> </p>
+          <p style="text-align: center;">\( {}^{a}\log_{b}x \) </p>
+          dengan \(a>0,\) \(a \ne 1\) dan \(x>0\) (<b>Dibaca:</b> logaritma berbasis a dari x).
+
+    <div class="dfn-box teorema">
+      <div class="dfn-header"> 
+        Teorema 4.1
+      </div>
+      <div class="materi1">
+        <ol>
+          <li>\( {}^{a}\log_{1} = 0\)</li>
+          <li>\( {}^{a}\log_{a} = 1 \)</li>
+          <li>\( {}^{a}\log_{bc} = {}^{a}\log_{b} + {}^{a}\log_{b} \)</li>
+          <li>\( {}^{a}\log_{ \frac{b}{c}} = {}^{a}\log_{b} - {}^{a}\log_{b} \)</li>
+          <li>\( {}^{a}\log_{b^r} = r{}^{a}\log_{b} \)</li>
+          <li>\( {}^{a}\log_{ \frac{1}{c}} = -{}^{a}\log_{c}\) </li>
+        </ol>
+
+      </div>
+    </div>
+<div class="dfn-box teorema">
+      <div class="dfn-header"> 
+        Teorema 4.2
+      </div>
+      <div class="materi1">
+        <p style="display: flex; justify-content: center;">\({}^{a}\log_{x} = \frac{{}^{b}\log_{x}}{{}^{b}\log_{x}}\) </p>
+      </div>
+    </div>
+
+<p style="font-size: 118%;"><b>5 Fungsi Logaritma Natural </b> </p>
+
+    <div class="dfn-box definisi">
+          <div class="dfn-header"> 
+            Definisi 5.1
+          </div>
+          <div class="materi1">
+            Untuk \(a>0\) dan \(a\ne1\), fungsi logaritma berbasis a didefinisikan dengan rumus <br>
+              <p style="display: flex;justify-content: center;">\({}^{a}\log_{x} = \frac{\ln(x)}{\ln(a)}\)</p>
+          </div>
+        </div>
+    <div class="dfn-box teorema">
+      <div class="dfn-header"> 
+        Teorema 5.2
+      </div>
+          <div class="materi1">
+            <p>untuk sebarang bilangan positif \(b, c\) dan sebarang bilangan rasional \(r,\) berlaku </p> 
+            <ol class="materi1">
+                <li>\(\ln(bc) = \ln(b) + \ln(c)\)</li>
+                <li>\(\ln (\frac{b}{c}) = \ln(b) - \ln(c)\)</li>
+                <li>\(\ln(b)^r = r \ln(b)\)</li>
+                <li>\(\ln (\frac{1}{c}) = -\ln(c) \)</li>
+                </ol>
+          </div>
+        </div>
+    <div class="dfn-box definisi">
+      <div class="dfn-header"> 
+        Definisi 5.3
+      </div>
+      <div class="materi1">
+        Jika x adalah bilangan real dan a adalah bilangan real positif, maka fungsi \(f(x)=a^x\) didefinisikan dengan rumus
+        <p style="display: flex; justify-content: center;">\(a^x =e^{x \ln (a)} \)</p>
+        dan disebut <b>fungsi eksponensial berbasis a</b>
+      </div>
+    </div>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 5.4
+            </div>
+            <div class="materi1">
+                <p>untuk sebarang bilangan positif \(a\) dan sebarang bilangan real \(x\) berlaku </p> 
+                <p style="display: flex;justify-content: center;">\(\ln a^x = x \ln a\)</p>
+            </div>
+          </div>
+
+<p style="font-size: 120%;"><b><u>6  Grafik dari Fungsi Logaritma dan Eksponensial </u></b> </p>        
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 6.1
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+                <p>Untuk \(a>0\) dan \(a\ne1,\) fungsi \(f(x)=a^x\) dan \(g(x)={}^a \log{x}\) saling invers 
+            </div>
+          </div>
+          </div>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 6.2
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+          <p>Fungsi \(lnx\) adalah naik dan oleh karena itu satu-satu pada \((0,+\infty)\)
+            </div>
+          </div>
+          </div>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 6.3
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+                  <ol>
+                    <li>\(\lim_{x \to +\infty} \) \( \ln x = +\infty\)</li>
+                    <li>\(\lim_{x \to 0^+} \) \( \ln x = -\infty\)</li>
+                  </ol>                  
+                </div>
+          </div>
+          </div>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 6.4
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+                  <ol>
+                    <li>Domain dari \(\ln x\) adalah \((0,+\infty)\)</li>
+                    <li>Range dari \(\ln x\) adalah \((-\infty,+\infty)\)</li>
+                  </ol>                 
+                </div>
+          </div>
+          </div>
+
+                    <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              Definisi 6.5
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+                  <p>Invers dari fungsi logaritma natural ln \(x\) dinyatakan dengan \(e^x\) dan disebut <b>fungsi eksponensial natural</b> </p>
+                </div>
+          </div>
+          </div>
+
+<div style="text-align: center;">
+<img src="../gambar/gambar_1.1.2.svg" alt="Grafik Eksponensial" style="width:45%; "> <br>
+<p><b>Gambar 6.1</b> Grafik Logaritmik</p>
+
+  <img src="../gambar/gambar_1.1.3.svg" alt="Grafik Eksponensial" style="width: 45%; "> <br>
+<p><b>Gambar 6.2</b> Grafik Logaritmik</p>
+
+</div>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 6.6
+            </div>
+            <div class="materi1">
+                <div class="dfn-content">
+                  <ol>
+                    <li>Domain dari \(e^x = \) range dari \((-\infty,+\infty)\)</li>
+                    <li>Range dari \(e^x=\) domain dari \(\ln x = (0,+\infty)\)</li>
+                    <li>\(\ln e^x \) untuk \(-\infty &lt x&lt+\infty\)</li>
+                    <li>\(e^{ln x}\) untuk \(x &gt 0\)</li>
+                  </ol>  
+                  
+                </div>
+          </div>
+          </div>
+
+<p style="font-size: 118%;"><b>7 Turunan dan Integral Fungsi Logaritma  </b> </p> 
+        Jika \(u(x) \gt 0,\) dan fungsi \(u\) dapat diturunkan di \(x,\) maka
+        <p style="display: flex;justify-content: center;">\(\frac{d}{dx} [{}^a \log x] = \frac{1}{x \ln a} \frac{du}{dx}  \) &nbsp; dan &nbsp;  \(  \frac{d}{dx}[\ln u]=\frac{1}{x}\frac{du}{dx}\)</p>
+
+          <div class="dfn-box definisi">
+            <div class="dfn-header"> 
+              Definisi 1.7.1
+            </div>
+            <div class="materi1">
+              Fungsi Logaritma natural didefinisikan dengan rumus <br>
+                <p style="display: flex;justify-content: center;">\(\ln x = \int_1^x \frac{1}{t} \,dt, x>0\)</p>                
+                </div>
+          </div>
+
+<p style="font-size: 118%;"><b>8 Turunan Pangkat Real X  </b> </p>  
+              <div class="dfn-box teorema">
+                <div class="dfn-header"> 
+                  Teorema 8.1
+                </div>
+                <div class="materi1">
+                <p>Untuk sebarang bilangan real \(r\) fungsi \(x^r\) dapat diturunkan pada \((0,+\infty)\) dan turunannya adalah</p>
+                <p style="display: flex; justify-content: center;">\(\frac{d}{dx}[x^r]= rx^{r-1}\)</p>
+            </div>
+          </div>       
+
+<p style="font-size: 118%;"><b>9 Turunan dan Fungsi Eksponensial  </b> </p>
+             <div class="dfn-box teorema">
+                <div class="dfn-header"> 
+                  Teorema 1.9.1
+                </div>
+                <div class="materi1">
+                  <ol class="materi1">
+                    <li>Fungsi \(e^x\) dapat diturunkan pada \(-\infty,+\infty\), dan turunannya adalah</li>
+                    <br><p style="display: flex; justify-content: center;">\(\frac{d}{dx}[e^x]=e^x\)</p>
+                    <li>Fungsi \(a^x\) dapat diturunkan pada \( -\infty, +\infty \) dan turunannya adalah</li>
+                    <br><p style="display: flex; justify-content: center;">\(\frac{d}{dx}[a^x]=a{}^x \ln a\)</p>
+                  </ol>          </div> </div>
+                  Jika \(u\) fungsi \(x\) yang terdefinisi, maka
+                  <p style="display: flex; justify-content: center;">\(\frac{d}{dx}[e^u]=e^u\frac{du}{dx} \) &nbsp; dan &nbsp; \( \frac{d}{dx}[a^u]=a{}^u \ln a\frac{du}{dx}\)</p>
+                  Rumus integral yang bekaitan dengan turunan di atas adalah <br>
+                  <p style="display: flex; justify-content: center;">\(\int a^u\,du = \frac{a^u}{lna} +C\) &nbsp; dan &nbsp; \( \int e^u\,du = e^u + C\)</p>
+
+          <div class="dfn-box teorema">
+            <div class="dfn-header"> 
+              Teorema 9.2
+            </div>
+            <div class="materi1">
+              <ol>
+                <li>\(\lim_{x \to 0} (1+x)^{\frac{1}{x}} = e \)</li>
+                <li>\(\lim_{x \to +\infty} (1+\frac{1}{x})^x = e \)</li>
+                <li>\(\lim_{x \to -\infty} (1+\frac{1}{x})^x = e \)</li>
+              </ol>
+                </div>
+          </div>
+
+
+<p style="font-size: 118%;"><b>10 Grafik yang Melibatkan Fungsi Eksponensial dan Logaritma  </b> </p>
+ <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 18px;
+    }
+    td, th {
+      border: 1px solid black;
+      padding: 8px;
+      vertical-align: top;
+    }
+  </style>
+
+<h5>: Tabel Sifat Fungsi Eksponen dan Logaritma</h5>
+
+<table>
+  <tr style="background-color: rgb(175, 175, 175);">
+    <th>Sifat \( e^x \)</th>
+    <th>Sifat \( \ln x \)</th>
+  </tr>
+  <tr>
+    <td>\( e^x > 0 \) untuk semua \( x \)</td>
+    <td>
+      \( \ln x > 0 \) jika \( x > 1 \)<br>
+      \( \ln x < 0 \) jika \( 0 < x < 1 \)<br>
+      \( \ln x = 0 \) jika \( x = 1 \)
+    </td>
+  </tr>
+  <tr>
+    <td>\( e^x \) naik pada \( (-\infty, +\infty) \)</td>
+    <td>\( \ln x \) naik pada \( (0, +\infty) \)</td>
+  </tr>
+  <tr>
+    <td>grafik \( e^x \) cekung ke atas pada \( (-\infty, +\infty) \)</td>
+    <td>grafik \( \ln x \) cekung ke bawah pada \( (0, +\infty) \)</td>
+  </tr>
+</table>
+
+
+
+
+
+<div id="homeContoh">
+<h2 style="text-align: center;">B) Contoh Soal</h2> <br><hr><br>
+
+1. <b>Soal Kuis</b><br>
+Dapatkan nilai \(x\) dari: \(\ln (x+6) + \ln (x-3) = \ln 5 +\ln2\)
+<br>
+<h4>Jawab:</h4>
+        <div class="solution-step">
+          ingat bahwa \(\ln (ab) = \ln a + \ln b\), maka
+          <p style="display: flex; justify-content:center;">\(\ln (x+6) +\ln (x-3) = \ln 5 + \ln2\)</p>
+          <p style="display: flex; justify-content:center;">\(\ln (x+6)(x-3) = \ln 10\)</p>
+
+          sehingga \((x+6)(x-3)=10 -> x^2 +3x -28 = (x+7)(x-4)=0\). Jadi x yang memenuhi adalah \(7\) atau \(4\)
+
+      </div>
+<hr>
+2. <b>Soal ETS 2020</b><br>
+Dapatkan turunan dari  \(y=(1+x)^{\frac{1}{x}}\) 
+<h4>Jawab:</h4>
+<div class="solution-step">
+  <p style="display: flex;justify-content: center;">\(y=(1+x)^{\frac{1}{x}}\)</p>
+  <p style="display: flex;justify-content: center;">\(\ln y =\ln(1+x)^{\frac{1}{x}}\)</p>
+  <p style="display: flex;justify-content: center;">\(\ln y=\frac{1}{x} \ln (1+x)\)</p>
+  <p style="display: flex;justify-content: center;">\(\frac{d}{dx}[\ln y]=\frac{1}{y}[\frac{d}{dx} \ln(1+x)]\)</p>
+  <p style="display: flex;justify-content: center;">\(\frac{dy}{dx}\frac{1}{y}=-\frac{1}{x^2} \ln(1+x)+\frac{1}{1+x}\frac{1}{x}\)</p>
+  <p style="display: flex;justify-content: center;">\(\frac{dy}{dx}=(-\frac{1}{x^2} \ln (1+x)+\frac{1}{1+x}\frac{1}{x})\)</p>
+  <p style="display: flex;justify-content: center;">\(\frac{dy}{dx}=(\frac{-(1+x) \ln (1+x)+x}{x^2(1+x)})(1+x)^{\frac{1}{x}}\)</p>
+  <p style="display: flex;justify-content: center;">\(\frac{dy}{dx}=(-\frac{-(1+x) \ln (1+x)+x}{x^2})(1+x)^{\frac{1-x}{x}}\)</p>
+</div><hr>
+3. Hitung \(\int \frac{dx}{x \ln x}\) <br>
+<b>Jawab::</b><br>
+Misalkan \(u=\ln x\), sehingga \(du = \frac{dx}{x}\)
+<p style="display: flex;justify-content: center; font-size:x-larger;">\(\int \frac{dx}{x\ln x}=\int \frac{du}{u}\)</p>
+<p style="display: flex; justify-content: center;">=\(\ln x\) + C</p>
+<p style="display: flex; justify-content: center;">=\(\ln (\ln x)\) + C</p>
+
+<br>
+
+    </div>
+    </div>
+  
+<div id="homeSoal">
+<h2 style="display: flex; justify-content: center;">C) Latihan Soal</h2><br>
+<div class="content">
+  <div class="home">
+1. <b>Soal ETS 2020</b>
+Tentukan \(x\) yang memenuhi \(e^{-2x}-3e^{-x}=-2\) <br>
+<details id="hint">
+  <summary>Hint:</summary>
+  Misalkan \(e^x=u\) 
+</details> 
+
+      <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+          Misalkan \(u=e^{-x}\), sehingga
+          <p style="display: flex;justify-content: center;">\(e^{-2x}-3e{-x}=-2\)</p>
+          <p style="display: flex;justify-content: center;">\(u^2-3^u+2=0\)</p>
+          <p style="display: flex;justify-content: center;">\((u-1)(u-2)=0\)</p>
+          Diperoleh,
+          <p style="display: flex;justify-content: center;">u <sub>1</sub>\(=e{-x1}=1\)</p>
+          <p style="display: flex;justify-content: center;">\(\ln e{-x1}=\ln 1\)</p>
+          <p style="display: flex;justify-content: center ;">\(-x\)<sub>1</sub>\(=0\)</p>
+          <p style="display: flex;justify-content: center ;">\(x\)<sub>1</sub>\(=0\)</p>
+          <p style="display: flex;justify-content: center ;">dan </p>
+          <p style="display: flex;justify-content: center;">u2<sub>2</sub>\(=e^{-x2}=2\)</p>
+          <p style="display: flex;justify-content: center;">\(\ln e^{-x2}=\ln 2\)</p>
+          <p style="display: flex;justify-content: center ;">\(-x\) <sub>\(2\)</sub>\(=\ln 2\)</p>
+          <p style="display: flex;justify-content: center ;">\(x\) <sub>\(2\)</sub>\(=\ln {\frac{1}{2}}\)</p>
+          Jadi \(x\) yang memenuhi adalah \(0\) dan \(\ln \frac{1}{2}\)
+          
+      </div>
+      </details>
+    </div>
+<br>
+2. <b>Soal ETS 2021</b><br>
+Dapatkan penyelesaian dari persamaan \(\ln (e^{-x}-1)=x\) <br>
+      <details class="solution">
+        <summary>Pembahasan</summary>
+        <div class="solution-step">
+          <p style="display: flex; justify-content: center;">\( \ln(e^{-x}-1=x)\)</p>
+          <p style="display: flex; justify-content: center;">\(e^{\ln (e^{-x}-1)=e^x}\)</p>
+          <p style="display: flex; justify-content: center;">\(e^{-x}-1=e^x\)</p>
+          <p style="display: flex; justify-content: center;">\(e^{2x} +e^x-1=0\)</p><br>
+          Misalkan \(u=e^x\), sehingga
+          <p style="display: flex;justify-content: center;">\(e^{2x} + e^x-1=0\)</p>
+          <p style="display: flex;justify-content: center;">\(u^2 + u - 1\)</p>
+          Dengan rumus abc diperoleh
+          <p style="display: flex; justify-content: center;">u <sub>12</sub> \(= ]\frac {-1 &plusmn &radic;(1^2-4(1)(-1))}{2}\)</p>
+          <p style="display: flex; justify-content: center;">=\(\frac{-1 &plusmn &radic;(5)}{2}\)</p>
+          Karena \(u=e^x &gt 0\), akibatnya hanya \(u=e^x=\frac{-1 &plusmn &radic;(5)}{2}\)
+          
+      </div>
+      </details><br> <br>
+
+3. <b>Soal ETS 2020</b>
+Dapatkan \(\frac{dy}{dx}\) dari fungsi \(y=\ln (\frac{\cos^2 x}{&radic;(2x-3x^2)})\) <br>
+<b>Hint:</b> \(\frac{dy}{dx}\) dari \(y=\ln(u(x))\) adalah \(\frac{dy}{dx}=\frac{1}{u(x)}\frac{du}{dx}\)
+<br>
+<details class="solution">
+  <summary>Pembahasan:</summary>
+  <div class="solution-step">
+    <p style="display: flex; justify-content: center;">\(\frac{dy}{dx}=\frac{d}{dx}[ln(\frac {\cos^2x}{&radic;(2x-3x^2)})]\)</p>
+    <p style="display: flex; justify-content: center;">\(=\frac{a}{\cos^2x}\frac{d}{dx}[\frac{\cos^2x}{&radic;(2x-3x^2)}]\)</p>
+    <p style="display: flex; justify-content: center;">\(=\frac{&radic;(2x-3x^2)}{\cos^2x}\frac{-2\cos x \sin x &radic;(2x-3x^2)-\frac{2-6x}{2&radic;(2x-3x^2)}\cos^2x}{&radic;(2x-3x^2)}\)</p>
+    <p style="display: flex; justify-content: center;">\(=\frac{-2 \sin x(2x-3x^2)-(1-3x) \cos x}{(2x-3x^2) \cos x}\)</p>
+    <p style="display: flex; justify-content: center;">\(=\frac{-2 \tan(2x-3x^2)-1+3x}{(2x-3x^2)}\)</p>
+  </div>
+
+</details><br>
+
+
+
+4. <b>Soal ETS 2024</b>
+Hitung integral \(\int x2^{x^2};dx \)<br>
+<b>Hint 1:</b> Substitusi \(u=x^2\) <br>
+<b>Hint 2:</b> Gunakan sifat \(\int a^x; dx = \frac{a^x}{\ln a}+ C\) <br>
+<details class="solution">
+  <summary>Pembahasan:</summary><br>
+      <div class="solution-step">
+        Misalkan \(u=x^2\), sehingga \(du=2x dx\) &hArr; \( \frac{du}{2} = xdx\) <br>
+            <p style="display: flex; justify-content: center;">\(\ \int x2^{x^2} dx = \int 2^u\frac{du}{2} \)</p>
+            <p style="display: flex; justify-content: center;">\(=\ \frac{1}{2} \int 2^u ;du\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{1}{2}\frac{2^u}{\ln 2} +C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{2^{u-1}}{\ln 2} + C\)</p>
+            <p style="display: flex; justify-content: center;">\(= \frac{2^{x^2-1}}{\ln 2} + C\)</p>
+      </div>
+</details>
+ <div> 
+    
+    <p id="AnakKP">&copy; Copyright 2025 | KP Mahasiswa Matematika 2022</p>
+  </div>
+  </main>
+  
+</body>
+</html>
