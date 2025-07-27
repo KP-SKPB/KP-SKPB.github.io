@@ -1,6 +1,18 @@
 # 🌐 Interactive Calculus Learning Website
 
-A lightweight and responsive educational website to help students grasp Calculus concepts interactively. Built using vanilla **HTML**, **CSS**, and **JavaScript**, with math rendering powered by **KaTeX** and interactivity enhanced via **CortexJS**.
+This repository contains the source code for a lightweight, responsive educational website designed to help first-year university students understand Calculus concepts interactively. Built using vanilla **HTML**, **CSS**, and **JavaScript**, the site integrates **KaTeX** for high-quality math rendering and **CortexJS** for reactive user interaction.
+
+This website was developed as part of a mandatory internship program (*Kerja Praktik*) in the Department of Mathematics, Institut Teknologi Sepuluh Nopember (ITS). The purpose of the program is to allow students to contribute to academic or institutional needs through practical, real-world projects.
+
+The idea for this website emerged from observations that many new students struggle to grasp basic Calculus concepts such as limits, derivatives, and integrals. These difficulties are often due to abstract explanations and a lack of interactive, accessible learning media.
+
+To address this, the website was designed to provide:
+
+- Clear and concise explanations of fundamental Calculus topics
+- Well-rendered mathematical expressions using KaTeX
+- Interactive visual components powered by CortexJS, allowing students to explore concepts dynamically
+
+This project aims to support independent learning and supplement traditional lectures with a modern, intuitive platform that can be accessed across devices.
 
 ## ✨ Features
 
