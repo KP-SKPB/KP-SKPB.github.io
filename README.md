@@ -1,4 +1,5 @@
 # 🌐 Interactive Calculus Learning Website
+![Preview Screenshot](https://github.com/TetewHeroez/Tugas-Kuliah/blob/main/Semester%206/Kerja%20Praktek/Laporan%20KP/foto/KomponenWeb.png)
 <!-- PORTFOLIO-START: detailedDescription -->
 This repository contains the source code for a lightweight, responsive educational website designed to help first-year university students understand Calculus concepts interactively. Built using vanilla **HTML**, **CSS**, and **JavaScript**, the site integrates **KaTeX** for high-quality math rendering and **CortexJS** for reactive user interaction.
 
@@ -52,5 +53,8 @@ start index.html
 │   └── images, icons, etc.
 ```
 ## 📸 Preview
+![](https://github.com/TetewHeroez/Tugas-Kuliah/blob/main/Semester%206/Kerja%20Praktek/PPT%20KP/figs/Hasil1.png)
+![](https://github.com/TetewHeroez/Tugas-Kuliah/blob/main/Semester%206/Kerja%20Praktek/PPT%20KP/figs/Hasil2.png)
+![](https://github.com/TetewHeroez/Tugas-Kuliah/blob/main/Semester%206/Kerja%20Praktek/PPT%20KP/figs/Hasil3.png)
+![](https://github.com/TetewHeroez/Tugas-Kuliah/blob/main/Semester%206/Kerja%20Praktek/PPT%20KP/figs/Hasil4.png)
 
-![Preview Screenshot](./assets/screenshot.png)
