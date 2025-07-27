@@ -16,11 +16,10 @@ This project aims to support independent learning and supplement traditional lec
 
 ## ✨ Features
 
-- 📚 Rich, readable content on core Calculus topics (limits, derivatives, integrals, etc.)
-- 📐 Math rendering with KaTeX for clarity and precision
-- ⚙️ Reactive components (like sliders, inputs, and dynamic plots) using CortexJS
-- 📱 Responsive layout for both desktop and mobile users
-- 🧮 Practice exercises with immediate feedback
+- 📚 **Rich, readable content on core Calculus topics** (limits, derivatives, integrals, etc.)
+- 📐 **Math rendering with KaTeX for clarity and precision**
+- ⚙️ **Reactive components using CortexJS**
+- 🧮 **Practice exercises with immediate feedback**
 
 ## 📦 Built With
 
